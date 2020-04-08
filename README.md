@@ -1,5 +1,7 @@
 # covid19
 
+![CI](https://github.com/kerrongordon/covid19/workflows/CI/badge.svg)
+
 A covid 19 application.
 
 ## Getting Started
