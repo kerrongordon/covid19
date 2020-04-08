@@ -12,18 +12,20 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int _initialPage = 1;
+  static int _initialPage = 1;
   final HomeScreen _homeScreen = HomeScreen();
   final GeneralScreen _generalScreen = GeneralScreen();
   final InforScreen _inforScreen = InforScreen();
   final PageController _pageController = PageController(
-    initialPage: 1,
+    initialPage: _initialPage,
     keepPage: true,
   );
 
   _pageChange(int page) {
-    _pageController.jumpToPage(page);
-    setState(() => _initialPage = page);
+    setState(() {
+      _pageController.jumpToPage(page);
+      _initialPage = page;
+    });
   }
 
   @override
@@ -44,7 +46,7 @@ class _MainPageState extends State<MainPage> {
         height: 60,
         index: _initialPage,
         animationDuration: Duration(milliseconds: 300),
-        animationCurve: Curves.easeInOut,
+        animationCurve: Curves.linear,
         onTap: (val) => _pageChange(val),
         items: <Widget>[
           Icon(Icons.assessment,
@@ -55,7 +57,10 @@ class _MainPageState extends State<MainPage> {
       ),
       body: PageView(
         controller: _pageController,
-        onPageChanged: (val) => _pageChange(val),
+        onPageChanged: (val) {
+          setState(() => _initialPage = val);
+          // _pageChange(val);
+        },
         children: <Widget>[
           _generalScreen,
           _homeScreen,
