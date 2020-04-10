@@ -73,50 +73,48 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
                   } else if (!snapshot.hasData) {
                     return Text('There seem to be a problem');
                   } else {
+                    final snap = snapshot.data;
                     return Container(
-                      // padding: EdgeInsets.all(20),
                       child: Column(
                         children: <Widget>[
                           ListView.builder(
                             shrinkWrap: true,
-                            // scrollDirection: Axis.vertical,
-
-                            physics: NeverScrollableScrollPhysics(),
-                            itemCount: snapshot.data.length,
+                            scrollDirection: Axis.vertical,
+                            physics: const NeverScrollableScrollPhysics(),
+                            // physics: const AlwaysScrollableScrollPhysics(),
+                            itemCount: snap.length,
                             itemBuilder: (BuildContext context, int i) {
+                              final data = snap[i];
                               return Padding(
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 20),
                                 child: Card(
                                   elevation: 15,
-                                  color: Colors.blue[800],
-                                  margin: EdgeInsets.only(bottom: 30),
+                                  // color: Colors.blue[800],
+                                  margin: const EdgeInsets.only(bottom: 30),
                                   child: ListTile(
-                                    leading: ClipRRect(
-                                      borderRadius: BorderRadius.circular(50),
-                                      child: CachedNetworkImage(
-                                        imageUrl:
-                                            snapshot.data[i].countryInfo.flag,
-                                        height: 52.0,
-                                        width: 52.0,
-                                        fit: BoxFit.cover,
-                                      ),
+                                    leading: CachedNetworkImage(
+                                      imageUrl:
+                                          'https://www.countryflags.io/${data.countryInfo.iso2}/flat/32.png',
                                     ),
-                                    isThreeLine: true,
                                     title: Text(
-                                      snapshot.data[i].country,
+                                      data.country,
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Theme.of(context)
+                                            .textTheme
+                                            .body1
+                                            .color,
                                         fontSize: 18,
                                         fontWeight: FontWeight.w300,
                                       ),
                                     ),
-                                    subtitle: Text(
-                                        numberCommas(snapshot.data[i].deaths)),
                                     trailing: Text(
-                                      numberCommas(snapshot.data[i].cases),
+                                      numberCommas(data.cases),
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: Theme.of(context)
+                                            .textTheme
+                                            .body1
+                                            .color,
                                         fontSize: 20,
                                         fontWeight: FontWeight.w100,
                                       ),
