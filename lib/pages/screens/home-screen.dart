@@ -5,7 +5,6 @@ import 'package:covid19/models/summary-model.dart';
 import 'package:covid19/pages/country-page.dart';
 import 'package:covid19/services/api-data-service.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({Key key}) : super(key: key);

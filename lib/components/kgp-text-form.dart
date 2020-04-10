@@ -40,63 +40,60 @@ class KgpTextForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 4, bottom: 4),
-      child: Stack(
-        overflow: Overflow.visible,
-        children: <Widget>[
-          Positioned(
-            top: -3.9,
-            left: -3.8,
-            right: -3.8,
-            child: Card(
-              child: Container(
-                padding: const EdgeInsets.only(bottom: 48),
+    return Stack(
+      overflow: Overflow.visible,
+      children: <Widget>[
+        Positioned(
+          top: -3.9,
+          left: -3.8,
+          right: -3.8,
+          child: Card(
+            child: Container(
+              padding: const EdgeInsets.only(bottom: 48),
+            ),
+          ),
+        ),
+        TextFormField(
+          key: key,
+          autocorrect: true,
+          textInputAction: textInputAction,
+          onFieldSubmitted: onFieldSubmitted,
+          inputFormatters: inputFormatters,
+          focusNode: focusNode,
+          controller: controller,
+          autovalidate: false,
+          validator: validator,
+          autofocus: false,
+          onSaved: onSaved,
+          onChanged: onChanged,
+          initialValue: initialValue,
+          obscureText: obscureText,
+          keyboardType: keyboardType,
+          enabled: enabled,
+          style: TextStyle(
+            color: Theme.of(context).textTheme.body1.color,
+          ),
+          decoration: InputDecoration(
+            labelText: labelText,
+            hasFloatingPlaceholder: false,
+            filled: true,
+            helperText: ' ',
+            prefixIcon: prefixIcon,
+            fillColor: Theme.of(context).cardTheme.color,
+            prefixText: prefixText,
+            contentPadding: const EdgeInsets.all(0),
+            border: OutlineInputBorder(
+              borderRadius: const BorderRadius.all(
+                const Radius.circular(30.0),
+              ),
+              borderSide: const BorderSide(
+                width: 0,
+                style: BorderStyle.none,
               ),
             ),
           ),
-          TextFormField(
-            key: key,
-            autocorrect: true,
-            textInputAction: textInputAction,
-            onFieldSubmitted: onFieldSubmitted,
-            inputFormatters: inputFormatters,
-            focusNode: focusNode,
-            controller: controller,
-            autovalidate: false,
-            validator: validator,
-            autofocus: false,
-            onSaved: onSaved,
-            onChanged: onChanged,
-            initialValue: initialValue,
-            obscureText: obscureText,
-            keyboardType: keyboardType,
-            enabled: enabled,
-            style: TextStyle(
-              color: Theme.of(context).textTheme.body1.color,
-            ),
-            decoration: InputDecoration(
-              labelText: labelText,
-              hasFloatingPlaceholder: false,
-              filled: true,
-              helperText: ' ',
-              prefixIcon: prefixIcon,
-              fillColor: Theme.of(context).cardTheme.color,
-              prefixText: prefixText,
-              contentPadding: const EdgeInsets.all(0),
-              border: OutlineInputBorder(
-                borderRadius: const BorderRadius.all(
-                  const Radius.circular(30.0),
-                ),
-                borderSide: const BorderSide(
-                  width: 0,
-                  style: BorderStyle.none,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
