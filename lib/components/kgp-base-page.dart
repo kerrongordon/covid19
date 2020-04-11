@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 class KgpBasePage extends StatelessWidget {
   final String title;
   final Widget background;
+  final Widget scrollList;
+  final Widget persistentHeader;
   final List<Widget> actions;
   final List<Widget> children;
   final double expandedHeight;
+
   const KgpBasePage({
     Key key,
     this.expandedHeight,
@@ -13,6 +16,8 @@ class KgpBasePage extends StatelessWidget {
     this.background,
     this.title,
     @required this.children,
+    this.persistentHeader,
+    this.scrollList,
   }) : super(key: key);
 
   @override
@@ -23,7 +28,7 @@ class KgpBasePage extends StatelessWidget {
           expandedHeight: expandedHeight != null ? expandedHeight : 300,
           pinned: true,
           floating: false,
-          elevation: 3.0,
+          elevation: 0.0,
           actions: actions,
           flexibleSpace: FlexibleSpaceBar(
             titlePadding: const EdgeInsets.only(bottom: 8),
@@ -41,6 +46,9 @@ class KgpBasePage extends StatelessWidget {
                     title != null ? title : '',
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.clip,
+                    style: TextStyle(
+                      fontWeight: FontWeight.w300,
+                    ),
                   ),
                 ),
                 Flexible(
@@ -52,6 +60,13 @@ class KgpBasePage extends StatelessWidget {
             centerTitle: true,
           ),
         ),
+        persistentHeader != null
+            ? SliverPersistentHeader(
+                pinned: true,
+                floating: false,
+                delegate: Delegate(child: persistentHeader),
+              )
+            : SliverToBoxAdapter(),
         SliverToBoxAdapter(
           child: Container(
             child: Column(
@@ -62,4 +77,26 @@ class KgpBasePage extends StatelessWidget {
       ],
     );
   }
+}
+
+class Delegate extends SliverPersistentHeaderDelegate {
+  final Widget child;
+
+  Delegate({this.child});
+  @override
+  Widget build(
+          BuildContext context, double shrinkOffset, bool overlapsContent) =>
+      Container(
+        color: Theme.of(context).backgroundColor,
+        child: child,
+      );
+
+  @override
+  double get maxExtent => 70;
+
+  @override
+  double get minExtent => 69;
+
+  @override
+  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) => true;
 }

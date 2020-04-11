@@ -1,141 +1,106 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:covid19/components/box-card.dart';
-import 'package:covid19/components/home-card-item.dart';
 import 'package:covid19/components/kgp-base-page.dart';
-import 'package:covid19/models/summary-model.dart';
+import 'package:covid19/components/kgp-big-card.dart';
+import 'package:covid19/models/country-statistics.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 class CountryPage extends StatelessWidget {
-  final Countries data;
+  final CountryStatistics data;
 
   const CountryPage({Key key, this.data}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    DateTime _date = DateTime.parse(data.date);
-    DateFormat formatter = new DateFormat('EEEE MMMM d y');
-    String formatted = formatter.format(_date);
-
     return Scaffold(
       body: KgpBasePage(
-        expandedHeight: 300,
+        expandedHeight: 50,
         title: data.country,
         children: <Widget>[
-          Container(
-            padding: EdgeInsets.all(20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+          SizedBox(
+            height: 20,
+          ),
+          Hero(
+            tag: data.countryInfo.id != null ? data.countryInfo.id : 2000,
+            child: Stack(
+              overflow: Overflow.visible,
               children: <Widget>[
-                BoxCard(
-                  title: 'Death',
-                  color: Colors.red,
-                  value: data.totalDeaths.toString(),
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  child: Card(
+                    color: Colors.transparent,
+                    elevation: 30,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(100.0),
+                    ),
+                  ),
                 ),
-                BoxCard(
-                  title: 'Recovered',
-                  color: Colors.green,
-                  value: data.totalRecovered.toString(),
+                ClipOval(
+                  child: CachedNetworkImage(
+                    imageUrl: data.countryInfo.flag,
+                    width: 200,
+                    height: 200,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ],
             ),
           ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            child: Card(
-              color: Colors.brown,
-              elevation: 2,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0),
-              ),
-              child: Container(
-                height: 200,
-                width: double.infinity,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Column(
-                          children: <Widget>[
-                            Padding(
-                              padding: const EdgeInsets.only(top: 30, left: 20),
-                              child: Text(
-                                'Confirmed',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w300,
-                                  color: Colors.white,
-                                  fontSize: 30,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 30, left: 20),
-                              child: Text(
-                                data.totalConfirmed.toString(),
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.orangeAccent,
-                                  fontSize: 50,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 0, left: 100),
-                          child: CachedNetworkImage(
-                            height: 64,
-                            imageUrl:
-                                'https://www.countryflags.io/${data.countryCode}/flat/64.png',
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+          SizedBox(height: 50),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: KgpBigCard(
+              title: 'Cases',
+              total: data.cases,
+              today: data.todayCases,
+              color: Colors.orangeAccent,
+              icon: Icon(
+                Ionicons.ios_analytics,
+                size: 40,
+                color: Colors.white,
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(20),
-            child: Column(
-              children: <Widget>[
-                Text('As of $formatted'),
-                SizedBox(height: 20),
-                HomeCardItem(
-                  title: 'New Confirmed Cases',
-                  fontSizetitle: 15,
-                  fontSizetrailing: 20,
-                  verticalPad: 3,
-                  space: 5,
-                  position: 4,
-                  value: data.newConfirmed.toString(),
-                  color: Colors.blue[800],
-                ),
-                HomeCardItem(
-                  title: 'New Recovered Cases',
-                  fontSizetitle: 15,
-                  fontSizetrailing: 20,
-                  verticalPad: 3,
-                  space: 5,
-                  position: 4,
-                  value: data.newRecovered.toString(),
-                  color: Colors.blue[800],
-                ),
-                HomeCardItem(
-                  title: 'New Death Cases',
-                  fontSizetitle: 15,
-                  fontSizetrailing: 20,
-                  verticalPad: 3,
-                  space: 5,
-                  position: 4,
-                  value: data.newDeaths.toString(),
-                  color: Colors.blue[800],
-                ),
-                SizedBox(height: 50),
-              ],
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: KgpBigCard(
+              title: 'Recovered',
+              total: data.recovered,
+              color: Colors.green,
+              icon: Icon(
+                Ionicons.ios_walk,
+                size: 40,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: KgpBigCard(
+              title: 'Death',
+              total: data.deaths,
+              today: data.todayDeaths,
+              color: Colors.redAccent,
+              icon: Icon(
+                Ionicons.ios_person_add,
+                size: 40,
+                color: Colors.white,
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: KgpBigCard(
+              title: 'Critical',
+              total: data.critical,
+              color: Colors.blue[700],
+              icon: Icon(
+                Ionicons.ios_bed,
+                size: 40,
+                color: Colors.white,
+              ),
             ),
           ),
         ],

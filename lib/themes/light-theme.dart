@@ -36,7 +36,7 @@ class LightTheme {
         elevation: 3,
         color: Colors.white,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30.0),
+          borderRadius: BorderRadius.circular(10.0),
         ),
       ),
       primaryColor: lightPrimary,
