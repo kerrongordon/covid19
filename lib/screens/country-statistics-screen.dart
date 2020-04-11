@@ -144,6 +144,7 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
                                     ),
                                   ),
                                   onTap: () {
+                                    _focusNode.unfocus();
                                     Navigator.of(context)
                                         .push(MaterialPageRoute(
                                             builder: (BuildContext context) =>
@@ -152,7 +153,7 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
                                                 )))
                                         .then((d) {
                                       _search.clear();
-                                      _focusNode.unfocus();
+
                                       setState(() {
                                         loaddata();
                                       });

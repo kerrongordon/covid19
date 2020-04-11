@@ -41,8 +41,15 @@ class InforScreen extends StatelessWidget {
                                   'https://www.cdc.gov/coronavirus/2019-ncov/images/sneezingwoman.png',
                             ),
                           ),
-                          title: Text('Know How it Spreads'),
-                          trailing: Icon(Ionicons.ios_arrow_forward),
+                          title: Text(
+                            'Know How it Spreads',
+                            style: TextStyle(
+                                color: Theme.of(context).textTheme.body1.color),
+                          ),
+                          trailing: Icon(
+                            Ionicons.ios_arrow_forward,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                       ),
                     ),
@@ -67,8 +74,15 @@ class InforScreen extends StatelessWidget {
                                   'https://www.cdc.gov/coronavirus/2019-ncov/images/protect-wash-hands.png',
                             ),
                           ),
-                          title: Text('Clean your hands often'),
-                          trailing: Icon(Ionicons.ios_arrow_forward),
+                          title: Text(
+                            'Clean your hands often',
+                            style: TextStyle(
+                                color: Theme.of(context).textTheme.body1.color),
+                          ),
+                          trailing: Icon(
+                            Ionicons.ios_arrow_forward,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                       ),
                     ),
@@ -93,8 +107,15 @@ class InforScreen extends StatelessWidget {
                                   'https://www.cdc.gov/coronavirus/2019-ncov/images/protect-quarantine.png',
                             ),
                           ),
-                          title: Text('Avoid close contact'),
-                          trailing: Icon(Ionicons.ios_arrow_forward),
+                          title: Text(
+                            'Avoid close contact',
+                            style: TextStyle(
+                                color: Theme.of(context).textTheme.body1.color),
+                          ),
+                          trailing: Icon(
+                            Ionicons.ios_arrow_forward,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                       ),
                     ),
@@ -120,8 +141,14 @@ class InforScreen extends StatelessWidget {
                             ),
                           ),
                           title: Text(
-                              'Cover your mouth and nose with a cloth face cover when around others'),
-                          trailing: Icon(Ionicons.ios_arrow_forward),
+                            'Cover your mouth and nose with a cloth face cover when around others',
+                            style: TextStyle(
+                                color: Theme.of(context).textTheme.body1.color),
+                          ),
+                          trailing: Icon(
+                            Ionicons.ios_arrow_forward,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                       ),
                     ),
@@ -146,8 +173,15 @@ class InforScreen extends StatelessWidget {
                                   'https://www.cdc.gov/coronavirus/2019-ncov/images/COVIDweb_06_coverCough.png',
                             ),
                           ),
-                          title: Text('Cover coughs and sneezes'),
-                          trailing: Icon(Ionicons.ios_arrow_forward),
+                          title: Text(
+                            'Cover coughs and sneezes',
+                            style: TextStyle(
+                                color: Theme.of(context).textTheme.body1.color),
+                          ),
+                          trailing: Icon(
+                            Ionicons.ios_arrow_forward,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                       ),
                     ),
@@ -172,8 +206,15 @@ class InforScreen extends StatelessWidget {
                                   'https://www.cdc.gov/coronavirus/2019-ncov/images/COVIDweb_09_clean.png',
                             ),
                           ),
-                          title: Text('Clean and disinfect'),
-                          trailing: Icon(Ionicons.ios_arrow_forward),
+                          title: Text(
+                            'Clean and disinfect',
+                            style: TextStyle(
+                                color: Theme.of(context).textTheme.body1.color),
+                          ),
+                          trailing: Icon(
+                            Ionicons.ios_arrow_forward,
+                            color: Theme.of(context).primaryColor,
+                          ),
                         ),
                       ),
                     ),
