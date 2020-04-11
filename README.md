@@ -4,6 +4,10 @@
 
 A covid 19 application.
 
+![light 1](img/light1.jpg)![dark 1](img/dark1.jpg)
+![light 2](img/light2.jpg)![dark 2](img/dark2.jpg)
+![light 3](img/light3.jpg)![dark 3](img/dark3.jpg)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
