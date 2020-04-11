@@ -1,12 +1,8 @@
 # covid19
 
-![CI](https://github.com/kerrongordon/covid19/workflows/CI/badge.svg)
+![CI](https://github.com/kerrongordon/covid19/workflows/CI/badge.svg) ![GitHub All Releases](https://img.shields.io/github/downloads/kerrongordon/covid19/total)
 
-A covid 19 application.
-
-![light 1](img/light1.jpg)![dark 1](img/dark1.jpg)
-![light 2](img/light2.jpg)![dark 2](img/dark2.jpg)
-![light 3](img/light3.jpg)![dark 3](img/dark3.jpg)
+A covid 19 application. [Download here](https://github.com/kerrongordon/covid19/releases)
 
 ## Getting Started
 
@@ -20,3 +16,9 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+API Data is provided by [TheVirusTracker](https://thevirustracker.com/api) and from the [Centers for Disease Control and Prevention](https://www.cdc.gov/)
+
+![light 1](img/light1.jpg)![dark 1](img/dark1.jpg)
+![light 2](img/light2.jpg)![dark 2](img/dark2.jpg)
+![light 3](img/light3.jpg)![dark 3](img/dark3.jpg)
