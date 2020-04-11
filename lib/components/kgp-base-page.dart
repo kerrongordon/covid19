@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class KgpBasePage extends StatelessWidget {
   final String title;
   final Widget background;
+  final Widget scrollList;
   final Widget persistentHeader;
   final List<Widget> actions;
   final List<Widget> children;
@@ -16,6 +17,7 @@ class KgpBasePage extends StatelessWidget {
     this.title,
     @required this.children,
     this.persistentHeader,
+    this.scrollList,
   }) : super(key: key);
 
   @override

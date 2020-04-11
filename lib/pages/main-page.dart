@@ -1,6 +1,6 @@
-import 'package:covid19/pages/screens/infor-screen.dart';
 import 'package:covid19/screens/country-statistics-screen.dart';
 import 'package:covid19/screens/global-statistics-screen.dart';
+import 'package:covid19/screens/infor-screen.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -46,7 +46,7 @@ class _MainPageState extends State<MainPage> {
       extendBody: true,
       extendBodyBehindAppBar: true,
       bottomNavigationBar: CurvedNavigationBar(
-        color: Theme.of(context).cardTheme.color.withOpacity(0.98),
+        color: Theme.of(context).cardTheme.color,
         backgroundColor: Colors.transparent,
         buttonBackgroundColor: Theme.of(context).cardTheme.color,
         height: 50,

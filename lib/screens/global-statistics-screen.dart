@@ -114,7 +114,7 @@ class MainViewGS extends StatelessWidget {
                   ),
                 ),
                 KgpBigCard(
-                  title: 'Recovered Cases',
+                  title: 'Death Cases',
                   total: data.totalDeaths,
                   today: data.totalNewDeathsToday,
                   color: Colors.redAccent,
