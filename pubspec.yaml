@@ -37,9 +37,9 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: false
-  image_path: "assets/covid1.png"
-  adaptive_icon_background: "#485a6c"
-  adaptive_icon_foreground: "assets/covid.png"
+  image_path: "assets/covid.png"
+  # adaptive_icon_background: "#485a6c"
+  # adaptive_icon_foreground: "assets/covid.png"
 
 # The following section is specific to Flutter.
 flutter:
