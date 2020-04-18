@@ -3,8 +3,6 @@ import 'package:dio/dio.dart';
 
 class ApiService {
   static const countriesUrl = 'https://api.covid19api.com/summary';
-  static const countryInformationUrl =
-      'https://restcountries.eu/rest/v2/alpha/';
 
   Dio _dio = Dio();
 
