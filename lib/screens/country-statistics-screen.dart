@@ -2,9 +2,9 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/components/kgp-text-form.dart';
-import 'package:covid19/models/country-statistics.dart';
+import 'package:covid19/models/countries-all.dart';
 import 'package:covid19/pages/country-page.dart';
-import 'package:covid19/services/api-country.dart';
+import 'package:covid19/services/api-service.dart';
 import 'package:covid19/utils/util.dart';
 import 'package:flutter/material.dart';
 
@@ -16,10 +16,10 @@ class CountryStatisticsScreen extends StatefulWidget {
 
 class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
     with AutomaticKeepAliveClientMixin<CountryStatisticsScreen> {
-  final ApiCountry _apiService = ApiCountry();
-  Future<List<CountryStatistics>> _getCountryStatistics;
-  List<CountryStatistics> _countriesFilter = [];
-  List<CountryStatistics> _snapdata;
+  final ApiService _apiService = ApiService();
+  Future<List<Country>> _getCountryStatistics;
+  List<Country> _countriesFilter = [];
+  List<Country> _snapdata;
 
   TextEditingController _search = TextEditingController();
   FocusNode _focusNode = FocusNode();
@@ -27,14 +27,16 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
   @override
   void initState() {
     super.initState();
-    _getCountryStatistics = _apiService.getCountryStatistics();
     loaddata();
   }
 
   loaddata() {
+    _getCountryStatistics = _apiService.getAllCountries();
     return _getCountryStatistics.then((data) {
-      data.sort((a, b) => b.cases - a.cases);
-      _countriesFilter = data;
+      data.sort((a, b) => b.totalConfirmed - a.totalConfirmed);
+      List<Country> srmoveZero =
+          data.where((co) => co.totalConfirmed > 0).toList();
+      _countriesFilter = srmoveZero;
     });
   }
 
@@ -60,6 +62,7 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
                 _countriesFilter = _snapdata
                     .where((names) =>
                         names.country.toLowerCase().contains(val.toLowerCase()))
+                    .where((co) => co.totalConfirmed > 0)
                     .toList();
               });
             },
@@ -69,8 +72,8 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
         children: <Widget>[
           FutureBuilder(
             future: _getCountryStatistics,
-            builder: (BuildContext context,
-                AsyncSnapshot<List<CountryStatistics>> snapshot) {
+            builder:
+                (BuildContext context, AsyncSnapshot<List<Country>> snapshot) {
               switch (snapshot.connectionState) {
                 case ConnectionState.none:
                   return Container();
@@ -90,34 +93,34 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
                     _snapdata = snapshot.data;
                     return Container(
                       child: SizedBox(
-                        height: MediaQuery.of(context).size.height - 160,
-                        child: ListView.builder(
-                          shrinkWrap: true,
-                          scrollDirection: Axis.vertical,
-                          // physics: const NeverScrollableScrollPhysics(),
-                          // physics: const AlwaysScrollableScrollPhysics(),
-                          itemCount: _countriesFilter.length,
-                          itemBuilder: (BuildContext context, int i) {
-                            final data = _countriesFilter[i];
-                            return Padding(
+                        height: MediaQuery.of(context).size.height / 1.31,
+                        child: RefreshIndicator(
+                          onRefresh: () => loaddata(),
+                          child: ListView.separated(
+                            separatorBuilder: (context, index) => Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 20),
-                              child: Card(
-                                elevation: 15,
-                                // color: Colors.blue[800],
-                                margin: const EdgeInsets.only(bottom: 30),
+                              child: Divider(),
+                            ),
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            itemCount: _countriesFilter.length,
+                            itemBuilder: (BuildContext context, int i) {
+                              final data = _countriesFilter[i];
+                              return Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 20),
                                 child: ListTile(
-                                  leading: Hero(
-                                    tag: data.countryInfo.id != null
-                                        ? data.countryInfo.id
-                                        : 2000,
-                                    child: ClipOval(
-                                      child: CachedNetworkImage(
-                                        imageUrl: data.countryInfo.flag,
-                                        width: 35,
-                                        height: 35,
-                                        fit: BoxFit.cover,
-                                      ),
+                                  leading: CachedNetworkImage(
+                                    imageUrl:
+                                        'https://www.countryflags.io/${data.countryCode}/flat/64.png',
+                                    width: 35,
+                                    height: 35,
+                                    fit: BoxFit.cover,
+                                    placeholder: (context, url) => Container(
+                                      child: CircularProgressIndicator(),
+                                      width: 25,
+                                      height: 25,
                                     ),
                                   ),
                                   title: Text(
@@ -133,14 +136,14 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
                                     overflow: TextOverflow.ellipsis,
                                   ),
                                   trailing: Text(
-                                    numberCommas(data.cases),
+                                    numberCommas(data.totalConfirmed),
                                     style: TextStyle(
                                       color: Theme.of(context)
                                           .textTheme
                                           .body1
                                           .color,
                                       fontSize: 20,
-                                      fontWeight: FontWeight.w100,
+                                      fontWeight: FontWeight.w300,
                                     ),
                                   ),
                                   onTap: () {
@@ -160,9 +163,9 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
                                     });
                                   },
                                 ),
-                              ),
-                            );
-                          },
+                              );
+                            },
+                          ),
                         ),
                       ),
                     );

@@ -1,17 +1,28 @@
-import 'package:covid19/models/global-statistics.dart';
+import 'package:covid19/models/countries-all.dart';
 import 'package:dio/dio.dart';
 
 class ApiService {
-  static const baseUrl = 'https://api.thevirustracker.com/free-api';
+  static const countriesUrl = 'https://api.covid19api.com/summary';
+  static const countryInformationUrl =
+      'https://restcountries.eu/rest/v2/alpha/';
 
   Dio _dio = Dio();
 
-  Future<GlobalStatistics> getGlobalStatistics() async {
+  Future<Countries> getGlobal() async {
     try {
-      Response res =
-          await _dio.get(baseUrl, queryParameters: {"global": "stats"});
-      GlobalStatistics data = GlobalStatistics.fromJson(res.data);
+      Response res = await _dio.get(countriesUrl);
+      Countries data = Countries.fromJson(res.data);
       return data;
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<List<Country>> getAllCountries() async {
+    try {
+      Response res = await _dio.get(countriesUrl);
+      Countries data = Countries.fromJson(res.data);
+      return data.countries;
     } catch (e) {
       throw e;
     }
