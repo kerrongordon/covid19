@@ -94,70 +94,80 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
                     return Container(
                       child: SizedBox(
                         height: MediaQuery.of(context).size.height / 1.31,
-                        child: ListView.separated(
-                          separatorBuilder: (context, index) => Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 20),
-                            child: Divider(),
-                          ),
-                          shrinkWrap: true,
-                          scrollDirection: Axis.vertical,
-                          itemCount: _countriesFilter.length,
-                          itemBuilder: (BuildContext context, int i) {
-                            final data = _countriesFilter[i];
-                            return Padding(
+                        child: RefreshIndicator(
+                          backgroundColor: Theme.of(context).cardTheme.color,
+                          onRefresh: () => _getCountryStatistics =
+                              _apiService.getAllCountries(),
+                          child: ListView.separated(
+                            separatorBuilder: (context, index) => Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 20),
-                              child: ListTile(
-                                leading: CachedNetworkImage(
-                                  imageUrl:
-                                      'https://www.countryflags.io/${data.countryCode}/flat/64.png',
-                                  width: 35,
-                                  height: 35,
-                                  fit: BoxFit.cover,
-                                  placeholder: (context, url) => Container(
-                                    child: CircularProgressIndicator(),
-                                    width: 20,
-                                    height: 20,
+                              child: Divider(),
+                            ),
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            itemCount: _countriesFilter.length,
+                            itemBuilder: (BuildContext context, int i) {
+                              final data = _countriesFilter[i];
+                              return Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 20),
+                                child: ListTile(
+                                  leading: CachedNetworkImage(
+                                    imageUrl:
+                                        'https://www.countryflags.io/${data.countryCode}/flat/64.png',
+                                    width: 35,
+                                    height: 35,
+                                    fit: BoxFit.cover,
+                                    placeholder: (context, url) => Container(
+                                      child: CircularProgressIndicator(),
+                                      width: 20,
+                                      height: 20,
+                                    ),
                                   ),
-                                ),
-                                title: Text(
-                                  data.country,
-                                  style: TextStyle(
-                                    color:
-                                        Theme.of(context).textTheme.body1.color,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w300,
+                                  title: Text(
+                                    data.country,
+                                    style: TextStyle(
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .body1
+                                          .color,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                                    overflow: TextOverflow.ellipsis,
                                   ),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
-                                trailing: Text(
-                                  numberCommas(data.totalConfirmed),
-                                  style: TextStyle(
-                                    color:
-                                        Theme.of(context).textTheme.body1.color,
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.w300,
+                                  trailing: Text(
+                                    numberCommas(data.totalConfirmed),
+                                    style: TextStyle(
+                                      color: Theme.of(context)
+                                          .textTheme
+                                          .body1
+                                          .color,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.w300,
+                                    ),
                                   ),
-                                ),
-                                onTap: () {
-                                  _focusNode.unfocus();
-                                  Navigator.of(context)
-                                      .push(MaterialPageRoute(
-                                          builder: (BuildContext context) =>
-                                              CountryPage(
-                                                data: data,
-                                              )))
-                                      .then((d) {
-                                    _search.clear();
+                                  onTap: () {
+                                    _focusNode.unfocus();
+                                    Navigator.of(context)
+                                        .push(MaterialPageRoute(
+                                            builder: (BuildContext context) =>
+                                                CountryPage(
+                                                  data: data,
+                                                )))
+                                        .then((d) {
+                                      _search.clear();
 
-                                    setState(() {
-                                      loaddata();
+                                      setState(() {
+                                        loaddata();
+                                      });
                                     });
-                                  });
-                                },
-                              ),
-                            );
-                          },
+                                  },
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ),
                     );
