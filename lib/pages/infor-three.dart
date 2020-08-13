@@ -21,7 +21,7 @@ class InforThree extends StatelessWidget {
                   title: Text(
                     'Avoid close contact with people who are sick',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.body1.color,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                 ),
@@ -34,7 +34,7 @@ class InforThree extends StatelessWidget {
                     'Stay home as much as possible',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Theme.of(context).textTheme.body1.color,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                   trailing: Hero(
@@ -53,7 +53,7 @@ class InforThree extends StatelessWidget {
                   title: Text(
                     'Put distance between yourself and other people.',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.body1.color,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                 ),
@@ -65,7 +65,7 @@ class InforThree extends StatelessWidget {
                         title: Text(
                           'Remember that some people without symptoms may be able to spread virus.',
                           style: TextStyle(
-                            color: Theme.of(context).textTheme.body1.color,
+                            color: Theme.of(context).textTheme.bodyText1.color,
                           ),
                         ),
                       ),
@@ -73,7 +73,7 @@ class InforThree extends StatelessWidget {
                         title: Text(
                           'Keeping distance from others is especially important for people who are at higher risk of getting very sick.',
                           style: TextStyle(
-                            color: Theme.of(context).textTheme.body1.color,
+                            color: Theme.of(context).textTheme.bodyText1.color,
                           ),
                         ),
                       ),

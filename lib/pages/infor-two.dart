@@ -21,7 +21,7 @@ class InforTwo extends StatelessWidget {
                   title: Text(
                     'Wash your hands often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing.',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.body1.color,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                 ),
@@ -33,7 +33,7 @@ class InforTwo extends StatelessWidget {
                   title: Text(
                     'If soap and water are not readily available, use a hand sanitizer that contains at least 60% alcohol. Cover all surfaces of your hands and rub them together until they feel dry.',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.body1.color,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                   trailing: Hero(
@@ -52,7 +52,7 @@ class InforTwo extends StatelessWidget {
                   title: Text(
                     'Avoid touching your eyes, nose, and mouth with unwashed hands.',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.body1.color,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                 ),

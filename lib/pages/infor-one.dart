@@ -21,7 +21,7 @@ class InforOne extends StatelessWidget {
                   title: Text(
                     'There is currently no vaccine to prevent coronavirus disease 2019 (COVID-19).',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.body1.color,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                 ),
@@ -41,7 +41,7 @@ class InforOne extends StatelessWidget {
                     'The best way to prevent illness is to avoid being exposed to this virus.',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: Theme.of(context).textTheme.body1.color,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                 ),
@@ -53,7 +53,7 @@ class InforOne extends StatelessWidget {
                   title: Text(
                     'The virus is thought to spread mainly from person-to-person.',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.body1.color,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                 ),
@@ -65,7 +65,7 @@ class InforOne extends StatelessWidget {
                         title: Text(
                           'Between people who are in close contact with one another (within about 6 feet).',
                           style: TextStyle(
-                            color: Theme.of(context).textTheme.body1.color,
+                            color: Theme.of(context).textTheme.bodyText1.color,
                           ),
                         ),
                       ),
@@ -73,7 +73,7 @@ class InforOne extends StatelessWidget {
                         title: Text(
                           'Through respiratory droplets produced when an infected person coughs, sneezes or talks.',
                           style: TextStyle(
-                            color: Theme.of(context).textTheme.body1.color,
+                            color: Theme.of(context).textTheme.bodyText1.color,
                           ),
                         ),
                       ),
@@ -81,7 +81,7 @@ class InforOne extends StatelessWidget {
                         title: Text(
                           'These droplets can land in the mouths or noses of people who are nearby or possibly be inhaled into the lungs.',
                           style: TextStyle(
-                            color: Theme.of(context).textTheme.body1.color,
+                            color: Theme.of(context).textTheme.bodyText1.color,
                           ),
                         ),
                       ),
@@ -89,7 +89,7 @@ class InforOne extends StatelessWidget {
                         title: Text(
                           'Some recent studies have suggested that COVID-19 may be spread by people who are not showing symptoms.',
                           style: TextStyle(
-                            color: Theme.of(context).textTheme.body1.color,
+                            color: Theme.of(context).textTheme.bodyText1.color,
                           ),
                         ),
                       ),

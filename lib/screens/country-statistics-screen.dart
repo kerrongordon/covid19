@@ -130,7 +130,7 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
                                     style: TextStyle(
                                       color: Theme.of(context)
                                           .textTheme
-                                          .body1
+                                          .bodyText1
                                           .color,
                                       fontSize: 18,
                                       fontWeight: FontWeight.w300,
@@ -142,7 +142,7 @@ class _CountryStatisticsScreenState extends State<CountryStatisticsScreen>
                                     style: TextStyle(
                                       color: Theme.of(context)
                                           .textTheme
-                                          .body1
+                                          .bodyText1
                                           .color,
                                       fontSize: 20,
                                       fontWeight: FontWeight.w300,

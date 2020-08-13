@@ -45,7 +45,10 @@ class InforScreen extends StatelessWidget {
                           title: Text(
                             'Know How it Spreads',
                             style: TextStyle(
-                                color: Theme.of(context).textTheme.body1.color),
+                                color: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1
+                                    .color),
                           ),
                           trailing: Icon(
                             Ionicons.ios_arrow_forward,
@@ -78,7 +81,10 @@ class InforScreen extends StatelessWidget {
                           title: Text(
                             'Clean your hands often',
                             style: TextStyle(
-                                color: Theme.of(context).textTheme.body1.color),
+                                color: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1
+                                    .color),
                           ),
                           trailing: Icon(
                             Ionicons.ios_arrow_forward,
@@ -111,7 +117,10 @@ class InforScreen extends StatelessWidget {
                           title: Text(
                             'Avoid close contact',
                             style: TextStyle(
-                                color: Theme.of(context).textTheme.body1.color),
+                                color: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1
+                                    .color),
                           ),
                           trailing: Icon(
                             Ionicons.ios_arrow_forward,
@@ -144,7 +153,10 @@ class InforScreen extends StatelessWidget {
                           title: Text(
                             'Cover your mouth and nose with a cloth face cover when around others',
                             style: TextStyle(
-                                color: Theme.of(context).textTheme.body1.color),
+                                color: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1
+                                    .color),
                           ),
                           trailing: Icon(
                             Ionicons.ios_arrow_forward,
@@ -177,7 +189,10 @@ class InforScreen extends StatelessWidget {
                           title: Text(
                             'Cover coughs and sneezes',
                             style: TextStyle(
-                                color: Theme.of(context).textTheme.body1.color),
+                                color: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1
+                                    .color),
                           ),
                           trailing: Icon(
                             Ionicons.ios_arrow_forward,
@@ -210,7 +225,10 @@ class InforScreen extends StatelessWidget {
                           title: Text(
                             'Clean and disinfect',
                             style: TextStyle(
-                                color: Theme.of(context).textTheme.body1.color),
+                                color: Theme.of(context)
+                                    .textTheme
+                                    .bodyText1
+                                    .color),
                           ),
                           trailing: Icon(
                             Ionicons.ios_arrow_forward,

@@ -71,11 +71,11 @@ class KgpTextForm extends StatelessWidget {
           keyboardType: keyboardType,
           enabled: enabled,
           style: TextStyle(
-            color: Theme.of(context).textTheme.body1.color,
+            color: Theme.of(context).textTheme.bodyText1.color,
           ),
           decoration: InputDecoration(
             labelText: labelText,
-            hasFloatingPlaceholder: false,
+            floatingLabelBehavior: FloatingLabelBehavior.never,
             filled: true,
             helperText: ' ',
             prefixIcon: prefixIcon,

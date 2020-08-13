@@ -43,19 +43,19 @@ class LightTheme {
       primaryColorLight: frontColor,
       primaryColorBrightness: Brightness.light,
       primaryTextTheme: TextTheme(
-        body1: TextStyle(color: frontColor),
-        body2: TextStyle(color: frontColor),
-        title: TextStyle(color: frontColor),
-        subtitle: TextStyle(color: frontColor),
+        bodyText1: TextStyle(color: frontColor),
+        bodyText2: TextStyle(color: frontColor),
+        subtitle1: TextStyle(color: frontColor),
+        subtitle2: TextStyle(color: frontColor),
       ),
       textTheme: TextTheme(
-        body1: TextStyle(
+        bodyText1: TextStyle(
           color: frontColor,
           fontSize: 16,
         ),
-        body2: TextStyle(color: frontColor),
-        title: TextStyle(color: frontColor),
-        subtitle: TextStyle(color: frontColor),
+        bodyText2: TextStyle(color: frontColor),
+        subtitle1: TextStyle(color: frontColor),
+        subtitle2: TextStyle(color: frontColor),
       ),
       accentColor: lightPrimary,
       inputDecorationTheme: InputDecorationTheme(

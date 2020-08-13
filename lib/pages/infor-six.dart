@@ -21,7 +21,7 @@ class InforSix extends StatelessWidget {
                   title: Text(
                     'Clean AND disinfect frequently touched surfaces daily. This includes tables, doorknobs, light switches, countertops, handles, desks, phones, keyboards, toilets, faucets, and sinks.',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.body1.color,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                   trailing: Hero(
@@ -40,7 +40,7 @@ class InforSix extends StatelessWidget {
                   title: Text(
                     'If surfaces are dirty, clean them: Use detergent or soap and water prior to disinfection.',
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.body1.color,
+                      color: Theme.of(context).textTheme.bodyText1.color,
                     ),
                   ),
                 ),
