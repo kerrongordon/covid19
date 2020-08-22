@@ -19,11 +19,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  dio: ^3.0.9
+  dio: ^3.0.10
   flutter_icons: ^1.0.0+1
   loading_animations: ^2.1.0
   cached_network_image: ^2.0.0
   curved_navigation_bar: ^0.3.2
+  provider: ^4.3.2
+  motion_tab_bar: ^0.1.5
+  equatable: ^1.2.3
+  fl_chart: ^0.11.0
 
 dev_dependencies:
   flutter_test:
@@ -33,7 +37,6 @@ dev_dependencies:
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 flutter_icons:
   android: true
   ios: false

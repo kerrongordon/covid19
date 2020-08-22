@@ -8,6 +8,7 @@ class KgpBasePage extends StatelessWidget {
   final List<Widget> actions;
   final List<Widget> children;
   final double expandedHeight;
+  final SliverChildDelegate listItems;
 
   const KgpBasePage({
     Key key,
@@ -18,6 +19,7 @@ class KgpBasePage extends StatelessWidget {
     @required this.children,
     this.persistentHeader,
     this.scrollList,
+    this.listItems,
   }) : super(key: key);
 
   @override
@@ -41,7 +43,7 @@ class KgpBasePage extends StatelessWidget {
                   child: Container(),
                 ),
                 Flexible(
-                  flex: 2,
+                  flex: 4,
                   child: Text(
                     title != null ? title : '',
                     textAlign: TextAlign.center,
@@ -67,13 +69,15 @@ class KgpBasePage extends StatelessWidget {
                 delegate: Delegate(child: persistentHeader),
               )
             : SliverToBoxAdapter(),
-        SliverToBoxAdapter(
-          child: Container(
-            child: Column(
-              children: children,
-            ),
-          ),
-        ),
+        listItems == null
+            ? SliverToBoxAdapter(
+                child: Container(
+                  child: Column(
+                    children: children,
+                  ),
+                ),
+              )
+            : SliverList(delegate: listItems)
       ],
     );
   }

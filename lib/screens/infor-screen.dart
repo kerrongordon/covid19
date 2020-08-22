@@ -16,7 +16,7 @@ class InforScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: KgpBasePage(
-        expandedHeight: 50,
+        // expandedHeight: 50,
         title: 'Protect Yourself & Others',
         children: <Widget>[
           Container(
