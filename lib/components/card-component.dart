@@ -12,6 +12,7 @@ class CardComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      clipBehavior: Clip.antiAlias,
       color: color ?? Theme.of(context).cardTheme.color,
       elevation: 3,
       margin: const EdgeInsets.only(bottom: 20, top: 5),

@@ -1,3 +1,4 @@
+import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/global-provider.dart';
 import 'package:covid19/screens/home/home-screen.dart';
 import 'package:covid19/themes/dark-theme.dart';
@@ -21,12 +22,14 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider(create: (_) => GlobalProvider()),
+        FutureProvider(create: (_) => CountryProvider().getCountry())
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Covid 19 Tracker',
         theme: LightTheme.theme,
         darkTheme: DarkTheme.theme,
+        themeMode: ThemeMode.dark,
         home: HomeScreen(),
       ),
     );

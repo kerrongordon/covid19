@@ -2,9 +2,9 @@ import 'package:covid19/models/global-model.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class CardChartOne extends StatelessWidget {
+class CardOneChart extends StatelessWidget {
   final Global data;
-  const CardChartOne({
+  const CardOneChart({
     Key key,
     this.data,
   }) : super(key: key);

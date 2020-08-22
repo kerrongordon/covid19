@@ -1,11 +1,11 @@
 import 'package:covid19/utils/comma.util.dart';
 import 'package:flutter/material.dart';
 
-class CardTitleOne extends StatelessWidget {
+class CardOneTitle extends StatelessWidget {
   final String title;
   final Color color;
   final int number;
-  const CardTitleOne({
+  const CardOneTitle({
     Key key,
     this.title,
     this.color,
