@@ -24,11 +24,9 @@ dependencies:
   loading_animations: ^2.1.0
   cached_network_image: ^2.0.0
   provider: ^4.3.2
-  equatable: ^1.2.3
   fl_chart: ^0.11.0
   dio_http_cache: ^0.2.8
   intl: ^0.16.1
-  country_codes: ^1.0.1
 
 dev_dependencies:
   flutter_test:
