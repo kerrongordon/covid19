@@ -13,7 +13,10 @@ class GlobalService {
     try {
       Response res = await dio.get(
         url,
-        options: buildCacheOptions(Duration(days: 1)),
+        options: buildCacheOptions(
+          Duration(hours: 12),
+          maxStale: Duration(hours: 24),
+        ),
       );
       Global data = Global.fromJson(res.data);
 

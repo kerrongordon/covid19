@@ -27,6 +27,7 @@ dependencies:
   fl_chart: ^0.11.0
   dio_http_cache: ^0.2.8
   intl: ^0.16.1
+  bottom_navy_bar: ^5.5.0
 
 dev_dependencies:
   flutter_test:

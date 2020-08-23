@@ -1,6 +1,6 @@
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/global-provider.dart';
-import 'package:covid19/screens/home/home-screen.dart';
+import 'package:covid19/tabview.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
 import 'package:flutter/material.dart';
@@ -29,8 +29,8 @@ class MyApp extends StatelessWidget {
         title: 'Covid 19 Tracker',
         theme: LightTheme.theme,
         darkTheme: DarkTheme.theme,
-        themeMode: ThemeMode.dark,
-        home: HomeScreen(),
+        // themeMode: ThemeMode.dark,
+        home: TabView(),
       ),
     );
   }

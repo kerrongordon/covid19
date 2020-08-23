@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: 'Covid 19',
-        background: Image.asset('assets/earth.png'),
+        background: Image.asset('assets/earth1.png'),
         children: <Widget>[
           Consumer<GlobalProvider>(builder: (_, value, __) {
             return FutureBuilder(
@@ -51,34 +51,6 @@ class HomeScreen extends StatelessWidget {
             );
           }),
         ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Text('Drawer Header'),
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-            ),
-            ListTile(
-              title: Text('All Countries'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => CountriesScreen()));
-              },
-            ),
-            ListTile(
-              title: Text('Item 2'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-          ],
-        ),
       ),
     );
   }
