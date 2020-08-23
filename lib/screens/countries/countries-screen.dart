@@ -5,6 +5,7 @@ import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/utils/comma.util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
 class CountriesScreen extends StatelessWidget {
@@ -17,6 +18,11 @@ class CountriesScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: 'Countries',
+        background: Icon(
+          Ionicons.ios_trending_up,
+          size: 300,
+          color: Theme.of(context).accentColor,
+        ),
         children: [],
         sliverList: SliverChildListDelegate(
           [
@@ -25,6 +31,9 @@ class CountriesScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: CardComponent(
+                    onTap: () {
+                      print('Tap');
+                    },
                     child: ListTile(
                       leading: CachedNetworkImage(
                         imageUrl: data[i].countryInfo.flag,
@@ -51,8 +60,8 @@ class CountriesScreen extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: Theme.of(context).textTheme.bodyText1.color,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w300,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
                         ),
                       ),
                       trailing: Text(
@@ -60,12 +69,9 @@ class CountriesScreen extends StatelessWidget {
                         style: TextStyle(
                           color: Theme.of(context).textTheme.bodyText1.color,
                           fontSize: 18,
-                          fontWeight: FontWeight.w300,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
-                      onTap: () {
-                        print('Tap');
-                      },
                     ),
                   ),
                 )
@@ -73,6 +79,12 @@ class CountriesScreen extends StatelessWidget {
               KgpLoader()
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        child: Icon(Ionicons.ios_search),
       ),
     );
   }

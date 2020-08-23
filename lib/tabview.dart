@@ -1,6 +1,8 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:covid19/screens/countries/countries-screen.dart';
 import 'package:covid19/screens/home/home-screen.dart';
+import 'package:covid19/screens/infor-screen.dart';
+import 'package:covid19/screens/settings/settings-screen.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +19,8 @@ class _TabViewState extends State<TabView> {
 
   final HomeScreen _homeScreen = HomeScreen();
   final CountriesScreen _countriesScreen = CountriesScreen();
+  final InforScreen _inforScreen = InforScreen();
+  final SettingsScreen _settingsScreen = SettingsScreen();
 
   @override
   void initState() {
@@ -42,16 +46,13 @@ class _TabViewState extends State<TabView> {
           children: <Widget>[
             _homeScreen,
             _countriesScreen,
-            Container(
-              color: Colors.green,
-            ),
-            Container(
-              color: Colors.blue,
-            ),
+            _inforScreen,
+            _settingsScreen,
           ],
         ),
       ),
       bottomNavigationBar: BottomNavyBar(
+        backgroundColor: Theme.of(context).cardTheme.color,
         selectedIndex: _currentIndex,
         showElevation: true,
         onItemSelected: (index) {
@@ -63,21 +64,25 @@ class _TabViewState extends State<TabView> {
             title: Text('Global'),
             icon: Icon(Ionicons.ios_analytics),
             textAlign: TextAlign.center,
+            activeColor: Theme.of(context).accentColor,
           ),
           BottomNavyBarItem(
             title: Text('Countries'),
-            icon: Icon(Ionicons.ios_stats),
+            icon: Icon(Ionicons.ios_filing),
             textAlign: TextAlign.center,
+            activeColor: Theme.of(context).accentColor,
           ),
           BottomNavyBarItem(
-            title: Text('Item One'),
-            icon: Icon(Icons.chat_bubble),
+            title: Text('Info'),
+            icon: Icon(Ionicons.ios_paper),
             textAlign: TextAlign.center,
+            activeColor: Theme.of(context).accentColor,
           ),
           BottomNavyBarItem(
-            title: Text('Item One'),
-            icon: Icon(Icons.settings),
+            title: Text('Settings'),
+            icon: Icon(Ionicons.ios_cog),
             textAlign: TextAlign.center,
+            activeColor: Theme.of(context).accentColor,
           ),
         ],
       ),

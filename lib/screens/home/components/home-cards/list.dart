@@ -45,7 +45,10 @@ class HomeCards extends StatelessWidget {
                     ),
                   ),
                   Divider(),
-                  Text(TimeToDate.use(data.updated)),
+                  Text(
+                    'Updates as of ${TimeToDate.use(data.updated)}',
+                    style: TextStyle(fontSize: 12),
+                  ),
                   SizedBox(height: 25),
                   Container(
                     child: Row(

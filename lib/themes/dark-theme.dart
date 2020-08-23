@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class DarkTheme {
   static final ThemeData theme = _lightTheme();
-  static final Color darkPrimary = const Color.fromRGBO(204, 59, 2, 1.0);
-  static final Color darkBackground = const Color.fromRGBO(23, 23, 23, 1.0);
+  static final Color darkPrimary = const Color.fromRGBO(0, 133, 255, 1.0);
+  static final Color darkBackground = const Color.fromRGBO(23, 27, 30, 1.0);
   static final Color frontColor = Colors.white70;
-  static final Color cardColor = const Color.fromRGBO(56, 58, 62, 1.0);
+  static final Color cardColor = const Color.fromRGBO(27, 35, 47, 1.0);
 
   static ThemeData _lightTheme() {
     return ThemeData(
