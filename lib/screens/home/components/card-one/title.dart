@@ -15,7 +15,17 @@ class CardOneTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.end,
       children: [
+        Text(
+          CommaUtil.use(number),
+          style: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.w300,
+          ),
+          textAlign: TextAlign.end,
+        ),
+        SizedBox(height: 5),
         Text(
           title,
           style: TextStyle(
@@ -23,9 +33,8 @@ class CardOneTitle extends StatelessWidget {
             fontSize: 16,
             color: color,
           ),
+          textAlign: TextAlign.end,
         ),
-        SizedBox(height: 5),
-        Text(CommaUtil.use(number)),
         SizedBox(height: 20),
       ],
     );

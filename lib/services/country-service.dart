@@ -23,11 +23,8 @@ class CountryService {
         counties.add(list);
       }
 
-      print('CountryServiceData $counties');
-
       return counties;
     } catch (e) {
-      print('CountryServiceERROR $e');
       throw e;
     }
   }

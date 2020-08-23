@@ -21,9 +21,9 @@ class CardTwoItem extends StatelessWidget {
             Text(
               CommaUtil.use(data),
               style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: color,
+                fontSize: 20,
+                fontWeight: FontWeight.w300,
+                // color: color,
               ),
             ),
             SizedBox(height: 10),

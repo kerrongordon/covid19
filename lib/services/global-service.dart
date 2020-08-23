@@ -16,10 +16,9 @@ class GlobalService {
         options: buildCacheOptions(Duration(days: 1)),
       );
       Global data = Global.fromJson(res.data);
-      print('GlobalServiceData $data');
+
       return data;
     } catch (e) {
-      print('GlobalServiceERROR $e');
       throw e;
     }
   }

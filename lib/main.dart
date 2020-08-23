@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider(create: (_) => GlobalProvider()),
-        FutureProvider(create: (_) => CountryProvider().getCountry())
+        FutureProvider(create: (_) => CountryProvider().getCountry()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

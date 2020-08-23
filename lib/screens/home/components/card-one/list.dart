@@ -13,8 +13,12 @@ class CardOneList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        padding: const EdgeInsets.only(right: 20),
+        padding: const EdgeInsets.only(
+          top: 20,
+          right: 20,
+        ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             CardOneTitle(
               title: 'Confirmed',

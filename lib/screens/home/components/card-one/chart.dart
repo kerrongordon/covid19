@@ -17,30 +17,30 @@ class CardOneChart extends StatelessWidget {
         child: AspectRatio(
           aspectRatio: 1,
           child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20),
+            padding: const EdgeInsets.all(20),
             child: PieChart(
               PieChartData(
                 borderData: FlBorderData(show: false),
                 sectionsSpace: 0,
-                startDegreeOffset: -80,
+                startDegreeOffset: 40,
                 sections: [
                   PieChartSectionData(
                     color: Colors.orangeAccent,
                     value: data.cases.toDouble(),
                     title: '',
-                    radius: 25,
+                    radius: 35,
                   ),
                   PieChartSectionData(
                     color: Colors.green,
                     value: data.recovered.toDouble(),
                     title: '',
-                    radius: 25,
+                    radius: 45,
                   ),
                   PieChartSectionData(
                     color: Colors.redAccent,
                     value: data.deaths.toDouble(),
                     title: '',
-                    radius: 25,
+                    radius: 65,
                   ),
                 ],
               ),

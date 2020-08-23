@@ -39,6 +39,7 @@ class CountriesScreen extends StatelessWidget {
                             ),
                           ),
                         ),
+                        errorWidget: (context, url, error) => Icon(Icons.error),
                         placeholder: (context, url) => Container(
                           child: CircularProgressIndicator(),
                           width: 20,

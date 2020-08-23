@@ -3,6 +3,7 @@ import 'package:covid19/models/global-model.dart';
 import 'package:covid19/screens/home/components/card-one/chart.dart';
 import 'package:covid19/screens/home/components/card-one/list.dart';
 import 'package:covid19/screens/home/components/card-two/item.dart';
+import 'package:covid19/utils/timetodate.util.dart';
 import 'package:flutter/material.dart';
 
 class HomeCards extends StatelessWidget {
@@ -37,10 +38,14 @@ class HomeCards extends StatelessWidget {
                   Center(
                     child: Text(
                       'Today',
-                      style: TextStyle(fontSize: 20),
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ),
-                  Text(data.updated.toString()),
+                  Divider(),
+                  Text(TimeToDate.use(data.updated)),
                   SizedBox(height: 25),
                   Container(
                     child: Row(
