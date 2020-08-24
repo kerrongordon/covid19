@@ -68,13 +68,13 @@ class _TabViewState extends State<TabView> {
           ),
           BottomNavyBarItem(
             title: Text('Countries'),
-            icon: Icon(Ionicons.ios_filing),
+            icon: Icon(Ionicons.ios_trending_up),
             textAlign: TextAlign.center,
             activeColor: Theme.of(context).accentColor,
           ),
           BottomNavyBarItem(
             title: Text('Info'),
-            icon: Icon(Ionicons.ios_paper),
+            icon: Icon(Ionicons.ios_apps),
             textAlign: TextAlign.center,
             activeColor: Theme.of(context).accentColor,
           ),

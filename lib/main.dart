@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/global-provider.dart';
 import 'package:covid19/tabview.dart';
@@ -7,10 +8,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final savedThemeMode = await AdaptiveTheme.getThemeMode();
+  runApp(MyApp(savedThemeMode: savedThemeMode));
+}
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+  final AdaptiveThemeMode savedThemeMode;
+
+  const MyApp({Key key, this.savedThemeMode}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
@@ -24,13 +32,19 @@ class MyApp extends StatelessWidget {
         Provider(create: (_) => GlobalProvider()),
         FutureProvider(create: (_) => CountryProvider().getCountry()),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Covid 19 Tracker',
-        theme: LightTheme.theme,
-        darkTheme: DarkTheme.theme,
-        // themeMode: ThemeMode.dark,
-        home: TabView(),
+      child: AdaptiveTheme(
+        initial: savedThemeMode ?? AdaptiveThemeMode.system,
+        light: LightTheme.theme,
+        dark: DarkTheme.theme,
+        builder: (light, dark) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: 'Covid 19 Tracker',
+            theme: light,
+            darkTheme: dark,
+            home: TabView(),
+          );
+        },
       ),
     );
   }

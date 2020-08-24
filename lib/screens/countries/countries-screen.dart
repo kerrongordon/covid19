@@ -3,6 +3,7 @@ import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/models/country-model.dart';
+import 'package:covid19/screens/country/country-screen.dart';
 import 'package:covid19/utils/comma.util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -32,7 +33,12 @@ class CountriesScreen extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: CardComponent(
                     onTap: () {
-                      print('Tap');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CountryScreen(),
+                        ),
+                      );
                     },
                     child: ListTile(
                       leading: CachedNetworkImage(
@@ -81,11 +87,78 @@ class CountriesScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
         child: Icon(Ionicons.ios_search),
+        onPressed: () {
+          showSearch(context: context, delegate: ScrechCountry(data));
+        },
       ),
     );
+  }
+}
+
+class ScrechCountry extends SearchDelegate<Country> {
+  final List<Country> data;
+
+  ScrechCountry(this.data);
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+        icon: Icon(
+          Icons.clear,
+          color: Colors.grey,
+        ),
+        onPressed: () {
+          query = "";
+        },
+      )
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    return Container();
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List<Country> list = query.isEmpty
+        ? data
+        : data.where((p) => p.country.toLowerCase().startsWith(query)).toList();
+    return list.isEmpty
+        ? Center(
+            child: Text(
+              'No Result Found... 🙄️',
+              style: TextStyle(fontSize: 20),
+            ),
+          )
+        : ListView.builder(
+            itemCount: list.length,
+            itemBuilder: (context, int) {
+              final item = list[int];
+              return ListTile(
+                title: Text(item.country),
+                onTap: () {
+                  close(context, null);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CountryScreen(),
+                    ),
+                  );
+                },
+              );
+            },
+          );
   }
 }
