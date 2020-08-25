@@ -233,6 +233,10 @@ class CountryScreen extends StatelessWidget {
                                 item.countryCode == data.countryInfo.iso2)
                             .toList();
 
+                        if (datal == null) {
+                          return Container();
+                        }
+
                         return ListView.builder(
                           itemCount: datal.length,
                           shrinkWrap: true,
