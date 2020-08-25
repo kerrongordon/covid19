@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/global-provider.dart';
+import 'package:covid19/providers/travel-alert-provider.dart';
 import 'package:covid19/tabview.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider(create: (_) => GlobalProvider()),
+        Provider(create: (_) => TravelAlertProvider()),
         FutureProvider(create: (_) => CountryProvider().getCountry()),
       ],
       child: AdaptiveTheme(

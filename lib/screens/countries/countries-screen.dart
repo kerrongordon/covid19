@@ -36,29 +36,33 @@ class CountriesScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => CountryScreen(),
+                          builder: (context) => CountryScreen(data: data[i]),
                         ),
                       );
                     },
                     child: ListTile(
-                      leading: CachedNetworkImage(
-                        imageUrl: data[i].countryInfo.flag,
-                        imageBuilder: (context, imageProvider) => Container(
-                          width: 30.0,
-                          height: 30.0,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            image: DecorationImage(
-                              image: imageProvider,
-                              fit: BoxFit.cover,
+                      leading: Hero(
+                        tag: data[i].country,
+                        child: CachedNetworkImage(
+                          imageUrl: data[i].countryInfo.flag,
+                          imageBuilder: (context, imageProvider) => Container(
+                            width: 30.0,
+                            height: 30.0,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                image: imageProvider,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
-                        ),
-                        errorWidget: (context, url, error) => Icon(Icons.error),
-                        placeholder: (context, url) => Container(
-                          child: CircularProgressIndicator(),
-                          width: 20,
-                          height: 20,
+                          errorWidget: (context, url, error) =>
+                              Icon(Icons.error),
+                          placeholder: (context, url) => Container(
+                            child: CircularProgressIndicator(),
+                            width: 20,
+                            height: 20,
+                          ),
                         ),
                       ),
                       title: Text(
@@ -98,6 +102,7 @@ class CountriesScreen extends StatelessWidget {
 
 class ScrechCountry extends SearchDelegate<Country> {
   final List<Country> data;
+  // final Country item;
 
   ScrechCountry(this.data);
   @override
@@ -150,12 +155,12 @@ class ScrechCountry extends SearchDelegate<Country> {
                 title: Text(item.country),
                 onTap: () {
                   close(context, null);
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => CountryScreen(),
-                    ),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => CountryScreen(data: item,),
+                  //   ),
+                  // );
                 },
               );
             },

@@ -1,11 +1,11 @@
-import 'package:covid19/models/global-model.dart';
+import 'package:covid19/models/travel-alert-model.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
 
-class GlobalService {
-  static const url = 'https://disease.sh/v3/covid-19/all';
+class TravelAlertService {
+  static const url = 'http://api.coronatracker.com/v1/travel-alert';
 
-  Future<Global> getGlobalApi() async {
+  Future<List<TravelAlert>> gettravelAlertApi() async {
     Dio dio = new Dio();
     dio.interceptors
         .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
@@ -16,12 +16,17 @@ class GlobalService {
         options: buildCacheOptions(
           Duration(hours: 12),
           maxStale: Duration(hours: 24),
-          // forceRefresh: true,
         ),
       );
-      Global data = Global.fromJson(res.data);
 
-      return data;
+      List<TravelAlert> travelAlert = [];
+
+      for (var travel in res.data) {
+        TravelAlert list = TravelAlert.fromJson(travel);
+        travelAlert.add(list);
+      }
+
+      return travelAlert;
     } catch (e) {
       throw e;
     }
