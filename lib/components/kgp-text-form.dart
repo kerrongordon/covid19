@@ -48,6 +48,7 @@ class KgpTextForm extends StatelessWidget {
           left: -3.8,
           right: -3.8,
           child: Card(
+            elevation: 1,
             child: Container(
               padding: const EdgeInsets.only(bottom: 48),
             ),

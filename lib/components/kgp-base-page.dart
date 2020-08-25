@@ -50,6 +50,13 @@ class KgpBasePage extends StatelessWidget {
                     overflow: TextOverflow.clip,
                     style: TextStyle(
                       fontWeight: FontWeight.w300,
+                      shadows: [
+                        Shadow(
+                          blurRadius: 1.0,
+                          color: Theme.of(context).backgroundColor,
+                          offset: Offset(1.0, 1.0),
+                        ),
+                      ],
                     ),
                   ),
                 ),
