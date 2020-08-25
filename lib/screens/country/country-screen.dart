@@ -251,9 +251,12 @@ class CountryScreen extends StatelessWidget {
                                           TextSpan(
                                             text: 'Travel Alert',
                                             style: TextStyle(
-                                              fontSize: 25,
-                                              fontWeight: FontWeight.w700,
-                                            ),
+                                                fontSize: 25,
+                                                fontWeight: FontWeight.w700,
+                                                color: Theme.of(context)
+                                                    .textTheme
+                                                    .bodyText1
+                                                    .color),
                                           ),
                                           WidgetSpan(
                                             child: Padding(
