@@ -3,9 +3,9 @@ import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
 
 class TravelAlertService {
-  static const url = 'http://api.coronatracker.com/v1/travel-alert';
+  static const url = 'https://www.travel-advisory.info/api';
 
-  Future<List<TravelAlert>> gettravelAlertApi() async {
+  Future<TravelAlert> gettravelAlertApi({String countrycode}) async {
     Dio dio = new Dio();
     dio.interceptors
         .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
@@ -13,20 +13,16 @@ class TravelAlertService {
     try {
       Response res = await dio.get(
         url,
+        queryParameters: {'countrycode': countrycode},
         options: buildCacheOptions(
-          Duration(hours: 12),
-          maxStale: Duration(hours: 24),
+          Duration(hours: 1),
+          maxStale: Duration(hours: 2),
         ),
       );
 
-      List<TravelAlert> travelAlert = [];
+      TravelAlert data = TravelAlert.fromJson(res.data);
 
-      for (var travel in res.data) {
-        TravelAlert list = TravelAlert.fromJson(travel);
-        travelAlert.add(list);
-      }
-
-      return travelAlert;
+      return data;
     } catch (e) {
       throw e;
     }

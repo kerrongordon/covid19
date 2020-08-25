@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
@@ -11,6 +13,8 @@ import 'package:covid19/screens/country/card-three/item.dart';
 import 'package:covid19/screens/country/card-two/card-small.dart';
 import 'package:covid19/utils/timetodate.util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:intl/intl.dart';
 // import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
@@ -208,8 +212,9 @@ class CountryScreen extends StatelessWidget {
           Consumer<TravelAlertProvider>(
             builder: (context, value, child) {
               return FutureBuilder(
-                future: value.getTravelAlert(),
-                builder: (context, AsyncSnapshot<List<TravelAlert>> snapshot) {
+                future:
+                    value.getTravelAlert(countrycode: data.countryInfo.iso2),
+                builder: (context, AsyncSnapshot<TravelAlert> snapshot) {
                   switch (snapshot.connectionState) {
                     case ConnectionState.none:
                       return Container();
@@ -228,71 +233,62 @@ class CountryScreen extends StatelessWidget {
                         return Center(
                             child: Text('There seem to be a problem 😤️'));
                       } else {
-                        final datal = snapshot.data
-                            .where((item) =>
-                                item.countryCode == data.countryInfo.iso2)
-                            .toList();
+                        final datal = snapshot.data.data;
 
-                        if (datal == null) {
-                          return Container();
-                        }
+                        for (var val in datal.values) {
+                          print(val.advisory.message);
 
-                        return ListView.builder(
-                          itemCount: datal.length,
-                          shrinkWrap: true,
-                          padding: EdgeInsets.zero,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemBuilder: (context, index) {
-                            var split =
-                                datal[index].alertMessage.split('\n').map((i) {
-                              if (i == "") {
-                                return SizedBox(height: 10);
-                              } else {
-                                return Text(
-                                  i,
-                                  style: TextStyle(
-                                      fontSize: 17,
-                                      fontWeight: FontWeight.w400),
-                                );
-                              }
-                            }).toList();
-                            return Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 20),
-                              child: Container(
-                                child: CardComponent(
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(20),
-                                    child: Column(
-                                      children: [
-                                        Center(
-                                          child: Text(
-                                            'Travel Alert',
+                          return Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 20),
+                            child: Container(
+                              child: CardComponent(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(20),
+                                  child: Column(
+                                    children: [
+                                      RichText(
+                                        text: TextSpan(children: [
+                                          TextSpan(
+                                            text: 'Travel Alert',
                                             style: TextStyle(
                                               fontSize: 25,
                                               fontWeight: FontWeight.w700,
                                             ),
                                           ),
-                                        ),
-                                        Divider(),
-                                        Text(
-                                          'Updates as of ${datal[index].publishedDate}',
-                                          style: TextStyle(fontSize: 12),
-                                        ),
-                                        SizedBox(height: 25),
-                                        Container(
-                                          child: Column(
-                                            children: split,
+                                          WidgetSpan(
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10),
+                                              child:
+                                                  Icon(Ionicons.ios_airplane),
+                                            ),
                                           ),
+                                        ]),
+                                      ),
+                                      Divider(),
+                                      Text(
+                                        'Updates as of ${DateFormat.yMMMMEEEEd().format(val.advisory.updated)}',
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                      SizedBox(height: 25),
+                                      Container(
+                                        child: Text(
+                                          val.advisory.message,
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            height: 1.5,
+                                          ),
+                                          textAlign: TextAlign.center,
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
-                            );
-                          },
-                        );
+                            ),
+                          );
+                        }
+                        return Container();
                       }
                       break;
                     default:

@@ -3,10 +3,11 @@ import 'package:covid19/services/travel-alert-service.dart';
 
 class TravelAlertProvider {
   TravelAlertService _travelAlertervice = new TravelAlertService();
-  List<TravelAlert> _travelAlert = new List<TravelAlert>();
+  TravelAlert _travelAlert = new TravelAlert();
 
-  Future<List<TravelAlert>> getTravelAlert() async {
-    _travelAlert = await _travelAlertervice.gettravelAlertApi();
+  Future<TravelAlert> getTravelAlert({String countrycode}) async {
+    _travelAlert =
+        await _travelAlertervice.gettravelAlertApi(countrycode: countrycode);
     return _travelAlert;
   }
 }

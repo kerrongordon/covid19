@@ -15,8 +15,8 @@ class CountryService {
       Response res = await dio.get(
         url,
         options: buildCacheOptions(
-          Duration(hours: 12),
-          maxStale: Duration(hours: 24),
+          Duration(hours: 1),
+          maxStale: Duration(hours: 2),
         ),
       );
       List<Country> counties = [];
