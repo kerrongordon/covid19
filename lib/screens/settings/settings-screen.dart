@@ -97,7 +97,7 @@ class SettingsScreen extends StatelessWidget {
                       title: Link(
                         url: 'https://disease.sh/',
                         child: Text(
-                          'disease.sh - Open Disease Data',
+                          'Open Disease Data',
                           style: TextStyle(
                             fontSize: 14,
                             color: Theme.of(context).textTheme.bodyText1.color,
@@ -113,7 +113,7 @@ class SettingsScreen extends StatelessWidget {
                       title: Link(
                         url: 'https://www.travel-advisory.info/',
                         child: Text(
-                          'Daily updated travel advisories - Worldwide',
+                          'Daily updated travel advisories',
                           style: TextStyle(
                             fontSize: 14,
                             color: Theme.of(context).textTheme.bodyText1.color,
