@@ -236,8 +236,6 @@ class CountryScreen extends StatelessWidget {
                         final datal = snapshot.data.data;
 
                         for (var val in datal.values) {
-                          print(val.advisory.message);
-
                           return Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 20),
                             child: Container(

@@ -6,6 +6,7 @@ import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:link/link.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key key}) : super(key: key);
@@ -31,12 +32,12 @@ class SettingsScreen extends StatelessWidget {
                     Center(
                       child: Text(
                         'Appearance',
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 18),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 10),
                     Divider(),
-                    SizedBox(height: 30),
+                    SizedBox(height: 20),
                     Row(
                       children: [
                         ColorBtn(
@@ -55,12 +56,70 @@ class SettingsScreen extends StatelessWidget {
                         ),
                         ColorBtn(
                           title: 'Auto',
-                          fillColor: Colors.blueGrey[800],
+                          fillColor: Colors.blueGrey[600],
                           onPressed: () {
                             AdaptiveTheme.of(context).setSystem();
                           },
                         ),
                       ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: CardComponent(
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  children: [
+                    Center(
+                      child: Text(
+                        'About',
+                        style: TextStyle(fontSize: 18),
+                      ),
+                    ),
+                    SizedBox(height: 10),
+                    Divider(),
+                    SizedBox(height: 20),
+                    Text(
+                      'We source data from Open Disease Data and Daily updated travel advisories.',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                    SizedBox(height: 10),
+                    ListTile(
+                      leading: Icon(
+                        Ionicons.ios_arrow_forward,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      title: Link(
+                        url: 'https://disease.sh/',
+                        child: Text(
+                          'disease.sh - Open Disease Data',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Theme.of(context).textTheme.bodyText1.color,
+                          ),
+                        ),
+                      ),
+                    ),
+                    ListTile(
+                      leading: Icon(
+                        Ionicons.ios_arrow_forward,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      title: Link(
+                        url: 'https://www.travel-advisory.info/',
+                        child: Text(
+                          'Daily updated travel advisories - Worldwide',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Theme.of(context).textTheme.bodyText1.color,
+                          ),
+                        ),
+                      ),
                     ),
                   ],
                 ),

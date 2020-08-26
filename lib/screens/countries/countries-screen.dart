@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/components/kgp-loader.dart';
-import 'package:covid19/components/kgp-text-form.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/country/country-screen.dart';
 import 'package:covid19/utils/comma.util.dart';

@@ -1,12 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
-import 'package:covid19/pages/infor-five.dart';
-import 'package:covid19/pages/infor-four.dart';
-import 'package:covid19/pages/infor-one.dart';
-import 'package:covid19/pages/infor-six.dart';
-import 'package:covid19/pages/infor-three.dart';
-import 'package:covid19/pages/infor-two.dart';
+import 'package:covid19/screens/information/pages/infor-five.dart';
+import 'package:covid19/screens/information/pages/infor-four.dart';
+import 'package:covid19/screens/information/pages/infor-one.dart';
+import 'package:covid19/screens/information/pages/infor-six.dart';
+import 'package:covid19/screens/information/pages/infor-three.dart';
+import 'package:covid19/screens/information/pages/infor-two.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 

@@ -30,6 +30,7 @@ dependencies:
   bottom_navy_bar: ^5.5.0
   adaptive_theme: ^1.0.0
   shared_preferences: ^0.5.10
+  link: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -43,7 +44,7 @@ flutter_icons:
   android: true
   ios: false
   image_path: "assets/covid.png"
-  # adaptive_icon_background: "#485a6c"
+  # adaptive_icon_background: "#0085ff"
   # adaptive_icon_foreground: "assets/covid.png"
 
 # The following section is specific to Flutter.

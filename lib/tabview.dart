@@ -1,7 +1,7 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:covid19/screens/countries/countries-screen.dart';
 import 'package:covid19/screens/home/home-screen.dart';
-import 'package:covid19/screens/infor-screen.dart';
+import 'package:covid19/screens/information/infor-screen.dart';
 import 'package:covid19/screens/settings/settings-screen.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter/material.dart';
