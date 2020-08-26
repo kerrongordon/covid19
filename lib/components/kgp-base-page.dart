@@ -8,6 +8,7 @@ class KgpBasePage extends StatelessWidget {
   final List<Widget> actions;
   final List<Widget> children;
   final double expandedHeight;
+  final SliverChildDelegate sliverList;
 
   const KgpBasePage({
     Key key,
@@ -18,6 +19,7 @@ class KgpBasePage extends StatelessWidget {
     @required this.children,
     this.persistentHeader,
     this.scrollList,
+    this.sliverList,
   }) : super(key: key);
 
   @override
@@ -41,13 +43,20 @@ class KgpBasePage extends StatelessWidget {
                   child: Container(),
                 ),
                 Flexible(
-                  flex: 2,
+                  flex: 4,
                   child: Text(
                     title != null ? title : '',
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.clip,
                     style: TextStyle(
                       fontWeight: FontWeight.w300,
+                      shadows: [
+                        Shadow(
+                          blurRadius: 3.0,
+                          color: Theme.of(context).backgroundColor,
+                          offset: Offset(1.0, 1.0),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -58,6 +67,7 @@ class KgpBasePage extends StatelessWidget {
               ],
             ),
             centerTitle: true,
+            // collapseMode: CollapseMode.pin,
           ),
         ),
         persistentHeader != null
@@ -67,13 +77,15 @@ class KgpBasePage extends StatelessWidget {
                 delegate: Delegate(child: persistentHeader),
               )
             : SliverToBoxAdapter(),
-        SliverToBoxAdapter(
-          child: Container(
-            child: Column(
-              children: children,
-            ),
-          ),
-        ),
+        sliverList == null
+            ? SliverToBoxAdapter(
+                child: Container(
+                  child: Column(
+                    children: children,
+                  ),
+                ),
+              )
+            : SliverList(delegate: sliverList)
       ],
     );
   }
