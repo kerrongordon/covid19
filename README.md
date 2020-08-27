@@ -4,6 +4,8 @@
 
 A covid 19 application. [Download here](https://github.com/kerrongordon/covid19/releases)
 
+<a href="https://galaxy.store/CovidKgp"><img src="https://img.samsungapps.com/seller/images/badges/galaxyStore/png_big/GalaxyStore_English.png?ver=1597278750000" alt="Available on Samsung Galaxy Store" style="max-width: 200px; height: auto;"></a>
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
@@ -20,5 +22,3 @@ samples, guidance on mobile development, and a full API reference.
 API Data is provided by [Open Disease Data](https://disease.sh/), [Centers for Disease Control and Prevention](https://www.cdc.gov/) and from [Daily updated travel advisories](https://www.travel-advisory.info/).
 
 ![light 1](img/light1.jpg)![dark 1](img/dark1.jpg)
-![light 2](img/light2.jpg)![dark 2](img/dark2.jpg)
-![light 3](img/light3.jpg)![dark 3](img/dark3.jpg)

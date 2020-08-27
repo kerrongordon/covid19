@@ -18,7 +18,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   Widget _buildImage(String assetName) {
     return Align(
-      child: Image.asset('assets/$assetName.jpg', width: 350.0),
+      child: Image.asset('assets/$assetName.png', width: 350.0),
       alignment: Alignment.bottomCenter,
     );
   }
@@ -41,27 +41,27 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           title: "Fractional shares",
           body:
               "Instead of having to buy an entire share, invest any amount you want.",
-          image: _buildImage('img1'),
+          image: _buildImage('one'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Learn as you go",
           body:
               "Download the Stockpile app and master the market with our mini-lesson.",
-          image: _buildImage('img2'),
+          image: _buildImage('two'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Kids and teens",
           body:
               "Kids and teens can track their stocks 24/7 and place trades that you approve.",
-          image: _buildImage('img3'),
+          image: _buildImage('three'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Another title page",
           body: "Another beautiful body text for this example onboarding",
-          image: _buildImage('img2'),
+          image: _buildImage('four'),
           footer: RaisedButton(
             onPressed: () {
               introKey.currentState?.animateScroll(0);
@@ -87,7 +87,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               Text(" to edit a post", style: bodyStyle),
             ],
           ),
-          image: _buildImage('img1'),
+          image: _buildImage('five'),
           decoration: pageDecoration,
         ),
       ],
