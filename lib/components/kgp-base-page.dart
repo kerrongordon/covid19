@@ -16,7 +16,7 @@ class KgpBasePage extends StatelessWidget {
     this.actions,
     this.background,
     this.title,
-    @required this.children,
+    this.children,
     this.persistentHeader,
     this.scrollList,
     this.sliverList,

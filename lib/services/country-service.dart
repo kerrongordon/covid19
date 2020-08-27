@@ -3,7 +3,8 @@ import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:covid19/models/country-model.dart';
 
 class CountryService {
-  static const url = 'https://disease.sh/v3/covid-19/countries?sort=cases';
+  static const url =
+      'https://disease.sh/v3/covid-19/countries?yesterday=true&sort=cases';
 
   Future<List<Country>> getCountryApi() async {
     Dio dio = new Dio();

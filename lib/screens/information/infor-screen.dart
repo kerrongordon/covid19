@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/screens/information/pages/infor-five.dart';
@@ -37,10 +36,7 @@ class InforScreen extends StatelessWidget {
                     child: ListTile(
                       leading: Hero(
                         tag: 1,
-                        child: CachedNetworkImage(
-                          imageUrl:
-                              'https://www.cdc.gov/coronavirus/2019-ncov/images/sneezingwoman.png',
-                        ),
+                        child: Image.asset('assets/one.png'),
                       ),
                       title: Text(
                         'Know How it Spreads',
@@ -63,10 +59,7 @@ class InforScreen extends StatelessWidget {
                     child: ListTile(
                       leading: Hero(
                         tag: 2,
-                        child: CachedNetworkImage(
-                          imageUrl:
-                              'https://www.cdc.gov/coronavirus/2019-ncov/images/protect-wash-hands.png',
-                        ),
+                        child: Image.asset('assets/two.png'),
                       ),
                       title: Text(
                         'Clean your hands often',
@@ -89,10 +82,7 @@ class InforScreen extends StatelessWidget {
                     child: ListTile(
                       leading: Hero(
                         tag: 3,
-                        child: CachedNetworkImage(
-                          imageUrl:
-                              'https://www.cdc.gov/coronavirus/2019-ncov/images/protect-quarantine.png',
-                        ),
+                        child: Image.asset('assets/three.png'),
                       ),
                       title: Text(
                         'Avoid close contact',
@@ -115,10 +105,7 @@ class InforScreen extends StatelessWidget {
                     child: ListTile(
                       leading: Hero(
                         tag: 4,
-                        child: CachedNetworkImage(
-                          imageUrl:
-                              'https://www.cdc.gov/coronavirus/2019-ncov/images/prevent-getting-sick/cloth-face-cover.png',
-                        ),
+                        child: Image.asset('assets/four.png'),
                       ),
                       title: Text(
                         'Cover your mouth and nose with a cloth face cover when around others',
@@ -141,10 +128,7 @@ class InforScreen extends StatelessWidget {
                     child: ListTile(
                       leading: Hero(
                         tag: 5,
-                        child: CachedNetworkImage(
-                          imageUrl:
-                              'https://www.cdc.gov/coronavirus/2019-ncov/images/COVIDweb_06_coverCough.png',
-                        ),
+                        child: Image.asset('assets/five.png'),
                       ),
                       title: Text(
                         'Cover coughs and sneezes',
@@ -167,10 +151,7 @@ class InforScreen extends StatelessWidget {
                     child: ListTile(
                       leading: Hero(
                         tag: 6,
-                        child: CachedNetworkImage(
-                          imageUrl:
-                              'https://www.cdc.gov/coronavirus/2019-ncov/images/COVIDweb_09_clean.png',
-                        ),
+                        child: Image.asset('assets/six.png'),
                       ),
                       title: Text(
                         'Clean and disinfect',

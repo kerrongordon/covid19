@@ -4,11 +4,14 @@ class CardComponent extends StatelessWidget {
   final Color color;
   final Widget child;
   final void Function() onTap;
+  final EdgeInsetsGeometry padding;
+
   const CardComponent({
     Key key,
     this.color,
     @required this.child,
     this.onTap,
+    this.padding,
   }) : super(key: key);
 
   @override
@@ -21,7 +24,10 @@ class CardComponent extends StatelessWidget {
       child: InkWell(
         splashColor: Theme.of(context).primaryColor,
         onTap: onTap,
-        child: child,
+        child: Padding(
+          padding: padding ?? const EdgeInsets.all(0),
+          child: child,
+        ),
       ),
     );
   }
