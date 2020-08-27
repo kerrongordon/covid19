@@ -26,7 +26,7 @@ jobs:
       - name: Sign Android release
         uses: r0adkll/sign-android-release@v1
         with:
-          releaseDirectory: build/app/outputs/apk/release/
+          releaseDirectory: build/app/outputs/flutter-apk/
           signingKeyBase64: ${{ secrets.SIGNING_KEY }}
           alias: ${{ secrets.ALIAS }}
           keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
@@ -44,7 +44,7 @@ jobs:
         uses: svenstaro/upload-release-action@v1-release
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: build/app/outputs/apk/release/app-release-signed.apk
-          asset_name: kerrongordon.github.io.covid19-${{ steps.get_version.outputs.VERSION }}.apk
+          file: build/app/outputs/flutter-apk/app-release-signed.apk
+          asset_name: kerrongordon.github.io.covid19.${{ steps.get_version.outputs.VERSION }}.apk
           tag: ${{ github.ref }}
           overwrite: true
