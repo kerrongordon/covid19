@@ -2,7 +2,7 @@ import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/models/global-model.dart';
 import 'package:covid19/providers/global-provider.dart';
-import 'package:covid19/screens/home/components/home-cards/list.dart';
+import 'package:covid19/screens/home/home-card-list.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -40,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                           child: Text('There seem to be a problem 😤️'));
                     } else {
                       final data = snapshot.data;
-                      return HomeCards(data: data);
+                      return HomeCardList(data: data);
                     }
                     break;
                   default:

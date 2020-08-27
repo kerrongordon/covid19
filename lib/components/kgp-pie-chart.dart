@@ -1,16 +1,25 @@
-import 'package:covid19/models/country-model.dart';
+import 'package:covid19/themes/color-theme.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class CardOneChart extends StatelessWidget {
-  final Country data;
-  const CardOneChart({Key key, this.data}) : super(key: key);
+class KgpPieChart extends StatelessWidget {
+  final double aspectRatio;
+  final int cases;
+  final int recovered;
+  final int deaths;
+  const KgpPieChart({
+    Key key,
+    @required this.aspectRatio,
+    @required this.cases,
+    @required this.recovered,
+    @required this.deaths,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: AspectRatio(
-        aspectRatio: 1.3,
+        aspectRatio: aspectRatio,
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: PieChart(
@@ -20,20 +29,20 @@ class CardOneChart extends StatelessWidget {
               startDegreeOffset: 40,
               sections: [
                 PieChartSectionData(
-                  color: Colors.orangeAccent,
-                  value: data.cases.toDouble(),
+                  color: ColorTheme.cases,
+                  value: cases.toDouble(),
                   title: '',
                   radius: 35,
                 ),
                 PieChartSectionData(
-                  color: Colors.green,
-                  value: data.recovered.toDouble(),
+                  color: ColorTheme.recovered,
+                  value: recovered.toDouble(),
                   title: '',
                   radius: 45,
                 ),
                 PieChartSectionData(
-                  color: Colors.redAccent,
-                  value: data.deaths.toDouble(),
+                  color: ColorTheme.deaths,
+                  value: deaths.toDouble(),
                   title: '',
                   radius: 65,
                 ),
