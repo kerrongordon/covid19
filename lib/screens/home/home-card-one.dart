@@ -52,7 +52,7 @@ class HomeCardOne extends StatelessWidget {
                     ),
                     KgpStatsWithTitle(
                       title: 'Deaths',
-                      amount: data.recovered,
+                      amount: data.deaths,
                       titleFontSize: 16,
                       amountFontSize: 20,
                       titlecolor: ColorTheme.deaths,

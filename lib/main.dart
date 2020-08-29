@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/global-provider.dart';
+import 'package:covid19/providers/one-country-provider.dart';
 import 'package:covid19/providers/travel-alert-provider.dart';
 import 'package:covid19/tabview.dart';
 import 'package:covid19/themes/dark-theme.dart';
@@ -8,6 +9,7 @@ import 'package:covid19/themes/light-theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +34,11 @@ class MyApp extends StatelessWidget {
       providers: [
         Provider(create: (_) => GlobalProvider()),
         Provider(create: (_) => TravelAlertProvider()),
+        Provider(create: (_) => OneCountryProvider()),
         FutureProvider(create: (_) => CountryProvider().getCountry()),
+        FutureProvider(create: (_) => SharedPreferences.getInstance()),
+        Provider(create: (_) => SharedPreferences.getInstance()),
+        // StreamProvider(create: (_) => SharedPreferences.getInstance().asStream())
       ],
       child: AdaptiveTheme(
         initial: savedThemeMode ?? AdaptiveThemeMode.system,

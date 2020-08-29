@@ -4,7 +4,9 @@ import 'package:covid19/screens/country/country-card-four.dart';
 import 'package:covid19/screens/country/country-card-one.dart';
 import 'package:covid19/screens/country/country-card-three.dart';
 import 'package:covid19/screens/country/country-card-two.dart';
+import 'package:covid19/screens/country/country-dialog.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 class CountryScreen extends StatelessWidget {
   final Country data;
@@ -27,7 +29,19 @@ class CountryScreen extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(height: 50),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Ionicons.ios_add),
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            elevation: 30,
+            backgroundColor: Colors.transparent,
+            builder: (context) => CountryDialog(data: data),
+          );
+        },
       ),
     );
   }

@@ -17,11 +17,12 @@ class CountriesScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: 'Countries',
-        background: Icon(
-          Ionicons.ios_trending_up,
-          size: 300,
-          color: Theme.of(context).accentColor,
-        ),
+        // background: Icon(
+        //   Ionicons.ios_trending_up,
+        //   size: 300,
+        //   color: Theme.of(context).accentColor,
+        // ),
+
         sliverList: SliverChildListDelegate(
           [
             if (data != null)

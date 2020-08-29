@@ -6,6 +6,7 @@ import 'package:covid19/models/country-model.dart';
 import 'package:covid19/themes/color-theme.dart';
 import 'package:covid19/utils/timetodate.util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 
 class CountryCardOne extends StatelessWidget {
   final Country data;
@@ -31,17 +32,21 @@ class CountryCardOne extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Covid-19',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w500,
+                        FadeInDown(
+                          child: Text(
+                            'Covid-19',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                         SizedBox(height: 10),
-                        Text(
-                          'Last Updated on ${TimeToDate.use(data.updated)}',
-                          style: TextStyle(fontSize: 12),
+                        FadeInUp(
+                          child: Text(
+                            'Last Updated on ${TimeToDate.use(data.updated)}',
+                            style: TextStyle(fontSize: 12),
+                          ),
                         ),
                       ],
                     ),
@@ -49,7 +54,7 @@ class CountryCardOne extends StatelessWidget {
                 ),
                 Expanded(
                   child: Hero(
-                    tag: data.countryInfo.iso2,
+                    tag: data.country,
                     child: AspectRatio(
                       aspectRatio: 1,
                       child: CachedNetworkImage(
