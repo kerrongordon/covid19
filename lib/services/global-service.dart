@@ -22,7 +22,7 @@ class GlobalService {
       Global data = Global.fromJson(res.data);
 
       return data;
-    } catch (e) {
+    } on DioError catch (e) {
       throw e;
     }
   }

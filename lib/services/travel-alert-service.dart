@@ -23,7 +23,7 @@ class TravelAlertService {
       TravelAlert data = TravelAlert.fromJson(res.data);
 
       return data;
-    } catch (e) {
+    } on DioError catch (e) {
       throw e;
     }
   }
