@@ -24,63 +24,68 @@ class CountryCardFour extends StatelessWidget {
         return FutureBuilder(
           future: value.getTravelAlert(countrycode: data.countryInfo.iso2),
           builder: (context, AsyncSnapshot<TravelAlert> snapshot) {
-            switch (snapshot.connectionState) {
-              case ConnectionState.none:
-                return Container();
-                break;
-              case ConnectionState.waiting:
-                return KgpLoader();
-                break;
-              case ConnectionState.active:
-                return KgpLoader();
-                break;
-              case ConnectionState.done:
-                if (snapshot.hasError) {
-                  return Center(child: Text('Oh no something went wrong 😥️'));
-                } else if (!snapshot.hasData) {
-                  return Center(child: Text('There seem to be a problem 😤️'));
-                } else {
-                  final datal = snapshot.data.data;
-
-                  for (var val in datal.values) {
-                    final String _date =
-                        DateFormat.yMMMMEEEEd().format(val.advisory.updated);
-                    return Container(
-                      child: FadeInUp(
-                        child: CardComponent(
-                          padding: const EdgeInsets.all(20),
-                          child: Column(
-                            children: [
-                              KgpCardTitle(
-                                title: 'Travel Alert',
-                                subtitle: 'Updates as of $_date',
-                                icon: Icon(Ionicons.ios_airplane),
-                              ),
-                              Container(
-                                child: Text(
-                                  val.advisory.message,
-                                  style: TextStyle(
-                                    fontSize: 16,
-                                    height: 1.5,
-                                  ),
-                                  textAlign: TextAlign.center,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    );
-                  }
-                  return Container();
-                }
-                break;
-              default:
-                return Container();
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return KgpLoader();
+            } else if (snapshot.hasError) {
+              final error = snapshot.error;
+              return Container(
+                  height: 200, child: Center(child: Text(error.toString())));
+            } else if (snapshot.hasData) {
+              final datal = snapshot.data.data;
+              for (var val in datal.values) {
+                final String _date =
+                    DateFormat.yMMMMEEEEd().format(val.advisory.updated);
+                return CountryCardFourItem(date: _date, val: val);
+              }
+              return Container();
+            } else {
+              return Container();
             }
           },
         );
       },
+    );
+  }
+}
+
+class CountryCardFourItem extends StatelessWidget {
+  const CountryCardFourItem({
+    Key key,
+    @required String date,
+    @required this.val,
+  })  : _date = date,
+        super(key: key);
+
+  final String _date;
+  final Datum val;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: FadeInUp(
+        child: CardComponent(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              KgpCardTitle(
+                title: 'Travel Alert',
+                subtitle: 'Updates as of $_date',
+                icon: Icon(Ionicons.ios_airplane),
+              ),
+              Container(
+                child: Text(
+                  val.advisory.message,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    height: 1.5,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

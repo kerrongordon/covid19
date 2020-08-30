@@ -46,36 +46,18 @@ class CountryDialog extends StatelessWidget {
                   stream: consumer.asStream(),
                   builder:
                       (context, AsyncSnapshot<SharedPreferences> snapshot) {
-                    switch (snapshot.connectionState) {
-                      case ConnectionState.none:
-                        print('none');
-                        return Container();
-                        break;
-                      case ConnectionState.waiting:
-                        print('waiting');
-                        return Center(child: CircularProgressIndicator());
-                        break;
-                      case ConnectionState.active:
-                        print('active');
-                        return Container();
-                        break;
-                      case ConnectionState.done:
-                        print('done');
-                        if (snapshot.hasData) {
-                          String country =
-                              snapshot.data.getString('homeCountry');
-                          SharedPreferences preferences = snapshot.data;
-                          return DialogActions(
-                            data: data,
-                            country: country,
-                            preferences: preferences,
-                          );
-                        }
-                        return Container();
-                        break;
-                      default:
-                        print('default');
-                        return Container();
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Container();
+                    } else if (snapshot.hasError) {
+                      final error = snapshot.error;
+                      return Center(child: Text(error.toString()));
+                    } else if (snapshot.hasData) {
+                      String country = snapshot.data.getString('homeCountry');
+                      SharedPreferences pref = snapshot.data;
+                      return DialogActions(
+                          data: data, country: country, pref: pref);
+                    } else {
+                      return Container();
                     }
                   },
                 );
@@ -93,12 +75,12 @@ class DialogActions extends StatelessWidget {
     Key key,
     @required this.data,
     @required this.country,
-    this.preferences,
+    this.pref,
   }) : super(key: key);
 
   final Country data;
   final String country;
-  final SharedPreferences preferences;
+  final SharedPreferences pref;
 
   @override
   Widget build(BuildContext context) {
@@ -114,8 +96,9 @@ class DialogActions extends StatelessWidget {
                     ? Expanded(
                         child: FlatButton.icon(
                           onPressed: () {
-                            preferences.setString('homeCountry', '');
-                            Navigator.pop(context);
+                            pref.setString('homeCountry', '');
+                            Navigator.of(context)
+                                .popUntil((route) => route.isFirst);
                           },
                           icon: Icon(Ionicons.ios_remove_circle_outline),
                           label: Text('Remove'),
@@ -127,8 +110,9 @@ class DialogActions extends StatelessWidget {
                     : Expanded(
                         child: FlatButton.icon(
                           onPressed: () {
-                            preferences.setString('homeCountry', data.country);
-                            Navigator.pop(context);
+                            pref.setString('homeCountry', data.country);
+                            Navigator.of(context)
+                                .popUntil((route) => route.isFirst);
                           },
                           icon: Icon(Ionicons.ios_add_circle_outline),
                           label: Text('Add'),

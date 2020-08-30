@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:covid19/utils/failure.util.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:covid19/models/country-model.dart';
@@ -27,8 +30,10 @@ class CountryService {
       }
 
       return counties;
-    } on DioError catch (e) {
-      throw e;
+    } on DioError {
+      throw Failure('Oh no something went wrong 😥️');
+    } catch (e) {
+      throw Failure('There seem to be a problem 😱️');
     }
   }
 }

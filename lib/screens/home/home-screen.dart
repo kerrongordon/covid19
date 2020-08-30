@@ -21,30 +21,23 @@ class HomeScreen extends StatelessWidget {
             return FutureBuilder(
               future: value.getGlobal(),
               builder: (BuildContext context, AsyncSnapshot<Global> snapshot) {
-                switch (snapshot.connectionState) {
-                  case ConnectionState.none:
-                    return Container();
-                    break;
-                  case ConnectionState.waiting:
-                    return KgpLoader();
-                    break;
-                  case ConnectionState.active:
-                    return KgpLoader();
-                    break;
-                  case ConnectionState.done:
-                    if (snapshot.hasError) {
-                      return Center(
-                          child: Text('Oh no something went wrong 😥️'));
-                    } else if (!snapshot.hasData) {
-                      return Center(
-                          child: Text('There seem to be a problem 😤️'));
-                    } else {
-                      final data = snapshot.data;
-                      return HomeCardList(data: data);
-                    }
-                    break;
-                  default:
-                    return Container();
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return KgpLoader();
+                } else if (snapshot.hasError) {
+                  final error = snapshot.error;
+                  return Container(
+                    height: MediaQuery.of(context).size.height / 2.5,
+                    child: Center(
+                      child: Text(
+                        error.toString(),
+                      ),
+                    ),
+                  );
+                } else if (snapshot.hasData) {
+                  final data = snapshot.data;
+                  return HomeCardList(data: data);
+                } else {
+                  return Container();
                 }
               },
             );
