@@ -7,6 +7,7 @@ import 'package:covid19/screens/information/pages/infor-six.dart';
 import 'package:covid19/screens/information/pages/infor-three.dart';
 import 'package:covid19/screens/information/pages/infor-two.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 class InforScreen extends StatelessWidget {
@@ -16,11 +17,11 @@ class InforScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: KgpBasePage(
-        background: Icon(
-          Ionicons.ios_apps,
-          size: 250,
-          color: Theme.of(context).accentColor,
-        ),
+        // background: Icon(
+        //   Ionicons.ios_apps,
+        //   size: 250,
+        //   color: Theme.of(context).accentColor,
+        // ),
         title: 'Protect Yourself & Others',
         children: <Widget>[
           Container(
@@ -34,18 +35,25 @@ class InforScreen extends StatelessWidget {
                     height: 80,
                     padding: const EdgeInsets.only(top: 12),
                     child: ListTile(
-                      leading: Hero(
-                        tag: 1,
-                        child: Image.asset('assets/one.png'),
+                      leading: ZoomIn(
+                        child: Hero(
+                          tag: 1,
+                          child: Image.asset('assets/one.png'),
+                        ),
                       ),
-                      title: Text(
-                        'Know How it Spreads',
-                        style: TextStyle(
-                            color: Theme.of(context).textTheme.bodyText1.color),
+                      title: FadeInDown(
+                        child: Text(
+                          'Know How it Spreads',
+                          style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color),
+                        ),
                       ),
-                      trailing: Icon(
-                        Ionicons.ios_arrow_forward,
-                        color: Theme.of(context).primaryColor,
+                      trailing: FadeInLeft(
+                        child: Icon(
+                          Ionicons.ios_arrow_forward,
+                          color: Theme.of(context).primaryColor,
+                        ),
                       ),
                     ),
                   ),
@@ -57,18 +65,25 @@ class InforScreen extends StatelessWidget {
                     height: 80,
                     padding: const EdgeInsets.only(top: 12),
                     child: ListTile(
-                      leading: Hero(
-                        tag: 2,
-                        child: Image.asset('assets/two.png'),
+                      leading: ZoomIn(
+                        child: Hero(
+                          tag: 2,
+                          child: Image.asset('assets/two.png'),
+                        ),
                       ),
-                      title: Text(
-                        'Clean your hands often',
-                        style: TextStyle(
-                            color: Theme.of(context).textTheme.bodyText1.color),
+                      title: FadeInDown(
+                        child: Text(
+                          'Clean your hands often',
+                          style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color),
+                        ),
                       ),
-                      trailing: Icon(
-                        Ionicons.ios_arrow_forward,
-                        color: Theme.of(context).primaryColor,
+                      trailing: FadeInLeft(
+                        child: Icon(
+                          Ionicons.ios_arrow_forward,
+                          color: Theme.of(context).primaryColor,
+                        ),
                       ),
                     ),
                   ),
@@ -80,18 +95,25 @@ class InforScreen extends StatelessWidget {
                     height: 80,
                     padding: const EdgeInsets.only(top: 12),
                     child: ListTile(
-                      leading: Hero(
-                        tag: 3,
-                        child: Image.asset('assets/three.png'),
+                      leading: ZoomIn(
+                        child: Hero(
+                          tag: 3,
+                          child: Image.asset('assets/three.png'),
+                        ),
                       ),
-                      title: Text(
-                        'Avoid close contact',
-                        style: TextStyle(
-                            color: Theme.of(context).textTheme.bodyText1.color),
+                      title: FadeInDown(
+                        child: Text(
+                          'Avoid close contact',
+                          style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color),
+                        ),
                       ),
-                      trailing: Icon(
-                        Ionicons.ios_arrow_forward,
-                        color: Theme.of(context).primaryColor,
+                      trailing: FadeInLeft(
+                        child: Icon(
+                          Ionicons.ios_arrow_forward,
+                          color: Theme.of(context).primaryColor,
+                        ),
                       ),
                     ),
                   ),
@@ -103,18 +125,25 @@ class InforScreen extends StatelessWidget {
                     height: 90,
                     padding: const EdgeInsets.only(top: 12),
                     child: ListTile(
-                      leading: Hero(
-                        tag: 4,
-                        child: Image.asset('assets/four.png'),
+                      leading: ZoomIn(
+                        child: Hero(
+                          tag: 4,
+                          child: Image.asset('assets/four.png'),
+                        ),
                       ),
-                      title: Text(
-                        'Cover your mouth and nose with a cloth face cover when around others',
-                        style: TextStyle(
-                            color: Theme.of(context).textTheme.bodyText1.color),
+                      title: FadeInDown(
+                        child: Text(
+                          'Cover your mouth and nose with a cloth face cover when around others',
+                          style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color),
+                        ),
                       ),
-                      trailing: Icon(
-                        Ionicons.ios_arrow_forward,
-                        color: Theme.of(context).primaryColor,
+                      trailing: FadeInLeft(
+                        child: Icon(
+                          Ionicons.ios_arrow_forward,
+                          color: Theme.of(context).primaryColor,
+                        ),
                       ),
                     ),
                   ),
@@ -126,18 +155,25 @@ class InforScreen extends StatelessWidget {
                     height: 80,
                     padding: const EdgeInsets.only(top: 12),
                     child: ListTile(
-                      leading: Hero(
-                        tag: 5,
-                        child: Image.asset('assets/five.png'),
+                      leading: ZoomIn(
+                        child: Hero(
+                          tag: 5,
+                          child: Image.asset('assets/five.png'),
+                        ),
                       ),
-                      title: Text(
-                        'Cover coughs and sneezes',
-                        style: TextStyle(
-                            color: Theme.of(context).textTheme.bodyText1.color),
+                      title: FadeInDown(
+                        child: Text(
+                          'Cover coughs and sneezes',
+                          style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color),
+                        ),
                       ),
-                      trailing: Icon(
-                        Ionicons.ios_arrow_forward,
-                        color: Theme.of(context).primaryColor,
+                      trailing: FadeInLeft(
+                        child: Icon(
+                          Ionicons.ios_arrow_forward,
+                          color: Theme.of(context).primaryColor,
+                        ),
                       ),
                     ),
                   ),
@@ -149,18 +185,25 @@ class InforScreen extends StatelessWidget {
                     height: 80,
                     padding: const EdgeInsets.only(top: 12),
                     child: ListTile(
-                      leading: Hero(
-                        tag: 6,
-                        child: Image.asset('assets/six.png'),
+                      leading: ZoomIn(
+                        child: Hero(
+                          tag: 6,
+                          child: Image.asset('assets/six.png'),
+                        ),
                       ),
-                      title: Text(
-                        'Clean and disinfect',
-                        style: TextStyle(
-                            color: Theme.of(context).textTheme.bodyText1.color),
+                      title: FadeInDown(
+                        child: Text(
+                          'Clean and disinfect',
+                          style: TextStyle(
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color),
+                        ),
                       ),
-                      trailing: Icon(
-                        Ionicons.ios_arrow_forward,
-                        color: Theme.of(context).primaryColor,
+                      trailing: FadeInLeft(
+                        child: Icon(
+                          Ionicons.ios_arrow_forward,
+                          color: Theme.of(context).primaryColor,
+                        ),
                       ),
                     ),
                   ),

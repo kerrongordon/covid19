@@ -73,6 +73,10 @@ class InforThree extends StatelessWidget {
               ),
             ),
           ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 20),
+          //   child: AdsComponent(),
+          // ),
         ],
       ),
     );

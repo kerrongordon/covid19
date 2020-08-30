@@ -27,7 +27,7 @@ class CountryService {
       }
 
       return counties;
-    } catch (e) {
+    } on DioError catch (e) {
       throw e;
     }
   }

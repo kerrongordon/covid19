@@ -1,5 +1,6 @@
 import 'package:covid19/utils/comma.util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 
 class KgpStatsWithTitle extends StatelessWidget {
   final int amount;
@@ -36,38 +37,46 @@ class KgpStatsWithTitle extends StatelessWidget {
         mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
         children: [
           flip != null
-              ? Text(
-                  title,
-                  style: TextStyle(
-                    color: titlecolor,
-                    fontSize: titleFontSize,
-                    fontWeight: FontWeight.bold,
+              ? FadeInUp(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: titlecolor,
+                      fontSize: titleFontSize,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 )
-              : Text(
-                  CommaUtil.use(amount),
-                  style: TextStyle(
-                    color: amountcolor,
-                    fontSize: amountFontSize,
-                    fontWeight: FontWeight.w300,
+              : FadeInDown(
+                  child: Text(
+                    CommaUtil.use(amount),
+                    style: TextStyle(
+                      color: amountcolor,
+                      fontSize: amountFontSize,
+                      fontWeight: FontWeight.w300,
+                    ),
                   ),
                 ),
           SizedBox(height: 10),
           flip != null
-              ? Text(
-                  CommaUtil.use(amount),
-                  style: TextStyle(
-                    color: amountcolor,
-                    fontSize: amountFontSize,
-                    fontWeight: FontWeight.w300,
+              ? FadeInDown(
+                  child: Text(
+                    CommaUtil.use(amount),
+                    style: TextStyle(
+                      color: amountcolor,
+                      fontSize: amountFontSize,
+                      fontWeight: FontWeight.w300,
+                    ),
                   ),
                 )
-              : Text(
-                  title,
-                  style: TextStyle(
-                    color: titlecolor,
-                    fontSize: titleFontSize,
-                    fontWeight: FontWeight.bold,
+              : FadeInUp(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: titlecolor,
+                      fontSize: titleFontSize,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
         ],

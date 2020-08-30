@@ -71,6 +71,10 @@ class InforFour extends StatelessWidget {
               ),
             ),
           ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 20),
+          //   child: AdsComponent(),
+          // ),
         ],
       ),
     );

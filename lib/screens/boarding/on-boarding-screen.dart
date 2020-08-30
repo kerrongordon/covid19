@@ -26,11 +26,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   @override
   Widget build(BuildContext context) {
     const bodyStyle = TextStyle(fontSize: 19.0);
-    const pageDecoration = const PageDecoration(
+    final textcolor = Theme.of(context).textTheme.bodyText1.color;
+    var pageDecoration = PageDecoration(
       titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
       bodyTextStyle: bodyStyle,
       descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Colors.white,
+      pageColor: Theme.of(context).backgroundColor,
       imagePadding: EdgeInsets.zero,
     );
 
@@ -96,9 +97,21 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       showSkipButton: true,
       skipFlex: 0,
       nextFlex: 0,
-      skip: const Text('Skip'),
-      next: const Icon(Icons.arrow_forward),
-      done: const Text('Done', style: TextStyle(fontWeight: FontWeight.w600)),
+      skip: Text(
+        'Skip',
+        style: TextStyle(color: textcolor),
+      ),
+      next: Icon(
+        Icons.arrow_forward,
+        color: textcolor,
+      ),
+      done: Text(
+        'Done',
+        style: TextStyle(
+          fontWeight: FontWeight.w600,
+          color: textcolor,
+        ),
+      ),
       dotsDecorator: const DotsDecorator(
         size: Size(10.0, 10.0),
         color: Color(0xFFBDBDBD),

@@ -19,8 +19,9 @@ class CardComponent extends StatelessWidget {
     return Card(
       clipBehavior: Clip.antiAlias,
       color: color ?? Theme.of(context).cardTheme.color,
-      elevation: 1,
-      margin: const EdgeInsets.only(bottom: 20, top: 5),
+      elevation: 30,
+      shadowColor: Colors.black.withOpacity(0.3),
+      margin: const EdgeInsets.only(bottom: 20, top: 10),
       child: InkWell(
         splashColor: Theme.of(context).primaryColor,
         onTap: onTap,

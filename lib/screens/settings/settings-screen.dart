@@ -16,11 +16,11 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: 'Settings',
-        background: Icon(
-          Ionicons.ios_cog,
-          size: 200,
-          color: Theme.of(context).accentColor,
-        ),
+        // background: Icon(
+        //   Ionicons.ios_cog,
+        //   size: 200,
+        //   color: Theme.of(context).accentColor,
+        // ),
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),

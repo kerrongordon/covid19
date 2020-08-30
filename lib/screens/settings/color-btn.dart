@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 
 class ColorBtn extends StatelessWidget {
   final void Function() onPressed;
@@ -16,19 +17,23 @@ class ColorBtn extends StatelessWidget {
     return Expanded(
       child: Column(
         children: [
-          RawMaterialButton(
-            onPressed: onPressed,
-            elevation: 1,
-            fillColor: fillColor,
-            splashColor: Theme.of(context).accentColor,
-            child: Container(),
-            padding: EdgeInsets.all(35.0),
-            shape: CircleBorder(),
+          ZoomIn(
+            child: RawMaterialButton(
+              onPressed: onPressed,
+              elevation: 1,
+              fillColor: fillColor,
+              splashColor: Theme.of(context).accentColor,
+              child: Container(),
+              padding: EdgeInsets.all(30.0),
+              shape: CircleBorder(),
+            ),
           ),
           SizedBox(height: 10),
-          Text(
-            title,
-            style: TextStyle(fontSize: 16),
+          FadeInUp(
+            child: Text(
+              title,
+              style: TextStyle(fontSize: 16),
+            ),
           )
         ],
       ),
