@@ -19,7 +19,7 @@ class HomeCardList extends StatelessWidget {
         children: [
           HomeCardOne(data: data),
           HomeCardTwo(data: data),
-          HomeCardCountry()
+          HomeCardCountry(),
         ],
       ),
     );

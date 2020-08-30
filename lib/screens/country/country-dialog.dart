@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:covid19/models/country-model.dart';
+import 'package:covid19/themes/color-theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
@@ -24,10 +25,7 @@ class CountryDialog extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
           color: Theme.of(context).cardTheme.color.withOpacity(0.7),
-          borderRadius: BorderRadius.only(
-            topLeft: const Radius.circular(40),
-            topRight: const Radius.circular(40),
-          ),
+          borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -104,7 +102,6 @@ class DialogActions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(country);
     return Container(
       child: Column(
         children: [
@@ -122,6 +119,7 @@ class DialogActions extends StatelessWidget {
                           },
                           icon: Icon(Ionicons.ios_remove_circle_outline),
                           label: Text('Remove'),
+                          textColor: ColorTheme.deaths,
                           padding: const EdgeInsets.all(20),
                           splashColor: Theme.of(context).accentColor,
                         ),
@@ -134,6 +132,7 @@ class DialogActions extends StatelessWidget {
                           },
                           icon: Icon(Ionicons.ios_add_circle_outline),
                           label: Text('Add'),
+                          textColor: ColorTheme.recovered,
                           padding: const EdgeInsets.all(20),
                           splashColor: Theme.of(context).accentColor,
                         ),
@@ -144,6 +143,7 @@ class DialogActions extends StatelessWidget {
                     onPressed: () => Navigator.pop(context),
                     icon: Icon(Ionicons.ios_close_circle_outline),
                     label: Text('Cancel'),
+                    textColor: Theme.of(context).accentColor,
                     padding: const EdgeInsets.all(20),
                     splashColor: Theme.of(context).accentColor,
                   ),

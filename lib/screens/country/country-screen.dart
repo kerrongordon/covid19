@@ -39,7 +39,10 @@ class CountryScreen extends StatelessWidget {
             context: context,
             elevation: 30,
             backgroundColor: Colors.transparent,
-            builder: (context) => CountryDialog(data: data),
+            builder: (context) => Padding(
+              padding: const EdgeInsets.all(20),
+              child: CountryDialog(data: data),
+            ),
           );
         },
       ),

@@ -39,15 +39,17 @@ class KgpCardTitle extends StatelessWidget {
             ),
           ),
           Divider(),
-          FadeInDown(
-            child: Text(
-              subtitle ?? '',
-              style: const TextStyle(
-                fontSize: 12,
-              ),
-            ),
-          ),
-          SizedBox(height: 25),
+          subtitle != null
+              ? FadeInDown(
+                  child: Text(
+                    subtitle ?? '',
+                    style: const TextStyle(
+                      fontSize: 12,
+                    ),
+                  ),
+                )
+              : Container(),
+          subtitle != null ? SizedBox(height: 25) : Container(),
         ],
       ),
     );
