@@ -4,6 +4,7 @@ import 'package:covid19/components/kgp-stats-with-title.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/providers/one-country-provider.dart';
 import 'package:covid19/themes/color-theme.dart';
+import 'package:covid19/utils/timetodate.util.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,7 +21,8 @@ class HomeCardCountry extends StatelessWidget {
               country.getOneCountry(country: prefe.getString('homeCountry')),
           builder: (context, AsyncSnapshot<Country> snapshot) {
             if (snapshot.hasData) {
-              Country data = snapshot.data;
+              final Country data = snapshot.data;
+              final String date = TimeToDate.use(data.updated);
               return Container(
                 child: CardComponent(
                   padding: const EdgeInsets.all(20),
@@ -28,8 +30,8 @@ class HomeCardCountry extends StatelessWidget {
                     children: [
                       KgpCardTitle(
                         title: data.country,
+                        subtitle: 'Updates as of $date',
                       ),
-                      SizedBox(height: 20),
                       Container(
                         child: Row(
                           children: [
