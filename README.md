@@ -4,7 +4,7 @@
 
 A covid 19 application. [Download here](https://github.com/kerrongordon/covid19/releases)
 
-<a href="https://galaxy.store/CovidKgp"><img src="https://img.samsungapps.com/seller/images/badges/galaxyStore/png_big/GalaxyStore_English.png?ver=1597278750000" alt="Available on Samsung Galaxy Store" style="max-width: 200px; height: auto;"></a>
+<a href="https://galaxy.store/CovidKgp"><img src="https://img.samsungapps.com/seller/images/badges/galaxyStore/png_big/GalaxyStore_English.png?ver=1597278750000" alt="Available on Samsung Galaxy Store" style="width: 150px; height: auto;"></a>
 
 ## Getting Started
 
