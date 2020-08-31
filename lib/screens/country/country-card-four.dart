@@ -19,31 +19,34 @@ class CountryCardFour extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<TravelAlertProvider>(
-      builder: (context, value, child) {
-        return FutureBuilder(
-          future: value.getTravelAlert(countrycode: data.countryInfo.iso2),
-          builder: (context, AsyncSnapshot<TravelAlert> snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return KgpLoader();
-            } else if (snapshot.hasError) {
-              final error = snapshot.error;
-              return Container(
-                  height: 200, child: Center(child: Text(error.toString())));
-            } else if (snapshot.hasData) {
-              final datal = snapshot.data.data;
-              for (var val in datal.values) {
-                final String _date =
-                    DateFormat.yMMMMEEEEd().format(val.advisory.updated);
-                return CountryCardFourItem(date: _date, val: val);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Consumer<TravelAlertProvider>(
+        builder: (context, value, child) {
+          return FutureBuilder(
+            future: value.getTravelAlert(countrycode: data.countryInfo.iso2),
+            builder: (context, AsyncSnapshot<TravelAlert> snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return KgpLoader();
+              } else if (snapshot.hasError) {
+                final error = snapshot.error;
+                return Container(
+                    height: 200, child: Center(child: Text(error.toString())));
+              } else if (snapshot.hasData) {
+                final datal = snapshot.data.data;
+                for (var val in datal.values) {
+                  final String _date =
+                      DateFormat.yMMMMEEEEd().format(val.advisory.updated);
+                  return CountryCardFourItem(date: _date, val: val);
+                }
+                return Container();
+              } else {
+                return Container();
               }
-              return Container();
-            } else {
-              return Container();
-            }
-          },
-        );
-      },
+            },
+          );
+        },
+      ),
     );
   }
 }
@@ -62,17 +65,17 @@ class CountryCardFourItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: FadeInUp(
-        child: CardComponent(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: [
-              KgpCardTitle(
-                title: 'Travel Alert',
-                subtitle: 'Updates as of $_date',
-                icon: Icon(Ionicons.ios_airplane),
-              ),
-              Container(
+      child: CardComponent(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            KgpCardTitle(
+              title: 'Travel Alert',
+              subtitle: 'Updates as of $_date',
+              icon: Icon(Ionicons.ios_airplane),
+            ),
+            FadeInDown(
+              child: Container(
                 child: Text(
                   val.advisory.message,
                   style: const TextStyle(
@@ -82,8 +85,8 @@ class CountryCardFourItem extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

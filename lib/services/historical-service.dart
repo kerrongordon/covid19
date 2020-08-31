@@ -1,13 +1,11 @@
+import 'package:covid19/models/historical-model.dart';
 import 'package:covid19/utils/failure.util.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
-import 'package:covid19/models/country-model.dart';
 
-class CountryService {
-  static const url =
-      'https://disease.sh/v3/covid-19/countries?yesterday=true&sort=cases';
-
-  Future<List<Country>> getCountryApi() async {
+class HistoricalService {
+  Future<Historical> getHistoricalApi({String country}) async {
+    final String url = 'https://disease.sh/v3/covid-19/historical/$country';
     Dio dio = new Dio();
     dio.interceptors
         .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
@@ -15,19 +13,15 @@ class CountryService {
     try {
       Response res = await dio.get(
         url,
+        queryParameters: {'lastdays': '30'},
         options: buildCacheOptions(
           Duration(hours: 1),
           maxStale: Duration(hours: 2),
         ),
       );
-      List<Country> counties = [];
+      Historical data = Historical.fromJson(res.data);
 
-      for (var country in res.data) {
-        Country list = Country.fromJson(country);
-        counties.add(list);
-      }
-
-      return counties;
+      return data;
     } on DioError {
       throw Failure('Oh no something went wrong 😥️');
     } catch (e) {

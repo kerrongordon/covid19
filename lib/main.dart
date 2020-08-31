@@ -1,6 +1,7 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/global-provider.dart';
+import 'package:covid19/providers/historical-provider.dart';
 import 'package:covid19/providers/one-country-provider.dart';
 import 'package:covid19/providers/travel-alert-provider.dart';
 import 'package:covid19/tabview.dart';
@@ -35,10 +36,10 @@ class MyApp extends StatelessWidget {
         Provider(create: (_) => GlobalProvider()),
         Provider(create: (_) => TravelAlertProvider()),
         Provider(create: (_) => OneCountryProvider()),
+        Provider(create: (_) => HistoricalProvider()),
         FutureProvider(create: (_) => CountryProvider().getCountry()),
         FutureProvider(create: (_) => SharedPreferences.getInstance()),
         Provider(create: (_) => SharedPreferences.getInstance()),
-        // StreamProvider(create: (_) => SharedPreferences.getInstance().asStream())
       ],
       child: AdaptiveTheme(
         initial: savedThemeMode ?? AdaptiveThemeMode.system,

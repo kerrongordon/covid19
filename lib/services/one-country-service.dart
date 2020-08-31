@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/utils/failure.util.dart';
 import 'package:dio/dio.dart';

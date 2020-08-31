@@ -17,49 +17,52 @@ class CountryCartTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String _data = TimeToDate.use(data.updated);
-    return CardComponent(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        children: [
-          KgpCardTitle(
-            title: 'Today',
-            subtitle: 'Updates as of $_data',
-            icon: Icon(Ionicons.ios_send),
-          ),
-          Container(
-            child: Row(
-              children: [
-                Expanded(
-                  child: KgpStatsWithTitle(
-                    title: 'Confirmed',
-                    amount: data.todayCases,
-                    amountFontSize: 20,
-                    titleFontSize: 15,
-                    titlecolor: ColorTheme.cases,
-                  ),
-                ),
-                Expanded(
-                  child: KgpStatsWithTitle(
-                    title: 'Deaths',
-                    amount: data.todayDeaths,
-                    amountFontSize: 20,
-                    titleFontSize: 15,
-                    titlecolor: ColorTheme.deaths,
-                  ),
-                ),
-                Expanded(
-                  child: KgpStatsWithTitle(
-                    title: 'Recovered',
-                    amount: data.todayRecovered,
-                    amountFontSize: 20,
-                    titleFontSize: 15,
-                    titlecolor: ColorTheme.recovered,
-                  ),
-                ),
-              ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: CardComponent(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            KgpCardTitle(
+              title: 'Today',
+              subtitle: 'Updates as of $_data',
+              icon: Icon(Ionicons.ios_send),
             ),
-          ),
-        ],
+            Container(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: KgpStatsWithTitle(
+                      title: 'Confirmed',
+                      amount: data.todayCases,
+                      amountFontSize: 20,
+                      titleFontSize: 15,
+                      titlecolor: ColorTheme.cases,
+                    ),
+                  ),
+                  Expanded(
+                    child: KgpStatsWithTitle(
+                      title: 'Deaths',
+                      amount: data.todayDeaths,
+                      amountFontSize: 20,
+                      titleFontSize: 15,
+                      titlecolor: ColorTheme.deaths,
+                    ),
+                  ),
+                  Expanded(
+                    child: KgpStatsWithTitle(
+                      title: 'Recovered',
+                      amount: data.todayRecovered,
+                      amountFontSize: 20,
+                      titleFontSize: 15,
+                      titlecolor: ColorTheme.recovered,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

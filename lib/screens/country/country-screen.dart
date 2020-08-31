@@ -1,5 +1,6 @@
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/models/country-model.dart';
+import 'package:covid19/screens/country/country-card-five.dart';
 import 'package:covid19/screens/country/country-card-four.dart';
 import 'package:covid19/screens/country/country-card-one.dart';
 import 'package:covid19/screens/country/country-card-three.dart';
@@ -19,13 +20,13 @@ class CountryScreen extends StatelessWidget {
         title: data.country,
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
                 CountryCardOne(data: data),
                 CountryCartTwo(data: data),
                 CountryCardThree(data: data),
                 CountryCardFour(data: data),
+                CountryCardFive(data: data),
               ],
             ),
           ),
