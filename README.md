@@ -18,11 +18,14 @@
 API Data is provided by [Open Disease Data](https://disease.sh/), [Centers for Disease Control and Prevention](https://www.cdc.gov/) and from [Daily updated travel advisories](https://www.travel-advisory.info/).
 
 ## Download
+
 A covid 19 application. [Download here](https://github.com/kerrongordon/covid19/releases)
+<br>
 <br>
 <a href="https://galaxy.store/CovidKgp"><img src="https://img.samsungapps.com/seller/images/badges/galaxyStore/png_big/GalaxyStore_English.png?ver=1597278750000" alt="Available on Samsung Galaxy Store" width="150px"></a>
 
 ## Packages Used
+
 - [Dio](https://pub.dev/packages/dio)
 - [Dio Http Cache](https://pub.dev/packages/dio_http_cache)
 - [Flutter Icons](https://pub.dev/packages/flutter_icons)
@@ -36,5 +39,3 @@ A covid 19 application. [Download here](https://github.com/kerrongordon/covid19/
 - [Shared Preferences](https://pub.dev/packages/shared_preferences)
 - [Link](https://pub.dev/packages/link)
 - [Flutter Animator](https://pub.dev/packages/flutter_animator)
-
-
