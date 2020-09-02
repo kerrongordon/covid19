@@ -2,10 +2,10 @@
 # Covid 19 Tracker
 
 <p float="left">
-     <img src="img/light1.jpg" width="234"/>
-     <img src="img/dark1.jpg" width="234"/>
-     <img src="img/light2.jpg" width="234"/>
-     <img src="img/dark2.jpg" width="234"/>
+     <img src="img/light1.jpg" width="200"/>
+     <img src="img/dark1.jpg" width="200"/>
+     <img src="img/light2.jpg" width="200"/>
+     <img src="img/dark2.jpg" width="200"/>
 </p>
 
 ![CI](https://github.com/kerrongordon/covid19/workflows/CI/badge.svg) 
