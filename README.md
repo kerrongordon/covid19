@@ -1,3 +1,4 @@
+
 # Covid 19 Tracker
 
 <p float="left">
@@ -9,6 +10,8 @@
 
 ![CI](https://github.com/kerrongordon/covid19/workflows/CI/badge.svg) 
 ![GitHub All Releases](https://img.shields.io/github/downloads/kerrongordon/covid19/total)
+![GitHub repo size](https://img.shields.io/github/repo-size/kerrongordon/covid19)
+![GitHub top language](https://img.shields.io/github/languages/top/kerrongordon/covid19)
 
 ## Description
 
