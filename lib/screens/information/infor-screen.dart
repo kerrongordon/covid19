@@ -1,5 +1,6 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
+import 'package:covid19/components/kgp-bottom-dialog.dart';
 import 'package:covid19/screens/information/pages/infor-five.dart';
 import 'package:covid19/screens/information/pages/infor-four.dart';
 import 'package:covid19/screens/information/pages/infor-one.dart';
@@ -17,201 +18,298 @@ class InforScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: KgpBasePage(
-        // background: Icon(
-        //   Ionicons.ios_apps,
-        //   size: 250,
-        //   color: Theme.of(context).accentColor,
-        // ),
         title: 'Protect Yourself & Others',
         children: <Widget>[
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: <Widget>[
-                CardComponent(
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => InforOne())),
-                  child: Container(
-                    height: 80,
-                    padding: const EdgeInsets.only(top: 12),
-                    child: ListTile(
-                      leading: ZoomIn(
-                        child: Hero(
-                          tag: 1,
-                          child: Image.asset('assets/one.png'),
-                        ),
-                      ),
-                      title: FadeInDown(
-                        child: Text(
-                          'Know How it Spreads',
-                          style: TextStyle(
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color),
-                        ),
-                      ),
-                      trailing: FadeInLeft(
-                        child: Icon(
-                          Ionicons.ios_arrow_forward,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                CardComponent(
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => InforTwo())),
-                  child: Container(
-                    height: 80,
-                    padding: const EdgeInsets.only(top: 12),
-                    child: ListTile(
-                      leading: ZoomIn(
-                        child: Hero(
-                          tag: 2,
-                          child: Image.asset('assets/two.png'),
-                        ),
-                      ),
-                      title: FadeInDown(
-                        child: Text(
-                          'Clean your hands often',
-                          style: TextStyle(
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color),
-                        ),
-                      ),
-                      trailing: FadeInLeft(
-                        child: Icon(
-                          Ionicons.ios_arrow_forward,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                CardComponent(
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => InforThree())),
-                  child: Container(
-                    height: 80,
-                    padding: const EdgeInsets.only(top: 12),
-                    child: ListTile(
-                      leading: ZoomIn(
-                        child: Hero(
-                          tag: 3,
-                          child: Image.asset('assets/three.png'),
-                        ),
-                      ),
-                      title: FadeInDown(
-                        child: Text(
-                          'Avoid close contact',
-                          style: TextStyle(
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color),
-                        ),
-                      ),
-                      trailing: FadeInLeft(
-                        child: Icon(
-                          Ionicons.ios_arrow_forward,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                CardComponent(
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => InforFour())),
-                  child: Container(
-                    height: 90,
-                    padding: const EdgeInsets.only(top: 12),
-                    child: ListTile(
-                      leading: ZoomIn(
-                        child: Hero(
-                          tag: 4,
-                          child: Image.asset('assets/four.png'),
-                        ),
-                      ),
-                      title: FadeInDown(
-                        child: Text(
-                          'Cover your mouth and nose with a cloth face cover when around others',
-                          style: TextStyle(
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color),
-                        ),
-                      ),
-                      trailing: FadeInLeft(
-                        child: Icon(
-                          Ionicons.ios_arrow_forward,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                CardComponent(
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => InforFive())),
-                  child: Container(
-                    height: 80,
-                    padding: const EdgeInsets.only(top: 12),
-                    child: ListTile(
-                      leading: ZoomIn(
-                        child: Hero(
-                          tag: 5,
-                          child: Image.asset('assets/five.png'),
-                        ),
-                      ),
-                      title: FadeInDown(
-                        child: Text(
-                          'Cover coughs and sneezes',
-                          style: TextStyle(
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color),
-                        ),
-                      ),
-                      trailing: FadeInLeft(
-                        child: Icon(
-                          Ionicons.ios_arrow_forward,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                CardComponent(
-                  onTap: () => Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => InforSix())),
-                  child: Container(
-                    height: 80,
-                    padding: const EdgeInsets.only(top: 12),
-                    child: ListTile(
-                      leading: ZoomIn(
-                        child: Hero(
-                          tag: 6,
-                          child: Image.asset('assets/six.png'),
-                        ),
-                      ),
-                      title: FadeInDown(
-                        child: Text(
-                          'Clean and disinfect',
-                          style: TextStyle(
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color),
-                        ),
-                      ),
-                      trailing: FadeInLeft(
-                        child: Icon(
-                          Ionicons.ios_arrow_forward,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                CardInforOne(),
+                CardInforTwo(),
+                CardInforThree(),
+                CardInforFour(),
+                CardInforFive(),
+                CardInforSix(),
               ],
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CardInforSix extends StatelessWidget {
+  const CardInforSix({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CardComponent(
+      onTap: () async => await showModalBottomSheet(
+        context: context,
+        elevation: 30,
+        backgroundColor: Colors.transparent,
+        builder: (context) => Padding(
+          padding: const EdgeInsets.all(20),
+          child: KgpBottomDialog(
+            title: 'Clean and disinfect',
+            child: InforSix(),
+          ),
+        ),
+      ),
+      child: Container(
+        height: 80,
+        padding: const EdgeInsets.only(top: 12),
+        child: ListTile(
+          leading: ZoomIn(
+            child: Image.asset('assets/six.png'),
+          ),
+          title: FadeInDown(
+            child: Text(
+              'Clean and disinfect',
+              style:
+                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+            ),
+          ),
+          trailing: FadeInLeft(
+            child: Icon(
+              Ionicons.ios_arrow_forward,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CardInforFive extends StatelessWidget {
+  const CardInforFive({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CardComponent(
+      onTap: () async => await showModalBottomSheet(
+        context: context,
+        elevation: 30,
+        backgroundColor: Colors.transparent,
+        builder: (context) => Padding(
+          padding: const EdgeInsets.all(20),
+          child: KgpBottomDialog(
+            title: 'Cover coughs and sneezes',
+            child: InforFive(),
+          ),
+        ),
+      ),
+      child: Container(
+        height: 80,
+        padding: const EdgeInsets.only(top: 12),
+        child: ListTile(
+          leading: ZoomIn(
+            child: Image.asset('assets/five.png'),
+          ),
+          title: FadeInDown(
+            child: Text(
+              'Cover coughs and sneezes',
+              style:
+                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+            ),
+          ),
+          trailing: FadeInLeft(
+            child: Icon(
+              Ionicons.ios_arrow_forward,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CardInforFour extends StatelessWidget {
+  const CardInforFour({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CardComponent(
+      onTap: () async => await showModalBottomSheet(
+        context: context,
+        elevation: 30,
+        backgroundColor: Colors.transparent,
+        builder: (context) => Padding(
+          padding: const EdgeInsets.all(20),
+          child: KgpBottomDialog(
+            title: 'Cover your mouth and nose',
+            child: InforFour(),
+          ),
+        ),
+      ),
+      child: Container(
+        height: 80,
+        padding: const EdgeInsets.only(top: 12),
+        child: ListTile(
+          leading: ZoomIn(
+            child: Image.asset('assets/four.png'),
+          ),
+          title: FadeInDown(
+            child: Text(
+              'Cover your mouth and nose',
+              style:
+                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+            ),
+          ),
+          trailing: FadeInLeft(
+            child: Icon(
+              Ionicons.ios_arrow_forward,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CardInforThree extends StatelessWidget {
+  const CardInforThree({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CardComponent(
+      onTap: () async => await showModalBottomSheet(
+        context: context,
+        elevation: 30,
+        backgroundColor: Colors.transparent,
+        builder: (context) => Padding(
+          padding: const EdgeInsets.all(20),
+          child: KgpBottomDialog(
+            title: 'Avoid close contact',
+            child: InforThree(),
+          ),
+        ),
+      ),
+      child: Container(
+        height: 80,
+        padding: const EdgeInsets.only(top: 12),
+        child: ListTile(
+          leading: ZoomIn(
+            child: Image.asset('assets/three.png'),
+          ),
+          title: FadeInDown(
+            child: Text(
+              'Avoid close contact',
+              style:
+                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+            ),
+          ),
+          trailing: FadeInLeft(
+            child: Icon(
+              Ionicons.ios_arrow_forward,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CardInforTwo extends StatelessWidget {
+  const CardInforTwo({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CardComponent(
+      onTap: () async => await showModalBottomSheet(
+        context: context,
+        elevation: 30,
+        backgroundColor: Colors.transparent,
+        builder: (context) => Padding(
+          padding: const EdgeInsets.all(20),
+          child: KgpBottomDialog(
+            title: 'Clean your hands often',
+            child: InforTwo(),
+          ),
+        ),
+      ),
+      child: Container(
+        height: 80,
+        padding: const EdgeInsets.only(top: 12),
+        child: ListTile(
+          leading: ZoomIn(
+            child: Image.asset('assets/two.png'),
+          ),
+          title: FadeInDown(
+            child: Text(
+              'Clean your hands often',
+              style:
+                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+            ),
+          ),
+          trailing: FadeInLeft(
+            child: Icon(
+              Ionicons.ios_arrow_forward,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CardInforOne extends StatelessWidget {
+  const CardInforOne({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return CardComponent(
+      onTap: () async => await showModalBottomSheet(
+        context: context,
+        elevation: 30,
+        backgroundColor: Colors.transparent,
+        builder: (context) => Padding(
+          padding: const EdgeInsets.all(20),
+          child: KgpBottomDialog(
+            title: 'Know How it Spreads',
+            child: InforOne(),
+          ),
+        ),
+      ),
+      child: Container(
+        height: 80,
+        padding: const EdgeInsets.only(top: 12),
+        child: ListTile(
+          leading: ZoomIn(
+            child: Image.asset('assets/one.png'),
+          ),
+          title: FadeInDown(
+            child: Text(
+              'Know How it Spreads',
+              style:
+                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+            ),
+          ),
+          trailing: FadeInLeft(
+            child: Icon(
+              Ionicons.ios_arrow_forward,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+        ),
       ),
     );
   }

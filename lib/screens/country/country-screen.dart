@@ -35,17 +35,15 @@ class CountryScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Ionicons.ios_add),
-        onPressed: () {
-          showModalBottomSheet(
-            context: context,
-            elevation: 30,
-            backgroundColor: Colors.transparent,
-            builder: (context) => Padding(
-              padding: const EdgeInsets.all(20),
-              child: CountryDialog(data: data),
-            ),
-          );
-        },
+        onPressed: () async => await showModalBottomSheet(
+          context: context,
+          elevation: 30,
+          backgroundColor: Colors.transparent,
+          builder: (context) => Padding(
+            padding: const EdgeInsets.all(20),
+            child: CountryDialog(data: data),
+          ),
+        ),
       ),
     );
   }

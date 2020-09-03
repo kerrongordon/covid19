@@ -8,6 +8,7 @@ class KgpBasePage extends StatelessWidget {
   final List<Widget> actions;
   final List<Widget> children;
   final double expandedHeight;
+  final Color backgroundColor;
   final SliverChildDelegate sliverList;
 
   const KgpBasePage({
@@ -20,6 +21,7 @@ class KgpBasePage extends StatelessWidget {
     this.persistentHeader,
     this.scrollList,
     this.sliverList,
+    this.backgroundColor,
   }) : super(key: key);
 
   @override
@@ -27,6 +29,7 @@ class KgpBasePage extends StatelessWidget {
     return CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
+          backgroundColor: backgroundColor,
           expandedHeight: expandedHeight != null ? expandedHeight : 300,
           pinned: true,
           floating: false,
@@ -48,16 +51,7 @@ class KgpBasePage extends StatelessWidget {
                     title != null ? title : '',
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.clip,
-                    style: TextStyle(
-                      fontWeight: FontWeight.w300,
-                      shadows: [
-                        Shadow(
-                          blurRadius: 3.0,
-                          color: Theme.of(context).backgroundColor,
-                          offset: Offset(1.0, 1.0),
-                        ),
-                      ],
-                    ),
+                    style: TextStyle(fontWeight: FontWeight.w300),
                   ),
                 ),
                 Flexible(
