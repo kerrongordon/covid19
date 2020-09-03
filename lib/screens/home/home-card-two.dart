@@ -41,7 +41,7 @@ class HomeCardTwo extends StatelessWidget {
                 Expanded(
                   child: KgpStatsWithTitle(
                     title: 'Deaths',
-                    amount: data.todayCases,
+                    amount: data.todayDeaths,
                     amountFontSize: 20,
                     titleFontSize: 15,
                     titlecolor: ColorTheme.deaths,
@@ -50,7 +50,7 @@ class HomeCardTwo extends StatelessWidget {
                 Expanded(
                   child: KgpStatsWithTitle(
                     title: 'Recovered',
-                    amount: data.todayCases,
+                    amount: data.todayRecovered,
                     amountFontSize: 20,
                     titleFontSize: 15,
                     titlecolor: ColorTheme.recovered,
