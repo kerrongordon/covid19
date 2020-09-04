@@ -59,30 +59,35 @@ class _TabViewState extends State<TabView> {
           setState(() => _currentIndex = index);
           _pageController.jumpToPage(index);
         },
+        curve: Curves.easeInOut,
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
             title: Text('Global'),
-            icon: Icon(Ionicons.ios_analytics),
             textAlign: TextAlign.center,
+            icon: Icon(Ionicons.ios_analytics),
             activeColor: Theme.of(context).accentColor,
+            inactiveColor: Theme.of(context).textTheme.bodyText1.color,
           ),
           BottomNavyBarItem(
             title: Text('Countries'),
-            icon: Icon(Ionicons.ios_trending_up),
             textAlign: TextAlign.center,
+            icon: Icon(Ionicons.ios_trending_up),
             activeColor: Theme.of(context).accentColor,
+            inactiveColor: Theme.of(context).textTheme.bodyText1.color,
           ),
           BottomNavyBarItem(
             title: Text('Info'),
-            icon: Icon(Ionicons.ios_apps),
             textAlign: TextAlign.center,
+            icon: Icon(Ionicons.ios_apps),
             activeColor: Theme.of(context).accentColor,
+            inactiveColor: Theme.of(context).textTheme.bodyText1.color,
           ),
           BottomNavyBarItem(
             title: Text('Settings'),
-            icon: Icon(Ionicons.ios_cog),
             textAlign: TextAlign.center,
+            icon: Icon(Ionicons.ios_cog),
             activeColor: Theme.of(context).accentColor,
+            inactiveColor: Theme.of(context).textTheme.bodyText1.color,
           ),
         ],
       ),

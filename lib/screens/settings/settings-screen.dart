@@ -5,8 +5,7 @@ import 'package:covid19/screens/settings/color-btn.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
-import 'package:link/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({Key key}) : super(key: key);
@@ -16,11 +15,6 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: 'Settings',
-        // background: Icon(
-        //   Ionicons.ios_cog,
-        //   size: 200,
-        //   color: Theme.of(context).accentColor,
-        // ),
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -88,14 +82,9 @@ class SettingsScreen extends StatelessWidget {
                       'We source data from Open Disease Data and Daily updated travel advisories.',
                       style: TextStyle(fontSize: 16),
                     ),
-                    SizedBox(height: 10),
+                    SizedBox(height: 20),
                     ListTile(
-                      leading: Icon(
-                        Ionicons.ios_arrow_forward,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      title: Link(
-                        url: 'https://disease.sh/',
+                      title: FlatButton(
                         child: Text(
                           'Open Disease Data',
                           style: TextStyle(
@@ -103,15 +92,11 @@ class SettingsScreen extends StatelessWidget {
                             color: Theme.of(context).textTheme.bodyText1.color,
                           ),
                         ),
+                        onPressed: () => _launchURL(url: 'https://disease.sh/'),
                       ),
                     ),
                     ListTile(
-                      leading: Icon(
-                        Ionicons.ios_arrow_forward,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                      title: Link(
-                        url: 'https://www.travel-advisory.info/',
+                      title: FlatButton(
                         child: Text(
                           'Daily updated travel advisories',
                           style: TextStyle(
@@ -119,6 +104,8 @@ class SettingsScreen extends StatelessWidget {
                             color: Theme.of(context).textTheme.bodyText1.color,
                           ),
                         ),
+                        onPressed: () => _launchURL(
+                            url: 'https://www.travel-advisory.info/'),
                       ),
                     ),
                   ],
@@ -129,5 +116,13 @@ class SettingsScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _launchURL({String url}) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }

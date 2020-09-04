@@ -1,10 +1,12 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class KgpBasePage extends StatelessWidget {
   final String title;
   final Widget background;
   final Widget scrollList;
-  final Widget persistentHeader;
+  // final Widget persistentHeader;
   final List<Widget> actions;
   final List<Widget> children;
   final double expandedHeight;
@@ -18,7 +20,7 @@ class KgpBasePage extends StatelessWidget {
     this.background,
     this.title,
     this.children,
-    this.persistentHeader,
+    // this.persistentHeader,
     this.scrollList,
     this.sliverList,
     this.backgroundColor,
@@ -29,34 +31,56 @@ class KgpBasePage extends StatelessWidget {
     return CustomScrollView(
       slivers: <Widget>[
         SliverAppBar(
-          backgroundColor: backgroundColor,
+          backgroundColor: Colors.transparent,
           expandedHeight: expandedHeight != null ? expandedHeight : 300,
           pinned: true,
           floating: false,
           elevation: 0.0,
           actions: actions,
           flexibleSpace: FlexibleSpaceBar(
-            titlePadding: const EdgeInsets.only(bottom: 8),
+            titlePadding: const EdgeInsets.only(bottom: 0),
             background: background,
-            title: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Flexible(
-                  flex: 4,
-                  child: Container(),
-                ),
-                Flexible(
-                  flex: 4,
-                  child: Text(
-                    title != null ? title : '',
-                    textAlign: TextAlign.center,
-                    overflow: TextOverflow.clip,
-                    style: TextStyle(fontWeight: FontWeight.w300),
+            title: Stack(
+              children: [
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: 100,
+                  child: ClipRect(
+                    child: BackdropFilter(
+                      filter: ImageFilter.blur(
+                        sigmaX: 7,
+                        sigmaY: 7,
+                      ),
+                      child: Container(
+                        color:
+                            Theme.of(context).backgroundColor.withOpacity(0.7),
+                      ),
+                    ),
                   ),
                 ),
-                Flexible(
-                  flex: 1,
-                  child: Container(),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: <Widget>[
+                    Flexible(
+                      flex: 4,
+                      child: Container(),
+                    ),
+                    Flexible(
+                      flex: 4,
+                      child: Text(
+                        title != null ? title : '',
+                        textAlign: TextAlign.center,
+                        overflow: TextOverflow.clip,
+                        style: TextStyle(fontWeight: FontWeight.w300),
+                      ),
+                    ),
+                    Flexible(
+                      flex: 1,
+                      child: Container(),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -64,13 +88,13 @@ class KgpBasePage extends StatelessWidget {
             // collapseMode: CollapseMode.pin,
           ),
         ),
-        persistentHeader != null
-            ? SliverPersistentHeader(
-                pinned: true,
-                floating: false,
-                delegate: Delegate(child: persistentHeader),
-              )
-            : SliverToBoxAdapter(),
+        // persistentHeader != null
+        //     ? SliverPersistentHeader(
+        //         pinned: true,
+        //         floating: false,
+        //         delegate: Delegate(child: persistentHeader),
+        //       )
+        //     : SliverToBoxAdapter(),
         sliverList == null
             ? SliverToBoxAdapter(
                 child: Container(

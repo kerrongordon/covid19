@@ -37,5 +37,5 @@ A covid 19 application. [Download here](https://github.com/kerrongordon/covid19/
 - [Bottom Navy Bar](https://pub.dev/packages/bottom_navy_bar)
 - [Adaptive Theme](https://pub.dev/packages/adaptive_theme)
 - [Shared Preferences](https://pub.dev/packages/shared_preferences)
-- [Link](https://pub.dev/packages/link)
+- [Url Launcher](https://pub.dev/packages/url_launcher)
 - [Flutter Animator](https://pub.dev/packages/flutter_animator)
