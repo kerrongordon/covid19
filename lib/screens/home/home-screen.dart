@@ -15,7 +15,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: 'Global',
-        background: Image.asset('assets/earth1.png'),
+        background: Image.asset('assets/earth.png'),
         children: <Widget>[
           Consumer<GlobalProvider>(builder: (_, value, __) {
             return FutureBuilder(
