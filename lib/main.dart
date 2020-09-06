@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
+        Provider(create: (_) => savedThemeMode),
         Provider(create: (_) => GlobalProvider()),
         Provider(create: (_) => TravelAlertProvider()),
         Provider(create: (_) => OneCountryProvider()),
@@ -42,7 +43,7 @@ class MyApp extends StatelessWidget {
         Provider(create: (_) => SharedPreferences.getInstance()),
       ],
       child: AdaptiveTheme(
-        initial: savedThemeMode ?? AdaptiveThemeMode.system,
+        initial: savedThemeMode ?? AdaptiveThemeMode.light,
         light: LightTheme.theme,
         dark: DarkTheme.theme,
         builder: (light, dark) {

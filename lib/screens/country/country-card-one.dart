@@ -86,11 +86,14 @@ class CountryCardOne extends StatelessWidget {
                 ],
               ),
             ),
-            KgpPieChart(
-              aspectRatio: 1.3,
-              cases: data.cases,
-              recovered: data.recovered,
-              deaths: data.deaths,
+            Container(
+              padding: const EdgeInsets.all(20),
+              child: KgpPieChart(
+                aspectRatio: 1.3,
+                cases: data.cases,
+                recovered: data.recovered,
+                deaths: data.deaths,
+              ),
             ),
             Container(
               child: Row(

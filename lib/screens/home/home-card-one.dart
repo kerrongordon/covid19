@@ -22,11 +22,18 @@ class HomeCardOne extends StatelessWidget {
           children: [
             Expanded(
               flex: 2,
-              child: KgpPieChart(
-                aspectRatio: 1,
-                cases: data.cases,
-                recovered: data.recovered,
-                deaths: data.deaths,
+              child: Container(
+                padding: const EdgeInsets.only(
+                  bottom: 20,
+                  top: 20,
+                  right: 20,
+                ),
+                child: KgpPieChart(
+                  aspectRatio: 1,
+                  cases: data.cases,
+                  recovered: data.recovered,
+                  deaths: data.deaths,
+                ),
               ),
             ),
             Expanded(
