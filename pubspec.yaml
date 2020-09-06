@@ -48,9 +48,9 @@ dev_dependencies:
 # flutter pub run flutter_launcher_icons:main
 flutter_icons:
   android: true
-  # ios: false
+  ios: true
   image_path: "assets/appicon.png"
-  adaptive_icon_background: "#eef7f4"
+  adaptive_icon_background: "assets/iconbg.png"
   adaptive_icon_foreground: "assets/icon.png"
 
 # flutter pub pub run flutter_native_splash:create
