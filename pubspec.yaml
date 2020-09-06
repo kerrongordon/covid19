@@ -50,13 +50,14 @@ flutter_icons:
   android: true
   # ios: false
   image_path: "assets/appicon.png"
-  # adaptive_icon_background: "#0084ff"
-  # adaptive_icon_foreground: "assets/covid.png"
+  adaptive_icon_background: "#eef7f4"
+  adaptive_icon_foreground: "assets/icon.png"
 
 # flutter pub pub run flutter_native_splash:create
 flutter_native_splash:
   image: assets/icon.png
-  color: "0084ff"
+  color: "#eef7f4"
+  # color: "0084ff"
 
 # The following section is specific to Flutter.
 flutter:
