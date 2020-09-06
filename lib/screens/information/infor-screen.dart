@@ -10,6 +10,7 @@ import 'package:covid19/screens/information/pages/infor-two.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:lottie/lottie.dart';
 
 class InforScreen extends StatelessWidget {
   const InforScreen({Key key}) : super(key: key);
@@ -19,11 +20,17 @@ class InforScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: 'Protect Yourself & Others',
+        expandedHeight: 55,
         children: <Widget>[
           Container(
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: <Widget>[
+                Lottie.asset(
+                  'assets/prevent-epidemic-rebound.json',
+                  repeat: false,
+                  animate: true,
+                ),
                 CardInforOne(),
                 CardInforTwo(),
                 CardInforThree(),
