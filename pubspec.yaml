@@ -33,7 +33,6 @@ dependencies:
   url_launcher: ^5.5.2
   introduction_screen: ^1.0.9
   flutter_animator: ^2.1.0
-  day_night_switcher: ^0.1.1+1
   # facebook_audience_network: ^0.7.0
 
 dev_dependencies:

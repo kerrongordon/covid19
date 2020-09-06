@@ -57,12 +57,6 @@ class SettingsScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    // Consumer<AdaptiveThemeMode>(
-                    //   builder: (_, value, __) {
-                    //     print(value.isLight);
-                    //     return ThemeSwitcher(theme: value);
-                    //   },
-                    // ),
                   ],
                 ),
               ),

@@ -33,7 +33,6 @@ class MyApp extends StatelessWidget {
 
     return MultiProvider(
       providers: [
-        Provider(create: (_) => savedThemeMode),
         Provider(create: (_) => GlobalProvider()),
         Provider(create: (_) => TravelAlertProvider()),
         Provider(create: (_) => OneCountryProvider()),
