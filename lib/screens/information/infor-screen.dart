@@ -26,10 +26,13 @@ class InforScreen extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: <Widget>[
-                Lottie.asset(
-                  'assets/prevent-epidemic-rebound.json',
-                  repeat: false,
-                  animate: true,
+                AspectRatio(
+                  aspectRatio: 1,
+                  child: Lottie.asset(
+                    'assets/medical-frontliners.json',
+                    repeat: true,
+                    animate: true,
+                  ),
                 ),
                 CardInforOne(),
                 CardInforTwo(),
