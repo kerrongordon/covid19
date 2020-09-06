@@ -40,6 +40,7 @@ dev_dependencies:
     sdk: flutter
 
   flutter_launcher_icons: ^0.7.5
+  flutter_native_splash: ^0.1.9
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -50,6 +51,11 @@ flutter_icons:
   image_path: "assets/appicon.png"
   # adaptive_icon_background: "#0084ff"
   # adaptive_icon_foreground: "assets/covid.png"
+
+# flutter pub pub run flutter_native_splash:create
+flutter_native_splash:
+  image: assets/icon.png
+  color: "0084ff"
 
 # The following section is specific to Flutter.
 flutter:

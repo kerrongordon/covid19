@@ -32,7 +32,9 @@ class KgpBasePage extends StatelessWidget {
       slivers: <Widget>[
         SliverAppBar(
           backgroundColor: Colors.transparent,
-          expandedHeight: expandedHeight != null ? expandedHeight : 300,
+          expandedHeight: expandedHeight != null
+              ? expandedHeight
+              : MediaQuery.of(context).size.height / 3,
           pinned: true,
           floating: false,
           elevation: 0.0,

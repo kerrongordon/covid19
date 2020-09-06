@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="myblue">
-		#0084FF
+	<color name="splash_color">
+		#0084ff
 	</color>
 </resources>

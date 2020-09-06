@@ -20,7 +20,10 @@
 	-->
 	<style name="NormalTheme" parent="@android:style/Theme.Black.NoTitleBar">
 		<item name="android:windowBackground">
-			@color/myblue
+			@color/splash_color
+		</item>
+		<item name="android:windowFullscreen">
+			true
 		</item>
 	</style>
 </resources>

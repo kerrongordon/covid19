@@ -1,6 +1,7 @@
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/country/country-screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 class SearchCountry extends SearchDelegate<Country> {
   final List<Country> data;
@@ -11,7 +12,7 @@ class SearchCountry extends SearchDelegate<Country> {
     return [
       IconButton(
         icon: Icon(
-          Icons.clear,
+          Ionicons.ios_close_circle_outline,
           color: Colors.grey,
         ),
         onPressed: () {
@@ -25,9 +26,7 @@ class SearchCountry extends SearchDelegate<Country> {
   Widget buildLeading(BuildContext context) {
     return IconButton(
       icon: Icon(Icons.arrow_back),
-      onPressed: () {
-        close(context, null);
-      },
+      onPressed: () => close(context, null),
     );
   }
 

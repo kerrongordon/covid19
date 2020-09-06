@@ -18,6 +18,7 @@ class HomeCardOne extends StatelessWidget {
       child: Container(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Expanded(
               flex: 2,
@@ -29,8 +30,11 @@ class HomeCardOne extends StatelessWidget {
               ),
             ),
             Expanded(
+              flex: 1,
               child: Container(
+                padding: const EdgeInsets.only(right: 25),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     KgpStatsWithTitle(
                       title: 'Confirmed',
