@@ -79,8 +79,12 @@ class SettingsScreen extends StatelessWidget {
                     Divider(),
                     SizedBox(height: 20),
                     Text(
-                      'We source data from Open Disease Data and Daily updated travel advisories.',
-                      style: TextStyle(fontSize: 16),
+                      'We source data from Open Disease Data, Daily updated travel advisories and The Centers for Disease Control and Prevention.',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                        height: 1.3,
+                      ),
                     ),
                     SizedBox(height: 20),
                     ListTile(
@@ -88,7 +92,7 @@ class SettingsScreen extends StatelessWidget {
                         child: Text(
                           'Open Disease Data',
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 13,
                             color: Theme.of(context).textTheme.bodyText1.color,
                           ),
                         ),
@@ -100,12 +104,25 @@ class SettingsScreen extends StatelessWidget {
                         child: Text(
                           'Daily updated travel advisories',
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 13,
                             color: Theme.of(context).textTheme.bodyText1.color,
                           ),
                         ),
                         onPressed: () => _launchURL(
                             url: 'https://www.travel-advisory.info/'),
+                      ),
+                    ),
+                    ListTile(
+                      title: FlatButton(
+                        child: Text(
+                          'Centers for Disease Control and Prevention',
+                          style: TextStyle(
+                            fontSize: 13,
+                            color: Theme.of(context).textTheme.bodyText1.color,
+                          ),
+                        ),
+                        onPressed: () =>
+                            _launchURL(url: 'https://www.cdc.gov/'),
                       ),
                     ),
                   ],

@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:intl/intl.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class CountryCardFour extends StatelessWidget {
@@ -85,6 +86,12 @@ class CountryCardFourItem extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
+            ),
+            Lottie.asset(
+              'assets/airplane.json',
+              repeat: true,
+              animate: true,
+              height: 150,
             ),
           ],
         ),

@@ -1,6 +1,5 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
-import 'package:covid19/components/kgp-bottom-dialog.dart';
 import 'package:covid19/screens/information/pages/infor-five.dart';
 import 'package:covid19/screens/information/pages/infor-four.dart';
 import 'package:covid19/screens/information/pages/infor-one.dart';
@@ -9,7 +8,6 @@ import 'package:covid19/screens/information/pages/infor-three.dart';
 import 'package:covid19/screens/information/pages/infor-two.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:lottie/lottie.dart';
 
 class InforScreen extends StatelessWidget {
@@ -23,23 +21,83 @@ class InforScreen extends StatelessWidget {
         expandedHeight: 55,
         children: <Widget>[
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: <Widget>[
-                AspectRatio(
-                  aspectRatio: 1,
-                  child: Lottie.asset(
-                    'assets/medical-frontliners.json',
-                    repeat: true,
-                    animate: true,
+                Lottie.asset(
+                  'assets/medical-frontliners.json',
+                  repeat: true,
+                  animate: true,
+                  height: 300,
+                ),
+                Container(
+                  padding: const EdgeInsets.only(
+                    left: 20,
+                    right: 20,
+                    bottom: 20,
+                  ),
+                  child: Text(
+                    'COVID-19 is thought to spread mainly through close contact from person-to-person. Some people without symptoms may be able to spread the virus. We are still learning about how the virus spreads and the severity of illness it causes.',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w300,
+                      fontSize: 17,
+                      height: 1.6,
+                    ),
+                    textAlign: TextAlign.center,
                   ),
                 ),
-                CardInforOne(),
-                CardInforTwo(),
-                CardInforThree(),
-                CardInforFour(),
-                CardInforFive(),
-                CardInforSix(),
+                SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 20, right: 10),
+                        child: CardInforOne(),
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 10, right: 20),
+                        child: CardInforTwo(),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 20, right: 10),
+                        child: CardInforThree(),
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 10, right: 20),
+                        child: CardInforFour(),
+                      ),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 20, right: 10),
+                        child: CardInforFive(),
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 10, right: 20),
+                        child: CardInforSix(),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
               ],
             ),
           ),
@@ -57,38 +115,36 @@ class CardInforSix extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardComponent(
-      onTap: () async => await showModalBottomSheet(
-        context: context,
-        elevation: 30,
-        backgroundColor: Colors.transparent,
-        builder: (context) => Padding(
-          padding: const EdgeInsets.all(20),
-          child: KgpBottomDialog(
-            title: 'Clean and disinfect',
-            child: InforSix(),
-          ),
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => InforSix(),
         ),
       ),
       child: Container(
-        height: 80,
-        padding: const EdgeInsets.only(top: 12),
-        child: ListTile(
-          leading: ZoomIn(
-            child: Image.asset('assets/six.png'),
-          ),
-          title: FadeInDown(
-            child: Text(
-              'Clean and disinfect',
-              style:
-                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            ZoomIn(
+              child: Hero(
+                tag: 6,
+                child: Image.asset(
+                  'assets/six.png',
+                  width: 100,
+                ),
+              ),
             ),
-          ),
-          trailing: FadeInLeft(
-            child: Icon(
-              Ionicons.ios_arrow_forward,
-              color: Theme.of(context).primaryColor,
+            SizedBox(height: 10),
+            Divider(),
+            SizedBox(height: 10),
+            FadeInDown(
+              child: Text(
+                'Clean and disinfect',
+                style: TextStyle(),
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
@@ -103,38 +159,36 @@ class CardInforFive extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardComponent(
-      onTap: () async => await showModalBottomSheet(
-        context: context,
-        elevation: 30,
-        backgroundColor: Colors.transparent,
-        builder: (context) => Padding(
-          padding: const EdgeInsets.all(20),
-          child: KgpBottomDialog(
-            title: 'Cover coughs and sneezes',
-            child: InforFive(),
-          ),
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => InforFive(),
         ),
       ),
       child: Container(
-        height: 80,
-        padding: const EdgeInsets.only(top: 12),
-        child: ListTile(
-          leading: ZoomIn(
-            child: Image.asset('assets/five.png'),
-          ),
-          title: FadeInDown(
-            child: Text(
-              'Cover coughs and sneezes',
-              style:
-                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            ZoomIn(
+              child: Hero(
+                tag: 5,
+                child: Image.asset(
+                  'assets/five.png',
+                  width: 100,
+                ),
+              ),
             ),
-          ),
-          trailing: FadeInLeft(
-            child: Icon(
-              Ionicons.ios_arrow_forward,
-              color: Theme.of(context).primaryColor,
+            SizedBox(height: 10),
+            Divider(),
+            SizedBox(height: 10),
+            FadeInDown(
+              child: Text(
+                'Cover coughs and sneezes',
+                style: TextStyle(),
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
@@ -149,38 +203,36 @@ class CardInforFour extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardComponent(
-      onTap: () async => await showModalBottomSheet(
-        context: context,
-        elevation: 30,
-        backgroundColor: Colors.transparent,
-        builder: (context) => Padding(
-          padding: const EdgeInsets.all(20),
-          child: KgpBottomDialog(
-            title: 'Cover your mouth and nose',
-            child: InforFour(),
-          ),
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => InforFour(),
         ),
       ),
       child: Container(
-        height: 80,
-        padding: const EdgeInsets.only(top: 12),
-        child: ListTile(
-          leading: ZoomIn(
-            child: Image.asset('assets/four.png'),
-          ),
-          title: FadeInDown(
-            child: Text(
-              'Cover your mouth and nose',
-              style:
-                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            ZoomIn(
+              child: Hero(
+                tag: 4,
+                child: Image.asset(
+                  'assets/four.png',
+                  width: 100,
+                ),
+              ),
             ),
-          ),
-          trailing: FadeInLeft(
-            child: Icon(
-              Ionicons.ios_arrow_forward,
-              color: Theme.of(context).primaryColor,
+            SizedBox(height: 10),
+            Divider(),
+            SizedBox(height: 10),
+            FadeInDown(
+              child: Text(
+                'Cover your mouth and nose',
+                style: TextStyle(),
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
@@ -195,38 +247,36 @@ class CardInforThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardComponent(
-      onTap: () async => await showModalBottomSheet(
-        context: context,
-        elevation: 30,
-        backgroundColor: Colors.transparent,
-        builder: (context) => Padding(
-          padding: const EdgeInsets.all(20),
-          child: KgpBottomDialog(
-            title: 'Avoid close contact',
-            child: InforThree(),
-          ),
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => InforThree(),
         ),
       ),
       child: Container(
-        height: 80,
-        padding: const EdgeInsets.only(top: 12),
-        child: ListTile(
-          leading: ZoomIn(
-            child: Image.asset('assets/three.png'),
-          ),
-          title: FadeInDown(
-            child: Text(
-              'Avoid close contact',
-              style:
-                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            ZoomIn(
+              child: Hero(
+                tag: 3,
+                child: Image.asset(
+                  'assets/three.png',
+                  width: 100,
+                ),
+              ),
             ),
-          ),
-          trailing: FadeInLeft(
-            child: Icon(
-              Ionicons.ios_arrow_forward,
-              color: Theme.of(context).primaryColor,
+            SizedBox(height: 10),
+            Divider(),
+            SizedBox(height: 10),
+            FadeInDown(
+              child: Text(
+                'Avoid close contact',
+                style: TextStyle(),
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
@@ -241,38 +291,36 @@ class CardInforTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardComponent(
-      onTap: () async => await showModalBottomSheet(
-        context: context,
-        elevation: 30,
-        backgroundColor: Colors.transparent,
-        builder: (context) => Padding(
-          padding: const EdgeInsets.all(20),
-          child: KgpBottomDialog(
-            title: 'Clean your hands often',
-            child: InforTwo(),
-          ),
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => InforTwo(),
         ),
       ),
       child: Container(
-        height: 80,
-        padding: const EdgeInsets.only(top: 12),
-        child: ListTile(
-          leading: ZoomIn(
-            child: Image.asset('assets/two.png'),
-          ),
-          title: FadeInDown(
-            child: Text(
-              'Clean your hands often',
-              style:
-                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            ZoomIn(
+              child: Hero(
+                tag: 2,
+                child: Image.asset(
+                  'assets/two.png',
+                  width: 100,
+                ),
+              ),
             ),
-          ),
-          trailing: FadeInLeft(
-            child: Icon(
-              Ionicons.ios_arrow_forward,
-              color: Theme.of(context).primaryColor,
+            SizedBox(height: 10),
+            Divider(),
+            SizedBox(height: 10),
+            FadeInDown(
+              child: Text(
+                'Clean your hands often',
+                style: TextStyle(),
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
@@ -287,38 +335,36 @@ class CardInforOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardComponent(
-      onTap: () async => await showModalBottomSheet(
-        context: context,
-        elevation: 30,
-        backgroundColor: Colors.transparent,
-        builder: (context) => Padding(
-          padding: const EdgeInsets.all(20),
-          child: KgpBottomDialog(
-            title: 'Know How it Spreads',
-            child: InforOne(),
-          ),
+      onTap: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (context) => InforOne(),
         ),
       ),
       child: Container(
-        height: 80,
-        padding: const EdgeInsets.only(top: 12),
-        child: ListTile(
-          leading: ZoomIn(
-            child: Image.asset('assets/one.png'),
-          ),
-          title: FadeInDown(
-            child: Text(
-              'Know How it Spreads',
-              style:
-                  TextStyle(color: Theme.of(context).textTheme.bodyText1.color),
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            ZoomIn(
+              child: Hero(
+                tag: 1,
+                child: Image.asset(
+                  'assets/one.png',
+                  width: 100,
+                ),
+              ),
             ),
-          ),
-          trailing: FadeInLeft(
-            child: Icon(
-              Ionicons.ios_arrow_forward,
-              color: Theme.of(context).primaryColor,
+            SizedBox(height: 10),
+            Divider(),
+            SizedBox(height: 10),
+            FadeInDown(
+              child: Text(
+                'Know How it Spreads',
+                style: TextStyle(),
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

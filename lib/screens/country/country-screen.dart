@@ -18,6 +18,7 @@ class CountryScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: data.country,
+        expandedHeight: 55,
         children: [
           Container(
             child: Column(
