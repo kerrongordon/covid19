@@ -12,6 +12,7 @@ class KgpBasePage extends StatelessWidget {
   final double expandedHeight;
   final Color backgroundColor;
   final SliverChildDelegate sliverList;
+  final bool neverScroll;
 
   const KgpBasePage({
     Key key,
@@ -24,17 +25,21 @@ class KgpBasePage extends StatelessWidget {
     this.scrollList,
     this.sliverList,
     this.backgroundColor,
+    this.neverScroll,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: neverScroll == true
+          ? NeverScrollableScrollPhysics()
+          : AlwaysScrollableScrollPhysics(),
       slivers: <Widget>[
         SliverAppBar(
           backgroundColor: Colors.transparent,
           expandedHeight: expandedHeight != null
               ? expandedHeight
-              : MediaQuery.of(context).size.height / 3,
+              : MediaQuery.of(context).size.height / 2.8,
           pinned: true,
           floating: false,
           elevation: 0.0,
@@ -57,7 +62,7 @@ class KgpBasePage extends StatelessWidget {
                       ),
                       child: Container(
                         color:
-                            Theme.of(context).backgroundColor.withOpacity(0.7),
+                            Theme.of(context).backgroundColor.withOpacity(0.6),
                       ),
                     ),
                   ),

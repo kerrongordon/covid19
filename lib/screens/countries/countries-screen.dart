@@ -3,6 +3,7 @@ import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/countries/countries-item.dart';
 import 'package:covid19/screens/countries/countries-search.dart';
+import 'package:covid19/screens/map/map-screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
@@ -17,12 +18,19 @@ class CountriesScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: 'Countries',
-        // background: Icon(
-        //   Ionicons.ios_trending_up,
-        //   size: 300,
-        //   color: Theme.of(context).accentColor,
-        // ),
-
+        actions: [
+          IconButton(
+            icon: Icon(Ionicons.ios_map),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => MapScreen(),
+                ),
+              );
+            },
+          ),
+        ],
         sliverList: SliverChildListDelegate(
           [
             if (data != null)

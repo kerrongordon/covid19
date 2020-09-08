@@ -36,8 +36,10 @@ dependencies:
   lottie: ^0.6.0
   flutter_widget_from_html: ^0.4.3
   stringprocess: ^1.0.10
-  latlng: ^0.0.2
-  map: ^0.1.1
+  geocoder: ^0.2.1
+  latlong: ^0.6.1
+  flutter_map: ^0.10.1+1
+  flutter_map_marker_cluster: ^0.3.1
   # facebook_audience_network: ^0.7.0
 
 dev_dependencies:
