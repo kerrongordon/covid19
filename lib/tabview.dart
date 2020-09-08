@@ -3,6 +3,7 @@ import 'package:covid19/screens/countries/countries-screen.dart';
 import 'package:covid19/screens/home/home-screen.dart';
 import 'package:covid19/screens/information/infor-screen.dart';
 import 'package:covid19/screens/settings/settings-screen.dart';
+import 'package:covid19/screens/vaccine/vaccine-screen.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class _TabViewState extends State<TabView> {
   final HomeScreen _homeScreen = HomeScreen();
   final CountriesScreen _countriesScreen = CountriesScreen();
   final InforScreen _inforScreen = InforScreen();
-  final SettingsScreen _settingsScreen = SettingsScreen();
+  final VaccineScreen _vaccineScreen = VaccineScreen();
 
   @override
   void initState() {
@@ -47,7 +48,7 @@ class _TabViewState extends State<TabView> {
             _homeScreen,
             _countriesScreen,
             _inforScreen,
-            _settingsScreen,
+            _vaccineScreen,
           ],
         ),
       ),
@@ -59,7 +60,7 @@ class _TabViewState extends State<TabView> {
           setState(() => _currentIndex = index);
           _pageController.jumpToPage(index);
         },
-        curve: Curves.easeInOut,
+        curve: Curves.linear,
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
             title: Text('Global'),
@@ -83,9 +84,9 @@ class _TabViewState extends State<TabView> {
             inactiveColor: Theme.of(context).textTheme.bodyText1.color,
           ),
           BottomNavyBarItem(
-            title: Text('Settings'),
+            title: Text('Vaccine'),
             textAlign: TextAlign.center,
-            icon: Icon(Ionicons.ios_cog),
+            icon: Icon(Ionicons.ios_book),
             activeColor: Theme.of(context).accentColor,
             inactiveColor: Theme.of(context).textTheme.bodyText1.color,
           ),

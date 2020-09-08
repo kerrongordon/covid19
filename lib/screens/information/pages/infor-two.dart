@@ -12,7 +12,7 @@ class InforTwo extends StatelessWidget {
         expandedHeight: 55,
         children: <Widget>[
           Lottie.asset(
-            'assets/coronavirus-washing-hands-covid-19.json',
+            'assets/17896-wash-your-hands.json',
             repeat: true,
             animate: true,
             height: 300,

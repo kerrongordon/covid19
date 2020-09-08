@@ -12,7 +12,7 @@ class InforFour extends StatelessWidget {
         expandedHeight: 55,
         children: <Widget>[
           Lottie.asset(
-            'assets/18795-coronavirus.json',
+            'assets/17895-wear-mask.json',
             repeat: true,
             animate: true,
             height: 300,

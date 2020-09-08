@@ -62,32 +62,34 @@ class KgpBasePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Flexible(
-                      flex: 4,
-                      child: Container(),
-                    ),
-                    Flexible(
-                      flex: 4,
-                      child: Text(
-                        title != null ? title : '',
-                        textAlign: TextAlign.center,
-                        overflow: TextOverflow.clip,
-                        style: TextStyle(fontWeight: FontWeight.w300),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Flexible(
+                        flex: 4,
+                        child: Container(),
                       ),
-                    ),
-                    Flexible(
-                      flex: 1,
-                      child: Container(),
-                    ),
-                  ],
+                      Flexible(
+                        flex: 4,
+                        child: Text(
+                          title != null ? title : '',
+                          textAlign: TextAlign.center,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(fontWeight: FontWeight.w300),
+                        ),
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Container(),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
             centerTitle: true,
-            // collapseMode: CollapseMode.pin,
           ),
         ),
         // persistentHeader != null

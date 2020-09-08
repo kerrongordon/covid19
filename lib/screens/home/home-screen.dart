@@ -3,8 +3,10 @@ import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/models/global-model.dart';
 import 'package:covid19/providers/global-provider.dart';
 import 'package:covid19/screens/home/home-card-list.dart';
+import 'package:covid19/screens/settings/settings-screen.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -16,6 +18,18 @@ class HomeScreen extends StatelessWidget {
       body: KgpBasePage(
         title: 'Global',
         background: Image.asset('assets/earth.png'),
+        actions: [
+          IconButton(
+            icon: Icon(Ionicons.ios_cog),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SettingsScreen(),
+                  ));
+            },
+          ),
+        ],
         children: <Widget>[
           Consumer<GlobalProvider>(builder: (_, value, __) {
             return FutureBuilder(
