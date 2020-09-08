@@ -34,6 +34,8 @@ dependencies:
   introduction_screen: ^1.0.9
   flutter_animator: ^2.1.0
   lottie: ^0.6.0
+  flutter_widget_from_html: ^0.4.3
+  stringprocess: ^1.0.10
   latlng: ^0.0.2
   map: ^0.1.1
   # facebook_audience_network: ^0.7.0
