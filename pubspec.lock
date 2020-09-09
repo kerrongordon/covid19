@@ -272,20 +272,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.10.1+1"
-  flutter_map_marker_cluster:
-    dependency: "direct main"
-    description:
-      name: flutter_map_marker_cluster
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.1"
-  flutter_map_marker_popup:
-    dependency: transitive
-    description:
-      name: flutter_map_marker_popup
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.4"
   flutter_native_splash:
     dependency: "direct dev"
     description:
@@ -324,13 +310,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.3"
-  geocoder:
+  geolocator:
     dependency: "direct main"
     description:
-      name: geocoder
+      name: geolocator
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.1"
+    version: "6.0.0+4"
+  geolocator_platform_interface:
+    dependency: transitive
+    description:
+      name: geolocator_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.4"
   glob:
     dependency: transitive
     description:
