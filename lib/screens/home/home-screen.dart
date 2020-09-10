@@ -23,10 +23,11 @@ class HomeScreen extends StatelessWidget {
             icon: Icon(Ionicons.ios_cog),
             onPressed: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SettingsScreen(),
-                  ));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SettingsScreen(),
+                ),
+              );
             },
           ),
         ],

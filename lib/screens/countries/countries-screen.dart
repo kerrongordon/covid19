@@ -4,10 +4,8 @@ import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/countries/countries-item.dart';
 import 'package:covid19/screens/countries/countries-search.dart';
 import 'package:covid19/screens/map/map-screen.dart';
-import 'package:covid19/utils/position.util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:provider/provider.dart';
 
 class CountriesScreen extends StatelessWidget {
@@ -24,32 +22,32 @@ class CountriesScreen extends StatelessWidget {
           IconButton(
             icon: Icon(Ionicons.ios_map),
             onPressed: () async {
-              var bar = Scaffold.of(context).showSnackBar(
-                SnackBar(
-                  backgroundColor: Colors.black.withOpacity(0.8),
-                  behavior: SnackBarBehavior.floating,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(25.0),
-                  ),
-                  content: Row(
-                    children: [
-                      CircularProgressIndicator(
-                        strokeWidth: 3,
-                        backgroundColor: Theme.of(context).accentColor,
-                      ),
-                      SizedBox(width: 15),
-                      Text('Getting Your Location')
-                    ],
-                  ),
-                ),
-              );
+              // var bar = Scaffold.of(context).showSnackBar(
+              //   SnackBar(
+              //     backgroundColor: Colors.black.withOpacity(0.8),
+              //     behavior: SnackBarBehavior.floating,
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius: BorderRadius.circular(25.0),
+              //     ),
+              //     content: Row(
+              //       children: [
+              //         CircularProgressIndicator(
+              //           strokeWidth: 3,
+              //           backgroundColor: Theme.of(context).accentColor,
+              //         ),
+              //         SizedBox(width: 15),
+              //         Text('Getting Your Location')
+              //       ],
+              //     ),
+              //   ),
+              // );
 
-              Position position = await PositionUtil.use();
-              bar.close();
+              // Position position = await PositionUtil.use();
+              // bar.close();
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MapScreen(position: position),
+                  builder: (context) => MapScreen(),
                 ),
               );
             },

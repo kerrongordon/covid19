@@ -1,6 +1,8 @@
 import 'package:covid19/tabview.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:lottie/lottie.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoardingPage extends StatefulWidget {
   @override
@@ -10,15 +12,18 @@ class OnBoardingPage extends StatefulWidget {
 class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
-  void _onIntroEnd(context) {
-    Navigator.of(context).push(
+  void _onIntroEnd(context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('seen', true);
+    Navigator.of(context).pushReplacement(
       MaterialPageRoute(builder: (_) => TabView()),
     );
   }
 
-  Widget _buildImage(String assetName) {
+  Widget _buildLottie(String assetName) {
     return Align(
-      child: Image.asset('assets/$assetName.png', width: 350.0),
+      child: Lottie.asset('assets/$assetName.json',
+          repeat: true, animate: true, height: 350.0),
       alignment: Alignment.bottomCenter,
     );
   }
@@ -39,56 +44,31 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       key: introKey,
       pages: [
         PageViewModel(
-          title: "Fractional shares",
+          title: "Covid 19 Tracker",
           body:
-              "Instead of having to buy an entire share, invest any amount you want.",
-          image: _buildImage('one'),
+              "Get the Facts About Coronavirus Daily cases update around the world",
+          image: _buildLottie('28663-coronavirus-covid-19'),
           decoration: pageDecoration,
         ),
         PageViewModel(
           title: "Learn as you go",
           body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
-          image: _buildImage('two'),
+              "Take steps to care for yourself and help protect others in your home and community.",
+          image: _buildLottie('17949-corona-doctor'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Kids and teens",
+          title: "Travel Advisories",
           body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
-          image: _buildImage('three'),
+              "official travel advisories issued by governments across the globe.",
+          image: _buildLottie('airplane'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Another title page",
-          body: "Another beautiful body text for this example onboarding",
-          image: _buildImage('four'),
-          footer: RaisedButton(
-            onPressed: () {
-              introKey.currentState?.animateScroll(0);
-            },
-            child: const Text(
-              'FooButton',
-              style: TextStyle(color: Colors.white),
-            ),
-            color: Colors.lightBlue,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-          ),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Title of last page",
-          bodyWidget: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text("Click on ", style: bodyStyle),
-              Icon(Icons.edit),
-              Text(" to edit a post", style: bodyStyle),
-            ],
-          ),
-          image: _buildImage('five'),
+          title: "Stay At Home",
+          body:
+              "If you have symptoms of COVID-19 however mild, self-isolate for at least 10 days from when your symptoms started.",
+          image: _buildLottie('20546-i-stay-at-home'),
           decoration: pageDecoration,
         ),
       ],

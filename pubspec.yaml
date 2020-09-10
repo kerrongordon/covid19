@@ -11,7 +11,7 @@ description: A covid 19 application.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 4.2.0+4.2.0
+version: 5.0.0+5.0.0
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -39,6 +39,7 @@ dependencies:
   latlong: ^0.6.1
   flutter_map: ^0.10.1+1
   geolocator: ^6.0.0
+  after_layout: ^1.0.7+2
   # facebook_audience_network: ^0.7.0
 
 dev_dependencies:

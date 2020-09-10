@@ -5,7 +5,7 @@ import 'package:covid19/providers/historical-provider.dart';
 import 'package:covid19/providers/vaccine-provider.dart';
 import 'package:covid19/providers/one-country-provider.dart';
 import 'package:covid19/providers/travel-alert-provider.dart';
-import 'package:covid19/tabview.dart';
+import 'package:covid19/splash.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
 import 'package:flutter/material.dart';
@@ -38,10 +38,11 @@ class MyApp extends StatelessWidget {
         Provider(create: (_) => TravelAlertProvider()),
         Provider(create: (_) => OneCountryProvider()),
         Provider(create: (_) => HistoricalProvider()),
+        Provider(create: (_) => CountryProvider()),
+        Provider(create: (_) => SharedPreferences.getInstance()),
         FutureProvider(create: (_) => VaccineProvider().getVaccine()),
         FutureProvider(create: (_) => CountryProvider().getCountry()),
         FutureProvider(create: (_) => SharedPreferences.getInstance()),
-        Provider(create: (_) => SharedPreferences.getInstance()),
       ],
       child: AdaptiveTheme(
         initial: savedThemeMode ?? AdaptiveThemeMode.light,
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
             title: 'Covid 19 Tracker',
             theme: light,
             darkTheme: dark,
-            home: TabView(),
+            home: Splash(),
           );
         },
       ),
