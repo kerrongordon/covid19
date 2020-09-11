@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         FutureProvider(create: (_) => SharedPreferences.getInstance()),
       ],
       child: AdaptiveTheme(
-        initial: savedThemeMode ?? AdaptiveThemeMode.light,
+        initial: savedThemeMode ?? AdaptiveThemeMode.system,
         light: LightTheme.theme,
         dark: DarkTheme.theme,
         builder: (light, dark) {

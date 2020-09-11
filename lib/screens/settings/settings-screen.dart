@@ -1,10 +1,14 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
+import 'package:covid19/models/country-model.dart';
+import 'package:covid19/screens/boarding/countries-list.dart';
 import 'package:covid19/screens/settings/color-btn.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -12,6 +16,10 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<Country> _countries = Provider.of<List<Country>>(context);
+    Future<SharedPreferences> _perf =
+        Provider.of<Future<SharedPreferences>>(context);
+
     return Scaffold(
       body: KgpBasePage(
         title: 'Settings',
@@ -56,6 +64,22 @@ class SettingsScreen extends StatelessWidget {
                           },
                         ),
                       ],
+                    ),
+                    RaisedButton(
+                      color: Theme.of(context).accentColor,
+                      textColor: Colors.white,
+                      onPressed: () async {
+                        await showSearch(
+                          context: context,
+                          delegate: CountryList(
+                            data: _countries,
+                            perf: _perf,
+                          ),
+                        );
+                        final userCountry = await _perf;
+                        userCountry.getString('myhomecountry');
+                      },
+                      child: const Text("Select"),
                     ),
                   ],
                 ),

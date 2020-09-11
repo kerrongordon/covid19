@@ -1,6 +1,7 @@
 import 'package:covid19/components/kgp-bottom-dialog.dart';
 import 'package:covid19/components/kgp-stats-with-title.dart';
 import 'package:covid19/models/country-model.dart';
+import 'package:covid19/screens/country/country-screen.dart';
 import 'package:covid19/themes/color-theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -35,6 +36,7 @@ class MapMarkerItems extends StatelessWidget {
                 title: '${data[i].country}',
                 child: Column(
                   children: [
+                    SizedBox(height: 20),
                     Container(
                       child: Row(
                         children: [
@@ -69,50 +71,29 @@ class MapMarkerItems extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 20),
-                    Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Text(
-                        'Today',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
+                    Row(
+                      children: [
+                        Expanded(
+                          child: FlatButton.icon(
+                            onPressed: () {
+                              Navigator.pop(context);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      CountryScreen(data: data[i]),
+                                ),
+                              );
+                            },
+                            icon: Icon(Ionicons.ios_compass),
+                            label: Text('View More'),
+                            textColor: Theme.of(context).accentColor,
+                            padding: const EdgeInsets.all(20),
+                            splashColor: Theme.of(context).accentColor,
+                          ),
                         ),
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    Container(
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: KgpStatsWithTitle(
-                              title: 'Cases',
-                              amount: data[i].todayCases,
-                              amountFontSize: 20,
-                              titleFontSize: 16,
-                              titlecolor: ColorTheme.cases,
-                            ),
-                          ),
-                          Expanded(
-                            child: KgpStatsWithTitle(
-                              title: 'Recovered',
-                              amount: data[i].todayRecovered,
-                              amountFontSize: 20,
-                              titleFontSize: 16,
-                              titlecolor: ColorTheme.recovered,
-                            ),
-                          ),
-                          Expanded(
-                            child: KgpStatsWithTitle(
-                              title: 'Deaths',
-                              amount: data[i].todayDeaths,
-                              amountFontSize: 20,
-                              titleFontSize: 16,
-                              titlecolor: ColorTheme.deaths,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                      ],
+                    )
                   ],
                 ),
               ),

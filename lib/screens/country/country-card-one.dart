@@ -75,7 +75,7 @@ class CountryCardOne extends StatelessWidget {
                           errorWidget: (context, url, error) =>
                               Icon(Icons.error),
                           placeholder: (context, url) => Container(
-                            child: CircularProgressIndicator(),
+                            child: CircularProgressIndicator(strokeWidth: 2.0),
                             width: 20,
                             height: 20,
                           ),

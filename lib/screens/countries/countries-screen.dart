@@ -22,28 +22,6 @@ class CountriesScreen extends StatelessWidget {
           IconButton(
             icon: Icon(Ionicons.ios_map),
             onPressed: () async {
-              // var bar = Scaffold.of(context).showSnackBar(
-              //   SnackBar(
-              //     backgroundColor: Colors.black.withOpacity(0.8),
-              //     behavior: SnackBarBehavior.floating,
-              //     shape: RoundedRectangleBorder(
-              //       borderRadius: BorderRadius.circular(25.0),
-              //     ),
-              //     content: Row(
-              //       children: [
-              //         CircularProgressIndicator(
-              //           strokeWidth: 3,
-              //           backgroundColor: Theme.of(context).accentColor,
-              //         ),
-              //         SizedBox(width: 15),
-              //         Text('Getting Your Location')
-              //       ],
-              //     ),
-              //   ),
-              // );
-
-              // Position position = await PositionUtil.use();
-              // bar.close();
               Navigator.push(
                 context,
                 MaterialPageRoute(

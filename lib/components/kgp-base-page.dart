@@ -6,13 +6,13 @@ class KgpBasePage extends StatelessWidget {
   final String title;
   final Widget background;
   final Widget scrollList;
-  // final Widget persistentHeader;
   final List<Widget> actions;
   final List<Widget> children;
   final double expandedHeight;
   final Color backgroundColor;
   final SliverChildDelegate sliverList;
   final bool neverScroll;
+  final Widget leading;
 
   const KgpBasePage({
     Key key,
@@ -21,11 +21,11 @@ class KgpBasePage extends StatelessWidget {
     this.background,
     this.title,
     this.children,
-    // this.persistentHeader,
     this.scrollList,
     this.sliverList,
     this.backgroundColor,
     this.neverScroll,
+    this.leading,
   }) : super(key: key);
 
   @override
@@ -43,6 +43,7 @@ class KgpBasePage extends StatelessWidget {
           pinned: true,
           floating: false,
           elevation: 0.0,
+          leading: leading,
           actions: actions,
           flexibleSpace: FlexibleSpaceBar(
             titlePadding: const EdgeInsets.only(bottom: 0),
@@ -97,13 +98,6 @@ class KgpBasePage extends StatelessWidget {
             centerTitle: true,
           ),
         ),
-        // persistentHeader != null
-        //     ? SliverPersistentHeader(
-        //         pinned: true,
-        //         floating: false,
-        //         delegate: Delegate(child: persistentHeader),
-        //       )
-        //     : SliverToBoxAdapter(),
         sliverList == null
             ? SliverToBoxAdapter(
                 child: Container(
@@ -116,26 +110,4 @@ class KgpBasePage extends StatelessWidget {
       ],
     );
   }
-}
-
-class Delegate extends SliverPersistentHeaderDelegate {
-  final Widget child;
-
-  Delegate({this.child});
-  @override
-  Widget build(
-          BuildContext context, double shrinkOffset, bool overlapsContent) =>
-      Container(
-        color: Theme.of(context).backgroundColor,
-        child: child,
-      );
-
-  @override
-  double get maxExtent => 70;
-
-  @override
-  double get minExtent => 69;
-
-  @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) => true;
 }

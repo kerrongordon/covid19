@@ -1,7 +1,10 @@
+import 'package:covid19/models/country-model.dart';
+import 'package:covid19/screens/boarding/countries-list.dart';
 import 'package:covid19/tabview.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:lottie/lottie.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -13,6 +16,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) async {
+    if (countryName == null || countryName == '') {
+      return introKey.currentState.animateScroll(4);
+    }
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool('seen', true);
     Navigator.of(context).pushReplacement(
@@ -22,14 +28,23 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   Widget _buildLottie(String assetName) {
     return Align(
-      child: Lottie.asset('assets/$assetName.json',
-          repeat: true, animate: true, height: 350.0),
+      child: FractionallySizedBox(
+        heightFactor: 0.5,
+        child: Lottie.asset('assets/$assetName.json',
+            repeat: true, animate: true, height: 250.0),
+      ),
       alignment: Alignment.bottomCenter,
     );
   }
 
+  String countryName = '';
+
   @override
   Widget build(BuildContext context) {
+    List<Country> _countries = Provider.of<List<Country>>(context);
+    Future<SharedPreferences> _perf =
+        Provider.of<Future<SharedPreferences>>(context);
+
     const bodyStyle = TextStyle(fontSize: 19.0);
     final textcolor = Theme.of(context).textTheme.bodyText1.color;
     var pageDecoration = PageDecoration(
@@ -42,6 +57,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
     return IntroductionScreen(
       key: introKey,
+
       pages: [
         PageViewModel(
           title: "Covid 19 Tracker",
@@ -71,10 +87,46 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           image: _buildLottie('20546-i-stay-at-home'),
           decoration: pageDecoration,
         ),
+        PageViewModel(
+          title: "Select Your Country",
+          image: _buildLottie('3169-world'),
+          bodyWidget: Text(
+            countryName ?? '',
+            style: TextStyle(
+              fontSize: 18,
+            ),
+          ),
+          footer: RaisedButton(
+            color: Theme.of(context).accentColor,
+            textColor: Colors.white,
+            onPressed: () async {
+              await showSearch(
+                context: context,
+                delegate: CountryList(
+                  data: _countries,
+                  perf: _perf,
+                ),
+              );
+              final userCountry = await _perf;
+              String count = userCountry.getString('myhomecountry');
+              setState(() {
+                countryName = count;
+              });
+            },
+            child: const Text("Select"),
+          ),
+          decoration: pageDecoration,
+        ),
+        PageViewModel(
+          title: "Let's Go !",
+          body: "",
+          image: _buildLottie('22932-lets-tick'),
+        ),
       ],
       onDone: () => _onIntroEnd(context),
       //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
       showSkipButton: true,
+
       skipFlex: 0,
       nextFlex: 0,
       skip: Text(

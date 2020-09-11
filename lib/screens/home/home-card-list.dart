@@ -1,5 +1,4 @@
 import 'package:covid19/models/global-model.dart';
-import 'package:covid19/screens/home/home-card-country.dart';
 import 'package:covid19/screens/home/home-card-one.dart';
 import 'package:covid19/screens/home/home-card-two.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +18,6 @@ class HomeCardList extends StatelessWidget {
         children: [
           HomeCardOne(data: data),
           HomeCardTwo(data: data),
-          HomeCardCountry(),
         ],
       ),
     );

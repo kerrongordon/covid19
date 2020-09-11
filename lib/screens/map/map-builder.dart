@@ -46,7 +46,7 @@ class MapBuilder extends StatelessWidget {
                       position.longitude ?? 74.0060,
                     ),
                     builder: (context) => Icon(
-                      Ionicons.ios_pin,
+                      Ionicons.ios_body,
                       size: 50,
                       color: Theme.of(context).accentColor,
                     ),
@@ -74,7 +74,7 @@ class MapBuilder extends StatelessWidget {
             child: Container(
               width: double.infinity,
               height: 87,
-              color: Theme.of(context).backgroundColor.withOpacity(0.8),
+              color: Theme.of(context).backgroundColor.withOpacity(0.6),
               child: Container(),
             ),
           ),
