@@ -1,9 +1,8 @@
 import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/providers/one-country-provider.dart';
-import 'package:covid19/screens/country/country-screen.dart';
+import 'package:covid19/screens/main/main-card-list.dart';
 import 'package:covid19/screens/map/map-screen.dart';
-import 'package:covid19/screens/settings/settings-screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:provider/provider.dart';
@@ -38,35 +37,22 @@ class MainScreen extends StatelessWidget {
                 );
               } else if (snapshot.hasData) {
                 final Country data = snapshot.data;
-                return CountryScreen(
-                  data: data,
-                  leading: IconButton(
-                    icon: Icon(Ionicons.ios_cog),
-                    onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SettingsScreen(),
-                      ),
-                    ),
-                  ),
-                  actions: [
-                    IconButton(
-                      icon: Icon(Ionicons.ios_map),
-                      onPressed: () async => Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MapScreen(),
-                        ),
-                      ),
-                    ),
-                  ],
-                );
+                return MainCardList(data: data);
               } else {
                 return Container();
               }
             },
           );
         },
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Ionicons.ios_map),
+        onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MapScreen(),
+          ),
+        ),
       ),
     );
   }

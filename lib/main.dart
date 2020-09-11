@@ -2,7 +2,6 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/global-provider.dart';
 import 'package:covid19/providers/historical-provider.dart';
-import 'package:covid19/providers/vaccine-provider.dart';
 import 'package:covid19/providers/one-country-provider.dart';
 import 'package:covid19/providers/travel-alert-provider.dart';
 import 'package:covid19/splash.dart';
@@ -40,7 +39,6 @@ class MyApp extends StatelessWidget {
         Provider(create: (_) => HistoricalProvider()),
         Provider(create: (_) => CountryProvider()),
         Provider(create: (_) => SharedPreferences.getInstance()),
-        FutureProvider(create: (_) => VaccineProvider().getVaccine()),
         FutureProvider(create: (_) => CountryProvider().getCountry()),
         FutureProvider(create: (_) => SharedPreferences.getInstance()),
       ],

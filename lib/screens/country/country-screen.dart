@@ -1,10 +1,10 @@
+import 'package:covid19/components/country-card/country-card-detail.dart';
+import 'package:covid19/components/country-card/country-card-main.dart';
+import 'package:covid19/components/country-card/country-card-today.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/country/country-card-five.dart';
-import 'package:covid19/screens/country/country-card-four.dart';
-import 'package:covid19/screens/country/country-card-one.dart';
-import 'package:covid19/screens/country/country-card-three.dart';
-import 'package:covid19/screens/country/country-card-two.dart';
+import 'package:covid19/screens/country/travel-alert-screen.dart';
 import 'package:flutter/material.dart';
 
 class CountryScreen extends StatelessWidget {
@@ -27,16 +27,17 @@ class CountryScreen extends StatelessWidget {
         actions: actions,
         children: [
           Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                CountryCardOne(data: data),
-                CountryCartTwo(data: data),
-                CountryCardThree(data: data),
-                CountryCardFour(data: data),
-                CountryCardFive(data: data),
+                CountryCardMain(data: data),
+                CountryCardToday(data: data),
+                CountryCardDetail(data: data),
+                TravelAlertScreen(data: data),
               ],
             ),
           ),
+          CountryCardFive(data: data),
           SizedBox(height: 50),
         ],
       ),

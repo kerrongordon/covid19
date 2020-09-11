@@ -3,7 +3,7 @@ import 'package:covid19/screens/countries/countries-screen.dart';
 import 'package:covid19/screens/home/home-screen.dart';
 import 'package:covid19/screens/information/infor-screen.dart';
 import 'package:covid19/screens/main/main-screen.dart';
-import 'package:covid19/screens/vaccine/vaccine-screen.dart';
+import 'package:covid19/screens/settings/settings-screen.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter/material.dart';
 
@@ -18,11 +18,11 @@ class _TabViewState extends State<TabView> {
   int _currentIndex = 2;
   PageController _pageController;
 
-  final HomeScreen _homeScreen = HomeScreen();
-  final CountriesScreen _countriesScreen = CountriesScreen();
-  final InforScreen _inforScreen = InforScreen();
-  final VaccineScreen _vaccineScreen = VaccineScreen();
   final MainScreen _mainScreen = MainScreen();
+  final HomeScreen _homeScreen = HomeScreen();
+  final InforScreen _inforScreen = InforScreen();
+  final SettingsScreen _settingsScreen = SettingsScreen();
+  final CountriesScreen _countriesScreen = CountriesScreen();
 
   @override
   void initState() {
@@ -38,6 +38,7 @@ class _TabViewState extends State<TabView> {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
     return Scaffold(
       body: SizedBox.expand(
         child: PageView(
@@ -50,54 +51,53 @@ class _TabViewState extends State<TabView> {
             _countriesScreen,
             _mainScreen,
             _inforScreen,
-            _vaccineScreen,
+            _settingsScreen,
           ],
         ),
       ),
       bottomNavigationBar: BottomNavyBar(
-        backgroundColor: Theme.of(context).cardTheme.color,
+        backgroundColor: theme.cardTheme.color,
         selectedIndex: _currentIndex,
         showElevation: true,
         onItemSelected: (index) {
           setState(() => _currentIndex = index);
           _pageController.jumpToPage(index);
         },
-        curve: Curves.linear,
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
             title: Text('Global'),
             textAlign: TextAlign.center,
             icon: Icon(Ionicons.ios_analytics),
-            activeColor: Theme.of(context).accentColor,
-            inactiveColor: Theme.of(context).textTheme.bodyText1.color,
+            activeColor: theme.accentColor,
+            inactiveColor: theme.textTheme.bodyText1.color,
           ),
           BottomNavyBarItem(
             title: Text('Countries'),
             textAlign: TextAlign.center,
             icon: Icon(Ionicons.ios_trending_up),
-            activeColor: Theme.of(context).accentColor,
-            inactiveColor: Theme.of(context).textTheme.bodyText1.color,
+            activeColor: theme.accentColor,
+            inactiveColor: theme.textTheme.bodyText1.color,
           ),
           BottomNavyBarItem(
             title: Text('Home'),
             textAlign: TextAlign.center,
             icon: Icon(Ionicons.ios_pin),
-            activeColor: Theme.of(context).accentColor,
-            inactiveColor: Theme.of(context).textTheme.bodyText1.color,
+            activeColor: theme.accentColor,
+            inactiveColor: theme.textTheme.bodyText1.color,
           ),
           BottomNavyBarItem(
             title: Text('Info'),
             textAlign: TextAlign.center,
             icon: Icon(Ionicons.ios_apps),
-            activeColor: Theme.of(context).accentColor,
-            inactiveColor: Theme.of(context).textTheme.bodyText1.color,
+            activeColor: theme.accentColor,
+            inactiveColor: theme.textTheme.bodyText1.color,
           ),
           BottomNavyBarItem(
-            title: Text('Vaccine'),
+            title: Text('Settings'),
             textAlign: TextAlign.center,
-            icon: Icon(Ionicons.ios_book),
-            activeColor: Theme.of(context).accentColor,
-            inactiveColor: Theme.of(context).textTheme.bodyText1.color,
+            icon: Icon(Ionicons.ios_cog),
+            activeColor: theme.accentColor,
+            inactiveColor: theme.textTheme.bodyText1.color,
           ),
         ],
       ),

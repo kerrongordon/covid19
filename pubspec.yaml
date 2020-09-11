@@ -40,6 +40,8 @@ dependencies:
   flutter_map: ^0.10.1+1
   geolocator: ^6.0.0
   after_layout: ^1.0.7+2
+  hooks_riverpod: ^0.9.2
+  flutter_hooks: ^0.14.0
   # facebook_audience_network: ^0.7.0
 
 dev_dependencies:
