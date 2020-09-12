@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -54,26 +53,6 @@ class CountryList extends SearchDelegate<Country> {
             itemBuilder: (context, int) {
               final item = list[int];
               return ListTile(
-                leading: CachedNetworkImage(
-                  imageUrl: item.countryInfo.flag,
-                  imageBuilder: (context, imageProvider) => Container(
-                    width: 30.0,
-                    height: 30.0,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(
-                        image: imageProvider,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ),
-                  errorWidget: (context, url, error) => Icon(Icons.error),
-                  placeholder: (context, url) => Container(
-                    child: CircularProgressIndicator(strokeWidth: 2.0),
-                    width: 20,
-                    height: 20,
-                  ),
-                ),
                 title: Text(item.country),
                 onTap: () async {
                   var settings = await perf;

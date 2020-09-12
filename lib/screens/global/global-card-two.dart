@@ -7,9 +7,9 @@ import 'package:covid19/utils/timetodate.util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-class HomeCardTwo extends StatelessWidget {
+class GlobalCardTwo extends StatelessWidget {
   final Global data;
-  const HomeCardTwo({
+  const GlobalCardTwo({
     Key key,
     this.data,
   }) : super(key: key);

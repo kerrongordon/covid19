@@ -1,6 +1,6 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:covid19/screens/countries/countries-screen.dart';
-import 'package:covid19/screens/home/home-screen.dart';
+import 'package:covid19/screens/global/global-screen.dart';
 import 'package:covid19/screens/information/infor-screen.dart';
 import 'package:covid19/screens/main/main-screen.dart';
 import 'package:covid19/screens/settings/settings-screen.dart';
@@ -19,7 +19,7 @@ class _TabViewState extends State<TabView> {
   PageController _pageController;
 
   final MainScreen _mainScreen = MainScreen();
-  final HomeScreen _homeScreen = HomeScreen();
+  final GlobalScreen _homeScreen = GlobalScreen();
   final InforScreen _inforScreen = InforScreen();
   final SettingsScreen _settingsScreen = SettingsScreen();
   final CountriesScreen _countriesScreen = CountriesScreen();

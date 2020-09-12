@@ -5,9 +5,9 @@ import 'package:covid19/models/global-model.dart';
 import 'package:covid19/themes/color-theme.dart';
 import 'package:flutter/material.dart';
 
-class HomeCardOne extends StatelessWidget {
+class GlobalCardOne extends StatelessWidget {
   final Global data;
-  const HomeCardOne({
+  const GlobalCardOne({
     Key key,
     this.data,
   }) : super(key: key);

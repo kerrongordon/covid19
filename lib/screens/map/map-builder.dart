@@ -12,11 +12,11 @@ class MapBuilder extends StatelessWidget {
   const MapBuilder({
     Key key,
     @required this.position,
-    @required this.data,
+    @required this.countries,
   }) : super(key: key);
 
   final Position position;
-  final List<Country> data;
+  final List<Country> countries;
 
   @override
   Widget build(BuildContext context) {
@@ -51,14 +51,14 @@ class MapBuilder extends StatelessWidget {
                       color: Theme.of(context).accentColor,
                     ),
                   ),
-                  if (data != null)
-                    for (var i = 0; i < data.length; i++)
+                  if (countries != null)
+                    for (var i = 0; i < countries.length; i++)
                       Marker(
                         width: 100.0,
                         height: 100.0,
-                        point: LatLng(
-                            data[i].countryInfo.lat, data[i].countryInfo.long),
-                        builder: (ctx) => MapMarkerItems(data: data, i: i),
+                        point: LatLng(countries[i].countryInfo.lat,
+                            countries[i].countryInfo.long),
+                        builder: (ctx) => MapMarkerItems(data: countries, i: i),
                       ),
                 ],
               ),

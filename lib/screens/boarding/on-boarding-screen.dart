@@ -1,10 +1,11 @@
-import 'package:covid19/models/country-model.dart';
+import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/screens/boarding/countries-list.dart';
 import 'package:covid19/tabview.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:lottie/lottie.dart';
-import 'package:provider/provider.dart';
+import 'package:provider/provider.dart' as oldProvider;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class OnBoardingPage extends StatefulWidget {
@@ -41,9 +42,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
 
   @override
   Widget build(BuildContext context) {
-    List<Country> _countries = Provider.of<List<Country>>(context);
+    final _countries = useProvider(countryProvider);
     Future<SharedPreferences> _perf =
-        Provider.of<Future<SharedPreferences>>(context);
+        oldProvider.Provider.of<Future<SharedPreferences>>(context);
 
     const bodyStyle = TextStyle(fontSize: 19.0);
     final textcolor = Theme.of(context).textTheme.bodyText1.color;
@@ -103,7 +104,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               await showSearch(
                 context: context,
                 delegate: CountryList(
-                  data: _countries,
+                  data: _countries.data.value,
                   perf: _perf,
                 ),
               );
