@@ -7,10 +7,10 @@ import 'package:covid19/providers/historical-provider.dart';
 import 'package:covid19/themes/color-theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
 
-class CountryCardFive extends StatelessWidget {
+class CountryCardFive extends ConsumerWidget {
   final Country data;
   const CountryCardFive({
     Key key,
@@ -18,63 +18,61 @@ class CountryCardFive extends StatelessWidget {
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ScopedReader watch) {
+    final couName = data.country;
+    final historical = watch(historicalProvider);
+
     return Container(
-      child: Consumer<HistoricalProvider>(
-        builder: (_, value, __) {
-          return FutureBuilder(
-            future: value.getHistorical(country: data.country),
-            builder: (context, AsyncSnapshot<Historical> snapshot) {
-              if (snapshot.hasData) {
-                final Timeline items = snapshot.data.timeline;
+        child: FutureBuilder(
+      future: historical.getHistoricalApi(country: couName),
+      builder: (context, AsyncSnapshot<Historical> snapshot) {
+        if (snapshot.hasData) {
+          final Timeline items = snapshot.data.timeline;
 
-                List<HistoryItem> cases = [];
-                items.cases.forEach((key, value) {
-                  var item = {'date': key, 'count': value};
-                  cases.add(HistoryItem.fromJson(item));
-                });
+          List<HistoryItem> cases = [];
+          items.cases.forEach((key, value) {
+            var item = {'date': key, 'count': value};
+            cases.add(HistoryItem.fromJson(item));
+          });
 
-                List<HistoryItem> recovered = [];
-                items.recovered.forEach((key, value) {
-                  var item = {'date': key, 'count': value};
-                  recovered.add(HistoryItem.fromJson(item));
-                });
+          List<HistoryItem> recovered = [];
+          items.recovered.forEach((key, value) {
+            var item = {'date': key, 'count': value};
+            recovered.add(HistoryItem.fromJson(item));
+          });
 
-                List<HistoryItem> deaths = [];
-                items.deaths.forEach((key, value) {
-                  var item = {'date': key, 'count': value};
-                  deaths.add(HistoryItem.fromJson(item));
-                });
+          List<HistoryItem> deaths = [];
+          items.deaths.forEach((key, value) {
+            var item = {'date': key, 'count': value};
+            deaths.add(HistoryItem.fromJson(item));
+          });
 
-                return Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Text(
-                        'Last 30 Days',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: 300,
-                      child: LIstItems(
-                        cases: cases,
-                        recovered: recovered,
-                        deaths: deaths,
-                      ),
-                    ),
-                  ],
-                );
-              }
-              return Container();
-            },
+          return Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Text(
+                  'Last 30 Days',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              ),
+              Container(
+                height: 300,
+                child: LIstItems(
+                  cases: cases,
+                  recovered: recovered,
+                  deaths: deaths,
+                ),
+              ),
+            ],
           );
-        },
-      ),
-    );
+        }
+        return Container();
+      },
+    ));
   }
 }
 

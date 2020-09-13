@@ -37,49 +37,35 @@ class KgpStatsWithTitle extends StatelessWidget {
         mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
         children: [
           flip != null
-              ? FadeInUp(
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                      color: titlecolor,
-                      fontSize: titleFontSize,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                )
-              : FadeInDown(
-                  child: Text(
-                    CommaUtil.use(amount),
-                    style: TextStyle(
-                      color: amountcolor,
-                      fontSize: amountFontSize,
-                      fontWeight: FontWeight.w300,
-                    ),
-                  ),
-                ),
+              ? FadeInUp(child: _titleUi())
+              : FadeInDown(child: _amountUi()),
           SizedBox(height: 10),
           flip != null
-              ? FadeInDown(
-                  child: Text(
-                    CommaUtil.use(amount),
-                    style: TextStyle(
-                      color: amountcolor,
-                      fontSize: amountFontSize,
-                      fontWeight: FontWeight.w300,
-                    ),
-                  ),
-                )
-              : FadeInUp(
-                  child: Text(
-                    title,
-                    style: TextStyle(
-                      color: titlecolor,
-                      fontSize: titleFontSize,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+              ? FadeInDown(child: _amountUi())
+              : FadeInUp(child: _titleUi()),
         ],
+      ),
+    );
+  }
+
+  Text _amountUi() {
+    return Text(
+      CommaUtil.use(amount),
+      style: TextStyle(
+        color: amountcolor,
+        fontSize: amountFontSize,
+        fontWeight: FontWeight.w300,
+      ),
+    );
+  }
+
+  Text _titleUi() {
+    return Text(
+      title,
+      style: TextStyle(
+        color: titlecolor,
+        fontSize: titleFontSize,
+        fontWeight: FontWeight.bold,
       ),
     );
   }

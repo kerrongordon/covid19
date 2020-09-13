@@ -8,12 +8,14 @@ class KgpLoader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double _hight = hightDiv == null ? 3 : hightDiv;
+    final mediaQuery = MediaQuery.of(context);
+    final theme = Theme.of(context);
+    final double hight = hightDiv == null ? 3 : hightDiv;
     return Container(
-      height: MediaQuery.of(context).size.height / _hight,
+      height: mediaQuery.size.height / hight,
       child: Center(
         child: LoadingBouncingGrid.circle(
-          backgroundColor: Theme.of(context).primaryColor,
+          backgroundColor: theme.primaryColor,
         ),
       ),
     );

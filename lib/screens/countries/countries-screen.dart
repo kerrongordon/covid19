@@ -1,41 +1,35 @@
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/components/kgp-loader.dart';
-import 'package:covid19/models/country-model.dart';
+import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/screens/countries/countries-item.dart';
 import 'package:covid19/screens/countries/countries-search.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class CountriesScreen extends StatelessWidget {
-  const CountriesScreen({Key key}) : super(key: key);
-
+class CountriesScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    List<Country> data = Provider.of<List<Country>>(context);
-
+    final config = useProvider(countryProvider);
     return Scaffold(
       body: KgpBasePage(
         title: 'Countries',
-        // background: Icon(
-        //   Ionicons.ios_trending_up,
-        //   size: 300,
-        //   color: Theme.of(context).accentColor,
-        // ),
-
         sliverList: SliverChildListDelegate(
-          [
-            if (data != null)
-              for (var i = 0; i < data.length; i++) CountriesItem(data: data[i])
-            else
-              KgpLoader()
-          ],
+          config.when(
+            loading: () => [KgpLoader()],
+            error: (error, st) => [Center(child: Text(error.toString()))],
+            data: (data) => [for (final c in data) CountriesItem(data: c)],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Ionicons.ios_search),
         onPressed: () {
-          showSearch(context: context, delegate: SearchCountry(data));
+          showSearch(
+            context: context,
+            delegate: SearchCountry(config.data.value),
+          );
         },
       ),
     );

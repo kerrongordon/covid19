@@ -1,5 +1,5 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:covid19/components/card-component.dart';
+import 'package:covid19/components/kgp-flag.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/country/country-screen.dart';
 import 'package:covid19/utils/comma.util.dart';
@@ -29,28 +29,11 @@ class CountriesItem extends StatelessWidget {
         },
         child: ListTile(
           leading: ZoomIn(
-            child: Hero(
+            child: KgpFlag(
               tag: data.country,
-              child: CachedNetworkImage(
-                imageUrl: data.countryInfo.flag,
-                imageBuilder: (context, imageProvider) => Container(
-                  width: 30.0,
-                  height: 30.0,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: imageProvider,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ),
-                errorWidget: (context, url, error) => Icon(Icons.error),
-                placeholder: (context, url) => Container(
-                  child: CircularProgressIndicator(),
-                  width: 20,
-                  height: 20,
-                ),
-              ),
+              imageUrl: data.countryInfo.flag,
+              imageWidth: 30.0,
+              imageHeight: 30.0,
             ),
           ),
           title: FadeInDown(

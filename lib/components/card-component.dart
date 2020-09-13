@@ -16,14 +16,15 @@ class CardComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Card(
       clipBehavior: Clip.antiAlias,
-      color: color ?? Theme.of(context).cardTheme.color,
+      color: color ?? theme.cardTheme.color,
       elevation: 30,
       shadowColor: Colors.black.withOpacity(0.3),
       margin: const EdgeInsets.only(bottom: 20, top: 10),
       child: InkWell(
-        splashColor: Theme.of(context).primaryColor,
+        splashColor: theme.primaryColor,
         onTap: onTap,
         child: Padding(
           padding: padding ?? const EdgeInsets.all(0),

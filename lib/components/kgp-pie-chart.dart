@@ -23,34 +23,31 @@ class KgpPieChart extends StatelessWidget {
         child: Container(
           child: AspectRatio(
             aspectRatio: aspectRatio,
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: PieChart(
-                PieChartData(
-                  borderData: FlBorderData(show: false),
-                  sectionsSpace: 0,
-                  startDegreeOffset: 40,
-                  sections: [
-                    PieChartSectionData(
-                      color: ColorTheme.cases,
-                      value: cases.toDouble(),
-                      title: '',
-                      radius: 35,
-                    ),
-                    PieChartSectionData(
-                      color: ColorTheme.recovered,
-                      value: recovered.toDouble(),
-                      title: '',
-                      radius: 45,
-                    ),
-                    PieChartSectionData(
-                      color: ColorTheme.deaths,
-                      value: deaths.toDouble(),
-                      title: '',
-                      radius: 65,
-                    ),
-                  ],
-                ),
+            child: PieChart(
+              PieChartData(
+                borderData: FlBorderData(show: false),
+                sectionsSpace: 0,
+                startDegreeOffset: 40,
+                sections: [
+                  PieChartSectionData(
+                    color: ColorTheme.cases,
+                    value: cases.toDouble(),
+                    title: '',
+                    radius: 35,
+                  ),
+                  PieChartSectionData(
+                    color: ColorTheme.recovered,
+                    value: recovered.toDouble(),
+                    title: '',
+                    radius: 45,
+                  ),
+                  PieChartSectionData(
+                    color: ColorTheme.deaths,
+                    value: deaths.toDouble(),
+                    title: '',
+                    radius: 65,
+                  ),
+                ],
               ),
             ),
           ),

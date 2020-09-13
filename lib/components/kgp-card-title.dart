@@ -14,19 +14,22 @@ class KgpCardTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       child: Column(
         children: [
           FadeInUp(
             child: RichText(
+              textAlign: TextAlign.center,
               text: TextSpan(
                 children: [
                   TextSpan(
                     text: title ?? '',
                     style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w700,
-                        color: Theme.of(context).textTheme.bodyText1.color),
+                      fontSize: 22,
+                      fontWeight: FontWeight.w400,
+                      color: theme.textTheme.bodyText1.color,
+                    ),
                   ),
                   WidgetSpan(
                     child: Padding(

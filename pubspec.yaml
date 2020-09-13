@@ -11,7 +11,7 @@ description: A covid 19 application.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 4.2.0+4.2.0
+version: 5.0.0+5.0.0
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -23,7 +23,6 @@ dependencies:
   flutter_icons: ^1.0.0+1
   loading_animations: ^2.1.0
   cached_network_image: ^2.0.0
-  provider: ^4.3.2
   fl_chart: ^0.11.0
   dio_http_cache: ^0.2.8
   intl: ^0.16.1
@@ -33,22 +32,40 @@ dependencies:
   url_launcher: ^5.5.2
   introduction_screen: ^1.0.9
   flutter_animator: ^2.1.0
+  lottie: ^0.6.0
+  flutter_widget_from_html: ^0.4.3
+  stringprocess: ^1.0.10
+  latlong: ^0.6.1
+  flutter_map: ^0.10.1+1
+  geolocator: ^6.0.0
+  after_layout: ^1.0.7+2
+  hooks_riverpod: ^0.9.2
+  flutter_hooks: ^0.14.0
+  state_notifier: ^0.6.0
   # facebook_audience_network: ^0.7.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_launcher_icons: ^0.7.4
+  flutter_launcher_icons: ^0.7.5
+  flutter_native_splash: ^0.1.9
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+# flutter pub run flutter_launcher_icons:main
 flutter_icons:
   android: true
-  ios: false
-  image_path: "assets/covid.png"
-  # adaptive_icon_background: "#0085ff"
-  # adaptive_icon_foreground: "assets/covid.png"
+  ios: true
+  image_path: "assets/appicon.png"
+  adaptive_icon_background: "assets/iconbg.png"
+  adaptive_icon_foreground: "assets/icon.png"
+
+# flutter pub pub run flutter_native_splash:create
+flutter_native_splash:
+  image: assets/icon.png
+  color: "#eef7f4"
+  # color: "0084ff"
 
 # The following section is specific to Flutter.
 flutter:

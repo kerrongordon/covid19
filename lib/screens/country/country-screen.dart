@@ -1,49 +1,45 @@
+import 'package:covid19/components/country-card/country-card-detail.dart';
+import 'package:covid19/components/country-card/country-card-main.dart';
+import 'package:covid19/components/country-card/country-card-today.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/country/country-card-five.dart';
-import 'package:covid19/screens/country/country-card-four.dart';
-import 'package:covid19/screens/country/country-card-one.dart';
-import 'package:covid19/screens/country/country-card-three.dart';
-import 'package:covid19/screens/country/country-card-two.dart';
-import 'package:covid19/screens/country/country-dialog.dart';
+import 'package:covid19/screens/country/travel-alert-screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 class CountryScreen extends StatelessWidget {
   final Country data;
-  const CountryScreen({Key key, this.data}) : super(key: key);
+  final List<Widget> actions;
+  final Widget leading;
+  const CountryScreen({
+    Key key,
+    this.data,
+    this.actions,
+    this.leading,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: KgpBasePage(
         title: data.country,
+        leading: leading,
+        actions: actions,
         children: [
           Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
-                CountryCardOne(data: data),
-                CountryCartTwo(data: data),
-                CountryCardThree(data: data),
-                CountryCardFour(data: data),
-                CountryCardFive(data: data),
+                CountryCardMain(data: data),
+                CountryCardToday(data: data),
+                CountryCardDetail(data: data),
+                TravelAlertScreen(data: data),
               ],
             ),
           ),
+          CountryCardFive(data: data),
           SizedBox(height: 50),
         ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Ionicons.ios_add),
-        onPressed: () async => await showModalBottomSheet(
-          context: context,
-          elevation: 30,
-          backgroundColor: Colors.transparent,
-          builder: (context) => Padding(
-            padding: const EdgeInsets.all(20),
-            child: CountryDialog(data: data),
-          ),
-        ),
       ),
     );
   }

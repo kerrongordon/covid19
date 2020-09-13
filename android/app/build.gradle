@@ -44,7 +44,7 @@ android {
 
     defaultConfig {
         applicationId "kerrongordon.github.io.covid19"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -69,10 +69,10 @@ android {
             // signingConfig signingConfigs.debug
             if (keystorePropertiesFile.exists()) {
                 signingConfig signingConfigs.release
-                println 'Release Signing with the release keys'
+                println '🎉️ <== Release ==> Signing with the release keys'
             } else {
                 signingConfig signingConfigs.debug
-                println 'Debug Signing with the debug keys for now'
+                println '🤪️ <== Debug ==> Signing with the debug keys'
             }
 
             minifyEnabled true
