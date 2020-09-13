@@ -16,11 +16,14 @@ class MainScreen extends HookWidget {
     final prefs = useProvider(preferencesProvider);
     final oneCountry = useProvider(oneCountryProvider);
     final yourCountry = prefs.data.value.getString('myhomecountry');
-    final country =
-        useMemoized(() => oneCountry.getOneCountryApi(country: yourCountry));
+    final country = useMemoized(
+      () => oneCountry.getOneCountryApi(country: yourCountry),
+    );
     final snapshot = useFuture(country);
 
-    print(snapshot);
+    if (snapshot == null) {
+      return Container();
+    }
 
     if (snapshot.connectionState == ConnectionState.waiting) {
       return KgpCenter(child: KgpLoader());

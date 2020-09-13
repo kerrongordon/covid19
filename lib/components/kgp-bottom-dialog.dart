@@ -13,6 +13,7 @@ class KgpBottomDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return BackdropFilter(
       filter: ImageFilter.blur(
         sigmaX: 10,
@@ -21,7 +22,7 @@ class KgpBottomDialog extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Theme.of(context).cardTheme.color.withOpacity(0.7),
+          color: theme.cardTheme.color.withOpacity(0.7),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Column(
@@ -41,54 +42,6 @@ class KgpBottomDialog extends StatelessWidget {
             child,
           ],
         ),
-
-        // Stack(
-        //   children: [
-        //     // Padding(
-        //     //   padding: const EdgeInsets.all(20),
-        //     //   child: child,
-        //     // ),
-        //     // Positioned(
-        //     //   top: 0,
-        //     //   left: 0,
-        //     //   right: 0,
-        //     //   height: 80,
-        //     //   child: ClipRect(
-        //     //     child: BackdropFilter(
-        //     //       filter: ImageFilter.blur(
-        //     //         sigmaX: 8,
-        //     //         sigmaY: 8,
-        //     //       ),
-        //     //       child: Container(
-        //     //         color: Theme.of(context).cardTheme.color.withOpacity(0.7),
-        //     //       ),
-        //     //     ),
-        //     //   ),
-        //     // ),
-        //     // Container(
-        //     //   padding: const EdgeInsets.all(20),
-        //     //   child: Row(
-        //     //     children: [
-        //     //       Text(
-        //     //         title ?? '',
-        //     //         style: TextStyle(
-        //     //           fontSize: 20,
-        //     //           fontWeight: FontWeight.w700,
-        //     //         ),
-        //     //         overflow: TextOverflow.ellipsis,
-        //     //       ),
-        //     //       Spacer(),
-        //     //       IconButton(
-        //     //         color: Theme.of(context).accentColor,
-        //     //         visualDensity: VisualDensity.compact,
-        //     //         icon: Icon(Ionicons.ios_close_circle_outline),
-        //     //         onPressed: () => Navigator.pop(context),
-        //     //       )
-        //     //     ],
-        //     //   ),
-        //     // ),
-        //   ],
-        // ),
       ),
     );
   }

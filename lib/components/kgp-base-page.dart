@@ -30,6 +30,8 @@ class KgpBasePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context);
+    final theme = Theme.of(context);
     return CustomScrollView(
       physics: neverScroll == true
           ? NeverScrollableScrollPhysics()
@@ -39,7 +41,7 @@ class KgpBasePage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           expandedHeight: expandedHeight != null
               ? expandedHeight
-              : MediaQuery.of(context).size.height / 2.8,
+              : mediaQuery.size.height / 2.8,
           pinned: true,
           floating: false,
           elevation: 0.0,
@@ -48,53 +50,7 @@ class KgpBasePage extends StatelessWidget {
           flexibleSpace: FlexibleSpaceBar(
             titlePadding: const EdgeInsets.only(bottom: 0),
             background: background,
-            title: Stack(
-              children: [
-                Positioned(
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: 100,
-                  child: ClipRect(
-                    child: BackdropFilter(
-                      filter: ImageFilter.blur(
-                        sigmaX: 7,
-                        sigmaY: 7,
-                      ),
-                      child: Container(
-                        color:
-                            Theme.of(context).backgroundColor.withOpacity(0.6),
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 40),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      Flexible(
-                        flex: 4,
-                        child: Container(),
-                      ),
-                      Flexible(
-                        flex: 4,
-                        child: Text(
-                          title != null ? title : '',
-                          textAlign: TextAlign.center,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(fontWeight: FontWeight.w300),
-                        ),
-                      ),
-                      Flexible(
-                        flex: 1,
-                        child: Container(),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+            title: _titleUi(context, theme),
             centerTitle: true,
           ),
         ),
@@ -107,6 +63,55 @@ class KgpBasePage extends StatelessWidget {
                 ),
               )
             : SliverList(delegate: sliverList)
+      ],
+    );
+  }
+
+  Stack _titleUi(BuildContext context, ThemeData theme) {
+    return Stack(
+      children: [
+        Positioned(
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 100,
+          child: ClipRect(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(
+                sigmaX: 7,
+                sigmaY: 7,
+              ),
+              child: Container(
+                color: theme.backgroundColor.withOpacity(0.6),
+              ),
+            ),
+          ),
+        ),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: <Widget>[
+              Flexible(
+                flex: 4,
+                child: Container(),
+              ),
+              Flexible(
+                flex: 4,
+                child: Text(
+                  title != null ? title : '',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(fontWeight: FontWeight.w300),
+                ),
+              ),
+              Flexible(
+                flex: 1,
+                child: Container(),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }

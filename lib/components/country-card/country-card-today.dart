@@ -16,14 +16,14 @@ class CountryCardToday extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final String _data = TimeToDate.use(data.updated);
+    final String date = TimeToDate.use(data.updated);
     return CardComponent(
       padding: const EdgeInsets.all(20),
       child: Column(
         children: [
           KgpCardTitle(
             title: 'Today',
-            subtitle: 'Updates as of $_data',
+            subtitle: 'Updates as of $date',
             icon: Icon(Ionicons.ios_send),
           ),
           Container(

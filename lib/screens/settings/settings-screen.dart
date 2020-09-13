@@ -1,20 +1,19 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
-// import 'package:covid19/components/kgp-flag.dart';
-// import 'package:covid19/models/country-model.dart';
-// import 'package:covid19/providers/country-provider.dart';
-// import 'package:covid19/providers/preference-provider.dart';
-// import 'package:covid19/screens/boarding/countries-list.dart';
+import 'package:covid19/components/kgp-flag.dart';
+import 'package:covid19/models/country-model.dart';
+import 'package:covid19/providers/country-provider.dart';
+import 'package:covid19/providers/preference-provider.dart';
+import 'package:covid19/screens/boarding/countries-list.dart';
 import 'package:covid19/screens/settings/color-btn.dart';
+import 'package:covid19/screens/settings/settings-country-picker.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-// import 'package:flutter_icons/flutter_icons.dart';
-// import 'package:hooks_riverpod/hooks_riverpod.dart';
-// import 'package:provider/provider.dart' as oldorivider;
-// import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends HookWidget {
@@ -35,6 +34,7 @@ class SettingsScreen extends HookWidget {
       body: KgpBasePage(
         title: 'Settings',
         children: [
+          SettingsCountryPicker(),
           // countryImage.value.isEmpty
           //     ? Container()
           //     : Padding(
