@@ -4,39 +4,37 @@ import 'package:covid19/models/country-model.dart';
 import 'package:covid19/models/travel-alert-model.dart';
 import 'package:covid19/providers/travel-alert-provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class TravelAlertScreen extends StatelessWidget {
+class TravelAlertScreen extends ConsumerWidget {
   final Country data;
-  const TravelAlertScreen({
-    Key key,
+  TravelAlertScreen({
     @required this.data,
-  }) : super(key: key);
+  });
 
   @override
-  Widget build(BuildContext context) {
-    return Consumer<TravelAlertProvider>(
-      builder: (context, value, child) {
-        return FutureBuilder(
-          future: value.getTravelAlert(countrycode: data.countryInfo.iso2),
-          builder: (context, AsyncSnapshot<TravelAlert> snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return KgpLoader();
-            } else if (snapshot.hasError) {
-              final error = snapshot.error;
-              return Container(
-                  height: 200, child: Center(child: Text(error.toString())));
-            } else if (snapshot.hasData) {
-              final datal = snapshot.data.data;
-              for (var val in datal.values) {
-                return CountryCardTravelAlert(data: val);
-              }
-              return Container();
-            } else {
-              return Container();
-            }
-          },
-        );
+  Widget build(BuildContext context, ScopedReader watch) {
+    final couCode = data.countryInfo.iso2;
+    final travelAlert = watch(travelAlertProvider);
+
+    return FutureBuilder(
+      future: travelAlert.gettravelAlertApi(countrycode: couCode),
+      builder: (context, AsyncSnapshot<TravelAlert> snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return KgpLoader();
+        } else if (snapshot.hasError) {
+          final error = snapshot.error;
+          return Container(
+              height: 200, child: Center(child: Text(error.toString())));
+        } else if (snapshot.hasData) {
+          final datal = snapshot.data.data;
+          for (var val in datal.values) {
+            return CountryCardTravelAlert(data: val);
+          }
+          return Container();
+        } else {
+          return Container();
+        }
       },
     );
   }

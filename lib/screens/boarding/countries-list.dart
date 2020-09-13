@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class CountryList extends SearchDelegate<Country> {
   final List<Country> data;
-  final Future<SharedPreferences> perf;
+  final SharedPreferences perf;
 
   CountryList({this.perf, this.data});
   @override
@@ -54,9 +54,8 @@ class CountryList extends SearchDelegate<Country> {
               final item = list[int];
               return ListTile(
                 title: Text(item.country),
-                onTap: () async {
-                  var settings = await perf;
-                  settings.setString('myhomecountry', item.country);
+                onTap: () {
+                  perf.setString('myhomecountry', item.country);
                   close(context, null);
                 },
               );
