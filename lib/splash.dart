@@ -1,6 +1,3 @@
-import 'dart:ffi';
-
-import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/components/kgp-center.dart';
 import 'package:covid19/providers/preference-provider.dart';
 import 'package:covid19/screens/boarding/on-boarding-screen.dart';
