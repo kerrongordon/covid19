@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Get the version
@@ -21,6 +21,7 @@ jobs:
         with:
           channel: "stable" # or: 'dev' or 'beta'
       - run: flutter pub get
+      - run: flutter analyze
       - run: flutter build apk --release
       - name: Sign Android release
         uses: r0adkll/sign-android-release@v1

@@ -1,10 +1,10 @@
 # Covid 19 Tracker
 
 <p float="left">
-     <img src="img/light1.jpg" width="200"/>
-     <img src="img/dark1.jpg" width="200"/>
-     <img src="img/light2.jpg" width="200"/>
-     <img src="img/dark2.jpg" width="200"/>
+     <img src="img/1.jpg" width="200"/>
+     <img src="img/2.jpg" width="200"/>
+     <img src="img/3.jpg" width="200"/>
+     <img src="img/4.jpg" width="200"/>
 </p>
 
 ![CI](https://github.com/kerrongordon/covid19/workflows/CI/badge.svg)
@@ -47,7 +47,6 @@ samples, guidance on mobile development, and a full API reference.
 - [Flutter Icons](https://pub.dev/packages/flutter_icons)
 - [Loading Animations](https://pub.dev/packages/loading_animations)
 - [Cached Network Image](https://pub.dev/packages/cached_network_image)
-- [Provider](https://pub.dev/packages/provider)
 - [Fl Chart](https://pub.dev/packages/fl_chart)
 - [Intl](https://pub.dev/packages/intl)
 - [Bottom Navy Bar](https://pub.dev/packages/bottom_navy_bar)
@@ -55,3 +54,10 @@ samples, guidance on mobile development, and a full API reference.
 - [Shared Preferences](https://pub.dev/packages/shared_preferences)
 - [Url Launcher](https://pub.dev/packages/url_launcher)
 - [Flutter Animator](https://pub.dev/packages/flutter_animator)
+- [Lottie](https://pub.dev/packages/lottie)
+- [Latlong](https://pub.dev/packages/latlong)
+- [Flutter Map](https://pub.dev/packages/flutter_map)
+- [Geolocator](https://pub.dev/packages/geolocator)
+- [Hooks Riverpod](https://pub.dev/packages/hooks_riverpod)
+- [Flutter Hooks](https://pub.dev/packages/flutter_hooks)
+- [State Notifier](https://pub.dev/packages/state_notifier)
