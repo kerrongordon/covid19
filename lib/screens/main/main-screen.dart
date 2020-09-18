@@ -9,13 +9,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MainScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final prefs = useProvider(preferencesProvider);
+
+    return prefs.when(
+      data: (pref) => _buildUI(pref: pref, context: context),
+      loading: () => KgpCenter(child: KgpLoader()),
+      error: (error, _) => KgpCenter(child: Text(error.toString())),
+    );
+  }
+
+  _buildUI({SharedPreferences pref, BuildContext context}) {
     final oneCountry = useProvider(oneCountryProvider);
-    final yourCountry = prefs.data.value.getString('myhomecountry');
+    final yourCountry = pref.getString('myhomecountry');
     final country = useMemoized(
       () => oneCountry.getOneCountryApi(country: yourCountry),
     );
