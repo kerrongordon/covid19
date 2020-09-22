@@ -1,5 +1,6 @@
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/components/kgp-loader.dart';
+import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/screens/countries/countries-item.dart';
 import 'package:covid19/screens/countries/countries-search.dart';
@@ -12,6 +13,7 @@ class CountriesScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final config = useProvider(countryProvider);
+    useAutomaticKeepAliveClient();
     return Scaffold(
       body: KgpBasePage(
         title: 'Countries',

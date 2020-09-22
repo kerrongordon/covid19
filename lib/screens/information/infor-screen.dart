@@ -1,5 +1,6 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
+import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
 import 'package:covid19/screens/information/pages/infor-five.dart';
 import 'package:covid19/screens/information/pages/infor-four.dart';
 import 'package:covid19/screens/information/pages/infor-one.dart';
@@ -8,13 +9,15 @@ import 'package:covid19/screens/information/pages/infor-three.dart';
 import 'package:covid19/screens/information/pages/infor-two.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:lottie/lottie.dart';
 
-class InforScreen extends StatelessWidget {
+class InforScreen extends HookWidget {
   const InforScreen({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    useAutomaticKeepAliveClient();
     return Scaffold(
       body: KgpBasePage(
         title: 'Protect Yourself & Others',

@@ -1,5 +1,6 @@
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/components/kgp-loader.dart';
+import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
 import 'package:covid19/providers/global-provider.dart';
 import 'package:covid19/screens/global/global-card-list.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class GlobalScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final config = useProvider(globalProvider);
+    useAutomaticKeepAliveClient();
     return Scaffold(
       body: KgpBasePage(
         title: 'Global',
