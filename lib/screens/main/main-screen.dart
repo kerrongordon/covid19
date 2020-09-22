@@ -1,5 +1,6 @@
 import 'package:covid19/components/kgp-center.dart';
 import 'package:covid19/components/kgp-loader.dart';
+import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/providers/one-country-provider.dart';
 import 'package:covid19/providers/preference-provider.dart';
@@ -15,6 +16,7 @@ class MainScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final prefs = useProvider(preferencesProvider);
+    useAutomaticKeepAliveClient();
 
     return prefs.when(
       data: (pref) => _buildUI(pref: pref, context: context),
