@@ -1,7 +1,7 @@
 import 'package:covid19/components/kgp-center.dart';
 import 'package:covid19/providers/preference-provider.dart';
 import 'package:covid19/screens/boarding/on-boarding-screen.dart';
-import 'package:covid19/tabview.dart';
+import 'package:covid19/screens/tab/tab-screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -22,7 +22,7 @@ class Splash extends HookWidget {
 
   Widget _checkFirstSeen(SharedPreferences prefs) {
     bool _seen = (prefs.getBool('seen') ?? false);
-    return _seen == true ? TabView() : StartScreen();
+    return _seen == true ? TabScreen() : StartScreen();
   }
 
   KgpCenter _loadingBuilder() =>
