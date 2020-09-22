@@ -3,7 +3,7 @@ import 'package:covid19/models/country-model.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/preference-provider.dart';
 import 'package:covid19/screens/boarding/countries-list.dart';
-import 'package:covid19/tabview.dart';
+import 'package:covid19/screens/tab/tab-screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -26,7 +26,7 @@ class OnBoardingPage extends HookWidget {
     }
     await prefs.data.value.setBool('seen', true);
     Navigator.of(context).pushReplacement(
-      MaterialPageRoute(builder: (_) => TabView()),
+      MaterialPageRoute(builder: (_) => TabScreen()),
     );
   }
 
