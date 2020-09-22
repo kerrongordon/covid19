@@ -1,5 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:covid19/splash.dart';
+import 'package:covid19/screens/splash/splash.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
 import 'package:flutter/material.dart';
