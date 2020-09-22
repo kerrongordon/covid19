@@ -2,6 +2,7 @@ import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-card-title.dart';
 import 'package:covid19/components/kgp-flag.dart';
 import 'package:covid19/components/kgp-loader.dart';
+import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/preference-provider.dart';
@@ -22,6 +23,8 @@ class SettingsCountryPicker extends HookWidget {
 
     final countryName = useState('');
     final ValueNotifier<List<Country>> countryImage = useState([]);
+
+    useAutomaticKeepAliveClient();
 
     return country.when(
       loading: () => Center(child: KgpLoader()),
@@ -56,7 +59,7 @@ class SettingsCountryPicker extends HookWidget {
                 Padding(
                   padding: const EdgeInsets.all(10),
                   child: KgpFlag(
-                    tag: 'home',
+                    tag: null,
                     imageUrl: countryImage.value.isEmpty
                         ? data[0].countryInfo.flag
                         : countryImage.value[0].countryInfo.flag,
