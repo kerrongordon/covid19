@@ -55,102 +55,35 @@ class OnBoardingPage extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     final prefs = useProvider(preferencesProvider);
     final countries = useProvider(countryProvider);
     final countryName = useState('');
     final ValueNotifier<List<Country>> countryImage = useState([]);
 
-    const bodyStyle = TextStyle(fontSize: 19.0);
-    final textcolor = Theme.of(context).textTheme.bodyText1.color;
+    final textcolor = theme.textTheme.bodyText1.color;
+
     var pageDecoration = PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
-      bodyTextStyle: bodyStyle,
-      descriptionPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Theme.of(context).backgroundColor,
+      titleTextStyle: const TextStyle(
+        fontSize: 28.0,
+        fontWeight: FontWeight.w700,
+      ),
+      bodyTextStyle: const TextStyle(fontSize: 19.0),
+      descriptionPadding: const EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+      pageColor: theme.backgroundColor,
       imagePadding: EdgeInsets.zero,
     );
 
     return IntroductionScreen(
       key: introKey,
       pages: [
-        PageViewModel(
-          title: "Covid 19 Tracker",
-          body:
-              "Get the Facts About Coronavirus Daily cases update around the world",
-          image: _buildLottie('28663-coronavirus-covid-19'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Learn as you go",
-          body:
-              "Take steps to care for yourself and help protect others in your home and community.",
-          image: _buildLottie('29877-washing-hands'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Travel Advisories",
-          body:
-              "Official travel advisories issued by governments across the globe.",
-          image: _buildLottie('airplane'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Stay At Home",
-          body:
-              "If you have symptoms of COVID-19 however mild, self-isolate for at least 10 days from when your symptoms started.",
-          image: _buildLottie('18168-stay-safe-stay-home'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Select Your Country",
-          // image: _buildLottie('3169-world'),
-          image: countryImage.value.isEmpty
-              ? _buildLottie('3169-world')
-              : _buildFlag(countryImage),
-          bodyWidget: Text(
-            countryName.value ?? '',
-            style: TextStyle(
-              fontSize: 18,
-            ),
-          ),
-          footer: RaisedButton.icon(
-            elevation: 5,
-            padding: const EdgeInsets.only(
-              left: 20,
-              right: 20,
-              top: 5,
-              bottom: 5,
-            ),
-            color: Theme.of(context).accentColor,
-            textColor: Colors.white,
-            icon: Icon(Ionicons.ios_pin),
-            label: const Text('View More'),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(18.0),
-            ),
-            onPressed: () async {
-              await showSearch(
-                context: context,
-                delegate: CountryList(
-                  data: countries.data.value,
-                  perf: prefs.data.value,
-                ),
-              );
-              String name = prefs.data.value.getString('myhomecountry');
-              countryName.value = name;
-              countryImage.value = countries.data.value
-                  .where((element) => name == element.country)
-                  .toList();
-            },
-          ),
-
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Let's Go !",
-          body: "",
-          image: _buildLottie('22932-lets-tick'),
-        ),
+        slideOne(pageDecoration),
+        slideTwo(pageDecoration),
+        slideThree(pageDecoration),
+        slideFour(pageDecoration),
+        slideFive(countryImage, countryName, context, countries, prefs,
+            pageDecoration),
+        slideSex(),
       ],
       onDone: () => _onIntroEnd(
         context: context,
@@ -160,20 +93,11 @@ class OnBoardingPage extends HookWidget {
       showSkipButton: true,
       skipFlex: 0,
       nextFlex: 0,
-      skip: Text(
-        'Skip',
-        style: TextStyle(color: textcolor),
-      ),
-      next: Icon(
-        Icons.arrow_forward,
-        color: textcolor,
-      ),
+      skip: Text('Skip', style: TextStyle(color: textcolor)),
+      next: Icon(Icons.arrow_forward, color: textcolor),
       done: Text(
         'Done',
-        style: TextStyle(
-          fontWeight: FontWeight.w600,
-          color: textcolor,
-        ),
+        style: TextStyle(fontWeight: FontWeight.w600, color: textcolor),
       ),
       dotsDecorator: const DotsDecorator(
         size: Size(10.0, 10.0),
@@ -183,6 +107,108 @@ class OnBoardingPage extends HookWidget {
           borderRadius: BorderRadius.all(Radius.circular(25.0)),
         ),
       ),
+    );
+  }
+
+  PageViewModel slideSex() {
+    return PageViewModel(
+      title: 'Let\'s Go !',
+      body: '',
+      image: _buildLottie('22932-lets-tick'),
+    );
+  }
+
+  PageViewModel slideFive(
+      ValueNotifier<List<Country>> countryImage,
+      ValueNotifier<String> countryName,
+      BuildContext context,
+      AsyncValue<List<Country>> countries,
+      AsyncValue<SharedPreferences> prefs,
+      PageDecoration pageDecoration) {
+    return PageViewModel(
+      title: 'Select Your Country',
+      // image: _buildLottie('3169-world'),
+      image: countryImage.value.isEmpty
+          ? _buildLottie('3169-world')
+          : _buildFlag(countryImage),
+      bodyWidget: Text(
+        countryName.value ?? '',
+        style: TextStyle(
+          fontSize: 18,
+        ),
+      ),
+      footer: RaisedButton.icon(
+        elevation: 5,
+        padding: const EdgeInsets.only(
+          left: 20,
+          right: 20,
+          top: 5,
+          bottom: 5,
+        ),
+        color: Theme.of(context).accentColor,
+        textColor: Colors.white,
+        icon: Icon(Ionicons.ios_pin),
+        label: const Text('View More'),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(18.0),
+        ),
+        onPressed: () async {
+          await showSearch(
+            context: context,
+            delegate: CountryList(
+              data: countries.data.value,
+              perf: prefs.data.value,
+            ),
+          );
+          String name = prefs.data.value.getString('myhomecountry');
+          countryName.value = name;
+          countryImage.value = countries.data.value
+              .where((element) => name == element.country)
+              .toList();
+        },
+      ),
+
+      decoration: pageDecoration,
+    );
+  }
+
+  PageViewModel slideFour(PageDecoration pageDecoration) {
+    return PageViewModel(
+      title: 'Stay At Home',
+      body:
+          'If you have symptoms of COVID-19 however mild, self-isolate for at least 10 days from when your symptoms started.',
+      image: _buildLottie('18168-stay-safe-stay-home'),
+      decoration: pageDecoration,
+    );
+  }
+
+  PageViewModel slideThree(PageDecoration pageDecoration) {
+    return PageViewModel(
+      title: 'Travel Advisories',
+      body:
+          'Official travel advisories issued by governments across the globe.',
+      image: _buildLottie('airplane'),
+      decoration: pageDecoration,
+    );
+  }
+
+  PageViewModel slideTwo(PageDecoration pageDecoration) {
+    return PageViewModel(
+      title: 'Learn as you go',
+      body:
+          'Take steps to care for yourself and help protect others in your home and community.',
+      image: _buildLottie('29877-washing-hands'),
+      decoration: pageDecoration,
+    );
+  }
+
+  PageViewModel slideOne(PageDecoration pageDecoration) {
+    return PageViewModel(
+      title: 'Covid 19 Tracker',
+      body:
+          'Get the Facts About Coronavirus Daily cases update around the world',
+      image: _buildLottie('28663-coronavirus-covid-19'),
+      decoration: pageDecoration,
     );
   }
 }
