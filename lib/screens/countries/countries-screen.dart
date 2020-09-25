@@ -26,6 +26,7 @@ class CountriesScreen extends HookWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'countrySearch',
         child: Icon(Ionicons.ios_search),
         onPressed: () {
           showSearch(
