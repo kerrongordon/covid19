@@ -1,3 +1,4 @@
+import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/components/country-card/country-card-detail.dart';
 import 'package:covid19/components/country-card/country-card-main.dart';
 import 'package:covid19/components/country-card/country-card-today.dart';
@@ -32,6 +33,7 @@ class CountryScreen extends StatelessWidget {
               children: [
                 CountryCardMain(data: data),
                 CountryCardToday(data: data),
+                AdsComponent(),
                 CountryCardDetail(data: data),
                 TravelAlertScreen(data: data),
               ],

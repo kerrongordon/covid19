@@ -1,3 +1,4 @@
+import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
@@ -40,7 +41,7 @@ class InforScreen extends HookWidget {
                   ),
                   child: Text(
                     'COVID-19 is thought to spread mainly through close contact from person-to-person. Some people without symptoms may be able to spread the virus. We are still learning about how the virus spreads and the severity of illness it causes.',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w300,
                       fontSize: 17,
                       height: 1.6,
@@ -100,10 +101,14 @@ class InforScreen extends HookWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: AdsComponent(),
+          ),
+          SizedBox(height: 20),
         ],
       ),
     );

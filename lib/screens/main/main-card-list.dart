@@ -1,3 +1,4 @@
+import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/components/country-card/country-card-main.dart';
 import 'package:covid19/components/country-card/country-card-today.dart';
 import 'package:covid19/components/kgp-base-page.dart';
@@ -22,6 +23,7 @@ class MainCardList extends StatelessWidget {
           child: Column(
             children: [
               CountryCardMain(data: data),
+              AdsComponent(),
               CountryCardToday(data: data),
               MainCallback(data: data),
             ],

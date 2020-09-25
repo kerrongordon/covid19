@@ -1,3 +1,4 @@
+import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/models/global-model.dart';
 import 'package:covid19/screens/global/global-card-two.dart';
 import 'package:covid19/screens/global/global-card-one.dart';
@@ -17,6 +18,7 @@ class GlobalCardList extends StatelessWidget {
       child: Column(
         children: [
           GlobalCardOne(data: data),
+          AdsComponent(),
           GlobalCardTwo(data: data),
         ],
       ),

@@ -1,3 +1,4 @@
+import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class InforFive extends StatelessWidget {
             height: 300,
           ),
           Container(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.symmetric(horizontal: 20),
             child: CardComponent(
               padding: const EdgeInsets.all(20),
               child: Column(
@@ -64,10 +65,10 @@ class InforFive extends StatelessWidget {
               ),
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 20),
-          //   child: AdsComponent(),
-          // ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: AdsComponent(),
+          ),
         ],
       ),
     );
