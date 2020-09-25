@@ -27,7 +27,7 @@ class TabScreen extends HookWidget {
     void onTapIcon(int index) => _pageController.animateToPage(
           index,
           duration: const Duration(milliseconds: 400),
-          curve: Curves.easeInOut,
+          curve: Curves.linear,
         );
 
     return Scaffold(
