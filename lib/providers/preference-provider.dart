@@ -25,10 +25,12 @@ class MyHomeCountryChangeNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
-  void getCountry() async {
+  Future<Country> getCountry() async {
     final prefs = await SharedPreferences.getInstance();
-    final Country home = jsonDecode(prefs.getString('HomeCountry'));
+    final Country home =
+        Country.fromJson(jsonDecode(prefs.getString('HomeCountry')));
     _homeCountry = home;
     notifyListeners();
+    return home;
   }
 }

@@ -30,9 +30,7 @@ class BoardingScreen extends HookWidget {
         );
 
     void startApp() async {
-      if (homePrefs.homeCountry.country == null) {
-        return onTapIcon(4);
-      }
+      if (homePrefs.homeCountry.country == null) return onTapIcon(4);
       await prefs.data.value.setBool('seen', true);
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => TabScreen()),
@@ -45,24 +43,28 @@ class BoardingScreen extends HookWidget {
         subtitle:
             'Get the Facts About Coronavirus Daily cases update around the world',
         lottie: '28663-coronavirus-covid-19',
+        repeat: false,
       ),
       BoardingSlide(
         title: 'Learn as you go',
         subtitle:
             'Take steps to care for yourself and help protect others in your home and community.',
-        lottie: '29877-washing-hands',
+        lottie: '17949-corona-doctor',
+        repeat: false,
       ),
       BoardingSlide(
         title: 'Travel Advisories',
         subtitle:
             'Official travel advisories issued by governments across the globe.',
-        lottie: 'airplane',
+        lottie: '23697-travelling-icon-animation',
+        repeat: false,
       ),
       BoardingSlide(
         title: 'Stay At Home',
         subtitle:
             'If you have symptoms of COVID-19 however mild, self-isolate for at least 10 days from when your symptoms started.',
-        lottie: '18168-stay-safe-stay-home',
+        lottie: '20546-i-stay-at-home',
+        repeat: false,
       ),
       BoardingSlide(
         title: 'Select Your Country',
@@ -84,8 +86,8 @@ class BoardingScreen extends HookWidget {
         },
       ),
       BoardingSlide(
-        title: 'Let\'s Go !',
         lottie: '22932-lets-tick',
+        repeat: false,
       ),
     ];
 

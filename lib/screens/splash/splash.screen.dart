@@ -1,6 +1,6 @@
 import 'package:covid19/components/kgp-center.dart';
 import 'package:covid19/providers/preference-provider.dart';
-import 'package:covid19/screens/splash/start.screen.dart';
+import 'package:covid19/screens/boarding/boarding.screen.dart';
 import 'package:covid19/screens/tab/tab-screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -33,7 +33,7 @@ class Splash extends HookWidget {
         ? KgpCenter(
             child: Lottie.asset(
               lottieFile,
-              height: 250.0,
+              height: 300.0,
               controller: animationController,
               onLoaded: onAnimationLoaded,
             ),
@@ -47,7 +47,7 @@ class Splash extends HookWidget {
 
   Widget _checkFirstSeen(SharedPreferences prefs) {
     bool _seen = (prefs.getBool('seen') ?? false);
-    return _seen == true ? TabScreen() : StartScreen();
+    return _seen == true ? TabScreen() : BoardingScreen();
   }
 
   KgpCenter _loadingBuilder() =>

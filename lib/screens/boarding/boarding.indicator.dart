@@ -19,8 +19,8 @@ class BoardingIndicator extends StatelessWidget {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 400),
           curve: Curves.easeInOut,
-          height: 12,
-          width: toggle ? 30 : 12,
+          height: 8,
+          width: toggle ? 30 : 8,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(50),
             color: toggle ? theme.accentColor : theme.textTheme.bodyText1.color,

@@ -10,6 +10,7 @@ class BoardingSlide extends StatelessWidget {
   final String flag;
   final String buttonTitle;
   final Widget buttonIcon;
+  final bool repeat;
   final void Function() onPressed;
   const BoardingSlide({
     Key key,
@@ -20,6 +21,7 @@ class BoardingSlide extends StatelessWidget {
     this.buttonIcon,
     this.onPressed,
     this.flag,
+    this.repeat = true,
   }) : super(key: key);
 
   @override
@@ -37,8 +39,8 @@ class BoardingSlide extends StatelessWidget {
                   child: AspectRatio(
                     aspectRatio: 1.5,
                     child: Lottie.asset(
-                      'assets/$lottie.json',
-                      repeat: true,
+                      'assets/lottiefiles/$lottie.json',
+                      repeat: repeat,
                       animate: true,
                       height: mediaQuery.size.width / 2,
                     ),
