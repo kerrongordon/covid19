@@ -20,7 +20,6 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   final AdaptiveThemeMode savedThemeMode;
-
   const MyApp({Key key, this.savedThemeMode}) : super(key: key);
 
   @override
