@@ -14,7 +14,7 @@ jobs:
         run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
       - uses: actions/checkout@v1
       - name: Make envfile
-      - uses: SpicyPizza/create-envfile@v1
+        uses: SpicyPizza/create-envfile@v1
         with:
           envkey_SECRET_KEY: ${{ secrets.FACEBOOK_PLACEMENT_ID }}
           file_name: .env
