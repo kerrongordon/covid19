@@ -13,7 +13,6 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class MainScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    print('MainScreen Build');
     final homePrefs = useProvider(myHomeCountryProvider);
     final country = useMemoized(
       () => homePrefs.getCountry(),
