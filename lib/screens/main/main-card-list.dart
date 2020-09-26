@@ -1,9 +1,10 @@
 import 'package:covid19/components/ads-component.dart';
-import 'package:covid19/components/country-card/country-card-main.dart';
 import 'package:covid19/components/country-card/country-card-today.dart';
 import 'package:covid19/components/kgp-base-page.dart';
+import 'package:covid19/components/kgp-flag.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/main/main-callback.dart';
+import 'package:covid19/screens/main/main.card.one.dart';
 import 'package:flutter/material.dart';
 
 class MainCardList extends StatelessWidget {
@@ -22,7 +23,20 @@ class MainCardList extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              CountryCardMain(data: data),
+              Stack(
+                children: [
+                  MainCardOne(data: data),
+                  Positioned(
+                    top: 108,
+                    left: 80,
+                    child: KgpFlag(
+                      imageUrl: data.countryInfo.flag,
+                      imageWidth: 70,
+                      imageHeight: 70,
+                    ),
+                  ),
+                ],
+              ),
               AdsComponent(),
               CountryCardToday(data: data),
               MainCallback(data: data),

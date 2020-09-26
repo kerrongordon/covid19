@@ -14,7 +14,7 @@ class GlobalScreen extends HookWidget {
     useAutomaticKeepAliveClient();
     return Scaffold(
       body: KgpBasePage(
-        title: 'Global',
+        title: 'Worldwide',
         background: Image.asset('assets/earth.png'),
         children: [
           config.when(

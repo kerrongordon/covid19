@@ -33,7 +33,7 @@ class Splash extends HookWidget {
         ? KgpCenter(
             child: Lottie.asset(
               lottieFile,
-              height: 300.0,
+              height: 250.0,
               controller: animationController,
               onLoaded: onAnimationLoaded,
             ),

@@ -16,6 +16,7 @@ class CountriesItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: CardComponent(
@@ -28,20 +29,18 @@ class CountriesItem extends StatelessWidget {
           );
         },
         child: ListTile(
-          leading: ZoomIn(
-            child: KgpFlag(
-              tag: data.country,
-              imageUrl: data.countryInfo.flag,
-              imageWidth: 30.0,
-              imageHeight: 30.0,
-            ),
+          leading: KgpFlag(
+            tag: data.country,
+            imageUrl: data.countryInfo.flag,
+            imageWidth: 30.0,
+            imageHeight: 30.0,
           ),
           title: FadeInDown(
             child: Text(
               data.country,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
-                color: Theme.of(context).textTheme.bodyText1.color,
+                color: theme.textTheme.bodyText1.color,
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
               ),
@@ -54,7 +53,7 @@ class CountriesItem extends StatelessWidget {
                   TextSpan(
                     text: CommaUtil.use(data.cases),
                     style: TextStyle(
-                      color: Theme.of(context).textTheme.bodyText1.color,
+                      color: theme.textTheme.bodyText1.color,
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
                     ),
@@ -64,7 +63,7 @@ class CountriesItem extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 10),
                       child: Icon(
                         Ionicons.ios_pulse,
-                        color: Theme.of(context).accentColor,
+                        color: theme.accentColor,
                       ),
                     ),
                   ),

@@ -9,9 +9,10 @@ class AdsComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final placementId = DotEnv().env['PLACEMENT_ID'];
-    final theme = Theme.of(context);
 
     if (placementId == null) return Container();
+
+    final theme = Theme.of(context);
 
     return Container(
       child: CardComponent(
@@ -28,8 +29,9 @@ class AdsComponent extends StatelessWidget {
           buttonColor: theme.accentColor,
           buttonTitleColor: Colors.white,
           buttonBorderColor: theme.accentColor,
-          // keepExpandedWhileLoading: false,
-          // expandAnimationDuraion: 800,
+          keepExpandedWhileLoading: false,
+          expandAnimationDuraion: 400,
+          isMediaCover: true,
         ),
       ),
     );

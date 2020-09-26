@@ -40,3 +40,4 @@ lib/generated_plugin_registrant.dart
 # keys
 keystone.jks
 **/android/key.properties
+.env*

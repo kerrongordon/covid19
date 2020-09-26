@@ -38,7 +38,9 @@ dependencies:
   hooks_riverpod: ^0.9.2
   flutter_hooks: ^0.14.0
   state_notifier: ^0.6.0
-  facebook_audience_network: ^0.7.0
+  facebook_audience_network: ^0.7.1
+  flutter_dotenv: ^2.1.0
+  list_tile_switch: ^0.0.2
 
 dev_dependencies:
   flutter_test:
@@ -46,9 +48,11 @@ dev_dependencies:
 
   flutter_launcher_icons: ^0.7.5
   flutter_native_splash: ^0.1.9
+  flutter_launcher_name: "^0.0.1"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
 # flutter pub run flutter_launcher_icons:main
 flutter_icons:
   android: true
@@ -63,6 +67,10 @@ flutter_native_splash:
   color: "#eef7f4"
   # color: "0084ff"
 
+# flutter pub run flutter_launcher_name:main
+flutter_launcher_name:
+  name: "Covid 19 Tracker"
+
 # The following section is specific to Flutter.
 flutter:
   # The following line ensures that the Material Icons font is
@@ -71,6 +79,7 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
+    - .env
     - assets/
     - assets/lottiefiles/
   #  - images/a_dot_ham.jpeg

@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     ));
 
     return AdaptiveTheme(
-      initial: savedThemeMode ?? AdaptiveThemeMode.system,
+      initial: savedThemeMode ?? AdaptiveThemeMode.light,
       light: LightTheme.theme,
       dark: DarkTheme.theme,
       builder: (light, dark) {

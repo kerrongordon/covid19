@@ -1,4 +1,3 @@
-import 'package:covid19/components/kgp-base-page.dart';
 import 'package:flutter/material.dart';
 
 class KgpCenter extends StatelessWidget {
@@ -8,7 +7,22 @@ class KgpCenter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: KgpBasePage(children: [Center(child: child)]),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0.0,
+        toolbarHeight: 0,
+      ),
+      body: Container(
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            child,
+          ],
+        ),
+      ),
     );
   }
 }
