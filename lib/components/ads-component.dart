@@ -1,39 +1,75 @@
 import 'package:covid19/components/card-component.dart';
-import 'package:facebook_audience_network/facebook_audience_network.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_native_admob/flutter_native_admob.dart';
+import 'package:flutter_native_admob/native_admob_controller.dart';
+import 'package:flutter_native_admob/native_admob_options.dart';
 
-class AdsComponent extends StatelessWidget {
-  const AdsComponent({Key key}) : super(key: key);
+class AdsComponent extends StatefulWidget {
+  const AdsComponent({
+    Key key,
+    @required this.type,
+  }) : super(key: key);
+
+  final NativeAdmobType type;
+
+  @override
+  _AdsComponentState createState() => _AdsComponentState();
+}
+
+class _AdsComponentState extends State<AdsComponent> {
+  final _controller = NativeAdmobController();
+  bool ready = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller.setAdUnitID('ca-app-pub-5675929973866541/7003986965');
+    Future.delayed(Duration(seconds: 2)).then((_) {
+      if (mounted) setState(() => ready = true);
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    final placementId = DotEnv().env['PLACEMENT_ID'];
-
-    if (placementId == null) return Container();
-
     final theme = Theme.of(context);
+    final textColor = theme.textTheme.bodyText1.color;
 
-    return Container(
-      child: CardComponent(
-        padding: const EdgeInsets.all(0),
-        child: FacebookNativeAd(
-          height: 120,
-          placementId: placementId,
-          adType: NativeAdType.NATIVE_BANNER_AD,
-          bannerAdSize: NativeBannerAdSize.HEIGHT_120,
-          width: double.infinity,
-          backgroundColor: theme.cardTheme.color,
-          titleColor: theme.textTheme.bodyText1.color,
-          descriptionColor: theme.textTheme.bodyText1.color,
-          buttonColor: theme.accentColor,
-          buttonTitleColor: Colors.white,
-          buttonBorderColor: theme.accentColor,
-          // keepExpandedWhileLoading: false,
-          // expandAnimationDuraion: 400,
-          isMediaCover: true,
+    if (ready) {
+      return CardComponent(
+        padding: const EdgeInsets.all(20),
+        child: Container(
+          height: widget.type == NativeAdmobType.full ? 350 : 60,
+          child: NativeAdmob(
+            adUnitID: 'ca-app-pub-5675929973866541/7003986965',
+            // adUnitID: 'ca-app-pub-3940256099942544/2247696110',
+            loading: Center(child: CircularProgressIndicator(strokeWidth: 2.0)),
+            error: Container(height: 0),
+            controller: _controller,
+            type: widget.type,
+            options: NativeAdmobOptions(
+              ratingColor: Colors.red,
+              callToActionStyle: NativeTextStyle(
+                backgroundColor: theme.accentColor,
+                fontSize: 12,
+              ),
+              adLabelTextStyle: NativeTextStyle(color: textColor),
+              bodyTextStyle: NativeTextStyle(color: textColor),
+              headlineTextStyle: NativeTextStyle(color: textColor),
+              advertiserTextStyle: NativeTextStyle(color: textColor),
+              priceTextStyle: NativeTextStyle(color: textColor),
+              storeTextStyle: NativeTextStyle(color: textColor),
+            ),
+          ),
         ),
-      ),
-    );
+      );
+    }
+
+    return Container();
   }
 }

@@ -22,16 +22,17 @@ class BoardingBottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      color: Theme.of(context).accentColor,
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           FlatButton(
             onPressed: () => ontap(_pages.length),
-            child: Text(
+            child: const Text(
               'Skip',
-              style: TextStyle(
-                color: Theme.of(context).textTheme.bodyText1.color,
+              style: const TextStyle(
+                color: Colors.white,
               ),
             ),
           ),
@@ -58,6 +59,7 @@ class BoardingBottomNav extends StatelessWidget {
               icon: Icon(
                 Ionicons.ios_arrow_round_forward,
                 size: 30,
+                color: Colors.white,
               ),
               onPressed: () => _pageController.nextPage(
                 duration: const Duration(milliseconds: 400),

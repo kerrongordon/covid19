@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class LightTheme {
   static final ThemeData theme = _lightTheme();
-  static final Color lightPrimary = const Color.fromRGBO(0, 133, 255, 1.0);
+  static final Color lightPrimary = const Color.fromRGBO(69, 41, 129, 1.0);
   static final Color lightBackground = const Color.fromRGBO(238, 247, 244, 1.0);
   static final Color frontColor = const Color.fromRGBO(107, 124, 147, 1.0);
   static final Color cardColor = const Color.fromRGBO(255, 255, 255, 1.0);

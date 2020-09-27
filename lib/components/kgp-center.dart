@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 class KgpCenter extends StatelessWidget {
   final Widget child;
-  const KgpCenter({this.child});
+  final Color backgroundColor;
+  const KgpCenter({this.child, this.backgroundColor});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: backgroundColor,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,

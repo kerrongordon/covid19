@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1055154403376",
+    "firebase_url": "https://korona-6a7f6.firebaseio.com",
+    "project_id": "korona-6a7f6",
+    "storage_bucket": "korona-6a7f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055154403376:android:16fd09a9e66781f11555f5",
+        "android_client_info": {
+          "package_name": "kerrongordon.github.io.korona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055154403376-r73tkaaluf6gkl8r1jrhus249l6k7h1h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIjZCyd7xIArCmgU12vJNAZkAwXj7Z5r0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055154403376-r73tkaaluf6gkl8r1jrhus249l6k7h1h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055154403376:android:9c89ef31b044c10b1555f5",
+        "android_client_info": {
+          "package_name": "kerrongordon.github.io.korona19"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055154403376-r73tkaaluf6gkl8r1jrhus249l6k7h1h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIjZCyd7xIArCmgU12vJNAZkAwXj7Z5r0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055154403376-r73tkaaluf6gkl8r1jrhus249l6k7h1h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

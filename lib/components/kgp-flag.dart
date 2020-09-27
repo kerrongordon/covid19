@@ -6,12 +6,14 @@ class KgpFlag extends StatelessWidget {
   final String imageUrl;
   final double imageWidth;
   final double imageHeight;
+  final Animation<Color> valueColor;
   const KgpFlag({
     Key key,
     this.tag,
     @required this.imageUrl,
     @required this.imageWidth,
     @required this.imageHeight,
+    this.valueColor,
   }) : super(key: key);
 
   @override
@@ -37,7 +39,10 @@ class KgpFlag extends StatelessWidget {
       ),
       errorWidget: (context, url, error) => const Icon(Icons.error),
       placeholder: (context, url) => Container(
-        child: const CircularProgressIndicator(strokeWidth: 2.0),
+        child: CircularProgressIndicator(
+          strokeWidth: 2.0,
+          valueColor: valueColor,
+        ),
         width: imageWidth,
         height: imageHeight,
       ),

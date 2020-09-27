@@ -16,6 +16,7 @@ class Splash extends HookWidget {
     final prefs = useProvider(preferencesProvider);
     final loaded = useState(false);
     final animationController = useAnimationController();
+    final backgroundColor = Theme.of(context).accentColor;
 
     void onAnimationLoaded(LottieComposition composition) {
       animationController.addStatusListener((status) {
@@ -31,6 +32,7 @@ class Splash extends HookWidget {
 
     return loaded.value == false
         ? KgpCenter(
+            backgroundColor: backgroundColor,
             child: Lottie.asset(
               lottieFile,
               height: 250.0,
@@ -40,18 +42,19 @@ class Splash extends HookWidget {
           )
         : prefs.when(
             data: (data) => _checkFirstSeen(data),
-            loading: () => _loadingBuilder(),
+            loading: () => _loadingBuilder(backgroundColor),
             error: (error, _) => _errorBuilder(error),
           );
   }
 
   Widget _checkFirstSeen(SharedPreferences prefs) {
-    bool _seen = (prefs.getBool('seen') ?? false);
+    bool _seen = (prefs.getBool('start') ?? false);
     return _seen == true ? TabScreen() : BoardingScreen();
   }
 
-  KgpCenter _loadingBuilder() =>
-      KgpCenter(child: Lottie.asset(lottieFile, height: 250.0));
+  KgpCenter _loadingBuilder(Color backgroundColor) => KgpCenter(
+      backgroundColor: backgroundColor,
+      child: Lottie.asset(lottieFile, height: 250.0));
 
   KgpCenter _errorBuilder(error) => KgpCenter(child: Text(error.toString()));
 }

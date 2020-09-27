@@ -31,10 +31,12 @@ class BoardingScreen extends HookWidget {
 
     void startApp() async {
       if (homePrefs.homeCountry.country == null) return onTapIcon(4);
-      await prefs.data.value.setBool('seen', true);
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => TabScreen()),
-      );
+      await prefs.data.value.setBool('start', true);
+      Future.delayed(Duration(seconds: 1)).then((value) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (_) => TabScreen()),
+        );
+      });
     }
 
     List<Widget> _pages = [
@@ -105,7 +107,12 @@ class BoardingScreen extends HookWidget {
     }
 
     return Scaffold(
-      appBar: AppBar(elevation: 0, toolbarHeight: 0),
+      appBar: AppBar(
+        elevation: 0,
+        toolbarHeight: 0,
+        backgroundColor: Theme.of(context).accentColor,
+        brightness: Brightness.dark,
+      ),
       body: PageView(
         controller: _pageController,
         onPageChanged: onPageChange,

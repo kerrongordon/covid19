@@ -7,16 +7,13 @@ import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/country/country-card-five.dart';
 import 'package:covid19/screens/country/travel-alert-screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_admob/flutter_native_admob.dart';
 
 class CountryScreen extends StatelessWidget {
   final Country data;
-  final List<Widget> actions;
-  final Widget leading;
   const CountryScreen({
     Key key,
     this.data,
-    this.actions,
-    this.leading,
   }) : super(key: key);
 
   @override
@@ -24,17 +21,16 @@ class CountryScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: data.country,
-        leading: leading,
-        actions: actions,
         children: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
               children: [
                 CountryCardMain(data: data),
+                AdsComponent(type: NativeAdmobType.banner),
                 CountryCardToday(data: data),
-                AdsComponent(),
                 CountryCardDetail(data: data),
+                AdsComponent(type: NativeAdmobType.full),
                 TravelAlertScreen(data: data),
               ],
             ),

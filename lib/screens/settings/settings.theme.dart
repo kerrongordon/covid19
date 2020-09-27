@@ -20,6 +20,8 @@ class SettingsTheme extends HookWidget {
         padding: const EdgeInsets.all(20),
         child: ListTileSwitch(
           value: themeState.value,
+          switchActiveColor: changeTheme.theme.accentColor,
+          focusColor: changeTheme.theme.accentColor,
           leading: Icon(
             Ionicons.ios_contrast,
             color: changeTheme.theme.accentColor,

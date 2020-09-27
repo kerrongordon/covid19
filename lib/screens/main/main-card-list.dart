@@ -6,6 +6,7 @@ import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/main/main-callback.dart';
 import 'package:covid19/screens/main/main.card.one.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_admob/flutter_native_admob.dart';
 
 class MainCardList extends StatelessWidget {
   final Country data;
@@ -37,7 +38,7 @@ class MainCardList extends StatelessWidget {
                   ),
                 ],
               ),
-              AdsComponent(),
+              AdsComponent(type: NativeAdmobType.banner),
               CountryCardToday(data: data),
               MainCallback(data: data),
             ],

@@ -19,6 +19,16 @@ class SettingsCountryPicker extends HookWidget {
     );
     final snapshot = useFuture(country);
 
+    void openSearch() async {
+      await showSearch(
+        context: context,
+        delegate: BoardingSearch(
+          countries: countries,
+          homePrefs: homePrefs,
+        ),
+      );
+    }
+
     if (snapshot == null && snapshot.hasError) {
       return Container();
     }
@@ -40,38 +50,39 @@ class SettingsCountryPicker extends HookWidget {
                 width: double.infinity,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 50),
-                  child: Center(
-                    child: Text(
-                      homePrefs.homeCountry.country == null
-                          ? data.country
-                          : homePrefs.homeCountry.country,
-                      style: const TextStyle(
-                        fontSize: 18,
+                  child: Column(
+                    children: [
+                      Text('Change Country'),
+                      SizedBox(height: 10),
+                      Center(
+                        child: Text(
+                          homePrefs.homeCountry.country == null
+                              ? data.country
+                              : homePrefs.homeCountry.country,
+                          style: const TextStyle(
+                            fontSize: 18,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
-                      textAlign: TextAlign.center,
-                    ),
+                    ],
                   ),
                 ),
               ),
-              onTap: () async {
-                await showSearch(
-                  context: context,
-                  delegate: BoardingSearch(
-                    countries: countries,
-                    homePrefs: homePrefs,
-                  ),
-                );
-              },
+              onTap: openSearch,
             ),
             Positioned(
               top: -30,
               left: MediaQuery.of(context).size.width / 2.9,
-              child: KgpFlag(
-                imageUrl: homePrefs.homeCountry.country == null
-                    ? data.countryInfo.flag
-                    : homePrefs.homeCountry.countryInfo.flag,
-                imageWidth: 90,
-                imageHeight: 90,
+              child: GestureDetector(
+                onTap: openSearch,
+                child: KgpFlag(
+                  imageUrl: homePrefs.homeCountry.country == null
+                      ? data.countryInfo.flag
+                      : homePrefs.homeCountry.countryInfo.flag,
+                  imageWidth: 90,
+                  imageHeight: 90,
+                ),
               ),
             )
           ],

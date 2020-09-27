@@ -13,18 +13,19 @@ class KgpIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RaisedButton.icon(
-      elevation: 5,
+    return FlatButton.icon(
       padding: const EdgeInsets.only(left: 20, right: 20, top: 7, bottom: 10),
       color: Theme.of(context).accentColor,
       textColor: Colors.white,
       icon: buttonIcon,
-      label: Text(buttonTitle ?? 'Change Title',
-          style: TextStyle(
-            fontSize: 18,
-          )),
+      label: Text(
+        buttonTitle ?? 'Change Title',
+        style: const TextStyle(
+          fontSize: 16,
+        ),
+      ),
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(18.0),
+        borderRadius: BorderRadius.circular(5.0),
       ),
       onPressed: onPressed,
     );

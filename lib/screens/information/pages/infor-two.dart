@@ -2,6 +2,7 @@ import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_native_admob/flutter_native_admob.dart';
 import 'package:lottie/lottie.dart';
 
 class InforTwo extends StatelessWidget {
@@ -67,7 +68,7 @@ class InforTwo extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: AdsComponent(),
+            child: AdsComponent(type: NativeAdmobType.banner),
           ),
         ],
       ),
