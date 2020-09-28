@@ -1,4 +1,5 @@
 import 'package:covid19/components/card-component.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
 import 'package:flutter_native_admob/native_admob_controller.dart';
@@ -40,14 +41,19 @@ class _AdsComponentState extends State<AdsComponent> {
     final theme = Theme.of(context);
     final textColor = theme.textTheme.bodyText1.color;
 
-    if (ready) {
-      return CardComponent(
+    return Visibility(
+      visible: ready,
+      maintainState: true,
+      maintainAnimation: true,
+      replacement: Container(),
+      child: CardComponent(
         padding: const EdgeInsets.all(20),
         child: Container(
           height: widget.type == NativeAdmobType.full ? 350 : 60,
           child: NativeAdmob(
-            adUnitID: 'ca-app-pub-5675929973866541/7003986965',
-            // adUnitID: 'ca-app-pub-3940256099942544/2247696110',
+            adUnitID: kDebugMode
+                ? 'ca-app-pub-3940256099942544/2247696110'
+                : 'ca-app-pub-5675929973866541/7003986965',
             loading: Center(child: CircularProgressIndicator(strokeWidth: 2.0)),
             error: Container(height: 0),
             controller: _controller,
@@ -67,9 +73,7 @@ class _AdsComponentState extends State<AdsComponent> {
             ),
           ),
         ),
-      );
-    }
-
-    return Container();
+      ),
+    );
   }
 }

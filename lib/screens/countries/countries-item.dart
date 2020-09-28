@@ -4,6 +4,7 @@ import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/country/country-screen.dart';
 import 'package:covid19/utils/comma.util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 // import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -29,36 +30,40 @@ class CountriesItem extends StatelessWidget {
             imageWidth: 30.0,
             imageHeight: 30.0,
           ),
-          title: Text(
-            data.country,
-            overflow: TextOverflow.ellipsis,
-            style: TextStyle(
-              color: theme.textTheme.bodyText1.color,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
+          title: FadeInDown(
+            child: Text(
+              data.country,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                color: theme.textTheme.bodyText1.color,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
-          trailing: RichText(
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: CommaUtil.use(data.cases),
-                  style: TextStyle(
-                    color: theme.textTheme.bodyText1.color,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                WidgetSpan(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: Icon(
-                      Ionicons.ios_pulse,
-                      color: theme.accentColor,
+          trailing: FadeInUp(
+            child: RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: CommaUtil.use(data.cases),
+                    style: TextStyle(
+                      color: theme.textTheme.bodyText1.color,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
-                ),
-              ],
+                  WidgetSpan(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Icon(
+                        Ionicons.ios_pulse,
+                        color: theme.accentColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

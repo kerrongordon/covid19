@@ -32,11 +32,10 @@ class BoardingScreen extends HookWidget {
     void startApp() async {
       if (homePrefs.homeCountry.country == null) return onTapIcon(4);
       await prefs.data.value.setBool('start', true);
-      Future.delayed(Duration(seconds: 1)).then((value) {
-        Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (_) => TabScreen()),
-        );
-      });
+
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (_) => TabScreen()),
+      );
     }
 
     List<Widget> _pages = [
