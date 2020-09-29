@@ -26,7 +26,7 @@ class MainCardList extends StatelessWidget {
       background: Stack(
         children: [
           Padding(
-            padding: const EdgeInsets.only(top: 30),
+            padding: const EdgeInsets.only(top: 40),
             child: CachedNetworkImage(
               imageUrl: data.countryInfo.flag,
               imageBuilder: (context, imageProvider) => Container(
@@ -51,11 +51,11 @@ class MainCardList extends StatelessWidget {
             top: 0,
             child: BackdropFilter(
               filter: ImageFilter.blur(
-                sigmaX: 20,
-                sigmaY: 20,
+                sigmaX: 10,
+                sigmaY: 10,
               ),
               child: Container(
-                color: theme.backgroundColor.withOpacity(0.7),
+                color: theme.backgroundColor.withOpacity(0.5),
               ),
             ),
           ),
@@ -85,8 +85,8 @@ class MainCardList extends StatelessWidget {
                 children: [
                   MainCardOne(data: data),
                   Positioned(
-                    top: 108,
-                    left: 80,
+                    top: 109,
+                    left: 79,
                     child: KgpFlag(
                       imageUrl: data.countryInfo.flag,
                       imageWidth: 70,

@@ -1,6 +1,7 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
 import 'package:flutter_native_admob/native_admob_controller.dart';
 import 'package:flutter_native_admob/native_admob_options.dart';
@@ -18,13 +19,12 @@ class AdsComponent extends StatefulWidget {
 }
 
 class _AdsComponentState extends State<AdsComponent> {
-  final _controller = NativeAdmobController();
+  final controller = NativeAdmobController();
   bool ready = false;
 
   @override
   void initState() {
     super.initState();
-    _controller.setAdUnitID('ca-app-pub-5675929973866541/7003986965');
     Future.delayed(Duration(seconds: 2)).then((_) {
       if (mounted) setState(() => ready = true);
     });
@@ -33,13 +33,16 @@ class _AdsComponentState extends State<AdsComponent> {
   @override
   void dispose() {
     super.dispose();
-    _controller.dispose();
+    controller.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    final adToggle = DotEnv().env['Ad_TOGGLE'].toLowerCase();
     final theme = Theme.of(context);
     final textColor = theme.textTheme.bodyText1.color;
+
+    if (adToggle == 'false') return Container();
 
     return Visibility(
       visible: ready,
@@ -56,7 +59,7 @@ class _AdsComponentState extends State<AdsComponent> {
                 : 'ca-app-pub-5675929973866541/7003986965',
             loading: Center(child: CircularProgressIndicator(strokeWidth: 2.0)),
             error: Container(height: 0),
-            controller: _controller,
+            controller: controller,
             type: widget.type,
             options: NativeAdmobOptions(
               ratingColor: Colors.red,

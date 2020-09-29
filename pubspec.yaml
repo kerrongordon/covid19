@@ -11,7 +11,7 @@ description: A covid 19 application.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 6.0.1+6.0.1
+version: 6.0.2+6.0.2
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -72,8 +72,8 @@ flutter_native_splash:
 
 # flutter pub run flutter_launcher_name:main
 flutter_launcher_name:
-  # name: "Covid 19 Tracker"
-  name: "korona"
+  name: "Covid 19 Tracker"
+  # name: "korona"
 
 # The following section is specific to Flutter.
 flutter:
