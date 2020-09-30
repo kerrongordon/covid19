@@ -1,7 +1,6 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
 import 'package:flutter_native_admob/native_admob_controller.dart';
 import 'package:flutter_native_admob/native_admob_options.dart';
@@ -38,11 +37,8 @@ class _AdsComponentState extends State<AdsComponent> {
 
   @override
   Widget build(BuildContext context) {
-    final adToggle = DotEnv().env['Ad_TOGGLE'].toLowerCase();
     final theme = Theme.of(context);
     final textColor = theme.textTheme.bodyText1.color;
-
-    if (adToggle == 'false') return Container();
 
     return Visibility(
       visible: ready,
