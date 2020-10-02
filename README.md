@@ -21,7 +21,7 @@ API Data is provided by [Open Disease Data](https://disease.sh/), [Centers for D
 A covid 19 application. [Download here](https://github.com/kerrongordon/covid19/releases)
 <br>
 <br>
-<a href="https://galaxy.store/CovidKgp"><img src="https://img.samsungapps.com/seller/images/badges/galaxyStore/png_big/GalaxyStore_English.png?ver=1597278750000" alt="Available on Samsung Galaxy Store" width="150px"></a>
+<a href="https://galaxy.store/korona19"><img src="https://img.samsungapps.com/seller/images/badges/galaxyStore/png_big/GalaxyStore_English.png?ver=1597278750000" alt="Available on Samsung Galaxy Store" width="150px"></a>
 
 ## Getting Started
 
