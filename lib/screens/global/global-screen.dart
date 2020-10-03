@@ -10,16 +10,16 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 class GlobalScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final config = useProvider(globalProvider);
+    final global = useProvider(globalProvider);
     useAutomaticKeepAliveClient();
     return Scaffold(
       body: KgpBasePage(
         title: 'Worldwide',
         background: Image.asset('assets/earth.png'),
-        child: config.when(
+        child: global.when(
           data: (data) => GlobalCardList(data: data),
-          loading: () => KgpLoader(),
-          error: (error, st) => Center(child: Text(error.toString())),
+          loading: () => const KgpLoader(),
+          error: (error, _) => Center(child: Text(error.toString())),
         ),
       ),
     );
