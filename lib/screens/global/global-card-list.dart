@@ -19,7 +19,7 @@ class GlobalCardList extends StatelessWidget {
       child: Column(
         children: [
           GlobalCardOne(data: data),
-          AdsComponent(type: NativeAdmobType.full),
+          const AdsComponent(type: NativeAdmobType.full),
           GlobalCardTwo(data: data),
         ],
       ),

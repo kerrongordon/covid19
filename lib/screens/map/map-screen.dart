@@ -27,8 +27,13 @@ class MapScreen extends HookWidget {
         ),
         loading: () => Center(child: KgpLoader()),
         error: (err, stak) => Container(
-            height: MediaQuery.of(context).size.height / 2.5,
-            child: Center(child: Text(err.toString()))),
+          height: MediaQuery.of(context).size.height / 2.5,
+          child: Center(
+            child: Text(
+              err.toString(),
+            ),
+          ),
+        ),
       ),
     );
   }

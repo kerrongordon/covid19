@@ -45,7 +45,7 @@ class CountryCardMain extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(20),
             child: KgpPieChart(
-              aspectRatio: 1.3,
+              aspectRatio: 1.5,
               cases: data.cases,
               recovered: data.recovered,
               deaths: data.deaths,

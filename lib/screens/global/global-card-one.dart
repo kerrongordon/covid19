@@ -21,15 +21,11 @@ class GlobalCardOne extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Expanded(
-              flex: 2,
+              flex: 1,
               child: Container(
-                padding: const EdgeInsets.only(
-                  bottom: 20,
-                  top: 20,
-                  right: 20,
-                ),
+                margin: const EdgeInsets.only(left: 20),
                 child: KgpPieChart(
-                  aspectRatio: 1,
+                  aspectRatio: 0.7,
                   cases: data.cases,
                   recovered: data.recovered,
                   deaths: data.deaths,
@@ -39,7 +35,7 @@ class GlobalCardOne extends StatelessWidget {
             Expanded(
               flex: 1,
               child: Container(
-                padding: const EdgeInsets.only(right: 25),
+                padding: const EdgeInsets.all(20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [

@@ -55,8 +55,16 @@ class KgpBasePage extends StatelessWidget {
           ),
         ),
         sliverList == null
-            ? SliverToBoxAdapter(child: child)
-            : SliverList(delegate: sliverList)
+            ? SliverToBoxAdapter(
+                child: Container(
+                  margin: const EdgeInsets.only(bottom: 60),
+                  child: child,
+                ),
+              )
+            : SliverPadding(
+                padding: const EdgeInsets.only(bottom: 60),
+                sliver: SliverList(delegate: sliverList),
+              ),
       ],
     );
   }

@@ -25,15 +25,18 @@ class CountriesScreen extends HookWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        heroTag: 'countrySearch',
-        child: Icon(Ionicons.ios_search),
-        onPressed: () {
-          showSearch(
-            context: context,
-            delegate: SearchCountry(config.data.value),
-          );
-        },
+      floatingActionButton: Container(
+        margin: const EdgeInsets.only(bottom: 60),
+        child: FloatingActionButton(
+          heroTag: 'countrySearch',
+          child: Icon(Ionicons.ios_search),
+          onPressed: () {
+            showSearch(
+              context: context,
+              delegate: SearchCountry(config.data.value),
+            );
+          },
+        ),
       ),
     );
   }

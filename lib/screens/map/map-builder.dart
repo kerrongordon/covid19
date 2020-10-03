@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
+// import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/map/map-marker-item.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_map/flutter_map.dart';
+// import 'package:flutter_native_admob/flutter_native_admob.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong/latlong.dart';
 
@@ -90,6 +92,17 @@ class MapBuilder extends HookWidget {
             ],
           ),
         ),
+        // Expanded(
+        //   child: Align(
+        //     alignment: FractionalOffset.bottomCenter,
+        //     child: Container(
+        //       padding: const EdgeInsets.all(20),
+        //       child: AdsComponent(
+        //         type: NativeAdmobType.banner,
+        //       ),
+        //     ),
+        //   ),
+        // ),
         ClipRect(
           child: BackdropFilter(
             filter: ImageFilter.blur(

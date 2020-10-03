@@ -35,13 +35,16 @@ class MainScreen extends HookWidget {
           : homePrefs.homeCountry;
       return Scaffold(
         body: MainCardList(data: data),
-        floatingActionButton: FloatingActionButton(
-          heroTag: 'openMap',
-          child: Icon(Ionicons.ios_map),
-          onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => MapScreen(),
+        floatingActionButton: Container(
+          margin: const EdgeInsets.only(bottom: 60),
+          child: FloatingActionButton(
+            heroTag: 'openMap',
+            child: Icon(Ionicons.ios_map),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MapScreen(),
+              ),
             ),
           ),
         ),

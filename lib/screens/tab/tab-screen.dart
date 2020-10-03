@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:covid19/hooks/page.controller.hook.dart';
 import 'package:covid19/screens/tab/tab-bottom-bar.dart';
 import 'package:covid19/screens/countries/countries-screen.dart';
@@ -19,6 +21,7 @@ class TabScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     final _pageIndex = useState(2);
     final _pageController = usePageController(initialPage: _pageIndex.value);
 
@@ -31,6 +34,8 @@ class TabScreen extends HookWidget {
         );
 
     return Scaffold(
+      extendBody: true,
+      extendBodyBehindAppBar: true,
       body: PageView(
         controller: _pageController,
         onPageChanged: onPageChange,
@@ -42,9 +47,30 @@ class TabScreen extends HookWidget {
           _settingsScreen,
         ],
       ),
-      bottomNavigationBar: TabBottomBar(
-        pageIndex: _pageIndex,
-        onItemSelected: onTapIcon,
+      bottomNavigationBar: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            height: 100,
+            child: ClipRect(
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                  sigmaX: 7,
+                  sigmaY: 7,
+                ),
+                child: Container(
+                  color: theme.backgroundColor.withOpacity(0.6),
+                ),
+              ),
+            ),
+          ),
+          TabBottomBar(
+            pageIndex: _pageIndex,
+            onItemSelected: onTapIcon,
+          ),
+        ],
       ),
     );
   }

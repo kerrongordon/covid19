@@ -17,9 +17,9 @@ class TabBottomBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final _theme = Theme.of(context);
     return BottomNavyBar(
-      backgroundColor: _theme.cardTheme.color,
+      backgroundColor: Colors.transparent,
       selectedIndex: _pageIndex.value,
-      showElevation: true,
+      showElevation: false,
       onItemSelected: onItemSelected,
       items: <BottomNavyBarItem>[
         BottomNavyBarItem(

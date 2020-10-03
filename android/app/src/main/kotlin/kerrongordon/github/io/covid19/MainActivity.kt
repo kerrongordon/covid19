@@ -1,4 +1,4 @@
-package kerrongordon.github.io.korona19
+package kerrongordon.github.io.covid19
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
