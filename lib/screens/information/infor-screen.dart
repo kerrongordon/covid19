@@ -24,93 +24,91 @@ class InforScreen extends HookWidget {
       body: KgpBasePage(
         title: 'Protect Yourself & Others',
         expandedHeight: 55,
-        children: <Widget>[
-          Container(
-            child: Column(
-              children: <Widget>[
-                Lottie.asset(
-                  'assets/medical-frontliners.json',
-                  repeat: true,
-                  animate: true,
-                  height: 300,
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Lottie.asset(
+                'assets/medical-frontliners.json',
+                repeat: true,
+                animate: true,
+                height: 300,
+              ),
+              Container(
+                padding: const EdgeInsets.only(
+                  left: 20,
+                  right: 20,
+                  bottom: 20,
                 ),
-                Container(
-                  padding: const EdgeInsets.only(
-                    left: 20,
-                    right: 20,
-                    bottom: 20,
+                child: Text(
+                  'COVID-19 is thought to spread mainly through close contact from person-to-person. Some people without symptoms may be able to spread the virus. We are still learning about how the virus spreads and the severity of illness it causes.',
+                  style: const TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontSize: 17,
+                    height: 1.6,
                   ),
-                  child: Text(
-                    'COVID-19 is thought to spread mainly through close contact from person-to-person. Some people without symptoms may be able to spread the virus. We are still learning about how the virus spreads and the severity of illness it causes.',
-                    style: const TextStyle(
-                      fontWeight: FontWeight.w300,
-                      fontSize: 17,
-                      height: 1.6,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 20, right: 10),
+                      child: CardInforOne(),
                     ),
-                    textAlign: TextAlign.center,
                   ),
-                ),
-                SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 20, right: 10),
-                        child: CardInforOne(),
-                      ),
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10, right: 20),
+                      child: CardInforTwo(),
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 20),
-                        child: CardInforTwo(),
-                      ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 20, right: 10),
+                      child: CardInforThree(),
                     ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 20, right: 10),
-                        child: CardInforThree(),
-                      ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10, right: 20),
+                      child: CardInforFour(),
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 20),
-                        child: CardInforFour(),
-                      ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 20, right: 10),
+                      child: CardInforFive(),
                     ),
-                  ],
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 20, right: 10),
-                        child: CardInforFive(),
-                      ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10, right: 20),
+                      child: CardInforSix(),
                     ),
-                    Expanded(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 10, right: 20),
-                        child: CardInforSix(),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                  ),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: AdsComponent(type: NativeAdmobType.banner),
+              ),
+              SizedBox(height: 20),
+            ],
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: AdsComponent(type: NativeAdmobType.banner),
-          ),
-          SizedBox(height: 20),
-        ],
+        ),
       ),
     );
   }

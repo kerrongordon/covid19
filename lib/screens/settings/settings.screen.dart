@@ -11,78 +11,84 @@ class SettingsScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: 'Settings',
-        children: [
-          SettingsCountryPicker(),
-          SettingsTheme(),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: CardComponent(
-              child: Container(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  children: [
-                    Center(
-                      child: Text(
-                        'About',
-                        style: const TextStyle(fontSize: 18),
-                      ),
-                    ),
-                    SizedBox(height: 10),
-                    Divider(),
-                    SizedBox(height: 20),
-                    Text(
-                      'We source data from Open Disease Data, Daily updated travel advisories and The Centers for Disease Control and Prevention.',
-                      style: const TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 16,
-                        height: 1.3,
-                      ),
-                    ),
-                    SizedBox(height: 20),
-                    ListTile(
-                      title: FlatButton(
+        child: Column(
+          children: [
+            SettingsCountryPicker(),
+            SettingsTheme(),
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: CardComponent(
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    children: [
+                      Center(
                         child: Text(
-                          'Open Disease Data',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Theme.of(context).textTheme.bodyText1.color,
-                          ),
+                          'About',
+                          style: const TextStyle(fontSize: 18),
                         ),
-                        onPressed: () => _launchURL(url: 'https://disease.sh/'),
                       ),
-                    ),
-                    ListTile(
-                      title: FlatButton(
-                        child: Text(
-                          'Daily updated travel advisories',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Theme.of(context).textTheme.bodyText1.color,
-                          ),
+                      SizedBox(height: 10),
+                      Divider(),
+                      SizedBox(height: 20),
+                      Text(
+                        'We source data from Open Disease Data, Daily updated travel advisories and The Centers for Disease Control and Prevention.',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 16,
+                          height: 1.3,
                         ),
-                        onPressed: () => _launchURL(
-                            url: 'https://www.travel-advisory.info/'),
                       ),
-                    ),
-                    ListTile(
-                      title: FlatButton(
-                        child: Text(
-                          'Centers for Disease Control and Prevention',
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Theme.of(context).textTheme.bodyText1.color,
+                      SizedBox(height: 20),
+                      ListTile(
+                        title: FlatButton(
+                          child: Text(
+                            'Open Disease Data',
+                            style: TextStyle(
+                              fontSize: 13,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
+                            ),
                           ),
+                          onPressed: () =>
+                              _launchURL(url: 'https://disease.sh/'),
                         ),
-                        onPressed: () =>
-                            _launchURL(url: 'https://www.cdc.gov/'),
                       ),
-                    ),
-                  ],
+                      ListTile(
+                        title: FlatButton(
+                          child: Text(
+                            'Daily updated travel advisories',
+                            style: TextStyle(
+                              fontSize: 13,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
+                            ),
+                          ),
+                          onPressed: () => _launchURL(
+                              url: 'https://www.travel-advisory.info/'),
+                        ),
+                      ),
+                      ListTile(
+                        title: FlatButton(
+                          child: Text(
+                            'Centers for Disease Control and Prevention',
+                            style: TextStyle(
+                              fontSize: 13,
+                              color:
+                                  Theme.of(context).textTheme.bodyText1.color,
+                            ),
+                          ),
+                          onPressed: () =>
+                              _launchURL(url: 'https://www.cdc.gov/'),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

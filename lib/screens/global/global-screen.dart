@@ -16,13 +16,11 @@ class GlobalScreen extends HookWidget {
       body: KgpBasePage(
         title: 'Worldwide',
         background: Image.asset('assets/earth.png'),
-        children: [
-          config.when(
-            data: (data) => GlobalCardList(data: data),
-            loading: () => KgpLoader(),
-            error: (error, st) => Center(child: Text(error.toString())),
-          ),
-        ],
+        child: config.when(
+          data: (data) => GlobalCardList(data: data),
+          loading: () => KgpLoader(),
+          error: (error, st) => Center(child: Text(error.toString())),
+        ),
       ),
     );
   }

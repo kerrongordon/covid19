@@ -21,23 +21,25 @@ class CountryScreen extends StatelessWidget {
     return Scaffold(
       body: KgpBasePage(
         title: data.country,
-        children: [
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Column(
-              children: [
-                CountryCardMain(data: data),
-                AdsComponent(type: NativeAdmobType.banner),
-                CountryCardToday(data: data),
-                CountryCardDetail(data: data),
-                AdsComponent(type: NativeAdmobType.full),
-                TravelAlertScreen(data: data),
-              ],
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                children: [
+                  CountryCardMain(data: data),
+                  AdsComponent(type: NativeAdmobType.banner),
+                  CountryCardToday(data: data),
+                  CountryCardDetail(data: data),
+                  AdsComponent(type: NativeAdmobType.full),
+                  TravelAlertScreen(data: data),
+                ],
+              ),
             ),
-          ),
-          CountryCardFive(data: data),
-          SizedBox(height: 50),
-        ],
+            CountryCardFive(data: data),
+            SizedBox(height: 50),
+          ],
+        ),
       ),
     );
   }

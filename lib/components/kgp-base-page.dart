@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 
 class KgpBasePage extends StatelessWidget {
   final String title;
+  final Widget child;
   final Widget background;
   final Widget scrollList;
   final List<Widget> actions;
-  final List<Widget> children;
   final double expandedHeight;
   final Color backgroundColor;
   final SliverChildDelegate sliverList;
@@ -20,12 +20,12 @@ class KgpBasePage extends StatelessWidget {
     this.actions,
     this.background,
     this.title,
-    this.children,
     this.scrollList,
     this.sliverList,
     this.backgroundColor,
     this.neverScroll,
     this.leading,
+    this.child,
   }) : super(key: key);
 
   @override
@@ -55,13 +55,7 @@ class KgpBasePage extends StatelessWidget {
           ),
         ),
         sliverList == null
-            ? SliverToBoxAdapter(
-                child: Container(
-                  child: Column(
-                    children: children,
-                  ),
-                ),
-              )
+            ? SliverToBoxAdapter(child: child)
             : SliverList(delegate: sliverList)
       ],
     );

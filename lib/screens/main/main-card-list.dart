@@ -4,7 +4,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/components/country-card/country-card-today.dart';
 import 'package:covid19/components/kgp-base-page.dart';
-import 'package:covid19/components/kgp-flag.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/main/main-callback.dart';
 import 'package:covid19/screens/main/main.card.one.dart';
@@ -76,32 +75,17 @@ class MainCardList extends StatelessWidget {
           ),
         ],
       ),
-      children: [
-        Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-              Stack(
-                children: [
-                  MainCardOne(data: data),
-                  Positioned(
-                    top: 109,
-                    left: 79,
-                    child: KgpFlag(
-                      imageUrl: data.countryInfo.flag,
-                      imageWidth: 70,
-                      imageHeight: 70,
-                    ),
-                  ),
-                ],
-              ),
-              AdsComponent(type: NativeAdmobType.banner),
-              CountryCardToday(data: data),
-              MainCallback(data: data),
-            ],
-          ),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: Column(
+          children: [
+            MainCardOne(data: data),
+            AdsComponent(type: NativeAdmobType.banner),
+            CountryCardToday(data: data),
+            MainCallback(data: data),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
