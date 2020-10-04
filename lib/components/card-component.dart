@@ -5,6 +5,7 @@ class CardComponent extends StatelessWidget {
   final Widget child;
   final void Function() onTap;
   final EdgeInsetsGeometry padding;
+  final EdgeInsetsGeometry margin;
 
   const CardComponent({
     Key key,
@@ -12,6 +13,7 @@ class CardComponent extends StatelessWidget {
     @required this.child,
     this.onTap,
     this.padding,
+    this.margin,
   }) : super(key: key);
 
   @override
@@ -22,7 +24,7 @@ class CardComponent extends StatelessWidget {
       color: color ?? theme.cardTheme.color,
       elevation: 30,
       shadowColor: Colors.black.withOpacity(0.3),
-      margin: const EdgeInsets.only(bottom: 20, top: 10),
+      margin: margin ?? const EdgeInsets.only(bottom: 20, top: 10),
       child: InkWell(
         splashColor: theme.primaryColor,
         onTap: onTap,

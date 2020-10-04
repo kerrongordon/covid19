@@ -1,21 +1,25 @@
 import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
+import 'package:covid19/models/covid-Infor.model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
 import 'package:lottie/lottie.dart';
 
-class InforSix extends StatelessWidget {
+class InforPage extends StatelessWidget {
+  final Infor data;
+
+  const InforPage({Key key, this.data}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: KgpBasePage(
-        title: 'Clean and disinfect',
+        title: data.title,
         expandedHeight: 55,
         child: Column(
           children: [
             Lottie.asset(
-              'assets/21426-cleaning.json',
+              'assets/${data.lottie}',
               repeat: true,
               animate: true,
               height: 300,
@@ -27,28 +31,17 @@ class InforSix extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     ListTile(
-                      title: Text(
-                        'Clean AND disinfect frequently touched surfaces daily. This includes tables, doorknobs, light switches, countertops, handles, desks, phones, keyboards, toilets, faucets, and sinks.',
-                        style: TextStyle(
-                          color: Theme.of(context).textTheme.bodyText1.color,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 16,
-                          height: 1.3,
-                        ),
-                      ),
                       trailing: Hero(
-                        tag: 6,
-                        child: Image.asset('assets/six.png'),
+                        tag: 1,
+                        child: Image.asset('assets/${data.image}'),
                       ),
-                    ),
-                    ListTile(
                       title: Text(
-                        'If surfaces are dirty, clean them: Use detergent or soap and water prior to disinfection.',
+                        data.description,
                         style: TextStyle(
-                          color: Theme.of(context).textTheme.bodyText1.color,
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
                           height: 1.3,
+                          color: Theme.of(context).textTheme.bodyText1.color,
                         ),
                       ),
                     ),
@@ -58,7 +51,7 @@ class InforSix extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: AdsComponent(type: NativeAdmobType.banner),
+              child: const AdsComponent(type: NativeAdmobType.full),
             ),
           ],
         ),

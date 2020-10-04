@@ -17,7 +17,7 @@ class CountriesScreen extends HookWidget {
     return Scaffold(
       body: KgpBasePage(
         title: 'Countries',
-        sliverList: SliverChildListDelegate.fixed(
+        sliverList: SliverChildListDelegate(
           config.when(
             loading: () => [KgpLoader()],
             error: (error, st) => [Center(child: Text(error.toString()))],
