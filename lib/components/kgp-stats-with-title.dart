@@ -39,7 +39,7 @@ class KgpStatsWithTitle extends StatelessWidget {
           flip != null
               ? FadeInUp(child: _titleUi())
               : FadeInDown(child: _amountUi()),
-          SizedBox(height: 10),
+          const SizedBox(height: 10),
           flip != null
               ? FadeInDown(child: _amountUi())
               : FadeInUp(child: _titleUi()),

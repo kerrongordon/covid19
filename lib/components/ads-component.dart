@@ -24,7 +24,7 @@ class _AdsComponentState extends State<AdsComponent> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 2)).then((_) {
+    Future.delayed(Duration(seconds: 3)).then((_) {
       if (mounted) setState(() => ready = true);
     });
   }

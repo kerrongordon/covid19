@@ -41,7 +41,7 @@ class KgpCardTitle extends StatelessWidget {
               ),
             ),
           ),
-          Divider(),
+          const Divider(),
           subtitle != null
               ? FadeInDown(
                   child: Text(
@@ -52,7 +52,7 @@ class KgpCardTitle extends StatelessWidget {
                   ),
                 )
               : Container(),
-          subtitle != null ? SizedBox(height: 25) : Container(),
+          subtitle != null ? const SizedBox(height: 25) : Container(),
         ],
       ),
     );

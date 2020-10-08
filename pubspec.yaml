@@ -43,6 +43,7 @@ dependencies:
   firebase_core: ^0.5.0
   firebase_analytics: ^6.0.0
   flutter_native_admob: ^2.1.0+3
+  flare_flutter: ^2.0.6
 
 dev_dependencies:
   flutter_test:
@@ -85,6 +86,7 @@ flutter:
   assets:
     - .env
     - assets/
+    - assets/flar/
     - assets/lottiefiles/
     - json/
   #  - images/a_dot_ham.jpeg

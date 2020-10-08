@@ -34,8 +34,8 @@ class KgpBasePage extends StatelessWidget {
     final theme = Theme.of(context);
     return CustomScrollView(
       physics: neverScroll == true
-          ? NeverScrollableScrollPhysics()
-          : AlwaysScrollableScrollPhysics(),
+          ? const NeverScrollableScrollPhysics()
+          : const AlwaysScrollableScrollPhysics(),
       slivers: <Widget>[
         SliverAppBar(
           backgroundColor: Colors.transparent,

@@ -69,8 +69,10 @@ class BoardingScreen extends HookWidget {
       ),
       BoardingSlide(
         title: 'Select Your Country',
+        flarAnimationName: 'roll',
+        flar: homePrefs.homeCountry.country == null ? 'WorldSpin' : null,
         subtitle: homePrefs.homeCountry.country ?? '',
-        lottie: homePrefs.homeCountry.country == null ? '3169-world' : null,
+        // lottie: homePrefs.homeCountry.country == null ? '3169-world' : null,
         flag: homePrefs.homeCountry.country == null
             ? ''
             : homePrefs.homeCountry.countryInfo.flag,
@@ -87,7 +89,9 @@ class BoardingScreen extends HookWidget {
         },
       ),
       BoardingSlide(
-        lottie: '22932-lets-tick',
+        // lottie: '22932-lets-tick',
+        flar: 'SuccessCheck',
+        flarAnimationName: 'Untitled',
         repeat: false,
       ),
     ];

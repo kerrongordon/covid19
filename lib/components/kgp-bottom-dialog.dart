@@ -30,15 +30,15 @@ class KgpBottomDialog extends StatelessWidget {
           children: [
             Text(
               title ?? '',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w700,
               ),
               overflow: TextOverflow.ellipsis,
             ),
-            SizedBox(height: 10),
-            Divider(),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
+            const Divider(),
+            const SizedBox(height: 10),
             child,
           ],
         ),

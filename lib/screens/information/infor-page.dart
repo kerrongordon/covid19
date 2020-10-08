@@ -8,8 +8,9 @@ import 'package:lottie/lottie.dart';
 
 class InforPage extends StatelessWidget {
   final Infor data;
+  final int index;
 
-  const InforPage({Key key, this.data}) : super(key: key);
+  const InforPage({Key key, this.data, this.index}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,11 +19,14 @@ class InforPage extends StatelessWidget {
         expandedHeight: 55,
         child: Column(
           children: [
-            Lottie.asset(
-              'assets/${data.lottie}',
-              repeat: true,
-              animate: true,
-              height: 300,
+            Hero(
+              tag: index,
+              child: Lottie.asset(
+                'assets/${data.lottie}',
+                repeat: true,
+                animate: true,
+                height: 300,
+              ),
             ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -31,16 +35,12 @@ class InforPage extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     ListTile(
-                      trailing: Hero(
-                        tag: 1,
-                        child: Image.asset('assets/${data.image}'),
-                      ),
                       title: Text(
                         data.description,
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
-                          height: 1.3,
+                          height: 1.5,
                           color: Theme.of(context).textTheme.bodyText1.color,
                         ),
                       ),
@@ -49,7 +49,7 @@ class InforPage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
+            const Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: const AdsComponent(type: NativeAdmobType.full),
             ),

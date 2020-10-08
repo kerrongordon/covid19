@@ -34,14 +34,13 @@ class InforList extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: const AdsComponent(type: NativeAdmobType.banner),
         ),
         Container(
           child: GridView.builder(
             shrinkWrap: true,
             itemCount: data.infor.length,
             padding:
-                const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 40),
+                const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 50),
             physics: NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -55,10 +54,6 @@ class InforList extends StatelessWidget {
               );
             },
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: const AdsComponent(type: NativeAdmobType.full),
         ),
       ],
     );

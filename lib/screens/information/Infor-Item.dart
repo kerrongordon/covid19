@@ -3,6 +3,7 @@ import 'package:covid19/models/covid-Infor.model.dart';
 import 'package:covid19/screens/information/infor-page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
+import 'package:lottie/lottie.dart';
 
 class InforItem extends StatelessWidget {
   const InforItem({
@@ -26,9 +27,11 @@ class InforItem extends StatelessWidget {
             ZoomIn(
               child: Hero(
                 tag: index,
-                child: Image.asset(
-                  'assets/${data.infor[index].image}',
-                  width: 73,
+                child: Lottie.asset(
+                  'assets/${data.infor[index].lottie}',
+                  repeat: true,
+                  animate: true,
+                  height: 73,
                 ),
               ),
             ),
@@ -47,7 +50,10 @@ class InforItem extends StatelessWidget {
       ),
       onTap: () => Navigator.of(context).push(
         MaterialPageRoute(
-          builder: (context) => InforPage(data: data.infor[index]),
+          builder: (context) => InforPage(
+            data: data.infor[index],
+            index: index,
+          ),
         ),
       ),
     );

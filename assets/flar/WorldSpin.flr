@@ -1,0 +1,1505 @@
+{
+	"version": 24,
+	"artboards": [
+		{
+			"name": "Artboard",
+			"translation": [
+				-8.181808471679688,
+				12.1212158203125
+			],
+			"width": 350,
+			"height": 350,
+			"origin": [
+				0,
+				0
+			],
+			"clipContents": true,
+			"color": [
+				0.364705890417099,
+				0.364705890417099,
+				0.364705890417099,
+				1
+			],
+			"nodes": [
+				{
+					"name": "Background",
+					"translation": [
+						174,
+						175
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": false,
+					"blendMode": 3,
+					"drawOrder": 1,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 0,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 350,
+					"height": 350,
+					"cornerRadius": 0,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 0,
+					"opacity": 1,
+					"color": [
+						0.1882352977991104,
+						0.20000000298023224,
+						0.41960784792900085,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Earth",
+					"translation": [
+						177,
+						170
+					],
+					"rotation": 0,
+					"scale": [
+						0.9980000257492065,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"type": "node"
+				},
+				{
+					"name": "Shadow",
+					"parent": 3,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1.0020040273666382,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 23,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Color",
+					"parent": 4,
+					"opacity": 0.4,
+					"color": [
+						0.4000000059604645,
+						0.4000000059604645,
+						0.4000000059604645,
+						1
+					],
+					"fillRule": 1,
+					"type": "colorFill"
+				},
+				{
+					"name": "Ellipse Path",
+					"parent": 4,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 2,
+							"translation": [
+								0,
+								-125
+							],
+							"in": [
+								-69.03559112548828,
+								-125
+							],
+							"out": [
+								5,
+								-125
+							]
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								-40,
+								0
+							],
+							"in": [
+								-40,
+								-69.03559112548828
+							],
+							"out": [
+								-40,
+								69.03559112548828
+							]
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								0,
+								125
+							],
+							"in": [
+								5,
+								125
+							],
+							"out": [
+								-69.03559112548828,
+								125
+							]
+						},
+						{
+							"pointType": 2,
+							"translation": [
+								-125,
+								0
+							],
+							"in": [
+								-125,
+								69.03559112548828
+							],
+							"out": [
+								-125,
+								-69.03559112548828
+							]
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Mask",
+					"parent": 3,
+					"translation": [
+						0.000030279159545898438,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1.0020040273666382,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 2,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Ellipse",
+					"parent": 7,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 250,
+					"height": 250,
+					"type": "ellipse"
+				},
+				{
+					"name": "Color",
+					"parent": 7,
+					"opacity": 1,
+					"color": [
+						0.16078431904315948,
+						0.501960813999176,
+						0.7254902124404907,
+						1
+					],
+					"fillRule": 1,
+					"type": "colorFill"
+				},
+				{
+					"name": "Clouds",
+					"parent": 3,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1.0020040273666382,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [
+						{
+							"node": 7,
+							"intersect": true
+						}
+					],
+					"type": "node"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						-100,
+						-10
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 14,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 11,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 90,
+					"height": 20,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 11,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						20,
+						50
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 17,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 14,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 50,
+					"height": 15,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 14,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						-10,
+						-80
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 20,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 17,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 90,
+					"height": 20,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 17,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						70,
+						80
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 11,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 20,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 90,
+					"height": 20,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 20,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						170,
+						-10
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 15,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 23,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 90,
+					"height": 20,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 23,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						260,
+						-80
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 21,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 26,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 90,
+					"height": 20,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 26,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						290,
+						50
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 18,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 29,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 50,
+					"height": 15,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 29,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						340,
+						80
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 12,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Color",
+					"parent": 32,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 32,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 0,
+							"translation": [
+								-45,
+								-10
+							],
+							"radius": 10
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								45,
+								-10
+							],
+							"radius": 10
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								45,
+								10
+							],
+							"radius": 10
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-45,
+								10
+							],
+							"radius": 10
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						530,
+						-80
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 22,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 35,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 90,
+					"height": 20,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 35,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						440,
+						-10
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 16,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 38,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 90,
+					"height": 20,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 38,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						560,
+						50
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 19,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 41,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 50,
+					"height": 15,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 41,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Cloud",
+					"parent": 10,
+					"translation": [
+						610,
+						80
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 13,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Color",
+					"parent": 44,
+					"opacity": 1,
+					"color": [
+						0.9254902005195618,
+						0.9411764740943909,
+						0.9450980424880981,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 44,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"bones": [],
+					"isVisible": true,
+					"isClosed": true,
+					"points": [
+						{
+							"pointType": 0,
+							"translation": [
+								-45,
+								-10
+							],
+							"radius": 10
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								45,
+								-10
+							],
+							"radius": 10
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								45,
+								10
+							],
+							"radius": 10
+						},
+						{
+							"pointType": 0,
+							"translation": [
+								-45,
+								10
+							],
+							"radius": 10
+						}
+					],
+					"type": "path"
+				},
+				{
+					"name": "Continents",
+					"parent": 3,
+					"translation": [
+						140,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1.0020040273666382,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [
+						{
+							"node": 7,
+							"intersect": true
+						}
+					],
+					"type": "node"
+				},
+				{
+					"name": "Continent",
+					"parent": 47,
+					"translation": [
+						-240,
+						-50
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 3,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 48,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 70,
+					"height": 40,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 48,
+					"opacity": 1,
+					"color": [
+						0.15294118225574493,
+						0.6823529601097107,
+						0.3764705955982208,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Continent",
+					"parent": 47,
+					"translation": [
+						-220,
+						20
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 4,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 51,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 110,
+					"height": 40,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 51,
+					"opacity": 1,
+					"color": [
+						0.15294118225574493,
+						0.6823529601097107,
+						0.3764705955982208,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Continent",
+					"parent": 47,
+					"translation": [
+						-20,
+						-80
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 5,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 54,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 110,
+					"height": 40,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 54,
+					"opacity": 1,
+					"color": [
+						0.15294118225574493,
+						0.6823529601097107,
+						0.3764705955982208,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Continent",
+					"parent": 47,
+					"translation": [
+						-60,
+						80
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 6,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 57,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 60,
+					"height": 40,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 57,
+					"opacity": 1,
+					"color": [
+						0.15294118225574493,
+						0.6823529601097107,
+						0.3764705955982208,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Continent",
+					"parent": 47,
+					"translation": [
+						50,
+						-50
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 7,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 60,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 70,
+					"height": 40,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 60,
+					"opacity": 1,
+					"color": [
+						0.15294118225574493,
+						0.6823529601097107,
+						0.3764705955982208,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Continent",
+					"parent": 47,
+					"translation": [
+						70,
+						20
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 8,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 63,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 110,
+					"height": 40,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 63,
+					"opacity": 1,
+					"color": [
+						0.15294118225574493,
+						0.6823529601097107,
+						0.3764705955982208,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Continent",
+					"parent": 47,
+					"translation": [
+						270,
+						-80
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 9,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 66,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 110,
+					"height": 40,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 66,
+					"opacity": 1,
+					"color": [
+						0.15294118225574493,
+						0.6823529601097107,
+						0.3764705955982208,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				},
+				{
+					"name": "Continent",
+					"parent": 47,
+					"translation": [
+						230,
+						80
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"isVisible": true,
+					"blendMode": 3,
+					"drawOrder": 10,
+					"transformAffectsStroke": false,
+					"type": "shape"
+				},
+				{
+					"name": "Rectangle",
+					"parent": 69,
+					"translation": [
+						0,
+						0
+					],
+					"rotation": 0,
+					"scale": [
+						1,
+						1
+					],
+					"opacity": 1,
+					"isCollapsed": false,
+					"clips": [],
+					"width": 60,
+					"height": 40,
+					"cornerRadius": 50,
+					"type": "rectangle"
+				},
+				{
+					"name": "Color",
+					"parent": 69,
+					"opacity": 1,
+					"color": [
+						0.15294118225574493,
+						0.6823529601097107,
+						0.3764705955982208,
+						1
+					],
+					"fillRule": 0,
+					"type": "colorFill"
+				}
+			],
+			"animations": [
+				{
+					"name": "roll",
+					"fps": 60,
+					"duration": 2,
+					"isLooping": true,
+					"keyed": [
+						{
+							"component": 10,
+							"posX": [
+								[
+									{
+										"time": 0,
+										"interpolatorType": 1,
+										"value": 0
+									},
+									{
+										"time": 2,
+										"interpolatorType": 1,
+										"value": -540
+									}
+								]
+							]
+						},
+						{
+							"component": 47,
+							"posX": [
+								[
+									{
+										"time": 0,
+										"interpolatorType": 1,
+										"value": 140
+									},
+									{
+										"time": 2,
+										"interpolatorType": 1,
+										"value": -150
+									}
+								]
+							]
+						}
+					],
+					"animationStart": 0,
+					"animationEnd": 2,
+					"type": "animation"
+				}
+			],
+			"type": "artboard"
+		}
+	]
+}
