@@ -24,16 +24,11 @@ class InforItem extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ZoomIn(
-              child: Hero(
-                tag: index,
-                child: Lottie.asset(
-                  'assets/${data.infor[index].lottie}',
-                  repeat: true,
-                  animate: true,
-                  height: 73,
-                ),
-              ),
+            Lottie.asset(
+              'assets/${data.infor[index].lottie}',
+              repeat: true,
+              animate: true,
+              height: 73,
             ),
             const SizedBox(height: 10),
             Divider(),
