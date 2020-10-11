@@ -24,7 +24,7 @@ class InforItem extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              'assets/${data.infor[index].image}',
+              'assets/infor/${data.infor[index].image}',
               height: 73,
             ),
             const SizedBox(height: 10),

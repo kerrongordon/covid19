@@ -1,4 +1,3 @@
-import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/components/kgp-center.dart';
 import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
@@ -21,9 +20,9 @@ class MainScreen extends HookWidget {
     final snapshot = useFuture(country);
     useAutomaticKeepAliveClient();
 
-    if (snapshot == null) {
-      return KgpCenter(child: KgpLoader());
-    }
+    if (country == null) return KgpCenter(child: KgpLoader());
+
+    if (snapshot == null) return KgpCenter(child: KgpLoader());
 
     if (snapshot.connectionState == ConnectionState.waiting) {
       return KgpCenter(child: KgpLoader());

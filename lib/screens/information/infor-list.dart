@@ -1,7 +1,6 @@
 import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/models/covid-Infor.model.dart';
 import 'package:covid19/screens/information/Infor-Item.dart';
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
 
@@ -16,12 +15,7 @@ class InforList extends StatelessWidget {
       children: [
         AspectRatio(
           aspectRatio: 1.7,
-          child: FlareActor(
-            "assets/flar/${data.pageImage}.flr",
-            alignment: Alignment.center,
-            fit: BoxFit.contain,
-            animation: 'Animations',
-          ),
+          child: Image.asset('assets/splash1.png'),
         ),
         Container(
           padding: const EdgeInsets.all(20),

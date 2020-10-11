@@ -26,21 +26,23 @@ class MainCardList extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 40),
-            child: CachedNetworkImage(
-              imageUrl: data.countryInfo.flag,
-              imageBuilder: (context, imageProvider) => Container(
-                width: double.infinity,
-                height: double.infinity,
-                decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
-                  image: DecorationImage(
-                    image: imageProvider,
-                    fit: BoxFit.cover,
+            child: RepaintBoundary(
+              child: CachedNetworkImage(
+                imageUrl: data.countryInfo.flag,
+                imageBuilder: (context, imageProvider) => Container(
+                  width: double.infinity,
+                  height: double.infinity,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    image: DecorationImage(
+                      image: imageProvider,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
+                errorWidget: (context, url, error) => Container(),
+                placeholder: (context, url) => Container(),
               ),
-              errorWidget: (context, url, error) => Container(),
-              placeholder: (context, url) => Container(),
             ),
           ),
           Positioned(

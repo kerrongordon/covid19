@@ -40,12 +40,8 @@ class BoardingScreen extends HookWidget {
 
     _pageController.addListener(() {
       if (_pageIndex.value == 5) {
-        if (homePrefs.homeCountry.country == null)
-          return _pageController.jumpToPage(4);
+        if (homePrefs.homeCountry.country == null) return onTapIcon(4);
       }
-
-      if (homePrefs.homeCountry.country != null)
-        return _pageController.jumpToPage(5);
     });
 
     List<Widget> _pages = [
@@ -95,8 +91,6 @@ class BoardingScreen extends HookWidget {
               homePrefs: homePrefs,
             ),
           );
-          if (homePrefs.homeCountry.country != null)
-            return _pageController.jumpToPage(5);
         },
       ),
       BoardingSlide(
@@ -106,7 +100,7 @@ class BoardingScreen extends HookWidget {
     ];
 
     Widget changeNavbar() {
-      return homePrefs.homeCountry.country != null
+      return homePrefs.homeCountry.country != null && _pageIndex.value == 5
           ? BoardingStartButton(
               onPressed: startApp,
             )

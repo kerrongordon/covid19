@@ -23,7 +23,7 @@ class KgpFlag extends StatelessWidget {
         : Hero(tag: tag, child: imageBuilderUi());
   }
 
-  CachedNetworkImage imageBuilderUi() {
+  Widget imageBuilderUi() {
     return CachedNetworkImage(
       imageUrl: imageUrl,
       imageBuilder: (context, imageProvider) => Container(

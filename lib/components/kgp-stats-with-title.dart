@@ -30,20 +30,22 @@ class KgpStatsWithTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: padding,
-      child: Column(
-        crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
-        mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
-        children: [
-          flip != null
-              ? FadeInUp(child: _titleUi())
-              : FadeInDown(child: _amountUi()),
-          const SizedBox(height: 10),
-          flip != null
-              ? FadeInDown(child: _amountUi())
-              : FadeInUp(child: _titleUi()),
-        ],
+    return RepaintBoundary(
+      child: Container(
+        padding: padding,
+        child: Column(
+          crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
+          mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
+          children: [
+            flip != null
+                ? FadeInUp(child: _titleUi())
+                : FadeInDown(child: _amountUi()),
+            const SizedBox(height: 10),
+            flip != null
+                ? FadeInDown(child: _amountUi())
+                : FadeInUp(child: _titleUi()),
+          ],
+        ),
       ),
     );
   }

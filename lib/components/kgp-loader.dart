@@ -14,8 +14,10 @@ class KgpLoader extends StatelessWidget {
     return Container(
       height: mediaQuery.size.height / hight,
       child: Center(
-        child: LoadingBouncingGrid.circle(
-          backgroundColor: theme.primaryColor,
+        child: RepaintBoundary(
+          child: LoadingBouncingGrid.circle(
+            backgroundColor: theme.primaryColor,
+          ),
         ),
       ),
     );
