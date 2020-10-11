@@ -39,9 +39,9 @@ class CountryCardTravelAlert extends StatelessWidget {
             ),
           ),
           AspectRatio(
-            aspectRatio: 1,
+            aspectRatio: 2,
             child: FlareActor(
-              "assets/flar/plane.flr",
+              "assets/flar/Plane.flr",
               alignment: Alignment.center,
               fit: BoxFit.contain,
               animation: 'Animations',

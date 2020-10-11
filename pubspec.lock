@@ -50,6 +50,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.5.0-nullsafety.1"
+  bezier_chart:
+    dependency: "direct main"
+    description:
+      name: bezier_chart
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.17+1"
   boolean_selector:
     dependency: transitive
     description:
@@ -259,7 +266,7 @@ packages:
       name: fl_chart
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.0"
+    version: "0.12.0"
   flare_dart:
     dependency: transitive
     description:

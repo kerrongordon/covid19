@@ -23,7 +23,7 @@ dependencies:
   flutter_icons: ^1.0.0+1
   loading_animations: ^2.1.0
   cached_network_image: ^2.0.0
-  fl_chart: ^0.11.0
+  fl_chart: ^0.12.0
   dio_http_cache: ^0.2.8
   intl: ^0.16.1
   bottom_navy_bar: ^5.5.0
@@ -43,6 +43,7 @@ dependencies:
   firebase_analytics: ^6.0.0
   flutter_native_admob: ^2.1.0+3
   flare_flutter: ^2.0.6
+  bezier_chart: ^1.0.17+1
 
 dev_dependencies:
   flutter_test:
