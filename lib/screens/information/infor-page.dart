@@ -2,9 +2,10 @@ import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/models/covid-Infor.model.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
-import 'package:lottie/lottie.dart';
+// import 'package:lottie/lottie.dart';
 
 class InforPage extends StatelessWidget {
   final Infor data;
@@ -19,13 +20,13 @@ class InforPage extends StatelessWidget {
         expandedHeight: 55,
         child: Column(
           children: [
-            Hero(
-              tag: index,
-              child: Lottie.asset(
-                'assets/${data.lottie}',
-                repeat: true,
-                animate: true,
-                height: 300,
+            AspectRatio(
+              aspectRatio: 1,
+              child: FlareActor(
+                "assets/flar/${data.lottie}.flr",
+                alignment: Alignment.center,
+                fit: BoxFit.contain,
+                animation: 'Animations',
               ),
             ),
             Container(

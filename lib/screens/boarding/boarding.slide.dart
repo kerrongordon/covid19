@@ -2,29 +2,24 @@ import 'package:covid19/components/kgp-flag.dart';
 import 'package:covid19/components/kgp-icon-button.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 
 class BoardingSlide extends StatelessWidget {
   final String title;
   final String subtitle;
-  final String lottie;
   final String flar;
   final String flarAnimationName;
   final String flag;
   final String buttonTitle;
   final Widget buttonIcon;
-  final bool repeat;
   final void Function() onPressed;
   const BoardingSlide({
     Key key,
     this.title,
     this.subtitle,
-    this.lottie,
     this.buttonTitle,
     this.buttonIcon,
     this.onPressed,
     this.flag,
-    this.repeat = true,
     this.flar,
     this.flarAnimationName,
   }) : super(key: key);
@@ -53,20 +48,7 @@ class BoardingSlide extends StatelessWidget {
                   ),
                 )
               : Container(),
-          lottie != null
-              ? Container(
-                  child: AspectRatio(
-                    aspectRatio: 1.5,
-                    child: Lottie.asset(
-                      'assets/lottiefiles/$lottie.json',
-                      repeat: repeat,
-                      animate: true,
-                      height: mediaQuery.size.width / 2,
-                    ),
-                  ),
-                )
-              : Container(),
-          flag != null && lottie == null && flar == null
+          flag != null && flar == null
               ? Container(
                   child: Padding(
                     padding: const EdgeInsets.all(20),

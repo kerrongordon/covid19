@@ -38,41 +38,50 @@ class BoardingScreen extends HookWidget {
       );
     }
 
+    _pageController.addListener(() {
+      if (_pageIndex.value == 5) {
+        if (homePrefs.homeCountry.country == null)
+          return _pageController.jumpToPage(4);
+      }
+
+      if (homePrefs.homeCountry.country != null)
+        return _pageController.jumpToPage(5);
+    });
+
     List<Widget> _pages = [
       BoardingSlide(
         title: 'Covid 19 Tracker',
         subtitle:
             'Get the Facts About Coronavirus Daily cases update around the world',
-        lottie: '28663-coronavirus-covid-19',
-        repeat: false,
+        flar: 'Covid19Pprotect',
+        flarAnimationName: 'Animations',
       ),
       BoardingSlide(
         title: 'Learn as you go',
         subtitle:
             'Take steps to care for yourself and help protect others in your home and community.',
-        lottie: '17949-corona-doctor',
-        repeat: false,
+        flar: 'CoronaDoctor',
+        flarAnimationName: 'Animations',
       ),
       BoardingSlide(
         title: 'Travel Advisories',
         subtitle:
             'Official travel advisories issued by governments across the globe.',
-        lottie: '23697-travelling-icon-animation',
-        repeat: false,
+        flar: 'AirplaneAroundTheWorld',
+        flarAnimationName: 'Animations',
       ),
       BoardingSlide(
         title: 'Stay At Home',
         subtitle:
             'If you have symptoms of COVID-19 however mild, self-isolate for at least 10 days from when your symptoms started.',
-        lottie: '20546-i-stay-at-home',
-        repeat: false,
+        flar: 'StayAtHome',
+        flarAnimationName: 'Animations',
       ),
       BoardingSlide(
         title: 'Select Your Country',
         flarAnimationName: 'roll',
         flar: homePrefs.homeCountry.country == null ? 'WorldSpin' : null,
         subtitle: homePrefs.homeCountry.country ?? '',
-        // lottie: homePrefs.homeCountry.country == null ? '3169-world' : null,
         flag: homePrefs.homeCountry.country == null
             ? ''
             : homePrefs.homeCountry.countryInfo.flag,
@@ -86,18 +95,18 @@ class BoardingScreen extends HookWidget {
               homePrefs: homePrefs,
             ),
           );
+          if (homePrefs.homeCountry.country != null)
+            return _pageController.jumpToPage(5);
         },
       ),
       BoardingSlide(
-        // lottie: '22932-lets-tick',
         flar: 'SuccessCheck',
         flarAnimationName: 'Untitled',
-        repeat: false,
       ),
     ];
 
     Widget changeNavbar() {
-      return _pageIndex.value == _pages.length - 1
+      return homePrefs.homeCountry.country != null
           ? BoardingStartButton(
               onPressed: startApp,
             )

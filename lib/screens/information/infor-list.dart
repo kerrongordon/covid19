@@ -1,9 +1,9 @@
 import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/models/covid-Infor.model.dart';
 import 'package:covid19/screens/information/Infor-Item.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
-import 'package:lottie/lottie.dart';
 
 class InforList extends StatelessWidget {
   final CovidInfor data;
@@ -14,11 +14,14 @@ class InforList extends StatelessWidget {
     print(data.pageTitle);
     return Column(
       children: [
-        Lottie.asset(
-          'assets/${data.pageImage}',
-          repeat: true,
-          animate: true,
-          height: 300,
+        AspectRatio(
+          aspectRatio: 1.7,
+          child: FlareActor(
+            "assets/flar/${data.pageImage}.flr",
+            alignment: Alignment.center,
+            fit: BoxFit.contain,
+            animation: 'Animations',
+          ),
         ),
         Container(
           padding: const EdgeInsets.all(20),
@@ -55,6 +58,10 @@ class InforList extends StatelessWidget {
             },
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: const AdsComponent(type: NativeAdmobType.banner),
+        )
       ],
     );
   }

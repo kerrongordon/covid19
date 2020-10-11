@@ -3,7 +3,6 @@ import 'package:covid19/models/covid-Infor.model.dart';
 import 'package:covid19/screens/information/infor-page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
-import 'package:lottie/lottie.dart';
 
 class InforItem extends StatelessWidget {
   const InforItem({
@@ -24,14 +23,12 @@ class InforItem extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Lottie.asset(
-              'assets/${data.infor[index].lottie}',
-              repeat: true,
-              animate: true,
+            Image.asset(
+              'assets/${data.infor[index].image}',
               height: 73,
             ),
             const SizedBox(height: 10),
-            Divider(),
+            const Divider(),
             const SizedBox(height: 10),
             FadeInDown(
               child: Text(

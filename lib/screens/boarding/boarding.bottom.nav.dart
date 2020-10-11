@@ -27,21 +27,27 @@ class BoardingBottomNav extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          FlatButton(
-            onPressed: () => ontap(_pages.length),
-            child: const Text(
-              'Skip',
-              style: const TextStyle(
-                color: Colors.white,
-              ),
-            ),
-          ),
+          _pageIndex.value == _pages.length - 2 ||
+                  _pageIndex.value == _pages.length - 1
+              ? Container(
+                  width: 89,
+                  height: 40,
+                )
+              : FlatButton(
+                  onPressed: () => ontap(_pages.length - 2),
+                  child: const Text(
+                    'Skip',
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                for (var i = 0; i < _pages.length; i++)
+                for (var i = 0; i < _pages.length - 1; i++)
                   _pageIndex.value == i
                       ? BoardingIndicator(
                           toggle: true,

@@ -1,11 +1,11 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-card-title.dart';
 import 'package:covid19/models/travel-alert-model.dart';
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:intl/intl.dart';
-import 'package:lottie/lottie.dart';
 
 class CountryCardTravelAlert extends StatelessWidget {
   final Datum data;
@@ -38,11 +38,14 @@ class CountryCardTravelAlert extends StatelessWidget {
               ),
             ),
           ),
-          Lottie.asset(
-            'assets/airplane.json',
-            repeat: true,
-            animate: true,
-            height: 150,
+          AspectRatio(
+            aspectRatio: 1,
+            child: FlareActor(
+              "assets/flar/plane.flr",
+              alignment: Alignment.center,
+              fit: BoxFit.contain,
+              animation: 'Animations',
+            ),
           ),
         ],
       ),

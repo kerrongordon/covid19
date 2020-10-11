@@ -24,7 +24,7 @@ class Splash extends HookWidget {
       });
 
       animationController
-        ..duration = Duration(seconds: 2)
+        ..duration = Duration(seconds: 1)
         ..forward();
     }
 
