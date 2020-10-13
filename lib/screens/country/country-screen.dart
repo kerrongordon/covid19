@@ -6,6 +6,7 @@ import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/country/country-card-five.dart';
 import 'package:covid19/screens/country/travel-alert-screen.dart';
+import 'package:covid19/screens/country/usstate-screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
 
@@ -38,6 +39,7 @@ class CountryScreen extends StatelessWidget {
                 ],
               ),
             ),
+            data.country == 'USA' ? UsStateScreen() : Container(),
           ],
         ),
       ),

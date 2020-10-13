@@ -1,13 +1,12 @@
+import 'package:covid19/models/usstates-model.dart';
 import 'package:covid19/utils/failure.util.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
-import 'package:covid19/models/country-model.dart';
 
-class CountryService {
-  static const url =
-      'https://disease.sh/v3/covid-19/countries?yesterday=true&sort=cases';
-
-  Future<List<Country>> getCountryApi() async {
+class UsStatesService {
+  Future<List<UsStates>> getUsStatesApi() async {
+    final String url =
+        'https://disease.sh/v3/covid-19/states?sort=cases&yesterday=true';
     Dio dio = new Dio();
     dio.interceptors
         .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
@@ -20,17 +19,21 @@ class CountryService {
           maxStale: Duration(hours: 2),
         ),
       );
-      List<Country> counties = [];
 
-      for (final country in res.data) {
-        Country list = Country.fromJson(country);
-        counties.add(list);
+      List<UsStates> data = [];
+
+      for (final item in res.data) {
+        UsStates list = UsStates.fromJson(item);
+        data.add(list);
       }
 
-      return counties;
+      return data;
     } on DioError {
       throw Failure('Oh no something went wrong 😥️');
     } catch (e) {
+      print('=====================');
+      print(e);
+      print('=====================');
       throw Failure('There seem to be a problem 😱️');
     }
   }

@@ -38,7 +38,7 @@ class CountryCardDetail extends StatelessWidget {
                   child: KgpStatsWithTitle(
                     flip: true,
                     title: 'Critical',
-                    amount: data.active,
+                    amount: data.critical,
                     titleFontSize: 18,
                     amountFontSize: 15,
                     titlecolor: theme.accentColor,

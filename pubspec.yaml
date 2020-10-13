@@ -44,6 +44,7 @@ dependencies:
   flutter_native_admob: ^2.1.0+3
   flare_flutter: ^2.0.6
   bezier_chart: ^1.0.17+1
+  dots_indicator: ^1.2.0
 
 dev_dependencies:
   flutter_test:
