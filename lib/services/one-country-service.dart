@@ -13,7 +13,6 @@ class OneCountryService {
     try {
       Response res = await dio.get(
         url,
-        queryParameters: {'yesterday': 'true', 'strict': 'true'},
         options: buildCacheOptions(
           Duration(hours: 1),
           maxStale: Duration(hours: 2),
