@@ -17,9 +17,7 @@ jobs:
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v1
         with:
-          envkey_FACEBOOK_PLACEMENT_ID: ${{ secrets.FACEBOOK_PLACEMENT_ID }}
           envkey_MAP_API: ${{ secrets.MAP_API }}
-          envkey_Ad_TOGGLE: ${{ secrets.Ad_TOGGLE }}
           file_name: .env
       - name: Flutter action
         uses: actions/setup-java@v1
