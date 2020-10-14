@@ -82,8 +82,8 @@ class MainCardList extends StatelessWidget {
         child: Column(
           children: [
             MainCardOne(data: data),
-            AdsComponent(type: NativeAdmobType.banner),
             CountryCardToday(data: data),
+            const AdsComponent(type: NativeAdmobType.banner),
             MainCallback(data: data),
           ],
         ),

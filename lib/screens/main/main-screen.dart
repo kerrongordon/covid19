@@ -14,6 +14,7 @@ class MainScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final homePrefs = useProvider(myHomeCountryProvider);
+    final update = useState(true);
     final country = useMemoized(
       () => homePrefs.getCountry(),
     );
@@ -33,6 +34,10 @@ class MainScreen extends HookWidget {
       final Country data = homePrefs.homeCountry.country == null
           ? snapshot.data
           : homePrefs.homeCountry;
+      if (update.value) {
+        homePrefs.setCountry(data);
+        update.value = false;
+      }
       return Scaffold(
         body: MainCardList(data: data),
         floatingActionButton: Container(
