@@ -6,7 +6,7 @@ import 'package:dio_http_cache/dio_http_cache.dart';
 class UsStatesService {
   Future<List<UsStates>> getUsStatesApi() async {
     final String url =
-        'https://disease.sh/v3/covid-19/states?sort=cases&yesterday=false';
+        'https://disease.sh/v3/covid-19/states?sort=cases&yesterday=true';
     Dio dio = new Dio();
     dio.interceptors
         .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
