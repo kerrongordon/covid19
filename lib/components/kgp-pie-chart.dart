@@ -18,38 +18,36 @@ class KgpPieChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return RepaintBoundary(
-      child: RotateIn(
-        child: ZoomIn(
-          child: Container(
-            child: AspectRatio(
-              aspectRatio: aspectRatio,
-              child: PieChart(
-                PieChartData(
-                  borderData: FlBorderData(show: false),
-                  sectionsSpace: 0,
-                  startDegreeOffset: 40,
-                  sections: [
-                    PieChartSectionData(
-                      color: ColorTheme.cases,
-                      value: cases.toDouble(),
-                      title: '',
-                      radius: 35,
-                    ),
-                    PieChartSectionData(
-                      color: ColorTheme.recovered,
-                      value: recovered.toDouble(),
-                      title: '',
-                      radius: 45,
-                    ),
-                    PieChartSectionData(
-                      color: ColorTheme.deaths,
-                      value: deaths.toDouble(),
-                      title: '',
-                      radius: 65,
-                    ),
-                  ],
-                ),
+    return RotateIn(
+      child: RepaintBoundary(
+        child: Container(
+          child: AspectRatio(
+            aspectRatio: aspectRatio,
+            child: PieChart(
+              PieChartData(
+                borderData: FlBorderData(show: false),
+                sectionsSpace: 0,
+                startDegreeOffset: 40,
+                sections: [
+                  PieChartSectionData(
+                    color: ColorTheme.cases,
+                    value: cases.toDouble(),
+                    title: '',
+                    radius: 35,
+                  ),
+                  PieChartSectionData(
+                    color: ColorTheme.recovered,
+                    value: recovered.toDouble(),
+                    title: '',
+                    radius: 45,
+                  ),
+                  PieChartSectionData(
+                    color: ColorTheme.deaths,
+                    value: deaths.toDouble(),
+                    title: '',
+                    radius: 65,
+                  ),
+                ],
               ),
             ),
           ),
