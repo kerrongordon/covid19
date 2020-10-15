@@ -1,4 +1,7 @@
 import 'package:covid19/components/kgp-center.dart';
+import 'package:covid19/components/kgp-loader.dart';
+import 'package:covid19/models/country-model.dart';
+import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/preference-provider.dart';
 import 'package:covid19/screens/boarding/boarding.screen.dart';
 import 'package:covid19/screens/tab/tab-screen.dart';
@@ -11,35 +14,53 @@ import 'package:shared_preferences/shared_preferences.dart';
 class Splash extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final prefs = useProvider(preferencesProvider);
-    final loaded = useState(false);
-    final animationController = useAnimationController();
+    final countryPro = useProvider(countryProvider);
     final backgroundColor = ColorTheme.primary;
 
-    void onAnimationLoaded() {
-      animationController.addStatusListener((status) {
-        if (status == AnimationStatus.completed) {
-          return loaded.value = true;
-        }
-      });
-
-      animationController
-        ..duration = Duration(seconds: 1)
-        ..forward();
-    }
-
-    return loaded.value == false
-        ? _loadingBuilder(color: backgroundColor, start: onAnimationLoaded)
-        : prefs.when(
-            data: (data) => _checkFirstSeen(data),
-            loading: () => _loadingBuilder(color: backgroundColor),
-            error: (error, _) => _errorBuilder(error),
-          );
+    return countryPro.when(
+      data: (data) => _checkFirstSeen(countries: data),
+      loading: () => _loadingBuilder(color: backgroundColor),
+      error: (error, _) => _errorBuilder(error),
+    );
   }
 
-  Widget _checkFirstSeen(SharedPreferences prefs) {
+  Widget _checkFirstSeen({List<Country> countries}) {
+    final prefs = useProvider(preferencesProvider);
+    final backgroundColor = ColorTheme.primary;
+
+    return prefs.when(
+      data: (data) => _startApp(prefs: data, countries: countries),
+      loading: () => _loadingBuilder(color: backgroundColor),
+      error: (error, _) => _errorBuilder(error),
+    );
+  }
+
+  Widget _startApp({SharedPreferences prefs, List<Country> countries}) {
+    final homePrefs = useProvider(myHomeCountryProvider);
     bool _seen = (prefs.getBool('start') ?? false);
-    return _seen == true ? TabScreen() : BoardingScreen();
+    final backgroundColor = ColorTheme.primary;
+    final updateBuild = useState(true);
+
+    if (_seen == true) {
+      final country = useMemoized(() => homePrefs.getCountry());
+      final snapshot = useFuture(country);
+
+      if (snapshot.hasData) {
+        if (updateBuild.value) {
+          final oldDataName = snapshot.data.country;
+          final update = countries
+              .where((newDataName) => oldDataName == newDataName.country)
+              .toList()[0];
+          homePrefs.setCountry(update);
+          updateBuild.value = false;
+          return KgpCenter(child: KgpLoader());
+        } else {
+          return TabScreen();
+        }
+      }
+      return _loadingBuilder(color: backgroundColor);
+    }
+    return BoardingScreen();
   }
 
   Widget _loadingBuilder({Color color, Function start}) {
