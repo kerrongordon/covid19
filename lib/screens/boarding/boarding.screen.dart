@@ -116,8 +116,8 @@ class BoardingScreen extends HookWidget {
       appBar: AppBar(
         elevation: 0,
         toolbarHeight: 0,
-        backgroundColor: Theme.of(context).accentColor,
-        brightness: Brightness.dark,
+        backgroundColor: Theme.of(context).backgroundColor,
+        brightness: Brightness.light,
       ),
       body: PageView(
         controller: _pageController,

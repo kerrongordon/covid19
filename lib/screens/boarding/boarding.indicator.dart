@@ -11,6 +11,7 @@ class BoardingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Padding(
       padding: const EdgeInsets.all(8),
       child: GestureDetector(
@@ -23,7 +24,7 @@ class BoardingIndicator extends StatelessWidget {
             width: toggle ? 30 : 8,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50),
-              color: toggle ? Colors.white : Colors.grey.withOpacity(0.5),
+              color: toggle ? theme.accentColor : Colors.black54,
             ),
           ),
         ),

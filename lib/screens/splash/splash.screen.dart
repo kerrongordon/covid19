@@ -38,7 +38,6 @@ class Splash extends HookWidget {
   Widget _startApp({SharedPreferences prefs, List<Country> countries}) {
     final homePrefs = useProvider(myHomeCountryProvider);
     bool _seen = (prefs.getBool('start') ?? false);
-    final backgroundColor = ColorTheme.primary;
     final updateBuild = useState(true);
 
     if (_seen == true) {
@@ -58,7 +57,7 @@ class Splash extends HookWidget {
           return TabScreen();
         }
       }
-      return _loadingBuilder(color: backgroundColor);
+      return KgpCenter(child: KgpLoader());
     }
     return BoardingScreen();
   }

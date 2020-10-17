@@ -27,9 +27,10 @@ class BoardingSlide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
+    final theme = Theme.of(context);
 
     return Container(
-      color: Theme.of(context).accentColor,
+      color: theme.backgroundColor,
       padding: const EdgeInsets.symmetric(horizontal: 40),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +56,6 @@ class BoardingSlide extends StatelessWidget {
                     child: KgpFlag(
                       tag: null,
                       imageUrl: flag,
-                      valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                       imageHeight: mediaQuery.size.width / 2.5,
                       imageWidth: mediaQuery.size.width / 2.5,
                     ),
@@ -69,7 +69,6 @@ class BoardingSlide extends StatelessWidget {
                     title,
                     style: const TextStyle(
                       fontSize: 24,
-                      color: Colors.white,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -83,7 +82,6 @@ class BoardingSlide extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 18,
                       height: 1.5,
-                      color: Colors.white,
                       fontWeight: FontWeight.w300,
                     ),
                     textAlign: TextAlign.center,
