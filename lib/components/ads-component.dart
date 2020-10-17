@@ -17,9 +17,7 @@ class AdsComponent extends StatefulWidget {
 }
 
 class _AdsComponentState extends State<AdsComponent> {
-  static const _adUnitID = kDebugMode
-      ? 'ca-app-pub-3940256099942544/2247696110'
-      : 'ca-app-pub-5675929973866541/7003986965';
+  static const _adUnitID = 'ca-app-pub-5675929973866541/7003986965';
   final _nativeAdController = NativeAdmobController();
   double _height = 0;
 
@@ -27,6 +25,7 @@ class _AdsComponentState extends State<AdsComponent> {
 
   @override
   void initState() {
+    _nativeAdController.setTestDeviceIds(['D1A9FB043D5B3B683FFB73575B9C8AD8']);
     _subscription = _nativeAdController.stateChanged.listen(_onStateChanged);
     super.initState();
   }
