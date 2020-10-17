@@ -29,7 +29,6 @@ class CountryScreen extends StatelessWidget {
               child: Column(
                 children: [
                   CountryCardMain(data: data),
-                  const AdsComponent(type: NativeAdmobType.banner),
                   CountryCardToday(data: data),
                   CountryCardDetail(data: data),
                   const AdsComponent(type: NativeAdmobType.full),
