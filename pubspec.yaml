@@ -11,7 +11,7 @@ description: A covid 19 application.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 6.4.0+6.4.0
+version: 6.4.1+6.4.1
 
 environment:
   sdk: ">=2.6.0 <3.0.0"
@@ -44,7 +44,7 @@ dependencies:
   flutter_native_admob: ^2.1.0+3
   flare_flutter: ^2.0.6
   bezier_chart: ^1.0.17+1
-  dots_indicator: ^1.2.0
+  auto_size_text: ^2.1.0
 
 dev_dependencies:
   flutter_test:
