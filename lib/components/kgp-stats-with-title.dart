@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid19/utils/comma.util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
@@ -50,25 +51,27 @@ class KgpStatsWithTitle extends StatelessWidget {
     );
   }
 
-  Text _amountUi() {
-    return Text(
+  Widget _amountUi() {
+    return AutoSizeText(
       CommaUtil.use(amount),
       style: TextStyle(
         color: amountcolor,
         fontSize: amountFontSize,
         fontWeight: FontWeight.w300,
       ),
+      maxLines: 1,
     );
   }
 
-  Text _titleUi() {
-    return Text(
+  Widget _titleUi() {
+    return AutoSizeText(
       title,
       style: TextStyle(
         color: titlecolor,
         fontSize: titleFontSize,
         fontWeight: FontWeight.bold,
       ),
+      maxLines: 1,
     );
   }
 }

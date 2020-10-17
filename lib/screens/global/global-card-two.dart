@@ -33,7 +33,7 @@ class GlobalCardTwo extends StatelessWidget {
                   child: KgpStatsWithTitle(
                     title: 'Confirmed',
                     amount: data.todayCases,
-                    amountFontSize: 20,
+                    amountFontSize: 18,
                     titleFontSize: 15,
                     titlecolor: ColorTheme.cases,
                   ),
@@ -42,7 +42,7 @@ class GlobalCardTwo extends StatelessWidget {
                   child: KgpStatsWithTitle(
                     title: 'Deaths',
                     amount: data.todayDeaths,
-                    amountFontSize: 20,
+                    amountFontSize: 18,
                     titleFontSize: 15,
                     titlecolor: ColorTheme.deaths,
                   ),
@@ -51,7 +51,7 @@ class GlobalCardTwo extends StatelessWidget {
                   child: KgpStatsWithTitle(
                     title: 'Recovered',
                     amount: data.todayRecovered,
-                    amountFontSize: 20,
+                    amountFontSize: 18,
                     titleFontSize: 15,
                     titlecolor: ColorTheme.recovered,
                   ),

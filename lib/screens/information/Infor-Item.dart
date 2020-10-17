@@ -22,10 +22,14 @@ class InforItem extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/infor/${data.infor[index].image}',
-              height: 73,
+            AspectRatio(
+              aspectRatio: 2.5,
+              child: Image.asset(
+                'assets/infor/${data.infor[index].image}',
+              ),
             ),
             const SizedBox(height: 10),
             const Divider(),

@@ -33,8 +33,8 @@ class CountryCardToday extends StatelessWidget {
                   child: KgpStatsWithTitle(
                     title: 'Confirmed',
                     amount: data.todayCases,
-                    amountFontSize: 20,
-                    titleFontSize: 15,
+                    amountFontSize: 18,
+                    titleFontSize: 14,
                     titlecolor: ColorTheme.cases,
                   ),
                 ),
@@ -42,8 +42,8 @@ class CountryCardToday extends StatelessWidget {
                   child: KgpStatsWithTitle(
                     title: 'Deaths',
                     amount: data.todayDeaths,
-                    amountFontSize: 20,
-                    titleFontSize: 15,
+                    amountFontSize: 18,
+                    titleFontSize: 14,
                     titlecolor: ColorTheme.deaths,
                   ),
                 ),
@@ -51,8 +51,8 @@ class CountryCardToday extends StatelessWidget {
                   child: KgpStatsWithTitle(
                     title: 'Recovered',
                     amount: data.todayRecovered,
-                    amountFontSize: 20,
-                    titleFontSize: 15,
+                    amountFontSize: 18,
+                    titleFontSize: 14,
                     titlecolor: ColorTheme.recovered,
                   ),
                 ),
