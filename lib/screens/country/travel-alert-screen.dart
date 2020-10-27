@@ -1,5 +1,4 @@
 import 'package:covid19/components/country-card/country-card-travel-alert.dart';
-import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/models/travel-alert-model.dart';
 import 'package:covid19/providers/travel-alert-provider.dart';
@@ -21,17 +20,14 @@ class TravelAlertScreen extends ConsumerWidget {
       future: travelAlert.gettravelAlertApi(countrycode: couCode),
       builder: (context, AsyncSnapshot<TravelAlert> snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return KgpLoader();
+          return Container();
         } else if (snapshot.hasError) {
-          final error = snapshot.error;
-          return Container(
-              height: 200, child: Center(child: Text(error.toString())));
+          return Container();
         } else if (snapshot.hasData) {
           final datal = snapshot.data.data;
-          for (var val in datal.values) {
-            return CountryCardTravelAlert(data: val);
-          }
-          return Container();
+          return datal.values.length == 1
+              ? CountryCardTravelAlert(data: datal.values.first)
+              : Container();
         } else {
           return Container();
         }
