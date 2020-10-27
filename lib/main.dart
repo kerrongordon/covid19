@@ -29,9 +29,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
-    ));
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
+        systemNavigationBarColor: savedThemeMode.isLight
+            ? LightTheme.lightBackground
+            : DarkTheme.darkBackground ?? LightTheme.lightBackground,
+        systemNavigationBarIconBrightness: savedThemeMode.isLight
+            ? Brightness.dark
+            : Brightness.light ?? Brightness.dark,
+      ),
+    );
 
     return AdaptiveTheme(
       initial: savedThemeMode.isSystem

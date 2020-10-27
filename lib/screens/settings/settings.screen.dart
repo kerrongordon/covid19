@@ -1,13 +1,17 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
+import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
 import 'package:covid19/screens/settings/settings.country.picker.dart';
 import 'package:covid19/screens/settings/settings.theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class SettingsScreen extends StatelessWidget {
+class SettingsScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    useAutomaticKeepAliveClient();
     return Scaffold(
       body: KgpBasePage(
         title: 'Settings',
@@ -23,15 +27,15 @@ class SettingsScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       Center(
-                        child: Text(
+                        child: const Text(
                           'About',
                           style: const TextStyle(fontSize: 18),
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Divider(),
-                      SizedBox(height: 20),
-                      Text(
+                      const SizedBox(height: 10),
+                      const Divider(),
+                      const SizedBox(height: 20),
+                      const Text(
                         'We source data from Open Disease Data, Daily updated travel advisories and The Centers for Disease Control and Prevention.',
                         style: const TextStyle(
                           fontWeight: FontWeight.w400,
@@ -39,15 +43,14 @@ class SettingsScreen extends StatelessWidget {
                           height: 1.3,
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       ListTile(
                         title: FlatButton(
                           child: Text(
                             'Open Disease Data',
                             style: TextStyle(
                               fontSize: 13,
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color,
+                              color: theme.textTheme.bodyText1.color,
                             ),
                           ),
                           onPressed: () =>
@@ -60,8 +63,7 @@ class SettingsScreen extends StatelessWidget {
                             'Daily updated travel advisories',
                             style: TextStyle(
                               fontSize: 13,
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color,
+                              color: theme.textTheme.bodyText1.color,
                             ),
                           ),
                           onPressed: () => _launchURL(
@@ -74,8 +76,7 @@ class SettingsScreen extends StatelessWidget {
                             'Centers for Disease Control and Prevention',
                             style: TextStyle(
                               fontSize: 13,
-                              color:
-                                  Theme.of(context).textTheme.bodyText1.color,
+                              color: theme.textTheme.bodyText1.color,
                             ),
                           ),
                           onPressed: () =>
