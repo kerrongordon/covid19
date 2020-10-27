@@ -10,7 +10,6 @@ class InforList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(data.pageTitle);
     return Column(
       children: [
         AspectRatio(

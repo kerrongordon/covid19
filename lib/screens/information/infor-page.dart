@@ -5,7 +5,6 @@ import 'package:covid19/models/covid-Infor.model.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
-// import 'package:lottie/lottie.dart';
 
 class InforPage extends StatelessWidget {
   final Infor data;
