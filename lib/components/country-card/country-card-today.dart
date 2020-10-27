@@ -23,7 +23,7 @@ class CountryCardToday extends StatelessWidget {
         children: [
           KgpCardTitle(
             title: 'Today',
-            subtitle: 'Updates as of $date',
+            subtitle: 'Updated as of $date',
             icon: Icon(Ionicons.ios_send),
           ),
           Container(

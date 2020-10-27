@@ -1,7 +1,6 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-card-title.dart';
 import 'package:covid19/models/travel-alert-model.dart';
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -23,8 +22,8 @@ class CountryCardTravelAlert extends StatelessWidget {
         children: [
           KgpCardTitle(
             title: 'Travel Alert',
-            subtitle: 'Updates as of $date',
-            icon: Icon(Ionicons.ios_airplane),
+            subtitle: 'Updated as of $date',
+            icon: const Icon(Ionicons.ios_airplane),
           ),
           FadeInDown(
             child: Container(
@@ -36,15 +35,6 @@ class CountryCardTravelAlert extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-            ),
-          ),
-          AspectRatio(
-            aspectRatio: 2,
-            child: FlareActor(
-              "assets/flar/Plane.flr",
-              alignment: Alignment.center,
-              fit: BoxFit.contain,
-              animation: 'Animations',
             ),
           ),
         ],

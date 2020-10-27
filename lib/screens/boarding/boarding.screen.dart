@@ -33,9 +33,11 @@ class BoardingScreen extends HookWidget {
       if (homePrefs.homeCountry.country == null) return onTapIcon(4);
       await prefs.data.value.setBool('start', true);
 
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => TabScreen()),
-      );
+      return Future.delayed(Duration(milliseconds: 500), () {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (_) => TabScreen()),
+        );
+      });
     }
 
     _pageController.addListener(() {
@@ -81,7 +83,7 @@ class BoardingScreen extends HookWidget {
         flag: homePrefs.homeCountry.country == null
             ? ''
             : homePrefs.homeCountry.countryInfo.flag,
-        buttonTitle: 'Selcet',
+        buttonTitle: 'Select',
         buttonIcon: Icon(Ionicons.ios_pin),
         onPressed: () async {
           await showSearch(
