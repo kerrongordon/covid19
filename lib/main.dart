@@ -1,5 +1,6 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:covid19/screens/splash/splash.screen.dart';
+import 'package:covid19/routes/route-names.dart';
+import 'package:covid19/routes/routes.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
@@ -53,7 +54,8 @@ class MyApp extends StatelessWidget {
           title: 'Covid 19 Tracker',
           theme: light,
           darkTheme: dark,
-          home: Splash(),
+          initialRoute: startScreen,
+          onGenerateRoute: RouteGenerator.generateRoute,
         );
       },
     );

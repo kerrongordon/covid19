@@ -8,11 +8,11 @@ import 'package:flutter_native_admob/flutter_native_admob.dart';
 
 class InforPage extends StatelessWidget {
   final Infor data;
-  final int index;
 
-  const InforPage({Key key, this.data, this.index}) : super(key: key);
+  const InforPage({Key key, this.data}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
       body: KgpBasePage(
         title: data.title,
@@ -36,12 +36,12 @@ class InforPage extends StatelessWidget {
                   children: <Widget>[
                     ListTile(
                       title: Text(
-                        data.description,
+                        data.description ?? '',
                         style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
                           height: 1.5,
-                          color: Theme.of(context).textTheme.bodyText1.color,
+                          color: theme.textTheme.bodyText1.color,
                         ),
                       ),
                     ),

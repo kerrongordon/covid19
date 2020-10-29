@@ -1,7 +1,7 @@
 import 'package:covid19/components/kgp-bottom-dialog.dart';
 import 'package:covid19/components/kgp-stats-with-title.dart';
 import 'package:covid19/models/country-model.dart';
-import 'package:covid19/screens/country/country-screen.dart';
+import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/themes/color-theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -18,6 +18,7 @@ class MapMarkerItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
       child: InkWell(
         child: Icon(
@@ -36,7 +37,7 @@ class MapMarkerItems extends StatelessWidget {
                 title: '${data[i].country}',
                 child: Column(
                   children: [
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Container(
                       child: Row(
                         children: [
@@ -70,26 +71,19 @@ class MapMarkerItems extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       children: [
                         Expanded(
                           child: FlatButton.icon(
-                            onPressed: () {
-                              Navigator.pop(context);
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      CountryScreen(data: data[i]),
-                                ),
-                              );
-                            },
-                            icon: Icon(Ionicons.ios_compass),
-                            label: Text('View More'),
-                            textColor: Theme.of(context).accentColor,
+                            onPressed: () => Navigator.of(context)
+                                .popAndPushNamed(countryScreen,
+                                    arguments: data[i]),
+                            icon: const Icon(Ionicons.ios_compass),
+                            label: const Text('View More'),
+                            textColor: theme.accentColor,
                             padding: const EdgeInsets.all(20),
-                            splashColor: Theme.of(context).accentColor,
+                            splashColor: theme.accentColor,
                           ),
                         ),
                       ],

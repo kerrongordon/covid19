@@ -1,7 +1,7 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-flag.dart';
 import 'package:covid19/models/country-model.dart';
-import 'package:covid19/screens/country/country-screen.dart';
+import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/utils/comma.util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -19,8 +19,8 @@ class CountriesItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: CardComponent(
-        onTap: () => Navigator.of(context).push(
-            MaterialPageRoute(builder: (context) => CountryScreen(data: data))),
+        onTap: () =>
+            Navigator.of(context).pushNamed(countryScreen, arguments: data),
         child: ListTile(
           leading: RepaintBoundary(
             child: KgpFlag(

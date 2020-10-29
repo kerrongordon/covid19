@@ -1,6 +1,6 @@
 import 'package:covid19/components/kgp-icon-button.dart';
 import 'package:covid19/models/country-model.dart';
-import 'package:covid19/screens/country/country-screen.dart';
+import 'package:covid19/routes/route-names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -20,13 +20,9 @@ class MainCallback extends StatelessWidget {
       ),
       child: KgpIconButton(
         buttonTitle: 'View More',
-        buttonIcon: Icon(Ionicons.ios_folder_open),
-        onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => CountryScreen(data: data),
-          ),
-        ),
+        buttonIcon: const Icon(Ionicons.ios_folder_open),
+        onPressed: () =>
+            Navigator.of(context).pushNamed(countryScreen, arguments: data),
       ),
     );
   }
