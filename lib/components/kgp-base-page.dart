@@ -1,5 +1,4 @@
-import 'dart:ui';
-
+import 'package:covid19/components/kgp-blur.dart';
 import 'package:flutter/material.dart';
 
 class KgpBasePage extends StatelessWidget {
@@ -72,23 +71,7 @@ class KgpBasePage extends StatelessWidget {
   Stack _titleUi(BuildContext context, ThemeData theme) {
     return Stack(
       children: [
-        Positioned(
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 100,
-          child: ClipRect(
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                sigmaX: 7,
-                sigmaY: 7,
-              ),
-              child: Container(
-                color: theme.backgroundColor.withOpacity(0.6),
-              ),
-            ),
-          ),
-        ),
+        KgpBlur(),
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 40),
           child: Column(

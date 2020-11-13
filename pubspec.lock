@@ -341,7 +341,7 @@ packages:
       name: flutter_launcher_icons
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.5"
+    version: "0.8.1"
   flutter_launcher_name:
     dependency: "direct dev"
     description:
@@ -376,7 +376,7 @@ packages:
       name: flutter_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.1"
+    version: "0.12.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -421,7 +421,7 @@ packages:
       name: hooks_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.2"
+    version: "0.12.1"
   html:
     dependency: transitive
     description:
@@ -687,7 +687,7 @@ packages:
       name: riverpod
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.0"
+    version: "0.12.1"
   rxdart:
     dependency: transitive
     description:

@@ -45,8 +45,10 @@ class MapBuilder extends HookWidget {
           width: mediaQuery.size.width,
           child: FlutterMap(
             options: MapOptions(
-              center:
-                  LatLng(position.latitude ?? 58.8, position.longitude ?? 6.1),
+              center: LatLng(
+                position.latitude ?? 58.8,
+                position.longitude ?? 6.1,
+              ),
               zoom: 12.0,
             ),
             layers: [
@@ -82,9 +84,14 @@ class MapBuilder extends HookWidget {
                       Marker(
                         width: 100.0,
                         height: 100.0,
-                        point: LatLng(countries[i].countryInfo.lat,
-                            countries[i].countryInfo.long),
-                        builder: (ctx) => MapMarkerItems(data: countries, i: i),
+                        point: LatLng(
+                          countries[i].countryInfo.lat,
+                          countries[i].countryInfo.long,
+                        ),
+                        builder: (ctx) => MapMarkerItems(
+                          data: countries,
+                          i: i,
+                        ),
                       ),
                 ],
               ),
