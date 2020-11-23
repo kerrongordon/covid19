@@ -1,0 +1,63 @@
+name: CI Release Build
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  flutter_analyze:
+    name: Run Flutter analyze
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+      - run: flutter pub get
+      - run: flutter analyze
+
+  build_appbundle:
+    name: Build Flutter (Android)
+    needs: [flutter_analyze]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
+      - uses: actions/checkout@v2
+      - uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: "android/key.properties"
+          FILE_BASE64: ${{ secrets.KEY_PROPERTIES }}
+      - uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: "android/app/keystone.jks"
+          FILE_BASE64: ${{ secrets.SIGNING_KEY }}
+      - uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: ".env"
+          FILE_BASE64: ${{ secrets.MAP_API2 }}
+      - uses: actions/setup-java@v1
+        with:
+          java-version: "12.x"
+      - uses: subosito/flutter-action@v1
+        with:
+          channel: "stable"
+      - run: flutter pub get
+      - run: flutter clean
+      - run: flutter build appbundle --release
+      - run: flutter build apk --release
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          name: handys.${{ steps.get_version.outputs.VERSION }}
+          files: |
+            build/app/outputs/bundle/release/app-release.aab
+            build/app/outputs/flutter-apk/app-release.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
