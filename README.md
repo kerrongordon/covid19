@@ -7,7 +7,7 @@
      <img src="img/4.jpg" width="200"/>
 </p>
 
-![CI](https://github.com/kerrongordon/covid19/workflows/CI/badge.svg)
+![CI Analyze and Test Build](https://github.com/kerrongordon/covid19/workflows/CI%20Analyze%20and%20Test%20Build/badge.svg?branch=master)
 ![GitHub All Releases](https://img.shields.io/github/downloads/kerrongordon/covid19/total)
 ![GitHub repo size](https://img.shields.io/github/repo-size/kerrongordon/covid19)
 ![GitHub top language](https://img.shields.io/github/languages/top/kerrongordon/covid19)
