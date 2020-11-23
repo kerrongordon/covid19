@@ -1,5 +1,4 @@
 import 'package:covid19/components/kgp-blur.dart';
-import 'package:covid19/hooks/page.controller.hook.dart';
 import 'package:covid19/screens/tab/tab-bottom-bar.dart';
 import 'package:covid19/screens/countries/countries-screen.dart';
 import 'package:covid19/screens/global/global-screen.dart';

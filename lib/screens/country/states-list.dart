@@ -1,7 +1,6 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-card-title.dart';
 import 'package:covid19/components/kgp-stats-with-title.dart';
-import 'package:covid19/hooks/page.controller.hook.dart';
 import 'package:covid19/models/usstates-model.dart';
 import 'package:covid19/themes/color-theme.dart';
 import 'package:covid19/utils/timetodate.util.dart';
