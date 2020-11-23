@@ -8,6 +8,7 @@
 </p>
 
 ![CI Analyze and Test Build](https://github.com/kerrongordon/covid19/workflows/CI%20Analyze%20and%20Test%20Build/badge.svg?branch=master)
+![CI Release Build](https://github.com/kerrongordon/covid19/workflows/CI%20Release%20Build/badge.svg)
 ![GitHub All Releases](https://img.shields.io/github/downloads/kerrongordon/covid19/total)
 ![GitHub repo size](https://img.shields.io/github/repo-size/kerrongordon/covid19)
 ![GitHub top language](https://img.shields.io/github/languages/top/kerrongordon/covid19)
