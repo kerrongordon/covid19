@@ -35,7 +35,7 @@ dependencies:
   flutter_map: ^0.10.1+1
   geolocator: ^6.0.0
   hooks_riverpod: ^0.12.0
-  flutter_hooks: ^0.14.0
+  flutter_hooks: ^0.15.0
   state_notifier: ^0.6.0
   flutter_dotenv: ^2.1.0
   list_tile_switch: ^0.0.2
