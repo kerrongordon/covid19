@@ -22,42 +22,46 @@ class TabBottomBar extends StatelessWidget {
       showElevation: false,
       onItemSelected: onItemSelected,
       items: <BottomNavyBarItem>[
-        BottomNavyBarItem(
-          title: const Text('Global'),
-          textAlign: TextAlign.center,
-          icon: const Icon(Ionicons.ios_analytics),
-          activeColor: _theme.accentColor,
-          inactiveColor: _theme.textTheme.bodyText1.color,
+        buildBottomNavyBarItem(
+          title: 'Global',
+          theme: _theme,
+          icon: Icon(Ionicons.ios_analytics),
         ),
-        BottomNavyBarItem(
-          title: const Text('Countries'),
-          textAlign: TextAlign.center,
-          icon: const Icon(Ionicons.ios_trending_up),
-          activeColor: _theme.accentColor,
-          inactiveColor: _theme.textTheme.bodyText1.color,
+        buildBottomNavyBarItem(
+          title: 'Countries',
+          theme: _theme,
+          icon: Icon(Ionicons.ios_trending_up),
         ),
-        BottomNavyBarItem(
-          title: const Text('Home'),
-          textAlign: TextAlign.center,
-          icon: const Icon(Ionicons.ios_pin),
-          activeColor: _theme.accentColor,
-          inactiveColor: _theme.textTheme.bodyText1.color,
+        buildBottomNavyBarItem(
+          title: 'Home',
+          theme: _theme,
+          icon: Icon(Ionicons.ios_pin),
         ),
-        BottomNavyBarItem(
-          title: const Text('Info'),
-          textAlign: TextAlign.center,
-          icon: const Icon(Ionicons.ios_apps),
-          activeColor: _theme.accentColor,
-          inactiveColor: _theme.textTheme.bodyText1.color,
+        buildBottomNavyBarItem(
+          title: 'Info',
+          theme: _theme,
+          icon: Icon(Ionicons.ios_apps),
         ),
-        BottomNavyBarItem(
-          title: const Text('Settings'),
-          textAlign: TextAlign.center,
-          icon: const Icon(Ionicons.ios_cog),
-          activeColor: _theme.accentColor,
-          inactiveColor: _theme.textTheme.bodyText1.color,
+        buildBottomNavyBarItem(
+          title: 'Settings',
+          theme: _theme,
+          icon: Icon(Ionicons.ios_cog),
         ),
       ],
+    );
+  }
+
+  BottomNavyBarItem buildBottomNavyBarItem({
+    ThemeData theme,
+    String title,
+    Widget icon,
+  }) {
+    return BottomNavyBarItem(
+      title: Text(title),
+      textAlign: TextAlign.center,
+      icon: icon,
+      activeColor: theme.accentColor,
+      inactiveColor: theme.textTheme.bodyText1.color,
     );
   }
 }
