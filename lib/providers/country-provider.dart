@@ -5,7 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 final countryProvider = FutureProvider.autoDispose((_) async {
   CountryService countryService = new CountryService();
-  await countryService.getCountryApi();
+  return await countryService.getCountryApi();
 });
 
 final countryProviderPicker = FutureProvider.autoDispose((ref) async {

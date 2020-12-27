@@ -3,5 +3,5 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final globalProvider = FutureProvider.autoDispose((_) async {
   GlobalService _globalService = new GlobalService();
-  await _globalService.getGlobalApi();
+  return await _globalService.getGlobalApi();
 });
