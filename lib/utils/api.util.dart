@@ -1,9 +1,10 @@
 import 'package:covid19/utils/failure.util.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
+import 'package:dio_retry/dio_retry.dart';
 
 class ApiUtil {
-  Dio _dio = new Dio();
+  final Dio _dio = new Dio();
 
   Future<dynamic> getData({
     String baseUrl,
@@ -13,6 +14,7 @@ class ApiUtil {
     final String url = baseUrl + endPoint;
     _dio.interceptors
         .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
+    _dio.interceptors.add(RetryInterceptor(dio: _dio));
 
     try {
       Response res = await _dio.get(
@@ -21,6 +23,11 @@ class ApiUtil {
         options: buildCacheOptions(
           Duration(hours: 1),
           maxStale: Duration(hours: 2),
+          options: Options(
+            extra: RetryOptions(
+              retryInterval: const Duration(seconds: 10),
+            ).toExtra(),
+          ),
         ),
       );
 
