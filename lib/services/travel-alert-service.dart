@@ -1,33 +1,17 @@
+import 'package:covid19/configs/api.config.dart';
 import 'package:covid19/models/travel-alert-model.dart';
-import 'package:covid19/utils/failure.util.dart';
-import 'package:dio/dio.dart';
-import 'package:dio_http_cache/dio_http_cache.dart';
+import 'package:covid19/utils/api.util.dart';
 
 class TravelAlertService {
-  static const url = 'https://www.travel-advisory.info/api';
-
   Future<TravelAlert> gettravelAlertApi({String countrycode}) async {
-    Dio dio = new Dio();
-    dio.interceptors
-        .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
+    ApiUtil _travelAlertService = new ApiUtil();
 
-    try {
-      Response res = await dio.get(
-        url,
-        queryParameters: {'countrycode': countrycode},
-        options: buildCacheOptions(
-          Duration(hours: 1),
-          maxStale: Duration(hours: 2),
-        ),
-      );
+    dynamic data = await _travelAlertService.getData(
+      baseUrl: travelUrl,
+      endPoint: '/api',
+      queryParameters: {'countrycode': countrycode},
+    );
 
-      TravelAlert data = TravelAlert.fromJson(res.data);
-
-      return data;
-    } on DioError {
-      throw Failure('Oh no something went wrong 😥️');
-    } catch (e) {
-      throw Failure('There seem to be a problem 😱️');
-    }
+    return TravelAlert.fromJson(data);
   }
 }
