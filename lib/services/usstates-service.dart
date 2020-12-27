@@ -1,40 +1,24 @@
+import 'package:covid19/configs/api.config.dart';
 import 'package:covid19/models/usstates-model.dart';
-import 'package:covid19/utils/failure.util.dart';
-import 'package:dio/dio.dart';
-import 'package:dio_http_cache/dio_http_cache.dart';
+import 'package:covid19/utils/api.util.dart';
 
 class UsStatesService {
   Future<List<UsStates>> getUsStatesApi() async {
-    final String url =
-        'https://disease.sh/v3/covid-19/states?sort=cases&yesterday=true';
-    Dio dio = new Dio();
-    dio.interceptors
-        .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
+    ApiUtil _usStatesService = new ApiUtil();
 
-    try {
-      Response res = await dio.get(
-        url,
-        options: buildCacheOptions(
-          Duration(hours: 1),
-          maxStale: Duration(hours: 2),
-        ),
-      );
+    dynamic data = await _usStatesService.getData(
+      baseUrl: baseUrl,
+      endPoint: '/covid-19/states',
+      queryParameters: {'sort': 'cases', 'yesterday': 'true'},
+    );
 
-      List<UsStates> data = [];
+    List<UsStates> state = [];
 
-      for (final item in res.data) {
-        UsStates list = UsStates.fromJson(item);
-        data.add(list);
-      }
-
-      return data;
-    } on DioError {
-      throw Failure('Oh no something went wrong 😥️');
-    } catch (e) {
-      print('=====================');
-      print(e);
-      print('=====================');
-      throw Failure('There seem to be a problem 😱️');
+    for (final item in data) {
+      UsStates list = UsStates.fromJson(item);
+      state.add(list);
     }
+
+    return state;
   }
 }
