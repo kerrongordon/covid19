@@ -1,10 +1,12 @@
+import 'package:covid19/components/search/kgp-search.dart';
+import 'package:covid19/configs/data.config.dart';
 import 'package:covid19/providers/country-provider.dart';
+import 'package:covid19/providers/home-provider.dart';
 import 'package:covid19/providers/preference-provider.dart';
 import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/screens/boarding/boarding.bottom.nav.dart';
 import 'package:covid19/screens/boarding/boarding.slide.dart';
 import 'package:covid19/screens/boarding/boarding.start.button.dart';
-import 'package:covid19/screens/boarding/boarding.search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -18,7 +20,7 @@ class BoardingScreen extends HookWidget {
     final _pageIndex = useState(0);
     final countries = useProvider(countryProvider);
     final prefs = useProvider(preferencesProvider);
-    final homePrefs = useProvider(myHomeCountryProvider);
+    final home = useProvider(homeCountryProvider);
     final _pageController = usePageController(initialPage: _pageIndex.value);
 
     void onPageChange(int index) => _pageIndex.value = index;
@@ -29,8 +31,8 @@ class BoardingScreen extends HookWidget {
         );
 
     void startApp() async {
-      if (homePrefs.homeCountry.country == null) return onTapIcon(4);
-      await prefs.data.value.setBool('start', true);
+      if (home.item.country == null) return onTapIcon(4);
+      await prefs.data.value.setBool(appInitKey, true);
 
       return Future.delayed(Duration(milliseconds: 650),
           () => Navigator.of(context).pushReplacementNamed(tabScreen));
@@ -38,7 +40,7 @@ class BoardingScreen extends HookWidget {
 
     _pageController.addListener(() {
       if (_pageIndex.value == 5) {
-        if (homePrefs.homeCountry.country == null) return onTapIcon(4);
+        if (home.item.country == null) return onTapIcon(4);
       }
     });
 
@@ -74,21 +76,20 @@ class BoardingScreen extends HookWidget {
       BoardingSlide(
         title: 'Select Your Country',
         flarAnimationName: 'roll',
-        flar: homePrefs.homeCountry.country == null ? 'WorldSpin' : null,
-        subtitle: homePrefs.homeCountry.country ?? '',
-        flag: homePrefs.homeCountry.country == null
-            ? ''
-            : homePrefs.homeCountry.countryInfo.flag,
+        flar: home.item.country == null ? 'WorldSpin' : null,
+        subtitle: home.item.country ?? '',
+        flag: home.item.country == null ? '' : home.item.countryInfo.flag,
         buttonTitle: 'Select',
         buttonIcon: Icon(Ionicons.ios_pin),
         onPressed: () async {
-          await showSearch(
+          final search = await showSearch(
             context: context,
-            delegate: BoardingSearch(
+            delegate: KgpSearch(
               countries: countries,
-              homePrefs: homePrefs,
+              action: SearchAction.edit,
             ),
           );
+          home.setCountryName(search);
         },
       ),
       BoardingSlide(
@@ -98,7 +99,7 @@ class BoardingScreen extends HookWidget {
     ];
 
     Widget changeNavbar() {
-      return homePrefs.homeCountry.country != null && _pageIndex.value == 5
+      return home.item.country != null && _pageIndex.value == 5
           ? BoardingStartButton(
               onPressed: startApp,
             )

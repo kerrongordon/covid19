@@ -1,14 +1,12 @@
 import 'dart:ui';
 
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/components/country-card/country-card-today.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/main/main-callback.dart';
 import 'package:covid19/screens/main/main.card.one.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_native_admob/flutter_native_admob.dart';
 
 class MainCardList extends StatelessWidget {
   final Country data;
@@ -83,7 +81,6 @@ class MainCardList extends StatelessWidget {
           children: [
             MainCardOne(data: data),
             CountryCardToday(data: data),
-            const AdsComponent(type: NativeAdmobType.banner),
             MainCallback(data: data),
           ],
         ),

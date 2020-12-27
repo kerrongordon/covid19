@@ -1,8 +1,10 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-flag.dart';
+import 'package:covid19/components/search/kgp-search.dart';
+import 'package:covid19/models/country-model.dart';
 import 'package:covid19/providers/country-provider.dart';
-import 'package:covid19/providers/preference-provider.dart';
-import 'package:covid19/screens/boarding/boarding.search.dart';
+import 'package:covid19/providers/home-provider.dart';
+import 'package:covid19/providers/one-country-provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -13,80 +15,89 @@ class SettingsCountryPicker extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final countries = useProvider(countryProvider);
-    final homePrefs = useProvider(myHomeCountryProvider);
-    final country = useMemoized(
-      () => homePrefs.getCountry(),
+    final home = useProvider(homeCountryProvider);
+    final getcountry = useProvider(oneCountryProvider);
+
+    final countryName = useMemoized(
+      () => home.getCountryName(),
     );
-    final snapshot = useFuture(country);
+
+    final snapshot = useFuture(countryName);
 
     void openSearch() async {
-      await showSearch(
+      Country search = await showSearch(
         context: context,
-        delegate: BoardingSearch(
+        delegate: KgpSearch(
           countries: countries,
-          homePrefs: homePrefs,
+          action: SearchAction.edit,
         ),
       );
-    }
-
-    if (snapshot == null && snapshot.hasError) {
-      return Container();
+      home.setCountryName(search);
     }
 
     if (snapshot.hasData) {
-      final data = snapshot.data;
-      return Padding(
-        padding: const EdgeInsets.only(
-          left: 20,
-          right: 20,
-          top: 50,
-        ),
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            CardComponent(
-              padding: const EdgeInsets.all(20),
-              child: Container(
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 50),
-                  child: Column(
-                    children: [
-                      Text('Change Country'),
-                      SizedBox(height: 10),
-                      Center(
-                        child: Text(
-                          homePrefs.homeCountry.country == null
-                              ? data.country
-                              : homePrefs.homeCountry.country,
-                          style: const TextStyle(
-                            fontSize: 18,
-                          ),
-                          textAlign: TextAlign.center,
+      return FutureBuilder(
+        future: getcountry.getOneCountryApi(country: snapshot.data),
+        builder: (BuildContext context, AsyncSnapshot<Country> snapshot) {
+          if (snapshot.hasData) {
+            final data = snapshot.data;
+            return Padding(
+              padding: const EdgeInsets.only(
+                left: 20,
+                right: 20,
+                top: 50,
+              ),
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+                  CardComponent(
+                    padding: const EdgeInsets.all(20),
+                    child: Container(
+                      width: double.infinity,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 50),
+                        child: Column(
+                          children: [
+                            Text('Change Country'),
+                            SizedBox(height: 10),
+                            Center(
+                              child: Text(
+                                home.item.country == null
+                                    ? data.country
+                                    : home.item.country,
+                                style: const TextStyle(
+                                  fontSize: 18,
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
-                    ],
+                    ),
+                    onTap: openSearch,
                   ),
-                ),
+                  Positioned(
+                    top: -30,
+                    left: MediaQuery.of(context).size.width / 2.9,
+                    child: GestureDetector(
+                      onTap: openSearch,
+                      child: KgpFlag(
+                        imageUrl: home.item.country == null
+                            ? data.countryInfo.flag
+                            : home.item.countryInfo.flag,
+                        imageWidth: 90,
+                        imageHeight: 90,
+                      ),
+                    ),
+                  )
+                ],
               ),
-              onTap: openSearch,
-            ),
-            Positioned(
-              top: -30,
-              left: MediaQuery.of(context).size.width / 2.9,
-              child: GestureDetector(
-                onTap: openSearch,
-                child: KgpFlag(
-                  imageUrl: homePrefs.homeCountry.country == null
-                      ? data.countryInfo.flag
-                      : homePrefs.homeCountry.countryInfo.flag,
-                  imageWidth: 90,
-                  imageHeight: 90,
-                ),
-              ),
-            )
-          ],
-        ),
+            );
+          }
+
+          return Container();
+        },
       );
     }
 
