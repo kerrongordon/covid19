@@ -4,7 +4,7 @@ import 'package:covid19/utils/api.util.dart';
 
 class HistoricalService {
   Future<Historical> getHistoricalApi({String country}) async {
-    ApiUtil _historicalService = ApiUtil();
+    ApiUtil _historicalService = new ApiUtil();
 
     dynamic data = await _historicalService.getData(
       baseUrl: baseUrl,

@@ -4,7 +4,7 @@ import 'package:covid19/models/country-model.dart';
 
 class CountryService {
   Future<List<Country>> getCountryApi() async {
-    ApiUtil _countryService = ApiUtil();
+    ApiUtil _countryService = new ApiUtil();
 
     dynamic data = await _countryService.getData(
       baseUrl: baseUrl,

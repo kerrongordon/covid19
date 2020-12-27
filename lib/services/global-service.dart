@@ -4,7 +4,7 @@ import 'package:covid19/utils/api.util.dart';
 
 class GlobalService {
   Future<Global> getGlobalApi() async {
-    ApiUtil _globalService = ApiUtil();
+    ApiUtil _globalService = new ApiUtil();
 
     dynamic data = await _globalService.getData(
       baseUrl: baseUrl,
