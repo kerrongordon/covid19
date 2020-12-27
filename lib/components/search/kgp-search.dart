@@ -2,7 +2,6 @@ import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/components/search/kgp-search-list.dart';
 import 'package:covid19/components/search/kgp-search-not-found.dart';
 import 'package:covid19/models/country-model.dart';
-import 'package:covid19/providers/preference-provider.dart';
 import 'package:covid19/routes/route-names.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -13,12 +12,10 @@ enum SearchAction { open, edit }
 class KgpSearch extends SearchDelegate<Country> {
   final AsyncValue<List<Country>> countries;
   final SearchAction action;
-  final MyHomeCountryChangeNotifier homePrefs;
 
   KgpSearch({
     @required this.countries,
     @required this.action,
-    this.homePrefs,
   });
 
   @override
@@ -68,11 +65,7 @@ class KgpSearch extends SearchDelegate<Country> {
         case SearchAction.edit:
           return KgpSearchList(
             list: list,
-            onTap: (item) {
-              print(item.country);
-              // homePrefs.setCountry(item);
-              close(context, null);
-            },
+            onTap: (item) => close(context, item),
           );
           break;
       }
