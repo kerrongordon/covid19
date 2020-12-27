@@ -20,6 +20,7 @@ dependencies:
   flutter:
     sdk: flutter
   dio: ^3.0.10
+  dio_retry: ^0.1.9-beta
   flutter_icons: ^1.0.0+1
   loading_animations: ^2.1.0
   cached_network_image: ^2.0.0
@@ -28,7 +29,7 @@ dependencies:
   intl: ^0.16.1
   bottom_navy_bar: ^5.5.0
   adaptive_theme: ^1.0.0
-  shared_preferences: ^0.5.10
+  shared_preferences: ^0.5.12+4
   url_launcher: ^5.5.2
   flutter_animator: ^2.1.0
   latlong: ^0.6.1
