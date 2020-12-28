@@ -1,4 +1,5 @@
 import 'package:covid19/components/kgp-blur.dart';
+import 'package:covid19/screens/tab/providers/tab-provider.dart';
 import 'package:covid19/screens/tab/tab-bottom-bar.dart';
 import 'package:covid19/screens/countries/countries-screen.dart';
 import 'package:covid19/screens/global/global-screen.dart';
@@ -7,6 +8,7 @@ import 'package:covid19/screens/main/main-screen.dart';
 import 'package:covid19/screens/settings/settings.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class TabScreen extends HookWidget {
   TabScreen({Key key}) : super(key: key);
@@ -19,11 +21,9 @@ class TabScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _pageIndex = useState(2);
-    final _pageController = usePageController(initialPage: _pageIndex.value);
-
-    void onPageChange(int index) => _pageIndex.value = index;
-
+    final _pageIndex = useProvider(tabProvider);
+    final _pageController = usePageController(initialPage: 2);
+    void onPageChange(int index) => _pageIndex.changePages(index);
     void onTapIcon(int index) => _pageController.animateToPage(
           index,
           duration: const Duration(milliseconds: 400),
@@ -47,9 +47,14 @@ class TabScreen extends HookWidget {
       bottomNavigationBar: Stack(
         children: [
           KgpBlur(),
-          TabBottomBar(
-            pageIndex: _pageIndex,
-            onItemSelected: onTapIcon,
+          Consumer(
+            builder: (context, watch, __) {
+              final page = watch(tabProvider.state);
+              return TabBottomBar(
+                pageIndex: page,
+                onItemSelected: onTapIcon,
+              );
+            },
           ),
         ],
       ),
