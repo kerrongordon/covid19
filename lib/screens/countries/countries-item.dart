@@ -9,9 +9,8 @@ import 'package:flutter_icons/flutter_icons.dart';
 class CountriesItem extends StatelessWidget {
   final Country data;
   const CountriesItem({
-    Key key,
     this.data,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +21,11 @@ class CountriesItem extends StatelessWidget {
         onTap: () =>
             Navigator.of(context).pushNamed(countryScreen, arguments: data),
         child: ListTile(
-          leading: RepaintBoundary(
-            child: KgpFlag(
-              tag: data.country,
-              imageUrl: data.countryInfo.flag,
-              imageWidth: 30.0,
-              imageHeight: 30.0,
-            ),
+          leading: KgpFlag(
+            tag: data.country,
+            imageUrl: data.countryInfo.flag,
+            imageWidth: 30.0,
+            imageHeight: 30.0,
           ),
           title: Text(
             data.country,
