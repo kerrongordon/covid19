@@ -14,7 +14,6 @@ class KgpBasePage extends StatelessWidget {
   final Widget leading;
 
   const KgpBasePage({
-    Key key,
     this.expandedHeight,
     this.actions,
     this.background,
@@ -25,7 +24,7 @@ class KgpBasePage extends StatelessWidget {
     this.neverScroll,
     this.leading,
     this.child,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +86,7 @@ class KgpBasePage extends StatelessWidget {
                   title != null ? title : '',
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(fontWeight: FontWeight.w300),
+                  style: const TextStyle(fontWeight: FontWeight.w300),
                 ),
               ),
               Flexible(

@@ -50,6 +50,7 @@ class MyApp extends StatelessWidget {
       dark: DarkTheme.theme,
       builder: (light, dark) {
         return MaterialApp(
+          showPerformanceOverlay: false,
           debugShowCheckedModeBanner: false,
           title: 'Covid 19 Tracker',
           theme: light,
