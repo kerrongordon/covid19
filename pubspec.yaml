@@ -68,15 +68,13 @@ flutter_icons:
 
 # flutter pub pub run flutter_native_splash:create
 flutter_native_splash:
-  image: assets/icon.png
+  image: assets/splash.png
   color: "#452981"
-  # fill: true
-  # color: "0084ff"
+  fill: true
 
 # flutter pub run flutter_launcher_name:main
 flutter_launcher_name:
   name: "Covid 19 Tracker"
-  # name: "korona"
 
 # The following section is specific to Flutter.
 flutter:
