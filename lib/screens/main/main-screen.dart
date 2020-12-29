@@ -1,62 +1,53 @@
+import 'package:covid19/components/ads-component.dart';
+import 'package:covid19/components/country-card/country-card-today.dart';
+import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/components/kgp-center.dart';
 import 'package:covid19/components/kgp-loader.dart';
-import 'package:covid19/models/country-model.dart';
-import 'package:covid19/providers/home-provider.dart';
-import 'package:covid19/providers/one-country-provider.dart';
+import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
 import 'package:covid19/routes/route-names.dart';
-import 'package:covid19/screens/main/main-card-list.dart';
+import 'package:covid19/screens/main/main-callback.dart';
+import 'package:covid19/screens/main/main-flag.dart';
+import 'package:covid19/screens/main/main.card.one.dart';
+import 'package:covid19/screens/main/providers/main-provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:flutter_native_admob/flutter_native_admob.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class MainScreen extends HookWidget {
   @override
   Widget build(BuildContext context) {
-    final home = useProvider(homeCountryProvider);
-    final getcountry = useProvider(oneCountryProvider);
+    final homeData = useProvider(mainScreenProvider);
+    useAutomaticKeepAliveClient();
 
-    final countryName = useMemoized(
-      () => home.getCountryName(),
+    return homeData.when(
+      error: (error, _) => KgpCenter(child: Text(error.toString())),
+      loading: () => KgpCenter(child: KgpLoader()),
+      data: (data) => Scaffold(
+        body: KgpBasePage(
+          title: data.country,
+          background: MainFlag(data: data),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              children: [
+                MainCardOne(data: data),
+                CountryCardToday(data: data),
+                const AdsComponent(type: NativeAdmobType.banner),
+                MainCallback(data: data),
+              ],
+            ),
+          ),
+        ),
+        floatingActionButton: Container(
+          margin: const EdgeInsets.only(bottom: 60),
+          child: FloatingActionButton(
+              heroTag: 'openMap',
+              child: const Icon(Ionicons.ios_map),
+              onPressed: () => Navigator.of(context).pushNamed(mapScreen)),
+        ),
+      ),
     );
-
-    final snapshot = useFuture(countryName);
-
-    if (snapshot.hasData) {
-      return FutureBuilder(
-        future: getcountry.getOneCountryApi(country: snapshot.data),
-        builder: (BuildContext context, AsyncSnapshot<Country> snapshot) {
-          switch (snapshot.connectionState) {
-            case ConnectionState.none:
-              return KgpCenter(child: Container());
-              break;
-            case ConnectionState.waiting:
-              return KgpCenter(child: KgpLoader());
-              break;
-            case ConnectionState.active:
-              return KgpCenter(child: KgpLoader());
-              break;
-            case ConnectionState.done:
-              final data = snapshot.data;
-              return Scaffold(
-                body: MainCardList(data: data),
-                floatingActionButton: Container(
-                  margin: const EdgeInsets.only(bottom: 60),
-                  child: FloatingActionButton(
-                      heroTag: 'openMap',
-                      child: const Icon(Ionicons.ios_map),
-                      onPressed: () =>
-                          Navigator.of(context).pushNamed(mapScreen)),
-                ),
-              );
-              break;
-            default:
-              return KgpCenter(child: Container());
-          }
-        },
-      );
-    }
-
-    return KgpCenter(child: KgpLoader());
   }
 }
