@@ -1,8 +1,10 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/components/search/kgp-search.dart';
 import 'package:covid19/configs/data.config.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/home-provider.dart';
 import 'package:covid19/providers/preference-provider.dart';
+import 'package:covid19/providers/theme-mode-provider.dart';
 import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/screens/boarding/boarding.bottom.nav.dart';
 import 'package:covid19/screens/boarding/boarding.slide.dart';
@@ -21,6 +23,7 @@ class BoardingScreen extends HookWidget {
     final countries = useProvider(countryProvider);
     final prefs = useProvider(preferencesProvider);
     final home = useProvider(homeCountryProvider);
+    final themeMode = useProvider(themeModeProvider);
     final _pageController = usePageController(initialPage: _pageIndex.value);
 
     void onPageChange(int index) => _pageIndex.value = index;
@@ -98,7 +101,7 @@ class BoardingScreen extends HookWidget {
       ),
     ];
 
-    Widget changeNavbar() {
+    Widget changeNavbar({AdaptiveThemeMode themeMode}) {
       return home.item.country != null && _pageIndex.value == 5
           ? BoardingStartButton(
               onPressed: startApp,
@@ -108,22 +111,27 @@ class BoardingScreen extends HookWidget {
               pageIndex: _pageIndex,
               pageController: _pageController,
               ontap: onTapIcon,
+              themeMode: themeMode,
             );
     }
 
-    return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        toolbarHeight: 0,
-        backgroundColor: Theme.of(context).backgroundColor,
-        brightness: Brightness.light,
+    return themeMode.when(
+      loading: () => Container(),
+      error: (_, __) => Container(),
+      data: (themeMode) => Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          toolbarHeight: 0,
+          backgroundColor: Theme.of(context).backgroundColor,
+          brightness: themeMode.isLight ? Brightness.light : Brightness.dark,
+        ),
+        body: PageView(
+          controller: _pageController,
+          onPageChanged: onPageChange,
+          children: _pages,
+        ),
+        bottomNavigationBar: changeNavbar(themeMode: themeMode),
       ),
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: onPageChange,
-        children: _pages,
-      ),
-      bottomNavigationBar: changeNavbar(),
     );
   }
 }
