@@ -34,7 +34,7 @@ class MainScreen extends HookWidget {
               children: [
                 MainCardOne(data: data),
                 CountryCardToday(data: data),
-                const AdsComponent(type: NativeAdmobType.banner),
+                AdsComponent(type: NativeAdmobType.banner),
                 MainCallback(data: data),
               ],
             ),
