@@ -19,6 +19,10 @@ class CountryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // TODO remove
+    print('====================');
+    print('build Country Screen');
+    print('====================');
     return Scaffold(
       body: KgpBasePage(
         title: data.country,
@@ -31,10 +35,10 @@ class CountryScreen extends StatelessWidget {
                   CountryCardMain(data: data),
                   CountryCardToday(data: data),
                   CountryCardDetail(data: data),
-                  const AdsComponent(type: NativeAdmobType.full),
+                  AdsComponent(type: NativeAdmobType.full),
                   TravelAlertScreen(data: data),
                   CountryCardFive(data: data),
-                  const AdsComponent(type: NativeAdmobType.banner),
+                  AdsComponent(type: NativeAdmobType.banner),
                 ],
               ),
             ),
