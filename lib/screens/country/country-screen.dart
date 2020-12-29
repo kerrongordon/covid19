@@ -19,10 +19,6 @@ class CountryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO remove
-    print('====================');
-    print('build Country Screen');
-    print('====================');
     return Scaffold(
       body: KgpBasePage(
         title: data.country,
