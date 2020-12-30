@@ -18,35 +18,19 @@ class CountryCardFive extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final historical = useProvider(thirtyDayProvider(data.country));
 
-    return historical.when(
-      data: (data) => _buildUi(data: data, theme: theme),
-      loading: () => Container(),
-      error: (error, _) => Container(),
-    );
-  }
-
-  _buildUi({Historical data, ThemeData theme}) {
-    final Timeline items = data.timeline;
-
-    List<HistoryItem> cases = [];
-    items.cases.forEach((key, value) {
-      final item = {'date': key, 'count': value};
-      cases.add(HistoryItem.fromJson(item));
-    });
-
-    List<HistoryItem> recovered = [];
-    items.recovered.forEach((key, value) {
-      final item = {'date': key, 'count': value};
-      recovered.add(HistoryItem.fromJson(item));
-    });
-
-    List<HistoryItem> deaths = [];
-    items.deaths.forEach((key, value) {
-      final item = {'date': key, 'count': value};
-      deaths.add(HistoryItem.fromJson(item));
-    });
+    final cases = useProvider(historyItem(CountryAndType(
+      countryName: data.country,
+      historyItemType: HistoryItemType.cases,
+    )));
+    final recovered = useProvider(historyItem(CountryAndType(
+      countryName: data.country,
+      historyItemType: HistoryItemType.recovered,
+    )));
+    final deaths = useProvider(historyItem(CountryAndType(
+      countryName: data.country,
+      historyItemType: HistoryItemType.deaths,
+    )));
 
     List<DataPoint<DateTime>> _getLineData(List<HistoryItem> data) {
       final year = DateTime.now().year;
