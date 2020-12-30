@@ -17,8 +17,6 @@ class CountryCardFive extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     final cases = useProvider(historyItem(CountryAndType(
       countryName: data.country,
       historyItemType: HistoryItemType.cases,
@@ -31,6 +29,10 @@ class CountryCardFive extends HookWidget {
       countryName: data.country,
       historyItemType: HistoryItemType.deaths,
     )));
+
+    if (cases.isEmpty) {
+      return Container();
+    }
 
     List<DataPoint<DateTime>> _getLineData(List<HistoryItem> data) {
       final year = DateTime.now().year;
@@ -49,6 +51,7 @@ class CountryCardFive extends HookWidget {
     final toDate = DateTime.now().subtract(Duration(days: 1));
 
     return CardComponent(
+      color: Colors.brown,
       padding: const EdgeInsets.symmetric(vertical: 20),
       child: Column(
         children: [
@@ -56,7 +59,11 @@ class CountryCardFive extends HookWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: const KgpCardTitle(
               title: 'Last 30 Days',
-              icon: const Icon(Ionicons.ios_podium),
+              color: Colors.white,
+              icon: const Icon(
+                Ionicons.ios_podium,
+                color: Colors.white,
+              ),
             ),
           ),
           Container(
@@ -91,8 +98,8 @@ class CountryCardFive extends HookWidget {
                 verticalIndicatorFixedPosition: true,
                 footerHeight: 45.0,
                 updatePositionOnTap: true,
-                xAxisTextStyle: TextStyle(
-                  color: theme.textTheme.bodyText1.color,
+                xAxisTextStyle: const TextStyle(
+                  color: Colors.white,
                 ),
               ),
             ),

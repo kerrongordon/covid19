@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/themes/color-theme.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
 import 'package:flutter_native_admob/native_admob_controller.dart';
@@ -10,7 +9,8 @@ import 'package:flutter_native_admob/native_admob_options.dart';
 
 class AdsComponent extends StatefulWidget {
   final NativeAdmobType type;
-  const AdsComponent({Key key, this.type}) : super(key: key);
+  final Color color;
+  const AdsComponent({this.type, this.color});
 
   @override
   _AdsComponentState createState() => _AdsComponentState();
@@ -63,6 +63,7 @@ class _AdsComponentState extends State<AdsComponent> {
     return Container(
       height: _height,
       child: CardComponent(
+        color: widget.color,
         padding: const EdgeInsets.all(20),
         child: NativeAdmob(
           adUnitID: _adUnitID,

@@ -1,6 +1,7 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-stats-with-title.dart';
 import 'package:covid19/models/country-model.dart';
+import 'package:covid19/themes/color-theme.dart';
 import 'package:flutter/material.dart';
 
 class CountryCardDetail extends StatelessWidget {
@@ -12,7 +13,6 @@ class CountryCardDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeData theme = Theme.of(context);
     return Container(
       child: Column(
         children: [
@@ -20,6 +20,7 @@ class CountryCardDetail extends StatelessWidget {
             children: [
               Expanded(
                 child: CardComponent(
+                  color: ColorTheme.cases,
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
@@ -27,13 +28,15 @@ class CountryCardDetail extends StatelessWidget {
                     amount: data.active,
                     titleFontSize: 18,
                     amountFontSize: 15,
-                    titlecolor: theme.accentColor,
+                    titlecolor: Colors.white,
+                    amountcolor: Colors.white,
                   ),
                 ),
               ),
               SizedBox(width: 20),
               Expanded(
                 child: CardComponent(
+                  color: ColorTheme.deaths,
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
@@ -41,7 +44,8 @@ class CountryCardDetail extends StatelessWidget {
                     amount: data.critical,
                     titleFontSize: 18,
                     amountFontSize: 15,
-                    titlecolor: theme.accentColor,
+                    titlecolor: Colors.white,
+                    amountcolor: Colors.white,
                   ),
                 ),
               ),
@@ -51,6 +55,7 @@ class CountryCardDetail extends StatelessWidget {
             children: [
               Expanded(
                 child: CardComponent(
+                  color: Colors.blue,
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
@@ -58,13 +63,15 @@ class CountryCardDetail extends StatelessWidget {
                     amount: data.tests,
                     titleFontSize: 18,
                     amountFontSize: 15,
-                    titlecolor: theme.accentColor,
+                    titlecolor: Colors.white,
+                    amountcolor: Colors.white,
                   ),
                 ),
               ),
               SizedBox(width: 20),
               Expanded(
                 child: CardComponent(
+                  color: Colors.blue,
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
@@ -72,7 +79,8 @@ class CountryCardDetail extends StatelessWidget {
                     amount: data.population,
                     titleFontSize: 18,
                     amountFontSize: 15,
-                    titlecolor: theme.accentColor,
+                    titlecolor: Colors.white,
+                    amountcolor: Colors.white,
                   ),
                 ),
               ),

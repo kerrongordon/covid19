@@ -4,10 +4,12 @@ class KgpCardTitle extends StatelessWidget {
   final String title;
   final String subtitle;
   final Widget icon;
+  final Color color;
   const KgpCardTitle({
     this.title,
     this.subtitle,
     this.icon,
+    this.color,
   });
 
   @override
@@ -25,7 +27,7 @@ class KgpCardTitle extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.w400,
-                    color: theme.textTheme.bodyText1.color,
+                    color: color ?? theme.textTheme.bodyText1.color,
                   ),
                 ),
                 WidgetSpan(
@@ -41,8 +43,9 @@ class KgpCardTitle extends StatelessWidget {
           subtitle != null
               ? Text(
                   subtitle ?? '',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 12,
+                    color: color,
                   ),
                 )
               : Container(),
