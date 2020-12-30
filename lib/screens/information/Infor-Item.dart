@@ -2,7 +2,6 @@ import 'package:covid19/components/card-component.dart';
 import 'package:covid19/models/covid-Infor.model.dart';
 import 'package:covid19/routes/route-names.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animator/flutter_animator.dart';
 
 class InforItem extends StatelessWidget {
   const InforItem({
@@ -34,12 +33,10 @@ class InforItem extends StatelessWidget {
             const SizedBox(height: 10),
             const Divider(),
             const SizedBox(height: 10),
-            FadeInDown(
-              child: Text(
-                data.infor[index].title ?? '',
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.ellipsis,
-              ),
+            Text(
+              data.infor[index].title ?? '',
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),
