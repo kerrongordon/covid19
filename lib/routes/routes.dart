@@ -1,8 +1,11 @@
 import 'package:covid19/components/kgp-center.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/models/covid-Infor.model.dart';
+import 'package:covid19/models/usstates-model.dart';
 import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/screens/country/country-screen.dart';
+import 'package:covid19/screens/country/us-states/us-state.dart';
+import 'package:covid19/screens/country/us-states/usstate-screen.dart';
 import 'package:covid19/screens/information/infor-page.dart';
 import 'package:covid19/screens/map/map-screen.dart';
 import 'package:covid19/screens/splash/splash.screen.dart';
@@ -26,6 +29,12 @@ class RouteGenerator {
       case countryScreen:
         return args is Country
             ? MaterialPageRoute(builder: (_) => CountryScreen(data: args))
+            : MaterialPageRoute(builder: (_) => KgpCenter());
+      case usStatePageScreen:
+        return MaterialPageRoute(builder: (_) => UsStateScreen());
+      case usState:
+        return args is UsStates
+            ? MaterialPageRoute(builder: (_) => UsState(data: args))
             : MaterialPageRoute(builder: (_) => KgpCenter());
       default:
         return MaterialPageRoute(builder: (_) => KgpCenter());
