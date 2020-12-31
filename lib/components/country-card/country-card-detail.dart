@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-stats-with-title.dart';
 import 'package:covid19/models/country-model.dart';
@@ -14,6 +15,9 @@ class CountryCardDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final changeTheme = AdaptiveTheme.of(context);
+    final colorText = changeTheme.theme.textTheme.bodyText1.color;
+    final accentColor = changeTheme.theme.accentColor;
     return Container(
       child: Column(
         children: [
@@ -21,7 +25,7 @@ class CountryCardDetail extends StatelessWidget {
             children: [
               Expanded(
                 child: CardComponent(
-                  color: ColorTheme.cases,
+                  color: changeTheme.mode.isLight ? ColorTheme.cases : null,
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
@@ -29,15 +33,17 @@ class CountryCardDetail extends StatelessWidget {
                     amount: data.active,
                     titleFontSize: 18,
                     amountFontSize: 15,
-                    titlecolor: Colors.white,
-                    amountcolor: Colors.white,
+                    titlecolor:
+                        changeTheme.mode.isLight ? Colors.white : accentColor,
+                    amountcolor:
+                        changeTheme.mode.isLight ? Colors.white : colorText,
                   ),
                 ),
               ),
               SizedBox(width: 20),
               Expanded(
                 child: CardComponent(
-                  color: ColorTheme.deaths,
+                  color: changeTheme.mode.isLight ? ColorTheme.deaths : null,
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
@@ -45,8 +51,10 @@ class CountryCardDetail extends StatelessWidget {
                     amount: data.critical,
                     titleFontSize: 18,
                     amountFontSize: 15,
-                    titlecolor: Colors.white,
-                    amountcolor: Colors.white,
+                    titlecolor:
+                        changeTheme.mode.isLight ? Colors.white : accentColor,
+                    amountcolor:
+                        changeTheme.mode.isLight ? Colors.white : colorText,
                   ),
                 ),
               ),
@@ -56,7 +64,7 @@ class CountryCardDetail extends StatelessWidget {
             children: [
               Expanded(
                 child: CardComponent(
-                  color: Colors.blue,
+                  color: changeTheme.mode.isLight ? Colors.blue : null,
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
@@ -64,15 +72,17 @@ class CountryCardDetail extends StatelessWidget {
                     amount: data.tests,
                     titleFontSize: 18,
                     amountFontSize: 15,
-                    titlecolor: Colors.white,
-                    amountcolor: Colors.white,
+                    titlecolor:
+                        changeTheme.mode.isLight ? Colors.white : accentColor,
+                    amountcolor:
+                        changeTheme.mode.isLight ? Colors.white : colorText,
                   ),
                 ),
               ),
               SizedBox(width: 20),
               Expanded(
                 child: CardComponent(
-                  color: Colors.blue,
+                  color: changeTheme.mode.isLight ? Colors.blue : null,
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
@@ -80,8 +90,10 @@ class CountryCardDetail extends StatelessWidget {
                     amount: data.population,
                     titleFontSize: 18,
                     amountFontSize: 15,
-                    titlecolor: Colors.white,
-                    amountcolor: Colors.white,
+                    titlecolor:
+                        changeTheme.mode.isLight ? Colors.white : accentColor,
+                    amountcolor:
+                        changeTheme.mode.isLight ? Colors.white : colorText,
                   ),
                 ),
               ),

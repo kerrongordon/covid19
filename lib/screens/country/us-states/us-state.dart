@@ -17,6 +17,7 @@ class UsState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String date = TimeToDate.use(data.updated);
+    final theme = Theme.of(context);
 
     return Scaffold(
       body: KgpBasePage(
@@ -71,11 +72,7 @@ class UsState extends StatelessWidget {
                   ],
                 ),
               ),
-              AdsComponent(
-                type: NativeAdmobType.full,
-                color: Colors.brown,
-                textColor: Colors.white,
-              ),
+              AdsComponent(type: NativeAdmobType.full),
               Container(
                 child: Column(
                   children: [
@@ -83,7 +80,6 @@ class UsState extends StatelessWidget {
                       children: [
                         Expanded(
                           child: CardComponent(
-                            color: Colors.deepPurple,
                             padding: const EdgeInsets.all(20),
                             child: KgpStatsWithTitle(
                               flip: true,
@@ -91,15 +87,13 @@ class UsState extends StatelessWidget {
                               amount: data.active,
                               titleFontSize: 18,
                               amountFontSize: 15,
-                              titlecolor: Colors.white,
-                              amountcolor: Colors.white,
+                              titlecolor: theme.accentColor,
                             ),
                           ),
                         ),
                         const SizedBox(width: 20),
                         Expanded(
                           child: CardComponent(
-                            color: Colors.deepPurple,
                             padding: const EdgeInsets.all(20),
                             child: KgpStatsWithTitle(
                               flip: true,
@@ -107,8 +101,7 @@ class UsState extends StatelessWidget {
                               amount: data.population,
                               titleFontSize: 18,
                               amountFontSize: 15,
-                              titlecolor: Colors.white,
-                              amountcolor: Colors.white,
+                              titlecolor: theme.accentColor,
                             ),
                           ),
                         ),
@@ -118,7 +111,6 @@ class UsState extends StatelessWidget {
                 ),
               ),
               CardComponent(
-                color: Colors.blue,
                 padding: const EdgeInsets.all(20),
                 child: Container(
                   child: Column(
@@ -126,7 +118,6 @@ class UsState extends StatelessWidget {
                       KgpCardTitle(
                         title: today,
                         subtitle: '$updatedasof $date',
-                        color: Colors.white,
                       ),
                       Container(
                         child: Row(
@@ -138,7 +129,6 @@ class UsState extends StatelessWidget {
                                 amountFontSize: 20,
                                 titleFontSize: 15,
                                 titlecolor: ColorTheme.cases,
-                                amountcolor: Colors.white,
                               ),
                             ),
                             Expanded(
@@ -148,7 +138,6 @@ class UsState extends StatelessWidget {
                                 amountFontSize: 20,
                                 titleFontSize: 15,
                                 titlecolor: ColorTheme.deaths,
-                                amountcolor: Colors.white,
                               ),
                             ),
                             Expanded(
@@ -158,7 +147,6 @@ class UsState extends StatelessWidget {
                                 amountFontSize: 20,
                                 titleFontSize: 15,
                                 titlecolor: ColorTheme.recovered,
-                                amountcolor: Colors.white,
                               ),
                             ),
                           ],

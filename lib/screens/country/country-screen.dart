@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/components/country-card/country-card-detail.dart';
 import 'package:covid19/components/country-card/country-card-main.dart';
@@ -20,6 +21,8 @@ class CountryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final changeTheme = AdaptiveTheme.of(context);
+    final colorText = changeTheme.theme.textTheme.bodyText1.color;
     return Scaffold(
       body: KgpBasePage(
         title: data.country,
@@ -34,8 +37,9 @@ class CountryScreen extends StatelessWidget {
                   CountryCardDetail(data: data),
                   AdsComponent(
                     type: NativeAdmobType.full,
-                    color: Colors.brown,
-                    textColor: Colors.white,
+                    color: changeTheme.mode.isLight ? Colors.brown : null,
+                    textColor:
+                        changeTheme.mode.isLight ? Colors.white : colorText,
                   ),
                   TravelAlertScreen(data: data),
                   CountryCardFive(data: data),

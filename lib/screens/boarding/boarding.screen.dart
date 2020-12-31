@@ -24,7 +24,7 @@ class BoardingScreen extends HookWidget {
     final countries = useProvider(countryProvider);
     final prefs = useProvider(preferencesProvider);
     final home = useProvider(homeCountryProvider);
-    final themeMode = useProvider(themeModeProvider);
+    final changeTheme = AdaptiveTheme.of(context);
     final _pageController = usePageController(initialPage: _pageIndex.value);
 
     void onPageChange(int index) => _pageIndex.value = index;
@@ -98,7 +98,7 @@ class BoardingScreen extends HookWidget {
       ),
     ];
 
-    Widget changeNavbar({AdaptiveThemeMode themeMode}) {
+    Widget changeNavbar() {
       return home.item.country != null && _pageIndex.value == 5
           ? BoardingStartButton(
               onPressed: startApp,
@@ -108,27 +108,24 @@ class BoardingScreen extends HookWidget {
               pageIndex: _pageIndex,
               pageController: _pageController,
               ontap: onTapIcon,
-              themeMode: themeMode,
+              themeMode: changeTheme.mode,
             );
     }
 
-    return themeMode.when(
-      loading: () => Container(),
-      error: (_, __) => Container(),
-      data: (themeMode) => Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          toolbarHeight: 0,
-          backgroundColor: Theme.of(context).backgroundColor,
-          brightness: themeMode.isLight ? Brightness.light : Brightness.dark,
-        ),
-        body: PageView(
-          controller: _pageController,
-          onPageChanged: onPageChange,
-          children: _pages,
-        ),
-        bottomNavigationBar: changeNavbar(themeMode: themeMode),
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        toolbarHeight: 0,
+        backgroundColor: Theme.of(context).backgroundColor,
+        brightness:
+            changeTheme.mode.isLight ? Brightness.light : Brightness.dark,
       ),
+      body: PageView(
+        controller: _pageController,
+        onPageChanged: onPageChange,
+        children: _pages,
+      ),
+      bottomNavigationBar: changeNavbar(),
     );
   }
 }
