@@ -58,6 +58,7 @@ class CountryScreen extends StatelessWidget {
               icon: Icon(Ionicons.ios_list),
             )
           : null,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
