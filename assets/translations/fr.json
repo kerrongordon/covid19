@@ -66,7 +66,8 @@
       "description" : "Lavez-vous souvent les mains avec de l'eau et du savon pendant au moins 20 secondes, surtout après avoir été dans un lieu public, ou après vous être mouché, tousser ou éternuer.\n \n Si le savon et l'eau ne sont pas facilement disponibles, utilisez un désinfectant pour les mains contenant au moins 60% d'alcool. Couvrez toutes les surfaces de vos mains et frottez-les ensemble jusqu'à ce qu'elles soient sèches.\n \n Évitez de vous toucher les yeux, le nez et la bouche avec des mains non lavées.",
       "title" : "Nettoyez-vous souvent les mains"
     },
-    "pagetitle" : "On pense que le COVID-19 se propage principalement par contact étroit d'une personne à l'autre. Certaines personnes sans symptômes peuvent être en mesure de propager le virus. Nous apprenons encore comment le virus se propage et la gravité de la maladie qu'il cause."
+    "pagesubtitle" : "On pense que le COVID-19 se propage principalement par contact étroit de personne à personne. Certaines personnes sans symptômes peuvent être capables de propager le virus. Nous sommes toujours en train d'apprendre comment le virus se propage et la gravité de la maladie qu'il provoque.",
+    "pagetitle" : "Protégez-vous et les autres"
   },
   "settingscreen" : {
     "about" : "À propos",

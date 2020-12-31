@@ -1,15 +1,18 @@
 import 'package:covid19/components/ads-component.dart';
-import 'package:covid19/models/covid-Infor.model.dart';
+import 'package:covid19/providers/covid-infor-provider.dart';
 import 'package:covid19/screens/information/Infor-Item.dart';
+import 'package:covid19/translations/infor-translate.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class InforList extends StatelessWidget {
-  final CovidInfor data;
-  const InforList({Key key, this.data}) : super(key: key);
+class InforList extends HookWidget {
+  const InforList();
 
   @override
   Widget build(BuildContext context) {
+    final infor = useProvider(covidInforProvider);
     return Column(
       children: [
         AspectRatio(
@@ -19,7 +22,7 @@ class InforList extends StatelessWidget {
         Container(
           padding: const EdgeInsets.all(20),
           child: Text(
-            data.pageTitle ?? '',
+            pagesubtitle,
             style: const TextStyle(
               fontWeight: FontWeight.w300,
               fontSize: 17,
@@ -31,10 +34,14 @@ class InforList extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
         ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: const AdsComponent(type: NativeAdmobType.banner),
+        ),
         Container(
           child: GridView.builder(
             shrinkWrap: true,
-            itemCount: data.infor.length,
+            itemCount: infor.length,
             padding:
                 const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 50),
             physics: NeverScrollableScrollPhysics(),
@@ -44,17 +51,10 @@ class InforList extends StatelessWidget {
               mainAxisSpacing: 10,
             ),
             itemBuilder: (context, index) {
-              return InforItem(
-                data: data,
-                index: index,
-              );
+              return InforItem(data: infor[index]);
             },
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: const AdsComponent(type: NativeAdmobType.banner),
-        )
       ],
     );
   }

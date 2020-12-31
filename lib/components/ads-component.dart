@@ -10,7 +10,8 @@ import 'package:flutter_native_admob/native_admob_options.dart';
 class AdsComponent extends StatefulWidget {
   final NativeAdmobType type;
   final Color color;
-  const AdsComponent({this.type, this.color});
+  final Color textColor;
+  const AdsComponent({this.type, this.color, this.textColor});
 
   @override
   _AdsComponentState createState() => _AdsComponentState();
@@ -76,14 +77,19 @@ class _AdsComponentState extends State<AdsComponent> {
               backgroundColor: theme.accentColor,
               fontSize: 12,
             ),
-            adLabelTextStyle: NativeTextStyle(color: textColor),
-            bodyTextStyle: NativeTextStyle(color: textColor),
-            headlineTextStyle: NativeTextStyle(color: textColor),
-            advertiserTextStyle: NativeTextStyle(color: textColor),
-            priceTextStyle: NativeTextStyle(color: textColor),
-            storeTextStyle: NativeTextStyle(color: textColor),
+            adLabelTextStyle:
+                NativeTextStyle(color: widget.textColor ?? textColor),
+            bodyTextStyle:
+                NativeTextStyle(color: widget.textColor ?? textColor),
+            headlineTextStyle:
+                NativeTextStyle(color: widget.textColor ?? textColor),
+            advertiserTextStyle:
+                NativeTextStyle(color: widget.textColor ?? textColor),
+            priceTextStyle:
+                NativeTextStyle(color: widget.textColor ?? textColor),
+            storeTextStyle:
+                NativeTextStyle(color: widget.textColor ?? textColor),
             ratingColor: ColorTheme.cases,
-            showMediaContent: true,
           ),
         ),
       ),

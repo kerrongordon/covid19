@@ -20,7 +20,7 @@ class RouteGenerator {
       case mapScreen:
         return MaterialPageRoute(builder: (_) => MapScreen());
       case inforPageScreen:
-        return args is Infor
+        return args is CovidInfor
             ? MaterialPageRoute(builder: (_) => InforPage(data: args))
             : MaterialPageRoute(builder: (_) => KgpCenter());
       case countryScreen:

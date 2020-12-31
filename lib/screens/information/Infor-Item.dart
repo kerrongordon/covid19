@@ -5,10 +5,9 @@ import 'package:flutter/material.dart';
 
 class InforItem extends StatelessWidget {
   const InforItem({
-    Key key,
     @required this.data,
     this.index,
-  }) : super(key: key);
+  });
 
   final CovidInfor data;
   final int index;
@@ -16,6 +15,7 @@ class InforItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardComponent(
+      color: Color.fromRGBO(21, 140, 166, 1.0),
       margin: const EdgeInsets.only(bottom: 10),
       child: Container(
         padding: const EdgeInsets.all(20),
@@ -27,22 +27,27 @@ class InforItem extends StatelessWidget {
             AspectRatio(
               aspectRatio: 2.5,
               child: Image.asset(
-                'assets/infor/${data.infor[index].image}',
+                'assets/infor/${data.image}',
               ),
             ),
             const SizedBox(height: 10),
-            const Divider(),
+            const Divider(
+              color: Colors.white,
+            ),
             const SizedBox(height: 10),
             Text(
-              data.infor[index].title ?? '',
+              data.title ?? '',
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
+              style: const TextStyle(
+                color: Colors.white,
+              ),
             ),
           ],
         ),
       ),
-      onTap: () => Navigator.of(context)
-          .pushNamed(inforPageScreen, arguments: data.infor[index]),
+      onTap: () =>
+          Navigator.of(context).pushNamed(inforPageScreen, arguments: data),
     );
   }
 }

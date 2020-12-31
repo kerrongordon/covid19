@@ -7,12 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
 
 class InforPage extends StatelessWidget {
-  final Infor data;
+  final CovidInfor data;
 
   const InforPage({Key key, this.data}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return Scaffold(
       body: KgpBasePage(
         title: data.title,
@@ -28,30 +27,35 @@ class InforPage extends StatelessWidget {
                 animation: 'Animations',
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20),
+              child: AdsComponent(
+                type: NativeAdmobType.banner,
+                color: Colors.brown,
+                textColor: Colors.white,
+              ),
+            ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: CardComponent(
+                color: Colors.blue,
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   children: <Widget>[
                     ListTile(
                       title: Text(
                         data.description ?? '',
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
                           height: 1.5,
-                          color: theme.textTheme.bodyText1.color,
+                          color: Colors.white,
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
-            ),
-            const Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: const AdsComponent(type: NativeAdmobType.full),
             ),
           ],
         ),

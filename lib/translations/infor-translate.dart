@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 
 final String pagetitle = tr('inforscreen.pagetitle');
+final String pagesubtitle = tr('inforscreen.pagesubtitle');
 
 final String inforonetitle = tr('inforscreen.inforone.title');
 final String inforonedescription = tr('inforscreen.inforone.description');
