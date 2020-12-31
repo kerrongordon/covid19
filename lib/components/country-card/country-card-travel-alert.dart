@@ -20,7 +20,7 @@ class CountryCardTravelAlert extends HookWidget {
     final url = data.advisory.source;
 
     return CardComponent(
-      color: Colors.blue,
+      color: Colors.orange[800],
       onTap: () async => await canLaunch(url)
           ? await launch(url)
           : throw '$couldnotlaunch $url',

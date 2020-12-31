@@ -4,6 +4,7 @@ import 'package:covid19/components/search/kgp-search.dart';
 import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/screens/countries/providers/countries-list.dart';
+import 'package:covid19/translations/app-translate.dart';
 import 'package:covid19/translations/tab-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -30,9 +31,10 @@ class CountriesScreen extends HookWidget {
       ),
       floatingActionButton: Container(
         margin: const EdgeInsets.only(bottom: 60),
-        child: FloatingActionButton(
+        child: FloatingActionButton.extended(
           heroTag: 'countrySearch',
-          child: const Icon(Ionicons.ios_search),
+          label: Text(search),
+          icon: const Icon(Ionicons.ios_search),
           onPressed: () => showSearch(
             context: context,
             delegate: KgpSearch(
