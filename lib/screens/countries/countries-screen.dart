@@ -4,6 +4,7 @@ import 'package:covid19/components/search/kgp-search.dart';
 import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/screens/countries/providers/countries-list.dart';
+import 'package:covid19/translations/tab-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -18,7 +19,7 @@ class CountriesScreen extends HookWidget {
 
     return Scaffold(
       body: KgpBasePage(
-        title: 'Countries',
+        title: countries,
         sliverList: SliverChildListDelegate(
           _countries.when(
             data: (data) => data,

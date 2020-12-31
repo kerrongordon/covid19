@@ -1,0 +1,60 @@
+{
+	"boardingscreen": {
+		"skipbutton": "skip",
+		"startbutton": "start",
+		"pageone": {
+			"title": "Covid 19 Tracker",
+			"subtitle": "Get the Facts About Coronavirus Daily cases update around the world."
+		},
+		"pagetwo": {
+			"title": "Learn as you go",
+			"subtitle": "Take steps to care for yourself and help protect others in your home and community."
+		},
+		"pagethree": {
+			"title": "Travel Advisories",
+			"subtitle": "Official travel advisories issued by governments across the globe."
+		},
+		"pagefour": {
+			"title": "Stay At Home",
+			"subtitle": "If you have symptoms of COVID-19 however mild, self-isolate for at least 10 days from when your symptoms started."
+		},
+		"pagefive": {
+			"title": "Select Your Country",
+			"button": "Select"
+		}
+
+	},
+	"tabscreen": {
+		"global": "Global",
+		"countries": "Countries",
+		"home": "Home",
+		"info": "Info",
+		"settings": "Settings"
+	},
+	"settingscreen": {
+		"changecountry": "Change Country",
+		"lightdark": "Light / Dark",
+		"about": "About",
+		"aboutinfo": "We source data from Open Disease Data, Daily updated travel advisories and The Centers for Disease Control and Prevention."
+	},
+	"app": {
+		"cases": "Cases",
+		"recovered": "Recovered",
+		"deaths": "Deaths",
+		"confirmed": "Confirmed",
+		"active": "Active",
+		"critical": "Critical",
+		"testdone": "Test Done",
+		"population": "Population",
+		"today": "Today",
+		"updatedasof": "Updated as of",
+		"travelalert": "Travel Alert",
+		"readmore": "Read More",
+		"couldnotlaunch": "Could not launch",
+		"last30days": "Last 30 Days",
+		"viewmore": "View More",
+		"worldwide": "Worldwide"
+
+	}
+
+}

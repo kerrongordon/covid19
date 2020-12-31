@@ -5,6 +5,7 @@ import 'package:covid19/models/country-model.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/home-provider.dart';
 import 'package:covid19/providers/one-country-provider.dart';
+import 'package:covid19/translations/setting-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -58,7 +59,7 @@ class SettingsCountryPicker extends HookWidget {
                         padding: const EdgeInsets.only(top: 50),
                         child: Column(
                           children: [
-                            Text('Change Country'),
+                            Text(changecountry),
                             SizedBox(height: 10),
                             Center(
                               child: Text(

@@ -1,0 +1,57 @@
+{
+  "app" : {
+    "active" : "Actif",
+    "cases" : "Cas",
+    "confirmed" : "Confirmé",
+    "couldnotlaunch" : "Impossible de lancer",
+    "critical" : "Critique",
+    "deaths" : "Décès",
+    "last30days" : "Les 30 derniers jours",
+    "population" : "Population",
+    "readmore" : "Lire la suite",
+    "recovered" : "Restauré",
+    "testdone" : "Test terminé",
+    "today" : "Aujourd'hui",
+    "travelalert" : "Alerte Voyage",
+    "updatedasof" : "Mis à jour le",
+    "viewmore" : "Voir plus",
+    "worldwide" : "À l'échelle mondiale"
+  },
+  "boardingscreen" : {
+    "pagefive" : {
+      "button" : "Sélectionner",
+      "title" : "Sélectionnez votre pays"
+    },
+    "pagefour" : {
+      "subtitle" : "Si vous présentez des symptômes de COVID-19, même s'ils sont bénins, isolez vous-même pendant au moins 10 jours à compter de l'apparition de vos symptômes.",
+      "title" : "Rester à la maison"
+    },
+    "pageone" : {
+      "subtitle" : "Obtenez les faits à propos de Coronavirus Les cas quotidiens sont mis à jour dans le monde entier.",
+      "title" : "Covid 19 Tracker"
+    },
+    "pagethree" : {
+      "subtitle" : "Avis officiels aux voyageurs émis par les gouvernements du monde entier.",
+      "title" : "Avis aux voyageurs"
+    },
+    "pagetwo" : {
+      "subtitle" : "Prenez des mesures pour prendre soin de vous et aider à protéger les autres personnes dans votre maison et dans votre communauté.",
+      "title" : "Apprenez au fur et à mesure"
+    },
+    "skipbutton" : "Ignorer",
+    "startbutton" : "Démarrer"
+  },
+  "settingscreen" : {
+    "about" : "À propos",
+    "aboutinfo" : "Nous fournissons des données à partir des données ouvertes sur les maladies, des avis aux voyageurs mis à jour quotidiennement et des Centres pour le contrôle et la prévention des maladies.",
+    "changecountry" : "Changer de Pays",
+    "lightdark" : "Claire/Foncé"
+  },
+  "tabscreen" : {
+    "countries" : "Des pays",
+    "global" : "Global",
+    "home" : "Domicile",
+    "info" : "Info",
+    "settings" : "Réglages"
+  }
+}

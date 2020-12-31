@@ -3,6 +3,8 @@ import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
 import 'package:covid19/screens/settings/settings.country.picker.dart';
 import 'package:covid19/screens/settings/settings.theme.dart';
+import 'package:covid19/translations/setting-translate.dart';
+import 'package:covid19/translations/tab-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -14,7 +16,7 @@ class SettingsScreen extends HookWidget {
     useAutomaticKeepAliveClient();
     return Scaffold(
       body: KgpBasePage(
-        title: 'Settings',
+        title: settings,
         child: Column(
           children: [
             SettingsCountryPicker(),
@@ -27,16 +29,16 @@ class SettingsScreen extends HookWidget {
                   child: Column(
                     children: [
                       Center(
-                        child: const Text(
-                          'About',
+                        child: Text(
+                          abouttitle,
                           style: const TextStyle(fontSize: 18),
                         ),
                       ),
                       const SizedBox(height: 10),
                       const Divider(),
                       const SizedBox(height: 20),
-                      const Text(
-                        'We source data from Open Disease Data, Daily updated travel advisories and The Centers for Disease Control and Prevention.',
+                      Text(
+                        aboutinfo,
                         style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,

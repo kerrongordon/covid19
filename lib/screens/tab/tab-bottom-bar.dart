@@ -1,4 +1,5 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:covid19/translations/tab-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -21,27 +22,27 @@ class TabBottomBar extends StatelessWidget {
       onItemSelected: onItemSelected,
       items: <BottomNavyBarItem>[
         buildBottomNavyBarItem(
-          title: 'Global',
+          title: global,
           theme: _theme,
           icon: const Icon(Ionicons.ios_analytics),
         ),
         buildBottomNavyBarItem(
-          title: 'Countries',
+          title: countries,
           theme: _theme,
           icon: const Icon(Ionicons.ios_trending_up),
         ),
         buildBottomNavyBarItem(
-          title: 'Home',
+          title: home,
           theme: _theme,
           icon: const Icon(Ionicons.ios_pin),
         ),
         buildBottomNavyBarItem(
-          title: 'Info',
+          title: info,
           theme: _theme,
           icon: const Icon(Ionicons.ios_apps),
         ),
         buildBottomNavyBarItem(
-          title: 'Settings',
+          title: settings,
           theme: _theme,
           icon: const Icon(Ionicons.ios_cog),
         ),

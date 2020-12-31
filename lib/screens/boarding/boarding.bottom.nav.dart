@@ -1,5 +1,6 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/screens/boarding/boarding.indicator.dart';
+import 'package:covid19/translations/boarding-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -37,7 +38,7 @@ class BoardingBottomNav extends StatelessWidget {
               : FlatButton(
                   onPressed: () => ontap(_pages.length - 2),
                   child: Text(
-                    'Skip',
+                    skipbutton,
                     style: TextStyle(
                       color:
                           _themeMode.isLight ? Colors.black54 : Colors.white54,

@@ -2,6 +2,7 @@ import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-stats-with-title.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/themes/color-theme.dart';
+import 'package:covid19/translations/app-translate.dart';
 import 'package:flutter/material.dart';
 
 class CountryCardDetail extends StatelessWidget {
@@ -24,7 +25,7 @@ class CountryCardDetail extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
-                    title: 'Active',
+                    title: active,
                     amount: data.active,
                     titleFontSize: 18,
                     amountFontSize: 15,
@@ -40,7 +41,7 @@ class CountryCardDetail extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
-                    title: 'Critical',
+                    title: critical,
                     amount: data.critical,
                     titleFontSize: 18,
                     amountFontSize: 15,
@@ -59,7 +60,7 @@ class CountryCardDetail extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
-                    title: 'Test Done',
+                    title: testdone,
                     amount: data.tests,
                     titleFontSize: 18,
                     amountFontSize: 15,
@@ -75,7 +76,7 @@ class CountryCardDetail extends StatelessWidget {
                   padding: const EdgeInsets.all(20),
                   child: KgpStatsWithTitle(
                     flip: true,
-                    title: 'Population',
+                    title: population,
                     amount: data.population,
                     titleFontSize: 18,
                     amountFontSize: 15,

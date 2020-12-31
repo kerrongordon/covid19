@@ -1,3 +1,4 @@
+import 'package:covid19/translations/app-translate.dart';
 import 'package:covid19/utils/timetodate.util.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class CountryCardMailTitle extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            'Last Updated on $_date',
+            '$updatedasof $_date',
             style: const TextStyle(fontSize: 12),
           ),
         ],

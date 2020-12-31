@@ -9,6 +9,7 @@ import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/screens/boarding/boarding.bottom.nav.dart';
 import 'package:covid19/screens/boarding/boarding.slide.dart';
 import 'package:covid19/screens/boarding/boarding.start.button.dart';
+import 'package:covid19/translations/boarding-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -49,40 +50,36 @@ class BoardingScreen extends HookWidget {
 
     List<Widget> _pages = [
       BoardingSlide(
-        title: 'Covid 19 Tracker',
-        subtitle:
-            'Get the Facts About Coronavirus Daily cases update around the world',
+        title: pageonetitle,
+        subtitle: pageonesubtitle,
         flar: 'Covid19Pprotect',
         flarAnimationName: 'Animations',
       ),
       BoardingSlide(
-        title: 'Learn as you go',
-        subtitle:
-            'Take steps to care for yourself and help protect others in your home and community.',
+        title: pagetwotitle,
+        subtitle: pagetwosubtitle,
         flar: 'CoronaDoctor',
         flarAnimationName: 'Animations',
       ),
       BoardingSlide(
-        title: 'Travel Advisories',
-        subtitle:
-            'Official travel advisories issued by governments across the globe.',
+        title: pagethreetitle,
+        subtitle: pagethreesubtitle,
         flar: 'AirplaneAroundTheWorld',
         flarAnimationName: 'Animations',
       ),
       BoardingSlide(
-        title: 'Stay At Home',
-        subtitle:
-            'If you have symptoms of COVID-19 however mild, self-isolate for at least 10 days from when your symptoms started.',
+        title: pagefourtitle,
+        subtitle: pagefoursubtitle,
         flar: 'StayAtHome',
         flarAnimationName: 'Animations',
       ),
       BoardingSlide(
-        title: 'Select Your Country',
+        title: pagefivetitle,
         flarAnimationName: 'roll',
         flar: home.item.country == null ? 'WorldSpin' : null,
         subtitle: home.item.country ?? '',
         flag: home.item.country == null ? '' : home.item.countryInfo.flag,
-        buttonTitle: 'Select',
+        buttonTitle: pagefivebutton,
         buttonIcon: Icon(Ionicons.ios_pin),
         onPressed: () async {
           final search = await showSearch(

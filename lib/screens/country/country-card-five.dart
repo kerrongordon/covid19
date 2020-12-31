@@ -5,6 +5,7 @@ import 'package:covid19/models/country-model.dart';
 import 'package:covid19/models/historical-model.dart';
 import 'package:covid19/screens/country/providers/thirty-day.dart';
 import 'package:covid19/themes/color-theme.dart';
+import 'package:covid19/translations/app-translate.dart' as tran;
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -57,8 +58,8 @@ class CountryCardFive extends HookWidget {
         children: [
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: const KgpCardTitle(
-              title: 'Last 30 Days',
+            child: KgpCardTitle(
+              title: tran.last30days,
               color: Colors.white,
               icon: const Icon(
                 Ionicons.ios_podium,
@@ -76,17 +77,17 @@ class CountryCardFive extends HookWidget {
               selectedDate: toDate,
               series: [
                 BezierLine(
-                  label: "Cases",
+                  label: tran.cases,
                   data: _getLineData(cases),
                   lineColor: ColorTheme.cases,
                 ),
                 BezierLine(
-                  label: "Recovered",
+                  label: tran.recovered,
                   data: _getLineData(recovered),
                   lineColor: ColorTheme.recovered,
                 ),
                 BezierLine(
-                  label: "Deaths",
+                  label: tran.deaths,
                   data: _getLineData(deaths),
                   lineColor: ColorTheme.deaths,
                 ),
