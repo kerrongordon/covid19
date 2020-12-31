@@ -4,7 +4,6 @@ import 'package:covid19/configs/data.config.dart';
 import 'package:covid19/providers/country-provider.dart';
 import 'package:covid19/providers/home-provider.dart';
 import 'package:covid19/providers/preference-provider.dart';
-import 'package:covid19/providers/theme-mode-provider.dart';
 import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/screens/boarding/boarding.bottom.nav.dart';
 import 'package:covid19/screens/boarding/boarding.slide.dart';
