@@ -53,8 +53,9 @@
 		"couldnotlaunch": "Could not launch",
 		"last30days": "Last 30 Days",
 		"viewmore": "View More",
-		"worldwide": "Worldwide"
-
+		"worldwide": "Worldwide",
+		"search": "Search",
+		"map": "Map"
 	},
 	"inforscreen": {
 		"pagetitle": "Protect Yourself & Others",

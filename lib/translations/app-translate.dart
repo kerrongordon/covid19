@@ -16,3 +16,5 @@ final String couldnotlaunch = tr('app.couldnotlaunch');
 final String last30days = tr('app.last30days');
 final String viewmore = tr('app.viewmore');
 final String worldwide = tr('app.worldwide');
+final String search = tr('app.search');
+final String map = tr('app.map');
