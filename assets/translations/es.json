@@ -1,0 +1,87 @@
+{
+  "app" : {
+    "active" : "Activo",
+    "cases" : "Casos",
+    "confirmed" : "Confirmado",
+    "couldnotlaunch" : "No se pudo iniciar",
+    "critical" : "Crítico",
+    "deaths" : "Muertes",
+    "last30days" : "Últimos 30 días",
+    "map" : "Mapa",
+    "population" : "Población",
+    "readmore" : "Leer más",
+    "recovered" : "Restaurado",
+    "search" : "Buscar",
+    "testdone" : "Prueba realizada",
+    "today" : "Hoy",
+    "travelalert" : "Alerta de viaje",
+    "updatedasof" : "Actualizado a partir de",
+    "viewmore" : "Ver más",
+    "worldwide" : "En todo el mundo"
+  },
+  "boardingscreen" : {
+    "pagefive" : {
+      "button" : "Seleccionar",
+      "title" : "Selecciona tu país"
+    },
+    "pagefour" : {
+      "subtitle" : "Si tiene síntomas de COVID-19 por leves, autoaislarse durante al menos 10 días a partir del inicio de los síntomas.",
+      "title" : "Quédate en casa"
+    },
+    "pageone" : {
+      "subtitle" : "Obtenga los datos sobre Coronavirus Actualización de casos diarios en todo el mundo.",
+      "title" : "Covid 19 Tracker"
+    },
+    "pagethree" : {
+      "subtitle" : "Asesoramiento oficial sobre viajes emitidos por gobiernos de todo el mundo.",
+      "title" : "Asesorías de Viaje"
+    },
+    "pagetwo" : {
+      "subtitle" : "Tome medidas para cuidarse y ayudar a proteger a los demás en su hogar y comunidad.",
+      "title" : "Aprende a medida que vayas"
+    },
+    "skipbutton" : "Omitir",
+    "startbutton" : "Iniciar"
+  },
+  "inforscreen" : {
+    "inforfive" : {
+      "description" : "Si se encuentra en un lugar privado y no tiene la cara cubierta de tela, recuerde siempre cubrirse la boca y la nariz con un pañuelo cuando tosa o estornude o use la parte interna del codo.\n \n Tire los pañuelos usados ​​a la basura.\n \n Lávese las manos inmediatamente con agua y jabón durante al menos 20 segundos. Si no hay agua y jabón disponibles, lávese las manos con un desinfectante para manos que contenga al menos un 60% de alcohol.",
+      "title" : "Cubrir tos y estornudos"
+    },
+    "inforfour" : {
+      "description" : "Podría contagiar COVID-19 a otras personas incluso si no se siente enfermo.\n \n Todos deben usar una cubierta facial de tela cuando tengan que salir en público, por ejemplo, al supermercado o para recoger otras necesidades.\n \n No se deben colocar cubiertas faciales de tela a niños pequeños menores de 2 años, a cualquier persona que tenga problemas para respirar, o que esté inconsciente, incapacitado o que no pueda quitarse la máscara sin ayuda.\n \n La cubierta facial de tela está diseñada para proteger a otras personas en caso de que usted esté infectado.\n \n Continúe manteniendo unos 6 pies entre usted y los demás. La cubierta facial de tela no sustituye al distanciamiento social.",
+      "title" : "Cubrir la boca y la nariz"
+    },
+    "inforone" : {
+      "description" : "Actualmente no existe una vacuna para prevenir la enfermedad por coronavirus 2019 (COVID-19).\n \n La mejor forma de prevenir enfermedades es evitar la exposición a este virus.\n \n Se cree que el virus se transmite principalmente de persona a persona.\n \n Entre personas que están en contacto cercano entre sí (dentro de unos 6 pies).\n \n A través de las gotitas respiratorias que se producen cuando una persona infectada tose, estornuda o habla.\n \n Estas gotitas pueden aterrizar en la boca o la nariz de las personas que se encuentran cerca o posiblemente ser inhaladas hacia los pulmones.\n \n Algunos estudios recientes han sugerido que el COVID-19 puede ser transmitido por personas que no muestran síntomas.",
+      "title" : "Saber cómo se propaga"
+    },
+    "inforsix" : {
+      "description" : "Limpie y desinfecte las superficies que se tocan con frecuencia a diario. Esto incluye mesas, picaportes, interruptores de luz, encimeras, manijas, escritorios, teléfonos, teclados, inodoros, grifos y lavabos.\n \n Si las superficies están sucias, límpielas: use detergente o agua y jabón antes de la desinfección.",
+      "title" : "Limpiar y desinfectar"
+    },
+    "inforthree" : {
+      "description" : "Evitar el contacto cercano con personas que están enfermas.\n \n Quédese en casa tanto como sea posible.\n \n Ponga distancia entre usted y otras personas.\n \n Recuerde que algunas personas sin síntomas pueden transmitir el virus.\n \n Mantener la distancia de los demás es especialmente importante para las personas que tienen un mayor riesgo de enfermarse gravemente.",
+      "title" : "Evitar el contacto cercano"
+    },
+    "infortwo" : {
+      "description" : "Lávese las manos con frecuencia con agua y jabón durante al menos 20 segundos, especialmente después de haber estado en un lugar público o después de sonarse la nariz, toser o estornudar.\n \n Si no hay agua y jabón disponibles, use un desinfectante para manos que contenga al menos un 60% de alcohol. Cubre todas las superficies de tus manos y frótalas hasta que se sequen.\n \n Evite tocarse los ojos, la nariz y la boca con las manos sin lavar.",
+      "title" : "Limpiar las manos a menudo"
+    },
+    "pagesubtitle" : "Se cree que COVID-19 se difunde principalmente a través del contacto cercano de persona a persona. Algunas personas sin síntomas pueden ser capaces de propagar el virus. Todavía estamos aprendiendo sobre cómo se propaga el virus y la gravedad de la enfermedad que causa.",
+    "pagetitle" : "Protéjase usted mismo y otros"
+  },
+  "settingscreen" : {
+    "about" : "Acerca de",
+    "aboutinfo" : "Fuimos datos de Open Disease Data, avisos de viajes actualizados diariamente y Centros para el Control y la Prevención de Enfermedades.",
+    "changecountry" : "Cambiar país",
+    "lightdark" : "Luz/Oscuro"
+  },
+  "tabscreen" : {
+    "countries" : "países",
+    "global" : "Global",
+    "home" : "Casa",
+    "info" : "Información",
+    "settings" : "Ajustes"
+  }
+}
