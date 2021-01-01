@@ -1,0 +1,87 @@
+{
+  "app" : {
+    "active" : "Actif",
+    "cases" : "Cas",
+    "confirmed" : "Confirmé",
+    "couldnotlaunch" : "Impossible de lancer",
+    "critical" : "Critique",
+    "deaths" : "Décès",
+    "last30days" : "Les 30 derniers jours",
+    "map" : "Carte",
+    "population" : "Population",
+    "readmore" : "Lire la suite",
+    "recovered" : "Restauré",
+    "search" : "Rechercher…",
+    "testdone" : "Test terminé",
+    "today" : "Aujourd'hui",
+    "travelalert" : "Alerte Voyage",
+    "updatedasof" : "Mis à jour le",
+    "viewmore" : "Voir plus",
+    "worldwide" : "À l'échelle mondiale"
+  },
+  "boardingscreen" : {
+    "pagefive" : {
+      "button" : "Sélectionner",
+      "title" : "Sélectionnez votre pays"
+    },
+    "pagefour" : {
+      "subtitle" : "Si vous présentez des symptômes de COVID-19, même s'ils sont bénins, isolez vous-même pendant au moins 10 jours à compter de l'apparition de vos symptômes.",
+      "title" : "Rester à la maison"
+    },
+    "pageone" : {
+      "subtitle" : "Obtenez les faits à propos de Coronavirus Les cas quotidiens sont mis à jour dans le monde entier.",
+      "title" : "Covid 19 Tracker"
+    },
+    "pagethree" : {
+      "subtitle" : "Avis officiels aux voyageurs émis par les gouvernements du monde entier.",
+      "title" : "Avis aux voyageurs"
+    },
+    "pagetwo" : {
+      "subtitle" : "Prenez des mesures pour prendre soin de vous et aider à protéger les autres personnes dans votre maison et dans votre communauté.",
+      "title" : "Apprenez au fur et à mesure"
+    },
+    "skipbutton" : "Ignorer",
+    "startbutton" : "Démarrer"
+  },
+  "inforscreen" : {
+    "inforfive" : {
+      "description" : "Si vous êtes dans un cadre privé et que vous n'avez pas de masque facial en tissu, n'oubliez pas de toujours vous couvrir la bouche et le nez avec un mouchoir lorsque vous toussez ou éternuez ou utilisez l'intérieur de votre coude.\n \n Jetez les mouchoirs usagés à la poubelle.\n \n Lavez-vous immédiatement les mains à l'eau et au savon pendant au moins 20 secondes. Si le savon et l'eau ne sont pas facilement disponibles, nettoyez vos mains avec un désinfectant pour les mains contenant au moins 60% d'alcool.",
+      "title" : "Couvrir la toux et les éternuements"
+    },
+    "inforfour" : {
+      "description" : "Vous pouvez transmettre le COVID-19 à d'autres personnes même si vous ne vous sentez pas malade.\n \n Tout le monde devrait porter un couvre-visage en tissu lorsqu'il doit sortir en public, par exemple à l'épicerie ou pour aller chercher d'autres produits de première nécessité.\n \n Les protections faciales en tissu ne doivent pas être placées sur de jeunes enfants de moins de 2 ans, sur toute personne qui a du mal à respirer, ou qui est inconsciente, incapable ou incapable de retirer le masque sans assistance.\n \n Le couvre-visage en tissu est destiné à protéger d'autres personnes en cas d'infection.\n \n Continuez à garder environ 6 pieds entre vous et les autres. Le couvre-visage en tissu ne remplace pas la distanciation sociale.",
+      "title" : "Couvre ta bouche et ton nez"
+    },
+    "inforone" : {
+      "description" : "Il n'existe actuellement aucun vaccin pour prévenir la maladie à coronavirus 2019 (COVID-19).\n \n La meilleure façon de prévenir la maladie est d'éviter d'être exposé à ce virus.\n \n On pense que le virus se propage principalement de personne à personne.\n \n Entre des personnes qui sont en contact étroit les unes avec les autres (à environ 6 pieds).\n \n Par des gouttelettes respiratoires produites lorsqu'une personne infectée tousse, éternue ou parle.\n \n Ces gouttelettes peuvent atterrir dans la bouche ou le nez des personnes qui se trouvent à proximité ou éventuellement être inhalées dans les poumons.\n \n Certaines études récentes ont suggéré que le COVID-19 peut être propagé par des personnes qui ne présentent pas de symptômes.",
+      "title" : "Savoir comment il se propage"
+    },
+    "inforsix" : {
+      "description" : "Nettoyez ET désinfectez quotidiennement les surfaces fréquemment touchées. Cela comprend les tables, les poignées de porte, les interrupteurs d'éclairage, les comptoirs, les poignées, les bureaux, les téléphones, les claviers, les toilettes, les robinets et les éviers.\n \n Si les surfaces sont sales, nettoyez-les: Utilisez un détergent ou du savon et de l'eau avant la désinfection.",
+      "title" : "Nettoyer et désinfecter"
+    },
+    "inforthree" : {
+      "description" : "Évitez tout contact étroit avec des personnes malades.\n \n Restez à la maison autant que possible.\n \n Mettez de la distance entre vous et les autres.\n \n N'oubliez pas que certaines personnes sans symptômes peuvent transmettre le virus.\n \n Il est particulièrement important de se tenir à distance des autres pour les personnes qui risquent davantage de tomber gravement malades.",
+      "title" : "Évitez tout contact étroit"
+    },
+    "infortwo" : {
+      "description" : "Lavez-vous souvent les mains avec de l'eau et du savon pendant au moins 20 secondes, surtout après avoir été dans un lieu public, ou après vous être mouché, tousser ou éternuer.\n \n Si le savon et l'eau ne sont pas facilement disponibles, utilisez un désinfectant pour les mains contenant au moins 60% d'alcool. Couvrez toutes les surfaces de vos mains et frottez-les ensemble jusqu'à ce qu'elles soient sèches.\n \n Évitez de vous toucher les yeux, le nez et la bouche avec des mains non lavées.",
+      "title" : "Nettoyez-vous souvent les mains"
+    },
+    "pagesubtitle" : "On pense que le COVID-19 se propage principalement par contact étroit de personne à personne. Certaines personnes sans symptômes peuvent être capables de propager le virus. Nous sommes toujours en train d'apprendre comment le virus se propage et la gravité de la maladie qu'il provoque.",
+    "pagetitle" : "Protégez-vous et les autres"
+  },
+  "settingscreen" : {
+    "about" : "À propos",
+    "aboutinfo" : "Nous fournissons des données à partir des données ouvertes sur les maladies, des avis aux voyageurs mis à jour quotidiennement et des Centres pour le contrôle et la prévention des maladies.",
+    "changecountry" : "Changer de Pays",
+    "lightdark" : "Claire/Foncé"
+  },
+  "tabscreen" : {
+    "countries" : "Des pays",
+    "global" : "Global",
+    "home" : "Domicile",
+    "info" : "Info",
+    "settings" : "Réglages"
+  }
+}

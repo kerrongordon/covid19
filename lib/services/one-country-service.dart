@@ -1,31 +1,17 @@
+import 'package:covid19/configs/api.config.dart';
 import 'package:covid19/models/country-model.dart';
-import 'package:covid19/utils/failure.util.dart';
-import 'package:dio/dio.dart';
-import 'package:dio_http_cache/dio_http_cache.dart';
+import 'package:covid19/utils/api.util.dart';
 
 class OneCountryService {
   Future<Country> getOneCountryApi({String country}) async {
-    String url = 'https://disease.sh/v3/covid-19/countries/$country';
-    Dio dio = new Dio();
-    dio.interceptors
-        .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
+    ApiUtil _oneCountryService = new ApiUtil();
 
-    try {
-      Response res = await dio.get(
-        url,
-        queryParameters: {'yesterday': 'true', 'strict': 'true'},
-        options: buildCacheOptions(
-          Duration(hours: 1),
-          maxStale: Duration(hours: 2),
-        ),
-      );
+    dynamic data = await _oneCountryService.getData(
+      baseUrl: baseUrl,
+      endPoint: '/covid-19/countries/$country',
+      queryParameters: {'yesterday': 'true', 'strict': 'true'},
+    );
 
-      Country data = Country.fromJson(res.data);
-      return data;
-    } on DioError {
-      throw Failure('Oh no something went wrong 😥️');
-    } catch (e) {
-      throw Failure('There seem to be a problem 😱️');
-    }
+    return Country.fromJson(data);
   }
 }

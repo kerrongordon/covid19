@@ -1,36 +1,17 @@
+// To parse this JSON data, do
+//
+//     final covidInfor = covidInforFromJson(jsonString);
+
 import 'dart:convert';
 
-CovidInfor covidInforFromJson(String str) =>
-    CovidInfor.fromJson(json.decode(str));
+List<CovidInfor> covidInforFromJson(String str) =>
+    List<CovidInfor>.from(json.decode(str).map((x) => CovidInfor.fromJson(x)));
 
-String covidInforToJson(CovidInfor data) => json.encode(data.toJson());
+String covidInforToJson(List<CovidInfor> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class CovidInfor {
   CovidInfor({
-    this.pageTitle,
-    this.pageImage,
-    this.infor,
-  });
-
-  String pageTitle;
-  String pageImage;
-  List<Infor> infor;
-
-  factory CovidInfor.fromJson(Map<String, dynamic> json) => CovidInfor(
-        pageTitle: json["pageTitle"],
-        pageImage: json["pageImage"],
-        infor: List<Infor>.from(json["infor"].map((x) => Infor.fromJson(x))),
-      );
-
-  Map<String, dynamic> toJson() => {
-        "pageTitle": pageTitle,
-        "pageImage": pageImage,
-        "infor": List<dynamic>.from(infor.map((x) => x.toJson())),
-      };
-}
-
-class Infor {
-  Infor({
     this.title,
     this.lottie,
     this.image,
@@ -42,7 +23,7 @@ class Infor {
   String image;
   String description;
 
-  factory Infor.fromJson(Map<String, dynamic> json) => Infor(
+  factory CovidInfor.fromJson(Map<String, dynamic> json) => CovidInfor(
         title: json["title"],
         lottie: json["lottie"],
         image: json["image"],

@@ -1,37 +1,24 @@
-import 'package:covid19/utils/failure.util.dart';
-import 'package:dio/dio.dart';
-import 'package:dio_http_cache/dio_http_cache.dart';
+import 'package:covid19/configs/api.config.dart';
+import 'package:covid19/utils/api.util.dart';
 import 'package:covid19/models/country-model.dart';
 
 class CountryService {
-  static const url =
-      'https://disease.sh/v3/covid-19/countries?yesterday=true&sort=cases';
-
   Future<List<Country>> getCountryApi() async {
-    Dio dio = new Dio();
-    dio.interceptors
-        .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
+    ApiUtil _countryService = new ApiUtil();
 
-    try {
-      Response res = await dio.get(
-        url,
-        options: buildCacheOptions(
-          Duration(hours: 1),
-          maxStale: Duration(hours: 2),
-        ),
-      );
-      List<Country> counties = [];
+    dynamic data = await _countryService.getData(
+      baseUrl: baseUrl,
+      endPoint: '/covid-19/countries',
+      queryParameters: {'yesterday': 'true', 'sort': 'cases'},
+    );
 
-      for (final country in res.data) {
-        Country list = Country.fromJson(country);
-        counties.add(list);
-      }
+    List<Country> counties = [];
 
-      return counties;
-    } on DioError {
-      throw Failure('Oh no something went wrong 😥️');
-    } catch (e) {
-      throw Failure('There seem to be a problem 😱️');
+    for (final country in data) {
+      Country list = Country.fromJson(country);
+      counties.add(list);
     }
+
+    return counties;
   }
 }

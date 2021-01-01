@@ -1,29 +1,16 @@
-import 'package:dio/dio.dart';
-import 'package:covid19/utils/failure.util.dart';
-import 'package:dio_http_cache/dio_http_cache.dart';
+import 'package:covid19/configs/api.config.dart';
+import 'package:covid19/models/global-model.dart';
+import 'package:covid19/utils/api.util.dart';
 
 class GlobalService {
-  static const url = 'https://disease.sh/v3/covid-19/all';
+  Future<Global> getGlobalApi() async {
+    ApiUtil _globalService = new ApiUtil();
 
-  Future<Response<dynamic>> getGlobalApi() async {
-    Dio dio = new Dio();
-    dio.interceptors
-        .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
+    dynamic data = await _globalService.getData(
+      baseUrl: baseUrl,
+      endPoint: '/covid-19/all',
+    );
 
-    try {
-      Response res = await dio.get(
-        url,
-        options: buildCacheOptions(
-          Duration(hours: 1),
-          maxStale: Duration(hours: 2),
-        ),
-      );
-
-      return res;
-    } on DioError {
-      throw Failure('Oh no something went wrong 😥️');
-    } catch (e) {
-      throw Failure('There seem to be a problem 😱️');
-    }
+    return Global.fromJson(data);
   }
 }

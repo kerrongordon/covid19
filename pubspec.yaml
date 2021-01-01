@@ -11,52 +11,52 @@ description: A covid 19 application.
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 6.5.0+6.5.0
+version: 7.0.0+7.0.0
 
 environment:
-  sdk: ">=2.6.0 <3.0.0"
+  sdk: ">=2.10.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  dio: ^3.0.10
-  flutter_icons: ^1.0.0+1
-  loading_animations: ^2.1.0
-  cached_network_image: ^2.0.0
-  fl_chart: ^0.12.0
-  dio_http_cache: ^0.2.8
-  intl: ^0.16.1
-  bottom_navy_bar: ^5.5.0
-  adaptive_theme: ^1.0.0
-  shared_preferences: ^0.5.10
-  url_launcher: ^5.5.2
-  flutter_animator: ^2.1.0
-  latlong: ^0.6.1
-  flutter_map: ^0.10.1+1
-  geolocator: ^6.0.0
-  hooks_riverpod: ^0.12.0
-  flutter_hooks: ^0.15.0
-  state_notifier: ^0.6.0
-  flutter_dotenv: ^2.1.0
-  list_tile_switch: ^0.0.2
-  firebase_core: ^0.5.0
-  firebase_analytics: ^6.0.0
-  flutter_native_admob: ^2.1.0+3
-  flare_flutter: ^2.0.6
-  bezier_chart: ^1.0.17+1
+  adaptive_theme: ^1.1.0
   auto_size_text: ^2.1.0
+  bezier_chart: ^1.0.17+1
+  bottom_navy_bar: ^5.6.0
+  cached_network_image: ^2.5.0
+  dio: ^3.0.10
+  dio_http_cache: ^0.2.11
+  dio_retry: ^0.1.9-beta
+  easy_localization: ^2.3.3
+  firebase_analytics: ^6.3.0
+  firebase_core: ^0.5.3
+  fl_chart: ^0.12.0
+  flare_flutter: ^2.0.6
+  flutter_dotenv: ^2.1.0
+  flutter_hooks: ^0.15.0
+  flutter_icons: ^1.1.0
+  flutter_map: ^0.10.1+1
+  flutter_native_admob: ^2.1.0+3
+  geolocator: ^6.1.13
+  hooks_riverpod: ^0.12.1
+  intl: ^0.16.1
+  latlong: ^0.6.1
+  list_tile_switch: ^0.0.2
+  loading_animations: ^2.1.0
+  shared_preferences: ^0.5.12+4
+  state_notifier: ^0.6.0
+  url_launcher: ^5.7.10
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_launcher_icons: ^0.8.0
-  flutter_native_splash: ^0.1.9
+  flutter_launcher_icons: ^0.8.1
   flutter_launcher_name: "^0.0.1"
+  flutter_native_splash: ^0.1.9
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
-
 # flutter pub run flutter_launcher_icons:main
 flutter_icons:
   android: true
@@ -67,15 +67,13 @@ flutter_icons:
 
 # flutter pub pub run flutter_native_splash:create
 flutter_native_splash:
-  image: assets/icon.png
+  image: assets/splash.png
   color: "#452981"
-  # fill: true
-  # color: "0084ff"
+  fill: true
 
 # flutter pub run flutter_launcher_name:main
 flutter_launcher_name:
   name: "Covid 19 Tracker"
-  # name: "korona"
 
 # The following section is specific to Flutter.
 flutter:
@@ -89,7 +87,7 @@ flutter:
     - assets/
     - assets/flar/
     - assets/infor/
-    - json/
+    - assets/translations/
   #  - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

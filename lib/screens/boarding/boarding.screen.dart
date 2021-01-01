@@ -1,10 +1,14 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:covid19/components/search/kgp-search.dart';
+import 'package:covid19/configs/data.config.dart';
 import 'package:covid19/providers/country-provider.dart';
+import 'package:covid19/providers/home-provider.dart';
 import 'package:covid19/providers/preference-provider.dart';
 import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/screens/boarding/boarding.bottom.nav.dart';
 import 'package:covid19/screens/boarding/boarding.slide.dart';
 import 'package:covid19/screens/boarding/boarding.start.button.dart';
-import 'package:covid19/screens/boarding/boarding.search.dart';
+import 'package:covid19/translations/boarding-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -18,7 +22,8 @@ class BoardingScreen extends HookWidget {
     final _pageIndex = useState(0);
     final countries = useProvider(countryProvider);
     final prefs = useProvider(preferencesProvider);
-    final homePrefs = useProvider(myHomeCountryProvider);
+    final home = useProvider(homeCountryProvider);
+    final changeTheme = AdaptiveTheme.of(context);
     final _pageController = usePageController(initialPage: _pageIndex.value);
 
     void onPageChange(int index) => _pageIndex.value = index;
@@ -29,8 +34,8 @@ class BoardingScreen extends HookWidget {
         );
 
     void startApp() async {
-      if (homePrefs.homeCountry.country == null) return onTapIcon(4);
-      await prefs.data.value.setBool('start', true);
+      if (home.item.country == null) return onTapIcon(4);
+      await prefs.data.value.setBool(appInitKey, true);
 
       return Future.delayed(Duration(milliseconds: 650),
           () => Navigator.of(context).pushReplacementNamed(tabScreen));
@@ -38,57 +43,52 @@ class BoardingScreen extends HookWidget {
 
     _pageController.addListener(() {
       if (_pageIndex.value == 5) {
-        if (homePrefs.homeCountry.country == null) return onTapIcon(4);
+        if (home.item.country == null) return onTapIcon(4);
       }
     });
 
     List<Widget> _pages = [
       BoardingSlide(
-        title: 'Covid 19 Tracker',
-        subtitle:
-            'Get the Facts About Coronavirus Daily cases update around the world',
+        title: pageonetitle,
+        subtitle: pageonesubtitle,
         flar: 'Covid19Pprotect',
         flarAnimationName: 'Animations',
       ),
       BoardingSlide(
-        title: 'Learn as you go',
-        subtitle:
-            'Take steps to care for yourself and help protect others in your home and community.',
+        title: pagetwotitle,
+        subtitle: pagetwosubtitle,
         flar: 'CoronaDoctor',
         flarAnimationName: 'Animations',
       ),
       BoardingSlide(
-        title: 'Travel Advisories',
-        subtitle:
-            'Official travel advisories issued by governments across the globe.',
+        title: pagethreetitle,
+        subtitle: pagethreesubtitle,
         flar: 'AirplaneAroundTheWorld',
         flarAnimationName: 'Animations',
       ),
       BoardingSlide(
-        title: 'Stay At Home',
-        subtitle:
-            'If you have symptoms of COVID-19 however mild, self-isolate for at least 10 days from when your symptoms started.',
+        title: pagefourtitle,
+        subtitle: pagefoursubtitle,
         flar: 'StayAtHome',
         flarAnimationName: 'Animations',
       ),
       BoardingSlide(
-        title: 'Select Your Country',
+        title: pagefivetitle,
         flarAnimationName: 'roll',
-        flar: homePrefs.homeCountry.country == null ? 'WorldSpin' : null,
-        subtitle: homePrefs.homeCountry.country ?? '',
-        flag: homePrefs.homeCountry.country == null
-            ? ''
-            : homePrefs.homeCountry.countryInfo.flag,
-        buttonTitle: 'Select',
+        flar: home.item.country == null ? 'WorldSpin' : null,
+        subtitle: home.item.country ?? '',
+        flag: home.item.country == null ? '' : home.item.countryInfo.flag,
+        buttonTitle: pagefivebutton,
         buttonIcon: Icon(Ionicons.ios_pin),
         onPressed: () async {
-          await showSearch(
+          final search = await showSearch(
             context: context,
-            delegate: BoardingSearch(
+            delegate: KgpSearch(
               countries: countries,
-              homePrefs: homePrefs,
+              action: SearchAction.edit,
             ),
           );
+          home.setCountryName(search);
         },
       ),
       BoardingSlide(
@@ -98,7 +98,7 @@ class BoardingScreen extends HookWidget {
     ];
 
     Widget changeNavbar() {
-      return homePrefs.homeCountry.country != null && _pageIndex.value == 5
+      return home.item.country != null && _pageIndex.value == 5
           ? BoardingStartButton(
               onPressed: startApp,
             )
@@ -107,6 +107,7 @@ class BoardingScreen extends HookWidget {
               pageIndex: _pageIndex,
               pageController: _pageController,
               ontap: onTapIcon,
+              themeMode: changeTheme.mode,
             );
     }
 
@@ -115,7 +116,8 @@ class BoardingScreen extends HookWidget {
         elevation: 0,
         toolbarHeight: 0,
         backgroundColor: Theme.of(context).backgroundColor,
-        brightness: Brightness.light,
+        brightness:
+            changeTheme.mode.isLight ? Brightness.light : Brightness.dark,
       ),
       body: PageView(
         controller: _pageController,

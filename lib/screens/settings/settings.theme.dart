@@ -2,6 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
+import 'package:covid19/translations/setting-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -43,7 +44,7 @@ class SettingsTheme extends HookWidget {
           },
           visualDensity: VisualDensity.compact,
           switchType: SwitchType.material,
-          title: Text('Light / Dark'),
+          title: Text(lightdark),
         ),
       ),
     );

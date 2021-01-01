@@ -3,6 +3,7 @@ import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/routes/routes.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -17,8 +18,14 @@ void main() async {
   await DotEnv().load('.env');
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
   runApp(
-    ProviderScope(
-      child: MyApp(savedThemeMode: savedThemeMode),
+    EasyLocalization(
+      supportedLocales: [Locale('en'), Locale('fr')],
+      path: 'assets/translations',
+      fallbackLocale: Locale('en'),
+      useOnlyLangCode: true,
+      child: ProviderScope(
+        child: MyApp(savedThemeMode: savedThemeMode),
+      ),
     ),
   );
 }
@@ -50,7 +57,11 @@ class MyApp extends StatelessWidget {
       dark: DarkTheme.theme,
       builder: (light, dark) {
         return MaterialApp(
+          showPerformanceOverlay: false,
           debugShowCheckedModeBanner: false,
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
           title: 'Covid 19 Tracker',
           theme: light,
           darkTheme: dark,

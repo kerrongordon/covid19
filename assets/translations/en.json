@@ -1,0 +1,88 @@
+{
+	"boardingscreen": {
+		"skipbutton": "skip",
+		"startbutton": "start",
+		"pageone": {
+			"title": "Covid 19 Tracker",
+			"subtitle": "Get the Facts About Coronavirus Daily cases update around the world."
+		},
+		"pagetwo": {
+			"title": "Learn as you go",
+			"subtitle": "Take steps to care for yourself and help protect others in your home and community."
+		},
+		"pagethree": {
+			"title": "Travel Advisories",
+			"subtitle": "Official travel advisories issued by governments across the globe."
+		},
+		"pagefour": {
+			"title": "Stay At Home",
+			"subtitle": "If you have symptoms of COVID-19 however mild, self-isolate for at least 10 days from when your symptoms started."
+		},
+		"pagefive": {
+			"title": "Select Your Country",
+			"button": "Select"
+		}
+
+	},
+	"tabscreen": {
+		"global": "Global",
+		"countries": "Countries",
+		"home": "Home",
+		"info": "Info",
+		"settings": "Settings"
+	},
+	"settingscreen": {
+		"changecountry": "Change Country",
+		"lightdark": "Light / Dark",
+		"about": "About",
+		"aboutinfo": "We source data from Open Disease Data, Daily updated travel advisories and The Centers for Disease Control and Prevention."
+	},
+	"app": {
+		"cases": "Cases",
+		"recovered": "Recovered",
+		"deaths": "Deaths",
+		"confirmed": "Confirmed",
+		"active": "Active",
+		"critical": "Critical",
+		"testdone": "Test Done",
+		"population": "Population",
+		"today": "Today",
+		"updatedasof": "Updated as of",
+		"travelalert": "Travel Alert",
+		"readmore": "Read More",
+		"couldnotlaunch": "Could not launch",
+		"last30days": "Last 30 Days",
+		"viewmore": "View More",
+		"worldwide": "Worldwide",
+		"search": "Search",
+		"map": "Map"
+	},
+	"inforscreen": {
+		"pagetitle": "Protect Yourself & Others",
+		"pagesubtitle": "COVID-19 is thought to spread mainly through close contact from person-to-person. Some people without symptoms may be able to spread the virus. We are still learning about how the virus spreads and the severity of illness it causes.",
+		"inforone": {
+			"title": "Know How it Spreads",
+			"description": "There is currently no vaccine to prevent coronavirus disease 2019 (COVID-19). \n \n The best way to prevent illness is to avoid being exposed to this virus. \n \n The virus is thought to spread mainly from person-to-person. \n \n Between people who are in close contact with one another (within about 6 feet). \n \n Through respiratory droplets produced when an infected person coughs, sneezes or talks. \n \n These droplets can land in the mouths or noses of people who are nearby or possibly be inhaled into the lungs. \n \n Some recent studies have suggested that COVID-19 may be spread by people who are not showing symptoms."
+		},
+		"infortwo": {
+			"title": "Clean your hands often",
+			"description": "Wash your hands often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing. \n \n If soap and water are not readily available, use a hand sanitizer that contains at least 60% alcohol. Cover all surfaces of your hands and rub them together until they feel dry. \n \n Avoid touching your eyes, nose, and mouth with unwashed hands."
+		},
+		"inforthree": {
+			"title": "Avoid close contact",
+			"description": "Avoid close contact with people who are sick. \n \n Stay home as much as possible. \n \n Put distance between yourself and other people. \n \n Remember that some people without symptoms may be able to spread virus. \n \n Keeping distance from others is especially important for people who are at higher risk of getting very sick."
+		},
+		"inforfour": {
+			"title": "Cover your mouth and nose",
+			"description": "You could spread COVID-19 to others even if you do not feel sick. \n \n Everyone should wear a cloth face cover when they have to go out in public, for example to the grocery store or to pick up other necessities. \n \n Cloth face coverings should not be placed on young children under age 2, anyone who has trouble breathing, or is unconscious, incapacitated or otherwise unable to remove the mask without assistance. \n \n The cloth face cover is meant to protect other people in case you are infected. \n \n Continue to keep about 6 feet between yourself and others. The cloth face cover is not a substitute for social distancing."
+		},
+		"inforfive": {
+			"title": "Cover coughs and sneezes",
+			"description": "If you are in a private setting and do not have on your cloth face covering, remember to always cover your mouth and nose with a tissue when you cough or sneeze or use the inside of your elbow. \n \n Throw used tissues in the trash. \n \n Immediately wash your hands with soap and water for at least 20 seconds. If soap and water are not readily available, clean your hands with a hand sanitizer that contains at least 60% alcohol."
+		},
+		"inforsix": {
+			"title": "Clean and disinfect",
+			"description": "Clean AND disinfect frequently touched surfaces daily. This includes tables, doorknobs, light switches, countertops, handles, desks, phones, keyboards, toilets, faucets, and sinks. \n \n If surfaces are dirty, clean them: Use detergent or soap and water prior to disinfection."
+		}
+	}
+}

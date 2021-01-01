@@ -1,51 +1,50 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+import 'package:covid19/translations/tab-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 class TabBottomBar extends StatelessWidget {
-  const TabBottomBar({
-    Key key,
-    @required ValueNotifier<int> pageIndex,
-    @required this.onItemSelected,
-  })  : _pageIndex = pageIndex,
-        super(key: key);
-
-  final ValueNotifier<int> _pageIndex;
+  final int pageIndex;
   final void Function(int) onItemSelected;
+
+  TabBottomBar({
+    @required this.pageIndex,
+    @required this.onItemSelected,
+  });
 
   @override
   Widget build(BuildContext context) {
     final _theme = Theme.of(context);
     return BottomNavyBar(
       backgroundColor: Colors.transparent,
-      selectedIndex: _pageIndex.value,
+      selectedIndex: pageIndex,
       showElevation: false,
       onItemSelected: onItemSelected,
       items: <BottomNavyBarItem>[
         buildBottomNavyBarItem(
-          title: 'Global',
+          title: global,
           theme: _theme,
-          icon: Icon(Ionicons.ios_analytics),
+          icon: const Icon(Ionicons.ios_analytics),
         ),
         buildBottomNavyBarItem(
-          title: 'Countries',
+          title: countries,
           theme: _theme,
-          icon: Icon(Ionicons.ios_trending_up),
+          icon: const Icon(Ionicons.ios_trending_up),
         ),
         buildBottomNavyBarItem(
-          title: 'Home',
+          title: home,
           theme: _theme,
-          icon: Icon(Ionicons.ios_pin),
+          icon: const Icon(Ionicons.ios_pin),
         ),
         buildBottomNavyBarItem(
-          title: 'Info',
+          title: info,
           theme: _theme,
-          icon: Icon(Ionicons.ios_apps),
+          icon: const Icon(Ionicons.ios_apps),
         ),
         buildBottomNavyBarItem(
-          title: 'Settings',
+          title: settings,
           theme: _theme,
-          icon: Icon(Ionicons.ios_cog),
+          icon: const Icon(Ionicons.ios_cog),
         ),
       ],
     );

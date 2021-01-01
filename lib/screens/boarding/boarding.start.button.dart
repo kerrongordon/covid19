@@ -1,3 +1,4 @@
+import 'package:covid19/translations/boarding-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -31,9 +32,9 @@ class BoardingStartButton extends StatelessWidget {
             Ionicons.ios_checkmark_circle,
             color: Colors.white,
           ),
-          label: const Text(
-            'Start',
-            style: TextStyle(
+          label: Text(
+            startbutton,
+            style: const TextStyle(
               fontSize: 20,
               color: Colors.white,
             ),

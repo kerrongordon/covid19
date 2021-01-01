@@ -1,23 +1,26 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/screens/boarding/boarding.indicator.dart';
+import 'package:covid19/translations/boarding-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 class BoardingBottomNav extends StatelessWidget {
   const BoardingBottomNav({
-    Key key,
     @required List<Widget> pages,
     @required ValueNotifier<int> pageIndex,
     @required PageController pageController,
+    AdaptiveThemeMode themeMode,
     this.ontap,
   })  : _pages = pages,
         _pageIndex = pageIndex,
         _pageController = pageController,
-        super(key: key);
+        _themeMode = themeMode;
 
   final List<Widget> _pages;
   final ValueNotifier<int> _pageIndex;
   final PageController _pageController;
   final void Function(int) ontap;
+  final AdaptiveThemeMode _themeMode;
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +37,11 @@ class BoardingBottomNav extends StatelessWidget {
                 )
               : FlatButton(
                   onPressed: () => ontap(_pages.length - 2),
-                  child: const Text(
-                    'Skip',
+                  child: Text(
+                    skipbutton,
                     style: TextStyle(
-                      color: Colors.black54,
+                      color:
+                          _themeMode.isLight ? Colors.black54 : Colors.white54,
                     ),
                   ),
                 ),
@@ -61,10 +65,10 @@ class BoardingBottomNav extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 23),
             child: IconButton(
-              icon: const Icon(
+              icon: Icon(
                 Ionicons.ios_arrow_round_forward,
                 size: 30,
-                color: Colors.black54,
+                color: _themeMode.isLight ? Colors.black54 : Colors.white54,
               ),
               onPressed: () => _pageController.nextPage(
                 duration: const Duration(milliseconds: 400),

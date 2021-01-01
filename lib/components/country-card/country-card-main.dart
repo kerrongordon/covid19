@@ -5,6 +5,7 @@ import 'package:covid19/components/kgp-pie-chart.dart';
 import 'package:covid19/components/kgp-stats-with-title.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/themes/color-theme.dart';
+import 'package:covid19/translations/app-translate.dart';
 import 'package:flutter/material.dart';
 
 class CountryCardMain extends StatelessWidget {
@@ -57,7 +58,7 @@ class CountryCardMain extends StatelessWidget {
                 Expanded(
                   child: KgpStatsWithTitle(
                     flip: true,
-                    title: 'Cases',
+                    title: cases,
                     amount: data.cases,
                     amountFontSize: 18,
                     titleFontSize: 14,
@@ -67,7 +68,7 @@ class CountryCardMain extends StatelessWidget {
                 Expanded(
                   child: KgpStatsWithTitle(
                     flip: true,
-                    title: 'Recovered',
+                    title: recovered,
                     amount: data.recovered,
                     amountFontSize: 18,
                     titleFontSize: 14,
@@ -77,7 +78,7 @@ class CountryCardMain extends StatelessWidget {
                 Expanded(
                   child: KgpStatsWithTitle(
                     flip: true,
-                    title: 'Deaths',
+                    title: deaths,
                     amount: data.deaths,
                     amountFontSize: 18,
                     titleFontSize: 14,

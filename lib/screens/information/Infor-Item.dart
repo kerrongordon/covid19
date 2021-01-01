@@ -1,22 +1,26 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/models/covid-Infor.model.dart';
 import 'package:covid19/routes/route-names.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animator/flutter_animator.dart';
 
 class InforItem extends StatelessWidget {
   const InforItem({
-    Key key,
     @required this.data,
     this.index,
-  }) : super(key: key);
+  });
 
   final CovidInfor data;
   final int index;
 
   @override
   Widget build(BuildContext context) {
+    final changeTheme = AdaptiveTheme.of(context);
+    final colorText = changeTheme.theme.textTheme.bodyText1.color;
+
     return CardComponent(
+      color:
+          changeTheme.mode.isLight ? Color.fromRGBO(21, 140, 166, 1.0) : null,
       margin: const EdgeInsets.only(bottom: 10),
       child: Container(
         padding: const EdgeInsets.all(20),
@@ -26,26 +30,29 @@ class InforItem extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AspectRatio(
-              aspectRatio: 2.5,
+              aspectRatio: 2.1,
               child: Image.asset(
-                'assets/infor/${data.infor[index].image}',
+                'assets/infor/${data.image}',
               ),
             ),
             const SizedBox(height: 10),
-            const Divider(),
+            Divider(
+              color: changeTheme.mode.isLight ? Colors.white54 : null,
+            ),
             const SizedBox(height: 10),
-            FadeInDown(
-              child: Text(
-                data.infor[index].title ?? '',
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.ellipsis,
+            Text(
+              data.title ?? '',
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                color: changeTheme.mode.isLight ? Colors.white : colorText,
               ),
             ),
           ],
         ),
       ),
-      onTap: () => Navigator.of(context)
-          .pushNamed(inforPageScreen, arguments: data.infor[index]),
+      onTap: () =>
+          Navigator.of(context).pushNamed(inforPageScreen, arguments: data),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:covid19/components/kgp-card-title.dart';
 import 'package:covid19/components/kgp-stats-with-title.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/themes/color-theme.dart';
+import 'package:covid19/translations/app-translate.dart';
 import 'package:covid19/utils/timetodate.util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
@@ -22,16 +23,16 @@ class CountryCardToday extends StatelessWidget {
       child: Column(
         children: [
           KgpCardTitle(
-            title: 'Today',
-            subtitle: 'Updated as of $date',
-            icon: Icon(Ionicons.ios_send),
+            title: today,
+            subtitle: '$updatedasof $date',
+            icon: const Icon(Ionicons.ios_send),
           ),
           Container(
             child: Row(
               children: [
                 Expanded(
                   child: KgpStatsWithTitle(
-                    title: 'Confirmed',
+                    title: confirmed,
                     amount: data.todayCases,
                     amountFontSize: 18,
                     titleFontSize: 14,
@@ -40,7 +41,7 @@ class CountryCardToday extends StatelessWidget {
                 ),
                 Expanded(
                   child: KgpStatsWithTitle(
-                    title: 'Deaths',
+                    title: deaths,
                     amount: data.todayDeaths,
                     amountFontSize: 18,
                     titleFontSize: 14,
@@ -49,7 +50,7 @@ class CountryCardToday extends StatelessWidget {
                 ),
                 Expanded(
                   child: KgpStatsWithTitle(
-                    title: 'Recovered',
+                    title: recovered,
                     amount: data.todayRecovered,
                     amountFontSize: 18,
                     titleFontSize: 14,

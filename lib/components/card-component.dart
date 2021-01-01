@@ -8,13 +8,12 @@ class CardComponent extends StatelessWidget {
   final EdgeInsetsGeometry margin;
 
   const CardComponent({
-    Key key,
     this.color,
     @required this.child,
     this.onTap,
     this.padding,
     this.margin,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +21,8 @@ class CardComponent extends StatelessWidget {
     return Card(
       clipBehavior: Clip.antiAlias,
       color: color ?? theme.cardTheme.color,
-      elevation: 30,
-      shadowColor: Colors.black.withOpacity(0.3),
+      elevation: 20,
+      shadowColor: color ?? Colors.black.withOpacity(0.3),
       margin: margin ?? const EdgeInsets.only(bottom: 20, top: 10),
       child: InkWell(
         splashColor: theme.primaryColor,
