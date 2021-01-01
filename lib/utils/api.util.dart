@@ -21,10 +21,10 @@ class ApiUtil {
         url,
         queryParameters: queryParameters,
         options: buildCacheOptions(
-          Duration(hours: 1),
-          maxStale: Duration(hours: 2),
+          const Duration(minutes: 10),
+          maxStale: const Duration(minutes: 15),
           options: Options(
-            extra: RetryOptions(
+            extra: const RetryOptions(
               retryInterval: const Duration(seconds: 10),
             ).toExtra(),
           ),
