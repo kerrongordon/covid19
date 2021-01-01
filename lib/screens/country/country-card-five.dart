@@ -37,10 +37,11 @@ class CountryCardFive extends HookWidget {
     }
 
     List<DataPoint<DateTime>> _getLineData(List<HistoryItem> data) {
-      final year = DateTime.now().year;
       List<DataPoint<DateTime>> list = [];
       for (final item in data) {
         final dateTime1 = DateFormat('M/d/yyyy').parse(item.date);
+        final year =
+            dateTime1.year + 2000; // Using a hack for now fix is on prerelease
         final date = DateTime(year, dateTime1.month, dateTime1.day);
         final datapoint =
             DataPoint<DateTime>(value: item.count.toDouble(), xAxis: date);
