@@ -6,6 +6,11 @@
     "couldnotlaunch" : "Impossible de lancer",
     "critical" : "Critique",
     "deaths" : "Décès",
+    "error" : {
+      "messageone" : "Oh rien n'a mal tourné",
+      "messagethree" : "Aucun résultat trouvé",
+      "messagetwo" : "Il semble y avoir un problème"
+    },
     "last30days" : "Les 30 derniers jours",
     "map" : "Carte",
     "population" : "Population",

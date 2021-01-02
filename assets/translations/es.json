@@ -6,6 +6,11 @@
     "couldnotlaunch" : "No se pudo iniciar",
     "critical" : "Crítico",
     "deaths" : "Muertes",
+    "error" : {
+      "messageone" : "Oh, no algo salió mal.",
+      "messagethree" : "No se encontraron resultados.",
+      "messagetwo" : "Parece que hay un problema"
+    },
     "last30days" : "Últimos 30 días",
     "map" : "Mapa",
     "population" : "Población",
