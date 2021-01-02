@@ -1,7 +1,6 @@
 name: CI Analyze and Test Build
 
 on:
-  push:
   pull_request:
     branches:
       - master
