@@ -1,4 +1,3 @@
-import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-card-title.dart';
 import 'package:covid19/models/travel-alert-model.dart';
@@ -19,11 +18,8 @@ class CountryCardTravelAlert extends HookWidget {
   Widget build(BuildContext context) {
     final String date = DateFormat.yMMMMEEEEd().format(data.advisory.updated);
     final url = data.advisory.source;
-    final changeTheme = AdaptiveTheme.of(context);
-    final colorText = changeTheme.theme.textTheme.bodyText1.color;
 
     return CardComponent(
-      color: changeTheme.mode.isLight ? Colors.orange[800] : null,
       onTap: () async => await canLaunch(url)
           ? await launch(url)
           : throw '$couldnotlaunch $url',
@@ -33,21 +29,16 @@ class CountryCardTravelAlert extends HookWidget {
           KgpCardTitle(
             title: travelalert,
             subtitle: '$updatedasof $date',
-            color: changeTheme.mode.isLight ? Colors.white : colorText,
-            icon: Icon(
-              Ionicons.ios_airplane,
-              color: changeTheme.mode.isLight ? Colors.white : colorText,
-            ),
+            icon: Icon(Ionicons.ios_airplane),
           ),
           Column(
             children: [
               Container(
                 child: Text(
                   data.advisory.message,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     height: 1.5,
-                    color: changeTheme.mode.isLight ? Colors.white : colorText,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -56,10 +47,9 @@ class CountryCardTravelAlert extends HookWidget {
               Container(
                 child: Text(
                   readmore,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     height: 1.5,
-                    color: changeTheme.mode.isLight ? Colors.white : colorText,
                   ),
                   textAlign: TextAlign.center,
                 ),

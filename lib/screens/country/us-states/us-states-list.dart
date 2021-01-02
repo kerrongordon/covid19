@@ -24,6 +24,10 @@ class UsStatesList extends StatelessWidget {
             onTap: () =>
                 Navigator.of(context).pushNamed(usState, arguments: item),
             child: ListTile(
+              leading: Icon(
+                Ionicons.ios_pie,
+                color: Colors.lightBlue,
+              ),
               title: Text(
                 item.state,
                 overflow: TextOverflow.ellipsis,
@@ -48,7 +52,7 @@ class UsStatesList extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 10),
                         child: Icon(
-                          Ionicons.ios_pulse,
+                          Ionicons.ios_analytics,
                           color: theme.accentColor,
                         ),
                       ),

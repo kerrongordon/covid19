@@ -22,26 +22,26 @@ class KgpPieChart extends StatelessWidget {
         child: PieChart(
           PieChartData(
             borderData: FlBorderData(show: false),
-            sectionsSpace: 0,
+            sectionsSpace: 3,
             startDegreeOffset: 40,
             sections: [
               PieChartSectionData(
                 color: ColorTheme.cases,
                 value: cases.toDouble(),
                 title: '',
-                radius: 35,
+                radius: 20,
               ),
               PieChartSectionData(
                 color: ColorTheme.recovered,
                 value: recovered.toDouble(),
                 title: '',
-                radius: 45,
+                radius: 40,
               ),
               PieChartSectionData(
                 color: ColorTheme.deaths,
                 value: deaths.toDouble(),
                 title: '',
-                radius: 65,
+                radius: 60,
               ),
             ],
           ),

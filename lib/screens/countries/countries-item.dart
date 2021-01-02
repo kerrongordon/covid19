@@ -51,7 +51,7 @@ class CountriesItem extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(left: 10),
                     child: Icon(
-                      Ionicons.ios_pulse,
+                      Ionicons.ios_analytics,
                       color: theme.accentColor,
                     ),
                   ),

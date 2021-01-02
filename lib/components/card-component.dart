@@ -22,8 +22,14 @@ class CardComponent extends StatelessWidget {
       clipBehavior: Clip.antiAlias,
       color: color ?? theme.cardTheme.color,
       elevation: 20,
-      shadowColor: color ?? Colors.black.withOpacity(0.3),
+      shadowColor: color != null
+          ? color.withOpacity(0.4)
+          : Colors.black.withOpacity(0.4),
       margin: margin ?? const EdgeInsets.only(bottom: 20, top: 10),
+      shape: RoundedRectangleBorder(
+        // side: BorderSide(color: Colors.white70, width: 1),
+        borderRadius: BorderRadius.circular(20),
+      ),
       child: InkWell(
         splashColor: theme.primaryColor,
         onTap: onTap,

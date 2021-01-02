@@ -33,22 +33,24 @@ class InforList extends HookWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
           child: const AdsComponent(type: NativeAdmobType.banner),
         ),
         Container(
           child: GridView.builder(
             shrinkWrap: true,
             itemCount: infor.length,
-            padding:
-                const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 50),
+            padding: const EdgeInsets.only(
+              left: 20,
+              right: 20,
+              top: 20,
+              bottom: 50,
+            ),
             physics: NeverScrollableScrollPhysics(),
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
               crossAxisSpacing: 20,
               mainAxisSpacing: 10,
+              childAspectRatio: 1,
             ),
             itemBuilder: (context, index) {
               return InforItem(data: infor[index]);

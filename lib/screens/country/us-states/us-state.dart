@@ -17,7 +17,6 @@ class UsState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String date = TimeToDate.use(data.updated);
-    final theme = Theme.of(context);
 
     return Scaffold(
       body: KgpBasePage(
@@ -87,7 +86,7 @@ class UsState extends StatelessWidget {
                               amount: data.active,
                               titleFontSize: 18,
                               amountFontSize: 15,
-                              titlecolor: theme.accentColor,
+                              titlecolor: ColorTheme.recovered,
                             ),
                           ),
                         ),
@@ -101,7 +100,7 @@ class UsState extends StatelessWidget {
                               amount: data.population,
                               titleFontSize: 18,
                               amountFontSize: 15,
-                              titlecolor: theme.accentColor,
+                              titlecolor: ColorTheme.recovered,
                             ),
                           ),
                         ),

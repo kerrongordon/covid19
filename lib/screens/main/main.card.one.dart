@@ -16,6 +16,7 @@ class MainCardOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CardComponent(
+      padding: const EdgeInsets.symmetric(horizontal: 10),
       child: Container(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
