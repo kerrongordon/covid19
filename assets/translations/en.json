@@ -55,7 +55,12 @@
 		"viewmore": "View More",
 		"worldwide": "Worldwide",
 		"search": "Search",
-		"map": "Map"
+		"map": "Map",
+		"error": {
+			"messageone": "Oh no something went wrong",
+			"messagetwo": "There seem to be a problem",
+			"messagethree": "No Result Found"
+		}
 	},
 	"inforscreen": {
 		"pagetitle": "Protect Yourself & Others",

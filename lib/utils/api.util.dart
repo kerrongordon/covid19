@@ -1,3 +1,4 @@
+import 'package:covid19/translations/app-translate.dart';
 import 'package:covid19/utils/failure.util.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
@@ -33,9 +34,9 @@ class ApiUtil {
 
       return res.data;
     } on DioError {
-      throw Failure('Oh no something went wrong 😥️');
+      throw Failure('$messageone 😥️');
     } catch (e) {
-      throw Failure('There seem to be a problem 😱️');
+      throw Failure('$messagetwo 😱️');
     }
   }
 }

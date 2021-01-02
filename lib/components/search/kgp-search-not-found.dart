@@ -1,3 +1,4 @@
+import 'package:covid19/translations/app-translate.dart';
 import 'package:flutter/material.dart';
 
 class KgpSearchNotFound extends StatelessWidget {
@@ -8,8 +9,8 @@ class KgpSearchNotFound extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: const Text(
-        'No Result Found... 👀',
+      child: Text(
+        '$messagethree... 👀',
         style: TextStyle(fontSize: 20),
       ),
     );

@@ -18,3 +18,7 @@ final String viewmore = tr('app.viewmore');
 final String worldwide = tr('app.worldwide');
 final String search = tr('app.search');
 final String map = tr('app.map');
+
+final String messageone = tr('app.error.messageone');
+final String messagetwo = tr('app.error.messagetwo');
+final String messagethree = tr('app.error.messagethree');
