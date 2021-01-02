@@ -13,7 +13,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/kerrongordon/covid19)
 ![GitHub top language](https://img.shields.io/github/languages/top/kerrongordon/covid19)
 
-### Are you a translator you can help by contribute [here](https://localazy.com/p/covid-19-tracker1)
+### Are you a translator you can help by contributing [here](https://localazy.com/p/covid-19-tracker1)
 
 ---
 
