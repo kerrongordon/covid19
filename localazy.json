@@ -1,8 +1,5 @@
 {
 
-    "writeKey": "a8800202537712433320-7693df813ad22cd774b3abd560c08c760234bf645484497cef2b506644e4c67a",
-    "readKey": "a8800202537712433320-05012ffa6e5c4981bd98ac504438479f4e3ed7b59d169daffe75095b52e8b3d8",
-
     "upload": {
         "type": "json",
         "features": ["content_as_object"],

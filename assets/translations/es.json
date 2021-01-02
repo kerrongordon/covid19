@@ -22,7 +22,7 @@
     "travelalert" : "Alerta de viaje",
     "updatedasof" : "Actualizado a partir de",
     "viewmore" : "Ver más",
-    "worldwide" : "En todo el mundo"
+    "worldwide" : "Mundial"
   },
   "boardingscreen" : {
     "pagefive" : {
@@ -35,7 +35,7 @@
     },
     "pageone" : {
       "subtitle" : "Obtenga los datos sobre Coronavirus Actualización de casos diarios en todo el mundo.",
-      "title" : "Covid 19 Tracker"
+      "title" : "Rastreador Covid 19"
     },
     "pagethree" : {
       "subtitle" : "Asesoramiento oficial sobre viajes emitidos por gobiernos de todo el mundo.",
@@ -45,7 +45,7 @@
       "subtitle" : "Tome medidas para cuidarse y ayudar a proteger a los demás en su hogar y comunidad.",
       "title" : "Aprende a medida que vayas"
     },
-    "skipbutton" : "Omitir",
+    "skipbutton" : "Saltar",
     "startbutton" : "Iniciar"
   },
   "inforscreen" : {
@@ -83,9 +83,9 @@
     "lightdark" : "Luz/Oscuro"
   },
   "tabscreen" : {
-    "countries" : "países",
+    "countries" : "Países",
     "global" : "Global",
-    "home" : "Casa",
+    "home" : "Inicio",
     "info" : "Información",
     "settings" : "Ajustes"
   }

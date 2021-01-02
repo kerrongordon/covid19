@@ -1,7 +1,7 @@
 {
   "app" : {
     "active" : "Actif",
-    "cases" : "Cas",
+    "cases" : "Coffret",
     "confirmed" : "Confirmé",
     "couldnotlaunch" : "Impossible de lancer",
     "critical" : "Critique",
@@ -11,18 +11,18 @@
       "messagethree" : "Aucun résultat trouvé",
       "messagetwo" : "Il semble y avoir un problème"
     },
-    "last30days" : "Les 30 derniers jours",
+    "last30days" : "30 derniers jours",
     "map" : "Carte",
-    "population" : "Population",
-    "readmore" : "Lire la suite",
+    "population" : "Habitants",
+    "readmore" : "En savoir plus",
     "recovered" : "Restauré",
     "search" : "Rechercher…",
     "testdone" : "Test terminé",
     "today" : "Aujourd'hui",
     "travelalert" : "Alerte Voyage",
     "updatedasof" : "Mis à jour le",
-    "viewmore" : "Voir plus",
-    "worldwide" : "À l'échelle mondiale"
+    "viewmore" : "Afficher plus",
+    "worldwide" : "Mondial"
   },
   "boardingscreen" : {
     "pagefive" : {
@@ -79,14 +79,14 @@
   "settingscreen" : {
     "about" : "À propos",
     "aboutinfo" : "Nous fournissons des données à partir des données ouvertes sur les maladies, des avis aux voyageurs mis à jour quotidiennement et des Centres pour le contrôle et la prévention des maladies.",
-    "changecountry" : "Changer de Pays",
+    "changecountry" : "Changer de pays",
     "lightdark" : "Claire/Foncé"
   },
   "tabscreen" : {
-    "countries" : "Des pays",
-    "global" : "Global",
-    "home" : "Domicile",
-    "info" : "Info",
-    "settings" : "Réglages"
+    "countries" : "Pays",
+    "global" : "Général",
+    "home" : "Accueil",
+    "info" : "Informations",
+    "settings" : "Paramètres"
   }
 }
