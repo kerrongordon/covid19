@@ -25,34 +25,6 @@ jobs:
       - run: flutter pub get
       - run: flutter analyze
 
-  build_appbundle:
-    name: Build Flutter (Android App Bundle)
-    needs: [flutter_analyze]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: "finnp/create-file-action@master"
-        env:
-          FILE_NAME: "android/key.properties"
-          FILE_BASE64: ${{ secrets.KEY_PROPERTIES }}
-      - uses: "finnp/create-file-action@master"
-        env:
-          FILE_NAME: "android/app/keystone.jks"
-          FILE_BASE64: ${{ secrets.SIGNING_KEY }}
-      - uses: "finnp/create-file-action@master"
-        env:
-          FILE_NAME: ".env"
-          FILE_BASE64: ${{ secrets.MAP_API2 }}
-      - uses: actions/setup-java@v1
-        with:
-          java-version: "12.x"
-      - uses: subosito/flutter-action@v1
-        with:
-          channel: "stable"
-      - run: flutter pub get
-      - run: flutter clean
-      - run: flutter build appbundle --release
-
   build_apk:
     name: Build Flutter (Android apk)
     needs: [flutter_analyze]
@@ -74,6 +46,14 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: "12.x"
+      - uses: localazy/upload@v1
+        with:
+          read_key: ${{ secrets.LOCALAZY_READ_KEY }}
+          write_key: ${{ secrets.LOCALAZY_WRITE_KEY }}
+      - uses: localazy/download@v1
+        with:
+          read_key: ${{ secrets.LOCALAZY_READ_KEY }}
+          write_key: ${{ secrets.LOCALAZY_WRITE_KEY }}
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"

@@ -48,6 +48,14 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: "12.x"
+      - uses: localazy/upload@v1
+        with:
+          read_key: ${{ secrets.LOCALAZY_READ_KEY }}
+          write_key: ${{ secrets.LOCALAZY_WRITE_KEY }}
+      - uses: localazy/download@v1
+        with:
+          read_key: ${{ secrets.LOCALAZY_READ_KEY }}
+          write_key: ${{ secrets.LOCALAZY_WRITE_KEY }}
       - uses: subosito/flutter-action@v1
         with:
           channel: "stable"
