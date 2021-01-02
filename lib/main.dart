@@ -3,6 +3,7 @@ import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/routes/routes.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
+import 'package:covid19/translations/boarding-translate.dart';
 import 'package:covid19/translations/input-translate.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
@@ -63,7 +64,7 @@ class MyApp extends StatelessWidget {
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
-          title: 'Covid 19 Tracker',
+          title: pageonetitle,
           theme: light,
           darkTheme: dark,
           initialRoute: startScreen,

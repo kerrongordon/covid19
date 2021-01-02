@@ -1,0 +1,92 @@
+{
+  "app" : {
+    "active" : "Ativo",
+    "cases" : "Casos",
+    "confirmed" : "Confirmado",
+    "couldnotlaunch" : "Não foi possível iniciar",
+    "critical" : "Crítica",
+    "deaths" : "Mortes",
+    "error" : {
+      "messageone" : "Oh, nada deu errado.",
+      "messagethree" : "Nenhum resultado encontrado.",
+      "messagetwo" : "Parece haver um problema"
+    },
+    "last30days" : "Últimos 30 dias",
+    "map" : "Mapa",
+    "population" : "População",
+    "readmore" : "Ler mais",
+    "recovered" : "Recuperado",
+    "search" : "Pesquisar",
+    "testdone" : "Teste feito",
+    "today" : "Hoje",
+    "travelalert" : "Alerta de viagem",
+    "updatedasof" : "Atualizado a partir de",
+    "viewmore" : "Ver mais",
+    "worldwide" : "No mundo todo"
+  },
+  "boardingscreen" : {
+    "pagefive" : {
+      "button" : "Selecionar",
+      "title" : "Selecione o seu país"
+    },
+    "pagefour" : {
+      "subtitle" : "Se você tiver sintomas de COVID-19 no entanto leve, auto-isolar por pelo menos 10 dias a partir de quando seus sintomas começaram.",
+      "title" : "Fique em casa"
+    },
+    "pageone" : {
+      "subtitle" : "Obtenha os fatos sobre a atualização de casos do Coronavírus Daily em todo o mundo.",
+      "title" : "Covid 19 Rastreador"
+    },
+    "pagethree" : {
+      "subtitle" : "Avisos oficiais de viagem emitidos por governos em todo o mundo.",
+      "title" : "Avisos de Viagem"
+    },
+    "pagetwo" : {
+      "subtitle" : "Tome medidas para cuidar de si mesmo e ajudar a proteger os outros em sua casa e comunidade.",
+      "title" : "Aprenda como você vai"
+    },
+    "skipbutton" : "Pular",
+    "startbutton" : "Iniciar"
+  },
+  "inforscreen" : {
+    "inforfive" : {
+      "description" : "Se você está em um ambiente privado e não tem em seu pano cobertura rosto, lembre-se de sempre cobrir a boca e nariz com um tecido quando você tossir ou espirrar ou usar o interior do cotovelo. \n \n Jogue tecidos usados no lixo. \n \n Lave imediatamente as mãos com sabão e água por pelo menos 20 segundos. Se o sabão e a água não estiverem prontamente disponíveis, limpe as mãos com um desinfetante para as mãos que contenha pelo menos 60% de álcool.",
+      "title" : "Cobrir tosse e espirros"
+    },
+    "inforfour" : {
+      "description" : "Você pode espalhar o COVID-19 para os outros, mesmo que não se sinta doente. \n \n Todos devem usar uma capa de rosto de pano quando eles têm que sair em público, por exemplo, para a mercearia ou para pegar outras necessidades. \n \n Os revestimentos faciais de pano não devem ser colocados em crianças menores de 2 anos, qualquer pessoa que tenha dificuldade em respirar, ou esteja inconsciente, incapacitado ou incapaz de remover a máscara sem assistência. \n \n A tampa do rosto de pano destina-se a proteger outras pessoas no caso de você estar infectado. \n \n Continue a manter cerca de 6 pés entre você e os outros. A capa do rosto de pano não substitui o distanciamento social.",
+      "title" : "Cubra a boca e o nariz"
+    },
+    "inforone" : {
+      "description" : "Atualmente não existe vacina para prevenir a doença do coronavírus 2019 (COVID-19). \n \n A melhor maneira de prevenir doenças é evitar ser exposto a este vírus. \n \n Pensa-se que o vírus se espalhe principalmente de pessoa para pessoa. \n \n Entre pessoas que estão em contato próximo um com o outro (dentro de cerca de 6 pés). \n \n Através de gotículas respiratórias produzidas quando uma pessoa infectada tosse, espirra ou fala. \n \n Essas gotículas podem pousar nas bocas ou narizes de pessoas próximas ou possivelmente ser inaladas nos pulmões. \n \n Alguns estudos recentes sugerem que o COVID-19 pode ser espalhado por pessoas que não estão mostrando sintomas.",
+      "title" : "Saber como se espalha"
+    },
+    "inforsix" : {
+      "description" : "Limpe e desinfete superfícies frequentemente tocadas diariamente. Isso inclui mesas, maçanetas, interruptores de luz, bancadas, alças, mesas, telefones, teclados, banheiros, torneiras e pias. \n \n Se as superfícies estiverem sujas, limpe-as: Use detergente ou sabão e água antes da desinfecção.",
+      "title" : "Limpe e desinfete"
+    },
+    "inforthree" : {
+      "description" : "Evite contato próximo com pessoas que estão doentes. \n \n Fique em casa o máximo possível. \n \n Coloque a distância entre você e outras pessoas. \n \n Lembre-se que algumas pessoas sem sintomas podem ser capazes de espalhar vírus. \n \n Manter distância dos outros é especialmente importante para pessoas que estão em maior risco de ficar muito doente.",
+      "title" : "Evite contato próximo"
+    },
+    "infortwo" : {
+      "description" : "Lave as mãos muitas vezes com sabão e água por pelo menos 20 segundos, especialmente depois de ter estado em um lugar público, ou depois de soprar o nariz, tossir ou espirrar. \n \n Se o sabão e a água não estiverem prontamente disponíveis, use um desinfetante para as mãos que contenha pelo menos 60% de álcool. Cubra todas as superfícies das mãos e esfregue-as juntas até que se sintam secas. \n \n Evite tocar seus olhos, nariz e boca com as mãos não lavadas.",
+      "title" : "Limpe as mãos com frequência"
+    },
+    "pagesubtitle" : "Acredita-se que o COVID-19 se espalhe principalmente através de contato próximo de pessoa para pessoa. Algumas pessoas sem sintomas podem ser capazes de espalhar o vírus. Ainda estamos aprendendo sobre como o vírus se espalha e a gravidade da doença que causa.",
+    "pagetitle" : "Proteja-se e aos outros"
+  },
+  "settingscreen" : {
+    "about" : "Sobre",
+    "aboutinfo" : "Nós obtemos dados de dados de Open Disease Data, avisos de viagem atualizados diariamente e The Centers for Disease Control and Prevention.",
+    "changecountry" : "Alterar o País",
+    "lightdark" : "Luz/Escuro"
+  },
+  "tabscreen" : {
+    "countries" : "Países",
+    "global" : "Global",
+    "home" : "Início",
+    "info" : "Informações",
+    "settings" : "Configurações"
+  }
+}
