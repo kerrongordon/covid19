@@ -8,6 +8,7 @@ import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/screens/boarding/boarding.bottom.nav.dart';
 import 'package:covid19/screens/boarding/boarding.slide.dart';
 import 'package:covid19/screens/boarding/boarding.start.button.dart';
+import 'package:covid19/screens/boarding/providers/boarding-provider.dart';
 import 'package:covid19/translations/boarding-translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -19,33 +20,22 @@ class BoardingScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _pageIndex = useState(0);
+    final _pageIndex = useProvider(boardingProvider);
     final countries = useProvider(countryProvider);
     final prefs = useProvider(preferencesProvider);
     final home = useProvider(homeCountryProvider);
     final changeTheme = AdaptiveTheme.of(context);
-    final _pageController = usePageController(initialPage: _pageIndex.value);
+    final _pageController = useProvider(boardingController);
 
-    void onPageChange(int index) => _pageIndex.value = index;
-    void onTapIcon(int index) => _pageController.animateToPage(
-          index,
-          duration: const Duration(milliseconds: 400),
-          curve: Curves.linear,
-        );
+    void onPageChange(int index) => _pageIndex.changePages(index);
 
-    void startApp() async {
-      if (home.item.country == null) return onTapIcon(4);
+    void startApp({int pageIndex}) async {
+      if (home.item.country == null) return _pageController.onTapIcon(4);
       await prefs.data.value.setBool(appInitKey, true);
 
       return Future.delayed(Duration(milliseconds: 650),
           () => Navigator.of(context).pushReplacementNamed(tabScreen));
     }
-
-    _pageController.addListener(() {
-      if (_pageIndex.value == 5) {
-        if (home.item.country == null) return onTapIcon(4);
-      }
-    });
 
     List<Widget> _pages = [
       BoardingSlide(
@@ -97,17 +87,22 @@ class BoardingScreen extends HookWidget {
       ),
     ];
 
-    Widget changeNavbar() {
-      return home.item.country != null && _pageIndex.value == 5
+    Widget changeNavbar({int pageIndex}) {
+      return home.item.country != null && pageIndex == 5
           ? BoardingStartButton(
               onPressed: startApp,
             )
-          : BoardingBottomNav(
-              pages: _pages,
-              pageIndex: _pageIndex,
-              pageController: _pageController,
-              ontap: onTapIcon,
-              themeMode: changeTheme.mode,
+          : Consumer(
+              builder: (context, watch, __) {
+                final pageController = watch(boardingController.state);
+                return BoardingBottomNav(
+                  pages: _pages,
+                  pageIndex: pageIndex,
+                  pageController: pageController,
+                  ontap: _pageController.onTapIcon,
+                  themeMode: changeTheme.mode,
+                );
+              },
             );
     }
 
@@ -119,12 +114,21 @@ class BoardingScreen extends HookWidget {
         brightness:
             changeTheme.mode.isLight ? Brightness.light : Brightness.dark,
       ),
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: onPageChange,
-        children: _pages,
+      body: Consumer(
+        builder: (context, watch, __) {
+          final pageController = watch(boardingController.state);
+          return PageView(
+            controller: pageController,
+            onPageChanged: onPageChange,
+            children: _pages,
+          );
+        },
       ),
-      bottomNavigationBar: changeNavbar(),
+      bottomNavigationBar: Consumer(builder: (context, watch, __) {
+        final page = watch(boardingProvider.state);
+        _pageController.ready(index: page, home: home);
+        return changeNavbar(pageIndex: page);
+      }),
     );
   }
 }

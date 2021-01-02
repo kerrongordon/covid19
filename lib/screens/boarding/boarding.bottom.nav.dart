@@ -7,7 +7,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 class BoardingBottomNav extends StatelessWidget {
   const BoardingBottomNav({
     @required List<Widget> pages,
-    @required ValueNotifier<int> pageIndex,
+    @required int pageIndex,
     @required PageController pageController,
     AdaptiveThemeMode themeMode,
     this.ontap,
@@ -17,7 +17,7 @@ class BoardingBottomNav extends StatelessWidget {
         _themeMode = themeMode;
 
   final List<Widget> _pages;
-  final ValueNotifier<int> _pageIndex;
+  final int _pageIndex;
   final PageController _pageController;
   final void Function(int) ontap;
   final AdaptiveThemeMode _themeMode;
@@ -29,8 +29,7 @@ class BoardingBottomNav extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _pageIndex.value == _pages.length - 2 ||
-                  _pageIndex.value == _pages.length - 1
+          _pageIndex == _pages.length - 2 || _pageIndex == _pages.length - 1
               ? Container(
                   width: 89,
                   height: 40,
@@ -51,7 +50,7 @@ class BoardingBottomNav extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 for (var i = 0; i < _pages.length - 1; i++)
-                  _pageIndex.value == i
+                  _pageIndex == i
                       ? BoardingIndicator(
                           toggle: true,
                           onTap: () => ontap(i),
