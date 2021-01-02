@@ -3,6 +3,7 @@ import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/routes/routes.dart';
 import 'package:covid19/themes/dark-theme.dart';
 import 'package:covid19/themes/light-theme.dart';
+import 'package:covid19/translations/input-translate.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ void main() async {
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
   runApp(
     EasyLocalization(
-      supportedLocales: [Locale('en'), Locale('fr')],
+      supportedLocales: appLocaleList,
       path: 'assets/translations',
       fallbackLocale: Locale('en'),
       useOnlyLangCode: true,
