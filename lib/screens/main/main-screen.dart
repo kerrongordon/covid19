@@ -5,6 +5,7 @@ import 'package:covid19/components/kgp-center.dart';
 import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/hooks/automatic.keep.alive.hook.dart';
 import 'package:covid19/routes/route-names.dart';
+import 'package:covid19/screens/main/contact-card-list.dart';
 import 'package:covid19/screens/main/main-callback.dart';
 import 'package:covid19/screens/main/main-flag.dart';
 import 'package:covid19/screens/main/main.card.one.dart';
@@ -34,6 +35,7 @@ class MainScreen extends HookWidget {
             child: Column(
               children: [
                 MainCardOne(data: data),
+                ContactCardList(),
                 CountryCardToday(data: data),
                 AdsComponent(type: NativeAdmobType.banner),
                 MainCallback(data: data),

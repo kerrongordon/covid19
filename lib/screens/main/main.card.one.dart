@@ -2,6 +2,7 @@ import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-pie-chart.dart';
 import 'package:covid19/components/kgp-stats-with-title.dart';
 import 'package:covid19/models/country-model.dart';
+import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/themes/color-theme.dart';
 import 'package:covid19/translations/app-translate.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,10 @@ class MainCardOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return CardComponent(
       padding: const EdgeInsets.symmetric(horizontal: 10),
+      onTap: () => Navigator.of(context).pushNamed(
+        countryScreen,
+        arguments: data,
+      ),
       child: Container(
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,

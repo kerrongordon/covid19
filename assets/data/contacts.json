@@ -1,0 +1,25 @@
+[{
+    "Country": "Grenada",
+    "website": "https://covid19.gov.gd/",
+    "hotlineone": {
+        "title": "Covid 19 Hotline (Flow)",
+        "phonenumber": "1 473 458 4787"
+    },
+    "hotlinetwo": {
+        "title": "Covid 19 Hotline (Digicel)",
+        "phonenumber": "1 473 538 4787"
+    },
+    "address": {
+        "title": "Ministerial Complex",
+        "phonenumber": "1 473 440 2649",
+        "detail": "Southern Wing 1st & 2nd Floor Botanical Gardens",
+        "lat": 12.0471534,
+        "long": -61.7432767
+    },
+    "socialmedia": {
+        "facebook": "https://www.facebook.com/HealthGrenada",
+        "youtube": "",
+        "twitter": ""
+    }
+
+}]

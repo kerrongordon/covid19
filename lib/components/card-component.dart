@@ -23,11 +23,10 @@ class CardComponent extends StatelessWidget {
       color: color ?? theme.cardTheme.color,
       elevation: 20,
       shadowColor: color != null
-          ? color.withOpacity(0.4)
+          ? color.withOpacity(0.9)
           : Colors.black.withOpacity(0.4),
       margin: margin ?? const EdgeInsets.only(bottom: 20, top: 10),
       shape: RoundedRectangleBorder(
-        // side: BorderSide(color: Colors.white70, width: 1),
         borderRadius: BorderRadius.circular(20),
       ),
       child: InkWell(
