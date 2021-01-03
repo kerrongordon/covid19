@@ -5,6 +5,10 @@
      <img src="img/2.jpg" width="200"/>
      <img src="img/3.jpg" width="200"/>
      <img src="img/4.jpg" width="200"/>
+     <img src="img/5.jpg" width="200"/>
+     <img src="img/6.jpg" width="200"/>
+     <img src="img/7.jpg" width="200"/>
+     <img src="img/8.jpg" width="200"/>
 </p>
 
 ![CI Analyze and Test Build](https://github.com/kerrongordon/covid19/workflows/CI%20Analyze%20and%20Test%20Build/badge.svg?branch=master)
@@ -74,6 +78,7 @@ samples, guidance on mobile development, and a full API reference.
 - [Shared Preferences](https://pub.dev/packages/shared_preferences)
 - [State Notifier](https://pub.dev/packages/state_notifier)
 - [Url Launcher](https://pub.dev/packages/url_launcher)
+- [Package Info](https://pub.dev/packages/package_info)
 
 ## Dev Dependencies
 
