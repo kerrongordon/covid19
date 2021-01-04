@@ -54,20 +54,21 @@ class ContactList extends StatelessWidget {
               onTap: () => _call(data.hotlineone.phonenumber),
               padding: const EdgeInsets.all(20),
               child: Container(
-                height: 120,
+                height: 100,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
                       Ionicons.ios_call,
-                      size: 50,
+                      size: 40,
                       color: ColorTheme.primary,
                     ),
                     Divider(),
                     Container(
                       child: Text(
                         data.hotlineone.title,
+                        style: TextStyle(fontSize: 12),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -91,6 +92,7 @@ class ContactList extends StatelessWidget {
                         title: '${data.country} Resources',
                         child: Container(
                           child: ListView(
+                            physics: const NeverScrollableScrollPhysics(),
                             shrinkWrap: true,
                             children: [
                               ListTile(
@@ -137,20 +139,21 @@ class ContactList extends StatelessWidget {
               },
               padding: const EdgeInsets.all(20),
               child: Container(
-                height: 120,
+                height: 100,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
                       Ionicons.ios_apps,
-                      size: 50,
+                      size: 40,
                       color: ColorTheme.primary,
                     ),
                     Divider(),
                     Container(
                       child: Text(
                         '${data.country} Resources',
+                        style: TextStyle(fontSize: 12),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -165,20 +168,21 @@ class ContactList extends StatelessWidget {
               onTap: () => _call(data.hotlinetwo.phonenumber),
               padding: const EdgeInsets.all(20),
               child: Container(
-                height: 120,
+                height: 100,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
                       Ionicons.ios_call,
-                      size: 50,
+                      size: 40,
                       color: ColorTheme.primary,
                     ),
                     Divider(),
                     Container(
                       child: Text(
                         data.hotlinetwo.title,
+                        style: TextStyle(fontSize: 12),
                         textAlign: TextAlign.center,
                       ),
                     ),
