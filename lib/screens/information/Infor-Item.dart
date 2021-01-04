@@ -18,26 +18,32 @@ class InforItem extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       child: Container(
         child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(height: 10),
             AspectRatio(
-              aspectRatio: 2.1,
-              child: Image.asset(
-                'assets/infor/${data.image}',
+              aspectRatio: 1.6,
+              child: ClipRRect(
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  topRight: Radius.circular(20),
+                ),
+                child: Hero(
+                  tag: data.image,
+                  child: Image.asset(
+                    'assets/infor/${data.image}',
+                    fit: BoxFit.fill,
+                  ),
+                ),
               ),
             ),
-            const SizedBox(height: 5),
-            Divider(),
-            const SizedBox(height: 5),
-            Padding(
-              padding: const EdgeInsets.only(bottom: 20, left: 20, right: 20),
-              child: Text(
-                data.title ?? '',
-                textAlign: TextAlign.center,
-                overflow: TextOverflow.ellipsis,
+            const SizedBox(height: 20),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 20, left: 20, right: 20),
+                child: Text(
+                  data.title ?? '',
+                  textAlign: TextAlign.center,
+                  overflow: TextOverflow.ellipsis,
+                ),
               ),
             ),
           ],

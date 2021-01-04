@@ -6,38 +6,32 @@ final covidInforProvider = Provider.autoDispose((_) {
   final infors = [
     {
       'title': inforonetitle,
-      'lottie': 'KnowHowItSpreads',
-      'image': 'one.png',
+      'image': 'group-with-masks.jpg',
       'description': inforonedescription
     },
     {
       'title': infortwotitle,
-      'lottie': 'CleanYourHandsOften',
-      'image': 'two.png',
+      'image': 'girl-holding-books.jpg',
       'description': infortwodescription
     },
     {
       'title': inforthreetitle,
-      'lottie': 'AvoidCloseContact',
-      'image': 'three.png',
+      'image': 'stay-at-home.jpg',
       'description': inforthreedescription
     },
     {
       'title': inforfourtitle,
-      'lottie': 'CoverYourMouthAndNose',
-      'image': 'four.png',
+      'image': '320830-A_swab-test.jpg',
       'description': inforfourdescription
     },
     {
       'title': inforfivetitle,
-      'lottie': 'CoverCoughsAndSneezes',
-      'image': 'five.png',
+      'image': 'bike-rider-runner-600px.jpg',
       'description': inforfivedescription
     },
     {
       'title': inforsixtitle,
-      'lottie': 'CleanAndDisinfect',
-      'image': 'six.png',
+      'image': 'fever.jpg',
       'description': inforsixdescription
     }
   ];

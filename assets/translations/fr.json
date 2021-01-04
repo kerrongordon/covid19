@@ -50,28 +50,28 @@
   },
   "inforscreen" : {
     "inforfive" : {
-      "description" : "Si vous êtes dans un cadre privé et que vous n'avez pas de masque facial en tissu, n'oubliez pas de toujours vous couvrir la bouche et le nez avec un mouchoir lorsque vous toussez ou éternuez ou utilisez l'intérieur de votre coude.\n \n Jetez les mouchoirs usagés à la poubelle.\n \n Lavez-vous immédiatement les mains à l'eau et au savon pendant au moins 20 secondes. Si le savon et l'eau ne sont pas facilement disponibles, nettoyez vos mains avec un désinfectant pour les mains contenant au moins 60% d'alcool.",
-      "title" : "Couvrir la toux et les éternuements"
+      "description" : "Prenez soin de vous un petit chemin chaque jour. \n Détendez-vous en faisant du yoga, en écoutant de la musique ou en jardinant. \n Trouvez de nouvelles façons de communiquer avec votre famille et vos amis, d'obtenir du soutien et de partager vos sentiments. \n Mangez des aliments sains et prenez suffisamment de repos \n Détendez-vous en lisant, en écoutant de la musique ou en commençant un nouveau passe-temps.",
+      "title" : "Comment faire face au stress"
     },
     "inforfour" : {
-      "description" : "Vous pouvez transmettre le COVID-19 à d'autres personnes même si vous ne vous sentez pas malade.\n \n Tout le monde devrait porter un couvre-visage en tissu lorsqu'il doit sortir en public, par exemple à l'épicerie ou pour aller chercher d'autres produits de première nécessité.\n \n Les protections faciales en tissu ne doivent pas être placées sur de jeunes enfants de moins de 2 ans, sur toute personne qui a du mal à respirer, ou qui est inconsciente, incapable ou incapable de retirer le masque sans assistance.\n \n Le couvre-visage en tissu est destiné à protéger d'autres personnes en cas d'infection.\n \n Continuez à garder environ 6 pieds entre vous et les autres. Le couvre-visage en tissu ne remplace pas la distanciation sociale.",
-      "title" : "Couvre ta bouche et ton nez"
+      "description" : "Vous pouvez consulter le site Web de votre département de santé national ou local pour rechercher les dernières informations locales sur les tests. \n Si vous présentez des symptômes du COVID-19 et que vous souhaitez vous faire subir un test, appelez d'abord votre professionnel de la santé. \n Si vous présentez des symptômes du COVID-19 et que vous choisissez de ne pas vous faire subir de test, il est important de rester à la maison. Découvrez ce qu'il faut faire si vous êtes malade.",
+      "title" : "Comment obtenir un test d'infection actuelle"
     },
     "inforone" : {
-      "description" : "Il n'existe actuellement aucun vaccin pour prévenir la maladie à coronavirus 2019 (COVID-19).\n \n La meilleure façon de prévenir la maladie est d'éviter d'être exposé à ce virus.\n \n On pense que le virus se propage principalement de personne à personne.\n \n Entre des personnes qui sont en contact étroit les unes avec les autres (à environ 6 pieds).\n \n Par des gouttelettes respiratoires produites lorsqu'une personne infectée tousse, éternue ou parle.\n \n Ces gouttelettes peuvent atterrir dans la bouche ou le nez des personnes qui se trouvent à proximité ou éventuellement être inhalées dans les poumons.\n \n Certaines études récentes ont suggéré que le COVID-19 peut être propagé par des personnes qui ne présentent pas de symptômes.",
-      "title" : "Savoir comment il se propage"
+      "description" : "Portez un masque qui couvre votre nez et votre bouche pour vous protéger et protéger les autres. \n Restez à 6 pieds à l'écart des autres qui ne vivent pas avec vous. \n Évitez les foules. \n Évitez les espaces intérieurs mal ventilés. \n Lavez-vous les mains souvent avec de l'eau et du savon. Utilisez un désinfectant pour les mains si du savon et de l'eau ne sont pas disponibles.",
+      "title" : "Comment se protéger en sortant"
     },
     "inforsix" : {
-      "description" : "Nettoyez ET désinfectez quotidiennement les surfaces fréquemment touchées. Cela comprend les tables, les poignées de porte, les interrupteurs d'éclairage, les comptoirs, les poignées, les bureaux, les téléphones, les claviers, les toilettes, les robinets et les éviers.\n \n Si les surfaces sont sales, nettoyez-les: Utilisez un détergent ou du savon et de l'eau avant la désinfection.",
-      "title" : "Nettoyer et désinfecter"
+      "description" : "Les symptômes les plus courants du COVID-19 sont \n Fièvre \n Toux \n Maux de tête \n Fatigue \n Maux musculaires ou corporels \n Perte de goût ou d'odeur \n Maux de gorge \n Nausées \n Diarrhée \n D'autres symptômes sont des signes de maladie grave. Si quelqu'un a du mal à respirer, des douleurs thoraciques ou de la pression, ou de la difficulté à rester éveillé, obtenir des soins médicaux immédiatement.",
+      "title" : "Quels sont les symptômes à surveiller"
     },
     "inforthree" : {
-      "description" : "Évitez tout contact étroit avec des personnes malades.\n \n Restez à la maison autant que possible.\n \n Mettez de la distance entre vous et les autres.\n \n N'oubliez pas que certaines personnes sans symptômes peuvent transmettre le virus.\n \n Il est particulièrement important de se tenir à distance des autres pour les personnes qui risquent davantage de tomber gravement malades.",
-      "title" : "Évitez tout contact étroit"
+      "description" : "Restez à la maison sauf pour obtenir des soins médicaux. \n Isolez-vous des autres membres de votre famille pour éviter la propagation à eux et aux personnes avec qui ils peuvent avoir des contacts, comme les grands-parents. \n Même si vous ne vous sentez pas malade, vous pouvez propager COVID-19 aux autres. \n Prenez soin immédiatement si vous avez des signes d'avertissement d'urgence, comme des difficultés respiratoires, une douleur ou une pression thoracique.",
+      "title" : "Que faire si vous êtes malade"
     },
     "infortwo" : {
-      "description" : "Lavez-vous souvent les mains avec de l'eau et du savon pendant au moins 20 secondes, surtout après avoir été dans un lieu public, ou après vous être mouché, tousser ou éternuer.\n \n Si le savon et l'eau ne sont pas facilement disponibles, utilisez un désinfectant pour les mains contenant au moins 60% d'alcool. Couvrez toutes les surfaces de vos mains et frottez-les ensemble jusqu'à ce qu'elles soient sèches.\n \n Évitez de vous toucher les yeux, le nez et la bouche avec des mains non lavées.",
-      "title" : "Nettoyez-vous souvent les mains"
+      "description" : "Les personnes de tout âge peuvent recevoir COVID-19, même les jeunes adultes et les enfants en bonne santé. \n Les personnes âgées ou ayant certaines affections médicales sous-jacentes courent un risque plus élevé de tomber très malades à cause du COVID-19. \n D'autres groupes peuvent présenter un risque plus élevé de contracter le COVID-19 ou d'avoir une maladie plus grave.",
+      "title" : "Si vous êtes à risque de tomber très malade"
     },
     "pagesubtitle" : "On pense que le COVID-19 se propage principalement par contact étroit de personne à personne. Certaines personnes sans symptômes peuvent être capables de propager le virus. Nous sommes toujours en train d'apprendre comment le virus se propage et la gravité de la maladie qu'il provoque.",
     "pagetitle" : "Protégez-vous et les autres"

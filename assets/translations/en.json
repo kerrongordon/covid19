@@ -66,28 +66,28 @@
 		"pagetitle": "Protect Yourself & Others",
 		"pagesubtitle": "COVID-19 is thought to spread mainly through close contact from person-to-person. Some people without symptoms may be able to spread the virus. We are still learning about how the virus spreads and the severity of illness it causes.",
 		"inforone": {
-			"title": "Know How it Spreads",
-			"description": "There is currently no vaccine to prevent coronavirus disease 2019 (COVID-19). \n \n The best way to prevent illness is to avoid being exposed to this virus. \n \n The virus is thought to spread mainly from person-to-person. \n \n Between people who are in close contact with one another (within about 6 feet). \n \n Through respiratory droplets produced when an infected person coughs, sneezes or talks. \n \n These droplets can land in the mouths or noses of people who are nearby or possibly be inhaled into the lungs. \n \n Some recent studies have suggested that COVID-19 may be spread by people who are not showing symptoms."
+			"title": "How to Protect Yourself When Going Out",
+			"description": "Wear a mask that covers your nose and mouth to help protect yourself and others. \n Stay 6 feet apart from others who don’t live with you. \n Avoid crowds. \n Avoid poorly ventilated indoor spaces. \n Wash your hands often with soap and water. Use hand sanitizer if soap and water aren’t available."
 		},
 		"infortwo": {
-			"title": "Clean your hands often",
-			"description": "Wash your hands often with soap and water for at least 20 seconds especially after you have been in a public place, or after blowing your nose, coughing, or sneezing. \n \n If soap and water are not readily available, use a hand sanitizer that contains at least 60% alcohol. Cover all surfaces of your hands and rub them together until they feel dry. \n \n Avoid touching your eyes, nose, and mouth with unwashed hands."
+			"title": "If You are at Risk of Getting Very Sick",
+			"description": "People of any age can get COVID-19, even healthy young adults and children. \n People who are older or have certain underlying medical conditions are at higher risk of getting very sick from COVID-19. \n Other groups may be at higher risk for getting COVID-19 or having more severe illness."
 		},
 		"inforthree": {
-			"title": "Avoid close contact",
-			"description": "Avoid close contact with people who are sick. \n \n Stay home as much as possible. \n \n Put distance between yourself and other people. \n \n Remember that some people without symptoms may be able to spread virus. \n \n Keeping distance from others is especially important for people who are at higher risk of getting very sick."
+			"title": "What to Do If You're Sick",
+			"description": "Stay home except to get medical care. \n Isolate yourself from other members of your family to prevent spread to them and the people that they may have contact with, like grandparents. \n Even if you don’t feel sick, you can spread COVID-19 to others. \n Get care immediately if you are having emergency warning signs, like trouble breathing, pain or pressure in chest."
 		},
 		"inforfour": {
-			"title": "Cover your mouth and nose",
-			"description": "You could spread COVID-19 to others even if you do not feel sick. \n \n Everyone should wear a cloth face cover when they have to go out in public, for example to the grocery store or to pick up other necessities. \n \n Cloth face coverings should not be placed on young children under age 2, anyone who has trouble breathing, or is unconscious, incapacitated or otherwise unable to remove the mask without assistance. \n \n The cloth face cover is meant to protect other people in case you are infected. \n \n Continue to keep about 6 feet between yourself and others. The cloth face cover is not a substitute for social distancing."
+			"title": "How to Get a Test for Current Infection",
+			"description": "You can visit your state or local health department’s website to look for the latest local information on testing. \n If you have symptoms of COVID-19 and want to get tested, call your healthcare provider first. \n If you have symptoms of COVID-19 and choose to not get tested, it is important to stay home. Find out what to do if you are sick."
 		},
 		"inforfive": {
-			"title": "Cover coughs and sneezes",
-			"description": "If you are in a private setting and do not have on your cloth face covering, remember to always cover your mouth and nose with a tissue when you cough or sneeze or use the inside of your elbow. \n \n Throw used tissues in the trash. \n \n Immediately wash your hands with soap and water for at least 20 seconds. If soap and water are not readily available, clean your hands with a hand sanitizer that contains at least 60% alcohol."
+			"title": "How to Cope with Stress",
+			"description": "Care for yourself one small way each day. \n Unwind by doing yoga, listening to music, or gardening. \n Find new ways to connect with family and friends, get support, and share feelings. \n Eat healthy foods and get enough rest \n Relax by reading, listening to music, or starting a new hobby."
 		},
 		"inforsix": {
-			"title": "Clean and disinfect",
-			"description": "Clean AND disinfect frequently touched surfaces daily. This includes tables, doorknobs, light switches, countertops, handles, desks, phones, keyboards, toilets, faucets, and sinks. \n \n If surfaces are dirty, clean them: Use detergent or soap and water prior to disinfection."
+			"title": "What Symptoms to Watch For",
+			"description": "The most common symptoms of COVID-19 are \n Fever \n Cough \n Headaches \n Fatigue \n Muscle or body aches \n Loss of taste or smell \n Sore throat \n Nausea \n Diarrhea \n Other symptoms are signs of serious illness. If someone has trouble breathing, chest pain or pressure, or difficulty staying awake, get medical care immediately."
 		}
 	}
 }

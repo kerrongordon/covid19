@@ -2,7 +2,6 @@ import 'package:covid19/components/ads-component.dart';
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-base-page.dart';
 import 'package:covid19/models/covid-Infor.model.dart';
-import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_admob/flutter_native_admob.dart';
 
@@ -19,14 +18,16 @@ class InforPage extends StatelessWidget {
         child: Column(
           children: [
             AspectRatio(
-              aspectRatio: 1,
-              child: FlareActor(
-                "assets/flar/${data.lottie}.flr",
-                alignment: Alignment.center,
-                fit: BoxFit.contain,
-                animation: 'Animations',
+              aspectRatio: 1.7,
+              child: Hero(
+                tag: data.image,
+                child: Image.asset(
+                  'assets/infor/${data.image}',
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
+            const SizedBox(height: 50),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: AdsComponent(type: NativeAdmobType.banner),
