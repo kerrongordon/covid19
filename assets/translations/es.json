@@ -50,28 +50,28 @@
   },
   "inforscreen" : {
     "inforfive" : {
-      "description" : "Si se encuentra en un lugar privado y no tiene la cara cubierta de tela, recuerde siempre cubrirse la boca y la nariz con un pañuelo cuando tosa o estornude o use la parte interna del codo.\n \n Tire los pañuelos usados ​​a la basura.\n \n Lávese las manos inmediatamente con agua y jabón durante al menos 20 segundos. Si no hay agua y jabón disponibles, lávese las manos con un desinfectante para manos que contenga al menos un 60% de alcohol.",
-      "title" : "Cubrir tos y estornudos"
+      "description" : "Cuídate de una manera pequeña cada día. \n Relájese haciendo yoga, escuchando música o haciendo jardinería. \n Encuentre nuevas formas de conectarse con familiares y amigos, obtener apoyo y compartir sentimientos. \n Coma alimentos saludables y descansa lo suficiente \n Relájese leyendo, escuchando música o comenzando un nuevo pasatiempo.",
+      "title" : "Cómo lidiar con el estrés"
     },
     "inforfour" : {
-      "description" : "Podría contagiar COVID-19 a otras personas incluso si no se siente enfermo.\n \n Todos deben usar una cubierta facial de tela cuando tengan que salir en público, por ejemplo, al supermercado o para recoger otras necesidades.\n \n No se deben colocar cubiertas faciales de tela a niños pequeños menores de 2 años, a cualquier persona que tenga problemas para respirar, o que esté inconsciente, incapacitado o que no pueda quitarse la máscara sin ayuda.\n \n La cubierta facial de tela está diseñada para proteger a otras personas en caso de que usted esté infectado.\n \n Continúe manteniendo unos 6 pies entre usted y los demás. La cubierta facial de tela no sustituye al distanciamiento social.",
-      "title" : "Cubrir la boca y la nariz"
+      "description" : "Puede visitar el sitio web de su departamento de salud estatal o local para buscar la información local más reciente sobre las pruebas. \n Si tiene síntomas de COVID-19 y desea hacerse la prueba, llame a su médico primero. \n Si tiene síntomas de COVID-19 y decide no hacerse la prueba, es importante quedarse en casa. Averigüe qué hacer si está enfermo.",
+      "title" : "Cómo obtener una prueba de infección actual"
     },
     "inforone" : {
-      "description" : "Actualmente no existe una vacuna para prevenir la enfermedad por coronavirus 2019 (COVID-19).\n \n La mejor forma de prevenir enfermedades es evitar la exposición a este virus.\n \n Se cree que el virus se transmite principalmente de persona a persona.\n \n Entre personas que están en contacto cercano entre sí (dentro de unos 6 pies).\n \n A través de las gotitas respiratorias que se producen cuando una persona infectada tose, estornuda o habla.\n \n Estas gotitas pueden aterrizar en la boca o la nariz de las personas que se encuentran cerca o posiblemente ser inhaladas hacia los pulmones.\n \n Algunos estudios recientes han sugerido que el COVID-19 puede ser transmitido por personas que no muestran síntomas.",
-      "title" : "Saber cómo se propaga"
+      "description" : "Use una máscara que cubra la nariz y la boca para ayudar a protegerse a sí mismo y a los demás. \n Manténgase a 6 pies de distancia de otros que no viven con usted. \n Evite las multitudes. \n Evite los espacios interiores mal ventilados. \n Lávese las manos a menudo con agua y jabón. Use desinfectante para manos si no hay agua y jabón disponibles.",
+      "title" : "Cómo protegerse al salir"
     },
     "inforsix" : {
-      "description" : "Limpie y desinfecte las superficies que se tocan con frecuencia a diario. Esto incluye mesas, picaportes, interruptores de luz, encimeras, manijas, escritorios, teléfonos, teclados, inodoros, grifos y lavabos.\n \n Si las superficies están sucias, límpielas: use detergente o agua y jabón antes de la desinfección.",
-      "title" : "Limpiar y desinfectar"
+      "description" : "Los síntomas más comunes de COVID-19 son \n Fiebre \n Tos \n Dolores de cabeza \n Fatiga \n Dolores musculares o corporales \n Pérdida del gusto u olfato \n Dolor de garganta \n Náusea \n Diarrea \n Otros síntomas son signos de enfermedad grave. Si alguien tiene problemas para respirar, dolor o presión en el pecho, o dificultad para mantenerse despierto, obtenga atención médica inmediatamente.",
+      "title" : "Qué síntomas hay que vigilar"
     },
     "inforthree" : {
-      "description" : "Evitar el contacto cercano con personas que están enfermas.\n \n Quédese en casa tanto como sea posible.\n \n Ponga distancia entre usted y otras personas.\n \n Recuerde que algunas personas sin síntomas pueden transmitir el virus.\n \n Mantener la distancia de los demás es especialmente importante para las personas que tienen un mayor riesgo de enfermarse gravemente.",
-      "title" : "Evitar el contacto cercano"
+      "description" : "Quédate en casa excepto para obtener atención médica. \n Aísese de otros miembros de su familia para evitar que se propague a ellos y a las personas con las que puedan tener contacto, como abuelos. \n Incluso si usted no se siente enfermo, puede difundir COVID-19 a otros. \n Recibe atención inmediatamente si tiene signos de advertencia de emergencia, como dificultad para respirar, dolor o presión en el pecho.",
+      "title" : "Qué hacer si estás enfermo"
     },
     "infortwo" : {
-      "description" : "Lávese las manos con frecuencia con agua y jabón durante al menos 20 segundos, especialmente después de haber estado en un lugar público o después de sonarse la nariz, toser o estornudar.\n \n Si no hay agua y jabón disponibles, use un desinfectante para manos que contenga al menos un 60% de alcohol. Cubre todas las superficies de tus manos y frótalas hasta que se sequen.\n \n Evite tocarse los ojos, la nariz y la boca con las manos sin lavar.",
-      "title" : "Limpiar las manos a menudo"
+      "description" : "Las personas de cualquier edad pueden recibir COVID-19, incluso adultos jóvenes y niños sanos. \n Las personas mayores o que tienen ciertas afecciones médicas subyacentes corren mayor riesgo de enfermarse mucho por COVID-19. \n Otros grupos pueden tener un mayor riesgo de contraer COVID-19 o tener una enfermedad más grave.",
+      "title" : "Si usted está en riesgo de enfermarse muy"
     },
     "pagesubtitle" : "Se cree que COVID-19 se difunde principalmente a través del contacto cercano de persona a persona. Algunas personas sin síntomas pueden ser capaces de propagar el virus. Todavía estamos aprendiendo sobre cómo se propaga el virus y la gravedad de la enfermedad que causa.",
     "pagetitle" : "Protéjase usted mismo y otros"
