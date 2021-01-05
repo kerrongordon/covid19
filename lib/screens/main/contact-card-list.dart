@@ -50,25 +50,29 @@ class ContactList extends StatelessWidget {
         children: [
           Expanded(
             child: CardComponent(
-              margin: const EdgeInsets.only(right: 5),
+              color: Colors.blue,
+              margin: const EdgeInsets.symmetric(horizontal: 8),
               onTap: () => _call(data.hotlineone.phonenumber),
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(15),
               child: Container(
-                height: 100,
+                height: 70,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
                       Ionicons.ios_call,
-                      size: 40,
-                      color: ColorTheme.primary,
+                      size: 30,
+                      color: Colors.white,
                     ),
-                    Divider(),
+                    Divider(color: Colors.white.withOpacity(0.5)),
                     Container(
                       child: Text(
                         data.hotlineone.title,
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.white,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -79,7 +83,8 @@ class ContactList extends StatelessWidget {
           ),
           Expanded(
             child: CardComponent(
-              margin: const EdgeInsets.symmetric(horizontal: 5),
+              color: Colors.green,
+              margin: const EdgeInsets.symmetric(horizontal: 8),
               onTap: () async {
                 showModalBottomSheet(
                   context: context,
@@ -96,26 +101,42 @@ class ContactList extends StatelessWidget {
                             shrinkWrap: true,
                             children: [
                               ListTile(
-                                leading: Icon(Ionicons.ios_link),
+                                leading: Icon(
+                                  Ionicons.ios_link,
+                                  color: ColorTheme.primary,
+                                ),
                                 title: Text('Website'),
-                                trailing: Icon(Ionicons.ios_arrow_forward),
+                                trailing: Icon(
+                                  Ionicons.ios_arrow_forward,
+                                  color: ColorTheme.primary,
+                                ),
                                 onTap: () => _openUrl(data.website),
                               ),
-                              Divider(),
+                              // Divider(),
                               ListTile(
-                                leading: Icon(Ionicons.logo_facebook),
+                                leading: Icon(
+                                  Ionicons.logo_facebook,
+                                  color: ColorTheme.primary,
+                                ),
                                 title: Text('Facebook'),
-                                trailing: Icon(Ionicons.ios_arrow_forward),
+                                trailing: Icon(
+                                  Ionicons.ios_arrow_forward,
+                                  color: ColorTheme.primary,
+                                ),
                                 onTap: () =>
                                     _openUrl(data.socialmedia.facebook),
                               ),
-                              Divider(),
+                              // Divider(),
                               ListTile(
-                                leading: Icon(Ionicons.ios_pin),
+                                leading: Icon(
+                                  Ionicons.ios_pin,
+                                  color: ColorTheme.primary,
+                                ),
                                 title: Text(data.address.title),
-                                subtitle: Text(data.address.detail),
-                                trailing: Icon(Ionicons.ios_arrow_forward),
-                                isThreeLine: true,
+                                trailing: Icon(
+                                  Ionicons.ios_arrow_forward,
+                                  color: ColorTheme.primary,
+                                ),
                                 onTap: () async {
                                   final availableMaps =
                                       await MapLauncher.installedMaps;
@@ -137,23 +158,26 @@ class ContactList extends StatelessWidget {
                   },
                 );
               },
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(15),
               child: Container(
-                height: 100,
+                height: 70,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
                       Ionicons.ios_apps,
-                      size: 40,
-                      color: ColorTheme.primary,
+                      size: 30,
+                      color: Colors.white,
                     ),
-                    Divider(),
+                    Divider(color: Colors.white.withOpacity(0.5)),
                     Container(
                       child: Text(
                         '${data.country} Resources',
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.white,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -164,25 +188,29 @@ class ContactList extends StatelessWidget {
           ),
           Expanded(
             child: CardComponent(
-              margin: const EdgeInsets.only(left: 5),
+              color: Colors.red,
+              margin: const EdgeInsets.symmetric(horizontal: 8),
               onTap: () => _call(data.hotlinetwo.phonenumber),
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(15),
               child: Container(
-                height: 100,
+                height: 70,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
                       Ionicons.ios_call,
-                      size: 40,
-                      color: ColorTheme.primary,
+                      size: 30,
+                      color: Colors.white,
                     ),
-                    Divider(),
+                    Divider(color: Colors.white.withOpacity(0.5)),
                     Container(
                       child: Text(
                         data.hotlinetwo.title,
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Colors.white,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ),

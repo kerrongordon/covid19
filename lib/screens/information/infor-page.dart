@@ -13,21 +13,50 @@ class InforPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: KgpBasePage(
-        title: data.title,
+        title: '',
         expandedHeight: 55,
         child: Column(
           children: [
-            AspectRatio(
-              aspectRatio: 1.7,
-              child: Hero(
-                tag: data.image,
-                child: Image.asset(
-                  'assets/infor/${data.image}',
-                  fit: BoxFit.fill,
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: CardComponent(
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    AspectRatio(
+                      aspectRatio: 1.7,
+                      child: Hero(
+                        tag: data.image,
+                        child: Image.asset(
+                          'assets/infor/${data.image}',
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(40),
+                      child: Text(
+                        data.title,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          shadows: [
+                            Shadow(
+                              offset: Offset(0.0, 3.0),
+                              blurRadius: 3.0,
+                              color: Colors.black.withOpacity(0.9),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-            const SizedBox(height: 50),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: AdsComponent(type: NativeAdmobType.banner),
@@ -44,7 +73,7 @@ class InforPage extends StatelessWidget {
                         style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 16,
-                          height: 1.5,
+                          height: 1.8,
                         ),
                       ),
                     ),
