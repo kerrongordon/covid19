@@ -1,6 +1,5 @@
 import 'package:covid19/components/card-component.dart';
 import 'package:covid19/components/kgp-bottom-dialog.dart';
-import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/models/contact-model.dart';
 import 'package:covid19/providers/contact-provider.dart';
 import 'package:covid19/themes/color-theme.dart';
@@ -19,7 +18,7 @@ class ContactCardList extends HookWidget {
     final homeContact = useProvider(contactProvider);
     return homeContact.when(
       data: (data) => ContactList(data: data),
-      loading: () => KgpLoader(),
+      loading: () => Container(),
       error: (_, __) => Container(),
     );
   }
