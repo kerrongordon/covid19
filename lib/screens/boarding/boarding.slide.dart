@@ -29,76 +29,81 @@ class BoardingSlide extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     final theme = Theme.of(context);
 
-    return Container(
-      color: theme.backgroundColor,
-      padding: const EdgeInsets.symmetric(horizontal: 40),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          flar != null
-              ? Container(
-                  child: AspectRatio(
-                    aspectRatio: 1.5,
-                    child: FlareActor(
-                      "assets/flar/$flar.flr",
-                      alignment: Alignment.center,
-                      fit: BoxFit.contain,
-                      animation: flarAnimationName,
-                    ),
-                  ),
-                )
-              : Container(),
-          flag != null && flar == null
-              ? Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: KgpFlag(
-                      tag: null,
-                      imageUrl: flag,
-                      imageHeight: mediaQuery.size.width / 2.5,
-                      imageWidth: mediaQuery.size.width / 2.5,
-                    ),
-                  ),
-                )
-              : Container(),
-          title != null
-              ? Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 24,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                )
-              : Container(),
-          subtitle != null
-              ? Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 10),
-                  child: Text(
-                    subtitle,
-                    style: const TextStyle(
-                      fontSize: 18,
-                      height: 1.5,
-                      fontWeight: FontWeight.w300,
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                )
-              : Container(),
-          onPressed != null
-              ? Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  child: KgpIconButton(
-                    buttonTitle: buttonTitle,
-                    buttonIcon: buttonIcon,
-                    onPressed: onPressed,
-                  ),
-                )
-              : Container(),
-        ],
+    return SingleChildScrollView(
+      child: AspectRatio(
+        aspectRatio: 1.0,
+        child: Container(
+          color: theme.backgroundColor,
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              flar != null
+                  ? Container(
+                      child: AspectRatio(
+                        aspectRatio: 1.5,
+                        child: FlareActor(
+                          "assets/flar/$flar.flr",
+                          alignment: Alignment.center,
+                          fit: BoxFit.contain,
+                          animation: flarAnimationName,
+                        ),
+                      ),
+                    )
+                  : Container(),
+              flag != null && flar == null
+                  ? Container(
+                      child: Padding(
+                        padding: const EdgeInsets.all(20),
+                        child: KgpFlag(
+                          tag: null,
+                          imageUrl: flag,
+                          imageHeight: mediaQuery.size.width / 2.5,
+                          imageWidth: mediaQuery.size.width / 2.5,
+                        ),
+                      ),
+                    )
+                  : Container(),
+              title != null
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Text(
+                        title,
+                        style: const TextStyle(
+                          fontSize: 24,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  : Container(),
+              subtitle != null
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      child: Text(
+                        subtitle,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          height: 1.5,
+                          fontWeight: FontWeight.w300,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  : Container(),
+              onPressed != null
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      child: KgpIconButton(
+                        buttonTitle: buttonTitle,
+                        buttonIcon: buttonIcon,
+                        onPressed: onPressed,
+                      ),
+                    )
+                  : Container(),
+            ],
+          ),
+        ),
       ),
     );
   }
