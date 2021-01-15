@@ -28,7 +28,7 @@ dependencies:
   dio_http_cache: ^0.2.11
   dio_retry: ^0.1.9-beta
   easy_localization: ^2.3.3
-  firebase_analytics: ^6.3.0
+  firebase_analytics: ^7.0.0
   firebase_core: ^0.7.0
   fl_chart: ^0.12.2
   flare_flutter: ^2.0.6
