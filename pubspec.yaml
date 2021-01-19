@@ -32,7 +32,7 @@ dependencies:
   firebase_core: ^0.5.3
   fl_chart: ^0.12.2
   flare_flutter: ^2.0.6
-  flutter_dotenv: ^3.0.2
+  flutter_dotenv: ^3.1.0
   flutter_hooks: ^0.15.0
   flutter_icons: ^1.1.0
   flutter_map: ^0.10.1+1
