@@ -1,5 +1,4 @@
 import 'package:covid19/components/country-card/country-card-travel-alert.dart';
-import 'package:covid19/components/kgp-loader.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:covid19/screens/country/providers/travel-alert.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +16,7 @@ class TravelAlertScreen extends HookWidget {
 
     return travel.when(
       data: (data) => CountryCardTravelAlert(data: data.data.values.first),
-      loading: () => KgpLoader(),
+      loading: () => Container(),
       error: (error, _) => Container(),
     );
   }
