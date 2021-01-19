@@ -3,7 +3,7 @@ import 'package:covid19/translations/input-translate.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart' as DotEnv;
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 FirebaseAnalytics analytics;
@@ -11,7 +11,7 @@ FirebaseAnalytics analytics;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   analytics = FirebaseAnalytics();
-  await DotEnv().load('.env');
+  await DotEnv.load();
 
   runApp(
     EasyLocalization(

@@ -23,7 +23,7 @@ class MapBuilder extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mapApi = DotEnv().env['MAP_API'];
+    final mapApi = env['MAP_API'];
     final mapLight = 'ckfkbb59g00mo1ao408id402s';
     final mapDark = 'ckfkcdgj614e31aox1o5n2aml';
     final openstreetmap = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
