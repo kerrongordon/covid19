@@ -7,6 +7,7 @@ import 'package:covid19/providers/home-provider.dart';
 import 'package:covid19/providers/one-country-provider.dart';
 import 'package:covid19/translations/setting-translate.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -83,12 +84,14 @@ class SettingsCountryPicker extends HookWidget {
                     left: MediaQuery.of(context).size.width / 2.9,
                     child: GestureDetector(
                       onTap: openSearch,
-                      child: KgpFlag(
-                        imageUrl: home.item.country == null
-                            ? data.countryInfo.flag
-                            : home.item.countryInfo.flag,
-                        imageWidth: 90,
-                        imageHeight: 90,
+                      child: ZoomIn(
+                        child: KgpFlag(
+                          imageUrl: home.item.country == null
+                              ? data.countryInfo.flag
+                              : home.item.countryInfo.flag,
+                          imageWidth: 90,
+                          imageHeight: 90,
+                        ),
                       ),
                     ),
                   )

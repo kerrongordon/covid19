@@ -3,6 +3,7 @@ import 'package:covid19/models/usstates-model.dart';
 import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/utils/comma.util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 class UsStatesList extends StatelessWidget {
@@ -24,40 +25,46 @@ class UsStatesList extends StatelessWidget {
             onTap: () =>
                 Navigator.of(context).pushNamed(usState, arguments: item),
             child: ListTile(
-              leading: Icon(
-                Ionicons.ios_pie,
-                color: Colors.lightBlue,
-              ),
-              title: Text(
-                item.state,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  color: theme.textTheme.bodyText1.color,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
+              leading: ZoomIn(
+                child: Icon(
+                  Ionicons.ios_pie,
+                  color: Colors.lightBlue,
                 ),
               ),
-              trailing: RichText(
-                text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text: CommaUtil.use(item.cases),
-                      style: TextStyle(
-                        color: theme.textTheme.bodyText1.color,
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                    WidgetSpan(
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 10),
-                        child: Icon(
-                          Ionicons.ios_analytics,
-                          color: theme.accentColor,
+              title: FadeInDown(
+                child: Text(
+                  item.state,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    color: theme.textTheme.bodyText1.color,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              trailing: FadeInUp(
+                child: RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: CommaUtil.use(item.cases),
+                        style: TextStyle(
+                          color: theme.textTheme.bodyText1.color,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
-                    ),
-                  ],
+                      WidgetSpan(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10),
+                          child: Icon(
+                            Ionicons.ios_analytics,
+                            color: theme.accentColor,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:covid19/utils/comma.util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 
 class KgpStatsWithTitle extends StatelessWidget {
   final int amount;
@@ -36,9 +37,13 @@ class KgpStatsWithTitle extends StatelessWidget {
           crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
           mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
           children: [
-            flip != null ? _titleUi() : _amountUi(),
+            flip != null
+                ? FadeInUp(child: _titleUi())
+                : FadeInDown(child: _amountUi()),
             const SizedBox(height: 10),
-            flip != null ? _amountUi() : _titleUi(),
+            flip != null
+                ? FadeInDown(child: _amountUi())
+                : FadeInUp(child: _titleUi()),
           ],
         ),
       ),
