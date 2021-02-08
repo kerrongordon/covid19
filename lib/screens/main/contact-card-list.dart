@@ -8,7 +8,6 @@ import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:map_launcher/map_launcher.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactCardList extends HookWidget {
@@ -137,18 +136,7 @@ class ContactList extends StatelessWidget {
                                     Ionicons.ios_arrow_forward,
                                     color: ColorTheme.primary,
                                   ),
-                                  onTap: () async {
-                                    final availableMaps =
-                                        await MapLauncher.installedMaps;
-                                    await availableMaps.first.showMarker(
-                                      description: data.address.detail,
-                                      coords: Coords(
-                                        data.address.lat,
-                                        data.address.long,
-                                      ),
-                                      title: data.address.title,
-                                    );
-                                  },
+                                  onTap: () => _openUrl(data.address.maplink),
                                 ),
                               ],
                             ),

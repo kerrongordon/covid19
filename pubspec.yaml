@@ -48,7 +48,6 @@ dependencies:
   state_notifier: ^0.6.0
   url_launcher: ^5.7.10
   package_info: ^0.4.3+2
-  map_launcher: ^1.1.1
   avatar_glow: ^1.2.0
   flutter_animator: ^2.1.0
 
