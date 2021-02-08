@@ -37,13 +37,15 @@ class KgpStatsWithTitle extends StatelessWidget {
           crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
           mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
           children: [
-            flip != null
-                ? FadeInUp(child: _titleUi())
-                : FadeInDown(child: _amountUi()),
+            if (flip != null)
+              FadeInUp(child: _titleUi())
+            else
+              FadeInDown(child: _amountUi()),
             const SizedBox(height: 10),
-            flip != null
-                ? FadeInDown(child: _amountUi())
-                : FadeInUp(child: _titleUi()),
+            if (flip != null)
+              FadeInDown(child: _amountUi())
+            else
+              FadeInUp(child: _titleUi()),
           ],
         ),
       ),

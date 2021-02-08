@@ -6,6 +6,7 @@ import 'package:covid19/themes/color-theme.dart';
 import 'package:covid19/translations/app-translate.dart';
 import 'package:covid19/utils/timetodate.util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
 class GlobalCardTwo extends StatelessWidget {
@@ -18,17 +19,17 @@ class GlobalCardTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String _date = TimeToDate.use(data.updated);
-    return CardComponent(
-      padding: const EdgeInsets.all(20),
-      child: Column(
-        children: [
-          KgpCardTitle(
-            title: today,
-            subtitle: '$updatedasof $_date',
-            icon: Icon(Ionicons.ios_send),
-          ),
-          Container(
-            child: Row(
+    return FadeInUp(
+      child: CardComponent(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            KgpCardTitle(
+              title: today,
+              subtitle: '$updatedasof $_date',
+              icon: const Icon(Ionicons.ios_send),
+            ),
+            Row(
               children: [
                 Expanded(
                   child: KgpStatsWithTitle(
@@ -59,8 +60,8 @@ class GlobalCardTwo extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

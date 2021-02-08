@@ -10,8 +10,8 @@ class KgpLoader extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
     final theme = Theme.of(context);
-    final double hight = hightDiv == null ? 3 : hightDiv;
-    return Container(
+    final double hight = hightDiv ?? 3;
+    return SizedBox(
       height: mediaQuery.size.height / hight,
       child: Center(
         child: RepaintBoundary(

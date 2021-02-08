@@ -7,7 +7,7 @@ class TabBottomBar extends StatelessWidget {
   final int pageIndex;
   final void Function(int) onItemSelected;
 
-  TabBottomBar({
+  const TabBottomBar({
     @required this.pageIndex,
     @required this.onItemSelected,
   });

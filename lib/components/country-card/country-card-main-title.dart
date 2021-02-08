@@ -12,28 +12,26 @@ class CountryCardMailTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final String _date = TimeToDate.use(date);
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          FadeInRight(
-            child: const Text(
-              'Covid-19',
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w500,
-              ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        FadeInRight(
+          child: const Text(
+            'Covid-19',
+            style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w500,
             ),
           ),
-          const SizedBox(height: 10),
-          FadeInUp(
-            child: Text(
-              '$updatedasof $_date',
-              style: const TextStyle(fontSize: 12),
-            ),
+        ),
+        const SizedBox(height: 10),
+        FadeInUp(
+          child: Text(
+            '$updatedasof $_date',
+            style: const TextStyle(fontSize: 12),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

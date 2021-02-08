@@ -26,7 +26,7 @@ class MainScreen extends HookWidget {
 
     return homeData.when(
       error: (error, _) => KgpCenter(child: Text(error.toString())),
-      loading: () => KgpCenter(child: KgpLoader()),
+      loading: () => const KgpCenter(child: KgpLoader()),
       data: (data) => Scaffold(
         body: KgpBasePage(
           title: data.country,
@@ -36,9 +36,9 @@ class MainScreen extends HookWidget {
             child: Column(
               children: [
                 MainCardOne(data: data),
-                ContactCardList(),
-                CountryCardToday(data: data),
-                AdsComponent(type: NativeAdmobType.banner),
+                const ContactCardList(),
+                FadeInUp(child: CountryCardToday(data: data)),
+                const AdsComponent(type: NativeAdmobType.banner),
                 MainCallback(data: data),
               ],
             ),

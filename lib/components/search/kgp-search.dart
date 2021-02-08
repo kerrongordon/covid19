@@ -30,7 +30,7 @@ class KgpSearch extends SearchDelegate<Country> {
     return [
       IconButton(
         icon: const Icon(Ionicons.ios_close_circle_outline, color: Colors.grey),
-        onPressed: () => query = "",
+        onPressed: () => query = '',
       )
     ];
   }
@@ -48,15 +48,15 @@ class KgpSearch extends SearchDelegate<Country> {
 
   @override
   Widget buildSuggestions(BuildContext context) {
-    _buildcountriesSearchUi(List<Country> data) {
-      List<Country> list = query.isEmpty
+    StatelessWidget _buildcountriesSearchUi(List<Country> data) {
+      final List<Country> list = query.isEmpty
           ? data
           : data
               .where((p) => p.country.toLowerCase().startsWith(query))
               .toList();
 
       if (list.isEmpty) {
-        return KgpSearchNotFound();
+        return const KgpSearchNotFound();
       }
 
       switch (action) {
@@ -77,16 +77,21 @@ class KgpSearch extends SearchDelegate<Country> {
             onTap: (item) => close(context, item),
           );
           break;
+        default:
+          return KgpSearchList(
+            list: list,
+            onTap: (item) => close(context, item),
+          );
       }
     }
 
-    _buildstatesSearchUi(List<UsStates> data) {
-      List<UsStates> list = query.isEmpty
+    StatelessWidget _buildstatesSearchUi(List<UsStates> data) {
+      final List<UsStates> list = query.isEmpty
           ? data
           : data.where((p) => p.state.toLowerCase().startsWith(query)).toList();
 
       if (list.isEmpty) {
-        return KgpSearchNotFound();
+        return const KgpSearchNotFound();
       }
 
       return KgpSearchStates(
@@ -102,21 +107,21 @@ class KgpSearch extends SearchDelegate<Country> {
       case SearchType.country:
         return countries.when(
           data: (data) => _buildcountriesSearchUi(data),
-          loading: () => KgpLoader(),
+          loading: () => const KgpLoader(),
           error: (error, _) => Center(child: Text(error.toString())),
         );
         break;
       case SearchType.state:
         return states.when(
           data: (data) => _buildstatesSearchUi(data),
-          loading: () => KgpLoader(),
+          loading: () => const KgpLoader(),
           error: (error, _) => Center(child: Text(error.toString())),
         );
         break;
       default:
         return countries.when(
           data: (data) => _buildcountriesSearchUi(data),
-          loading: () => KgpLoader(),
+          loading: () => const KgpLoader(),
           error: (error, _) => Center(child: Text(error.toString())),
         );
     }

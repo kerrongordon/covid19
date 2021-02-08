@@ -14,12 +14,11 @@ class KgpCenter extends StatelessWidget {
         elevation: 0.0,
         toolbarHeight: 0,
       ),
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             child,
           ],

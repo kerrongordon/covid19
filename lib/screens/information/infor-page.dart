@@ -45,7 +45,7 @@ class InforPage extends StatelessWidget {
                           fontSize: 20,
                           shadows: [
                             Shadow(
-                              offset: Offset(0.0, 3.0),
+                              offset: const Offset(0.0, 3.0),
                               blurRadius: 3.0,
                               color: Colors.black.withOpacity(0.9),
                             ),
@@ -57,8 +57,8 @@ class InforPage extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: AdsComponent(type: NativeAdmobType.banner),
             ),
             Container(

@@ -6,12 +6,14 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 final countriesListProvider =
     FutureProvider.autoDispose<List<Widget>>((ref) async {
-  CountryService countryService = new CountryService();
+  final CountryService countryService = CountryService();
   final data = await countryService.getCountryApi();
 
   List<Widget> items(List<Country> data) {
-    List<CountriesItem> _cardItem = [];
-    for (final c in data) _cardItem.add(CountriesItem(data: c));
+    final List<CountriesItem> _cardItem = [];
+    for (final c in data) {
+      _cardItem.add(CountriesItem(data: c));
+    }
     return _cardItem;
   }
 

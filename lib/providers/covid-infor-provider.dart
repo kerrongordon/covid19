@@ -36,10 +36,10 @@ final covidInforProvider = Provider.autoDispose((_) {
     }
   ];
 
-  List<CovidInfor> counties = [];
+  final List<CovidInfor> counties = [];
 
   for (final infor in infors) {
-    CovidInfor list = CovidInfor.fromJson(infor);
+    final CovidInfor list = CovidInfor.fromJson(infor);
     counties.add(list);
   }
 

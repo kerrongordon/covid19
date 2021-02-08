@@ -44,7 +44,7 @@ class AdsComponent extends HookWidget {
       return () => _subscription.cancel();
     }, [_nativeAdmobController.value.stateChanged]);
 
-    return Container(
+    return SizedBox(
       height: _height.value,
       child: CardComponent(
         padding: const EdgeInsets.all(20),

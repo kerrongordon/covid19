@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
-class LightTheme {
+mixin LightTheme {
   static final ThemeData theme = _lightTheme();
-  static final Color lightPrimary = const Color.fromRGBO(69, 41, 129, 1.0);
-  static final Color lightBackground = const Color.fromRGBO(238, 247, 244, 1.0);
-  static final Color frontColor = const Color.fromRGBO(107, 124, 147, 1.0);
-  static final Color cardColor = const Color.fromRGBO(255, 255, 255, 1.0);
+  static const Color lightPrimary = Color.fromRGBO(69, 41, 129, 1.0);
+  static const Color lightBackground = Color.fromRGBO(238, 247, 244, 1.0);
+  static const Color frontColor = Color.fromRGBO(107, 124, 147, 1.0);
+  static const Color cardColor = Color.fromRGBO(255, 255, 255, 1.0);
 
   static ThemeData _lightTheme() {
     return ThemeData(
       scaffoldBackgroundColor: lightBackground,
       splashColor: lightBackground,
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         brightness: Brightness.light,
         color: lightBackground,
         iconTheme: IconThemeData(
@@ -21,13 +21,13 @@ class LightTheme {
           color: frontColor,
         ),
       ),
-      iconTheme: IconThemeData(
+      iconTheme: const IconThemeData(
         color: frontColor,
       ),
-      primaryIconTheme: IconThemeData(
+      primaryIconTheme: const IconThemeData(
         color: frontColor,
       ),
-      floatingActionButtonTheme: FloatingActionButtonThemeData(
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
         backgroundColor: lightPrimary,
       ),
       canvasColor: lightBackground,
@@ -43,13 +43,13 @@ class LightTheme {
       primaryColor: lightPrimary,
       primaryColorLight: frontColor,
       primaryColorBrightness: Brightness.light,
-      primaryTextTheme: TextTheme(
+      primaryTextTheme: const TextTheme(
         bodyText1: TextStyle(color: frontColor),
         bodyText2: TextStyle(color: frontColor),
         subtitle1: TextStyle(color: frontColor),
         subtitle2: TextStyle(color: frontColor),
       ),
-      textTheme: TextTheme(
+      textTheme: const TextTheme(
         bodyText1: TextStyle(
           color: frontColor,
           fontSize: 16,
@@ -59,12 +59,12 @@ class LightTheme {
         subtitle2: TextStyle(color: frontColor),
       ),
       accentColor: lightPrimary,
-      inputDecorationTheme: InputDecorationTheme(
+      inputDecorationTheme: const InputDecorationTheme(
         prefixStyle: TextStyle(
           color: frontColor,
         ),
       ),
-      bottomAppBarTheme: BottomAppBarTheme(
+      bottomAppBarTheme: const BottomAppBarTheme(
         color: lightBackground,
       ),
     );

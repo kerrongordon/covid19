@@ -27,38 +27,36 @@ class CountryCardToday extends StatelessWidget {
             subtitle: '$updatedasof $date',
             icon: const Icon(Ionicons.ios_send),
           ),
-          Container(
-            child: Row(
-              children: [
-                Expanded(
-                  child: KgpStatsWithTitle(
-                    title: confirmed,
-                    amount: data.todayCases,
-                    amountFontSize: 18,
-                    titleFontSize: 14,
-                    titlecolor: ColorTheme.cases,
-                  ),
+          Row(
+            children: [
+              Expanded(
+                child: KgpStatsWithTitle(
+                  title: confirmed,
+                  amount: data.todayCases,
+                  amountFontSize: 18,
+                  titleFontSize: 14,
+                  titlecolor: ColorTheme.cases,
                 ),
-                Expanded(
-                  child: KgpStatsWithTitle(
-                    title: deaths,
-                    amount: data.todayDeaths,
-                    amountFontSize: 18,
-                    titleFontSize: 14,
-                    titlecolor: ColorTheme.deaths,
-                  ),
+              ),
+              Expanded(
+                child: KgpStatsWithTitle(
+                  title: deaths,
+                  amount: data.todayDeaths,
+                  amountFontSize: 18,
+                  titleFontSize: 14,
+                  titlecolor: ColorTheme.deaths,
                 ),
-                Expanded(
-                  child: KgpStatsWithTitle(
-                    title: recovered,
-                    amount: data.todayRecovered,
-                    amountFontSize: 18,
-                    titleFontSize: 14,
-                    titlecolor: ColorTheme.recovered,
-                  ),
+              ),
+              Expanded(
+                child: KgpStatsWithTitle(
+                  title: recovered,
+                  amount: data.todayRecovered,
+                  amountFontSize: 18,
+                  titleFontSize: 14,
+                  titlecolor: ColorTheme.recovered,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),

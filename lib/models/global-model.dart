@@ -45,64 +45,64 @@ class Global {
       this.affectedCountries});
 
   Global.fromJson(Map<String, dynamic> json) {
-    updated = json['updated'];
-    cases = json['cases'];
-    todayCases = json['todayCases'];
-    deaths = json['deaths'];
-    todayDeaths = json['todayDeaths'];
-    recovered = json['recovered'];
-    todayRecovered = json['todayRecovered'];
-    active = json['active'];
-    critical = json['critical'];
+    updated = json['updated'] as int;
+    cases = json['cases'] as int;
+    todayCases = json['todayCases'] as int;
+    deaths = json['deaths'] as int;
+    todayDeaths = json['todayDeaths'] as int;
+    recovered = json['recovered'] as int;
+    todayRecovered = json['todayRecovered'] as int;
+    active = json['active'] as int;
+    critical = json['critical'] as int;
     casesPerOneMillion = json['casesPerOneMillion'] == null
         ? 0.0
-        : json['casesPerOneMillion'].toDouble();
+        : json['casesPerOneMillion'].toDouble() as double;
     deathsPerOneMillion = json['deathsPerOneMillion'] == null
         ? 0.0
-        : json['deathsPerOneMillion'].toDouble();
-    tests = json['tests'];
+        : json['deathsPerOneMillion'].toDouble() as double;
+    tests = json['tests'] as int;
     testsPerOneMillion = json['testsPerOneMillion'] == null
         ? 0.0
-        : json['testsPerOneMillion'].toDouble();
-    population = json['population'];
-    oneCasePerPeople = json['oneCasePerPeople'];
-    oneDeathPerPeople = json['oneDeathPerPeople'];
-    oneTestPerPeople = json['oneTestPerPeople'];
+        : json['testsPerOneMillion'].toDouble() as double;
+    population = json['population'] as int;
+    oneCasePerPeople = json['oneCasePerPeople'] as int;
+    oneDeathPerPeople = json['oneDeathPerPeople'] as int;
+    oneTestPerPeople = json['oneTestPerPeople'] as int;
     activePerOneMillion = json['activePerOneMillion'] == null
         ? 0.0
-        : json['activePerOneMillion'].toDouble();
+        : json['activePerOneMillion'].toDouble() as double;
     recoveredPerOneMillion = json['recoveredPerOneMillion'] == null
         ? 0.0
-        : json['recoveredPerOneMillion'].toDouble();
+        : json['recoveredPerOneMillion'].toDouble() as double;
     criticalPerOneMillion = json['criticalPerOneMillion'] == null
         ? 0.0
-        : json['criticalPerOneMillion'].toDouble();
-    affectedCountries = json['affectedCountries'];
+        : json['criticalPerOneMillion'].toDouble() as double;
+    affectedCountries = json['affectedCountries'] as int;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['updated'] = this.updated;
-    data['cases'] = this.cases;
-    data['todayCases'] = this.todayCases;
-    data['deaths'] = this.deaths;
-    data['todayDeaths'] = this.todayDeaths;
-    data['recovered'] = this.recovered;
-    data['todayRecovered'] = this.todayRecovered;
-    data['active'] = this.active;
-    data['critical'] = this.critical;
-    data['casesPerOneMillion'] = this.casesPerOneMillion;
-    data['deathsPerOneMillion'] = this.deathsPerOneMillion;
-    data['tests'] = this.tests;
-    data['testsPerOneMillion'] = this.testsPerOneMillion;
-    data['population'] = this.population;
-    data['oneCasePerPeople'] = this.oneCasePerPeople;
-    data['oneDeathPerPeople'] = this.oneDeathPerPeople;
-    data['oneTestPerPeople'] = this.oneTestPerPeople;
-    data['activePerOneMillion'] = this.activePerOneMillion;
-    data['recoveredPerOneMillion'] = this.recoveredPerOneMillion;
-    data['criticalPerOneMillion'] = this.criticalPerOneMillion;
-    data['affectedCountries'] = this.affectedCountries;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['updated'] = updated;
+    data['cases'] = cases;
+    data['todayCases'] = todayCases;
+    data['deaths'] = deaths;
+    data['todayDeaths'] = todayDeaths;
+    data['recovered'] = recovered;
+    data['todayRecovered'] = todayRecovered;
+    data['active'] = active;
+    data['critical'] = critical;
+    data['casesPerOneMillion'] = casesPerOneMillion;
+    data['deathsPerOneMillion'] = deathsPerOneMillion;
+    data['tests'] = tests;
+    data['testsPerOneMillion'] = testsPerOneMillion;
+    data['population'] = population;
+    data['oneCasePerPeople'] = oneCasePerPeople;
+    data['oneDeathPerPeople'] = oneDeathPerPeople;
+    data['oneTestPerPeople'] = oneTestPerPeople;
+    data['activePerOneMillion'] = activePerOneMillion;
+    data['recoveredPerOneMillion'] = recoveredPerOneMillion;
+    data['criticalPerOneMillion'] = criticalPerOneMillion;
+    data['affectedCountries'] = affectedCountries;
     return data;
   }
 }

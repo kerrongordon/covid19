@@ -4,18 +4,18 @@ import 'package:covid19/models/country-model.dart';
 
 class CountryService {
   Future<List<Country>> getCountryApi() async {
-    ApiUtil _countryService = new ApiUtil();
+    final ApiUtil _countryService = ApiUtil();
 
-    dynamic data = await _countryService.getData(
+    final dynamic data = await _countryService.getData(
       baseUrl: baseUrl,
       endPoint: '/covid-19/countries',
       queryParameters: {'yesterday': 'true', 'sort': 'cases'},
     );
 
-    List<Country> counties = [];
+    final List<Country> counties = [];
 
     for (final country in data) {
-      Country list = Country.fromJson(country);
+      final Country list = Country.fromJson(country as Map<String, dynamic>);
       counties.add(list);
     }
 

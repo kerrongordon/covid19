@@ -5,5 +5,5 @@ final tabProvider =
 
 class TabNotifier extends StateNotifier<int> {
   TabNotifier() : super(2);
-  void changePages(int number) => state = number;
+  Future<void> changePages(int number) async => state = number;
 }

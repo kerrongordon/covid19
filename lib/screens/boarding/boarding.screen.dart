@@ -30,15 +30,15 @@ class BoardingScreen extends HookWidget {
 
     void onPageChange(int index) => _pageIndex.changePages(index);
 
-    void startApp({int pageIndex}) async {
+    Future<void> startApp({int pageIndex}) async {
       if (home.item.country == null) return _pageController.onTapIcon(4);
       await prefs.data.value.setBool(appInitKey, true);
 
-      return Future.delayed(Duration(milliseconds: 650),
+      return Future.delayed(const Duration(milliseconds: 650),
           () => Navigator.of(context).pushReplacementNamed(tabScreen));
     }
 
-    List<Widget> _pages = [
+    final List<Widget> _pages = [
       BoardingSlide(
         title: pageonetitle,
         subtitle: pageonesubtitle,
@@ -70,7 +70,7 @@ class BoardingScreen extends HookWidget {
         subtitle: home.item.country ?? '',
         flag: home.item.country == null ? '' : home.item.countryInfo.flag,
         buttonTitle: pagefivebutton,
-        buttonIcon: Icon(Ionicons.ios_pin),
+        buttonIcon: const Icon(Ionicons.ios_pin),
         onPressed: () async {
           final search = await showSearch(
             context: context,
@@ -82,7 +82,7 @@ class BoardingScreen extends HookWidget {
           home.setCountryName(search);
         },
       ),
-      BoardingSlide(
+      const BoardingSlide(
         flar: 'SuccessCheck',
         flarAnimationName: 'Untitled',
       ),

@@ -16,7 +16,7 @@ class MapScreen extends HookWidget {
       extendBody: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text('Map'),
+        title: const Text('Map'),
         elevation: 0.0,
         centerTitle: true,
       ),
@@ -25,8 +25,8 @@ class MapScreen extends HookWidget {
           position: position,
           countries: countries.data.value,
         ),
-        loading: () => Center(child: KgpLoader()),
-        error: (err, stak) => Container(
+        loading: () => const Center(child: KgpLoader()),
+        error: (err, stak) => SizedBox(
           height: MediaQuery.of(context).size.height / 2.5,
           child: Center(
             child: Text(

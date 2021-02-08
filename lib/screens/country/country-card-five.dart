@@ -37,7 +37,7 @@ class CountryCardFive extends HookWidget {
     }
 
     List<DataPoint<DateTime>> _getLineData(List<HistoryItem> data) {
-      List<DataPoint<DateTime>> list = [];
+      final List<DataPoint<DateTime>> list = [];
       for (final item in data) {
         final dateTime1 = DateFormat('M/d/yyyy').parse(item.date);
         final year =
@@ -50,8 +50,8 @@ class CountryCardFive extends HookWidget {
       return list;
     }
 
-    final fromDate = DateTime.now().subtract(Duration(days: 30));
-    final toDate = DateTime.now().subtract(Duration(days: 1));
+    final fromDate = DateTime.now().subtract(const Duration(days: 30));
+    final toDate = DateTime.now().subtract(const Duration(days: 1));
 
     return CardComponent(
       padding: const EdgeInsets.symmetric(vertical: 20),
@@ -64,7 +64,7 @@ class CountryCardFive extends HookWidget {
               icon: const Icon(Ionicons.ios_podium),
             ),
           ),
-          Container(
+          SizedBox(
             height: 270,
             width: double.infinity,
             child: BezierChart(
@@ -92,7 +92,6 @@ class CountryCardFive extends HookWidget {
               config: BezierChartConfig(
                 verticalIndicatorStrokeWidth: 3.0,
                 verticalIndicatorColor: Colors.black26,
-                showVerticalIndicator: true,
                 verticalIndicatorFixedPosition: true,
                 footerHeight: 45.0,
                 updatePositionOnTap: true,

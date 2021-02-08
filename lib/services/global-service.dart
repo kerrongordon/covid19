@@ -4,13 +4,13 @@ import 'package:covid19/utils/api.util.dart';
 
 class GlobalService {
   Future<Global> getGlobalApi() async {
-    ApiUtil _globalService = new ApiUtil();
+    final ApiUtil _globalService = ApiUtil();
 
-    dynamic data = await _globalService.getData(
+    final dynamic data = await _globalService.getData(
       baseUrl: baseUrl,
       endPoint: '/covid-19/all',
     );
 
-    return Global.fromJson(data);
+    return Global.fromJson(data as Map<String, dynamic>);
   }
 }

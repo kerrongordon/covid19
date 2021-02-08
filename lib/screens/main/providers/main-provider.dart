@@ -7,5 +7,5 @@ final mainScreenProvider = FutureProvider.autoDispose<Country>((ref) async {
   final home = ref.watch(homeCountryProvider);
   final getcountry = ref.watch(oneCountryProvider);
   final homeName = await home.getCountryName();
-  return await getcountry.getOneCountryApi(country: homeName);
+  return getcountry.getOneCountryApi(country: homeName);
 });

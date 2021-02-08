@@ -16,9 +16,7 @@ class InforScreen extends HookWidget {
       body: KgpBasePage(
         title: pagetitle,
         expandedHeight: 55,
-        child: Container(
-          child: InforList(),
-        ),
+        child: const InforList(),
       ),
     );
   }

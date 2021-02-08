@@ -25,19 +25,19 @@ class RouteGenerator {
       case inforPageScreen:
         return args is CovidInfor
             ? MaterialPageRoute(builder: (_) => InforPage(data: args))
-            : MaterialPageRoute(builder: (_) => KgpCenter());
+            : MaterialPageRoute(builder: (_) => const KgpCenter());
       case countryScreen:
         return args is Country
             ? MaterialPageRoute(builder: (_) => CountryScreen(data: args))
-            : MaterialPageRoute(builder: (_) => KgpCenter());
+            : MaterialPageRoute(builder: (_) => const KgpCenter());
       case usStatePageScreen:
-        return MaterialPageRoute(builder: (_) => UsStateScreen());
+        return MaterialPageRoute(builder: (_) => const UsStateScreen());
       case usState:
         return args is UsStates
             ? MaterialPageRoute(builder: (_) => UsState(data: args))
-            : MaterialPageRoute(builder: (_) => KgpCenter());
+            : MaterialPageRoute(builder: (_) => const KgpCenter());
       default:
-        return MaterialPageRoute(builder: (_) => KgpCenter());
+        return MaterialPageRoute(builder: (_) => const KgpCenter());
     }
   }
 }

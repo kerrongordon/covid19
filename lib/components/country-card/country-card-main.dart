@@ -21,27 +21,24 @@ class CountryCardMain extends StatelessWidget {
       padding: const EdgeInsets.all(20),
       child: Column(
         children: [
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Expanded(
-                  flex: 5,
-                  child: CountryCardMailTitle(
-                    date: data.updated,
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                flex: 5,
+                child: CountryCardMailTitle(
+                  date: data.updated,
                 ),
-                Expanded(
-                  child: KgpFlag(
-                    tag: data.country,
-                    imageUrl: data.countryInfo.flag,
-                    imageWidth: 55.0,
-                    imageHeight: 55.0,
-                  ),
+              ),
+              Expanded(
+                child: KgpFlag(
+                  tag: data.country,
+                  imageUrl: data.countryInfo.flag,
+                  imageWidth: 55.0,
+                  imageHeight: 55.0,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
           Container(
             padding: const EdgeInsets.all(20),
@@ -52,41 +49,39 @@ class CountryCardMain extends StatelessWidget {
               deaths: data.deaths,
             ),
           ),
-          Container(
-            child: Row(
-              children: [
-                Expanded(
-                  child: KgpStatsWithTitle(
-                    flip: true,
-                    title: cases,
-                    amount: data.cases,
-                    amountFontSize: 18,
-                    titleFontSize: 14,
-                    titlecolor: ColorTheme.cases,
-                  ),
+          Row(
+            children: [
+              Expanded(
+                child: KgpStatsWithTitle(
+                  flip: true,
+                  title: cases,
+                  amount: data.cases,
+                  amountFontSize: 18,
+                  titleFontSize: 14,
+                  titlecolor: ColorTheme.cases,
                 ),
-                Expanded(
-                  child: KgpStatsWithTitle(
-                    flip: true,
-                    title: recovered,
-                    amount: data.recovered,
-                    amountFontSize: 18,
-                    titleFontSize: 14,
-                    titlecolor: ColorTheme.recovered,
-                  ),
+              ),
+              Expanded(
+                child: KgpStatsWithTitle(
+                  flip: true,
+                  title: recovered,
+                  amount: data.recovered,
+                  amountFontSize: 18,
+                  titleFontSize: 14,
+                  titlecolor: ColorTheme.recovered,
                 ),
-                Expanded(
-                  child: KgpStatsWithTitle(
-                    flip: true,
-                    title: deaths,
-                    amount: data.deaths,
-                    amountFontSize: 18,
-                    titleFontSize: 14,
-                    titlecolor: ColorTheme.deaths,
-                  ),
+              ),
+              Expanded(
+                child: KgpStatsWithTitle(
+                  flip: true,
+                  title: deaths,
+                  amount: data.deaths,
+                  amountFontSize: 18,
+                  titleFontSize: 14,
+                  titlecolor: ColorTheme.deaths,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),

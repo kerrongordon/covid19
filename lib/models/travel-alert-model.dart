@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 TravelAlert travelAlertFromJson(String str) =>
-    TravelAlert.fromJson(json.decode(str));
+    TravelAlert.fromJson(json.decode(str) as Map<String, dynamic>);
 
 String travelAlertToJson(TravelAlert data) => json.encode(data.toJson());
 
@@ -15,15 +15,17 @@ class TravelAlert {
   Map<String, Datum> data;
 
   factory TravelAlert.fromJson(Map<String, dynamic> json) => TravelAlert(
-        apiStatus: ApiStatus.fromJson(json["api_status"]),
-        data: Map.from(json["data"])
-            .map((k, v) => MapEntry<String, Datum>(k, Datum.fromJson(v))),
+        apiStatus:
+            ApiStatus.fromJson(json['api_status'] as Map<String, dynamic>),
+        data: Map.from(json['data'] as Map<String, dynamic>).map((k, v) =>
+            MapEntry<String, Datum>(
+                k as String, Datum.fromJson(v as Map<String, dynamic>))),
       );
 
   Map<String, dynamic> toJson() => {
-        "api_status": apiStatus.toJson(),
-        "data": Map.from(data)
-            .map((k, v) => MapEntry<String, dynamic>(k, v.toJson())),
+        'api_status': apiStatus.toJson(),
+        'data': Map.from(data)
+            .map((k, v) => MapEntry<String, dynamic>(k as String, v.toJson())),
       };
 }
 
@@ -37,13 +39,13 @@ class ApiStatus {
   Reply reply;
 
   factory ApiStatus.fromJson(Map<String, dynamic> json) => ApiStatus(
-        request: Request.fromJson(json["request"]),
-        reply: Reply.fromJson(json["reply"]),
+        request: Request.fromJson(json['request'] as Map<String, dynamic>),
+        reply: Reply.fromJson(json['reply'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toJson() => {
-        "request": request.toJson(),
-        "reply": reply.toJson(),
+        'request': request.toJson(),
+        'reply': reply.toJson(),
       };
 }
 
@@ -63,19 +65,19 @@ class Reply {
   int count;
 
   factory Reply.fromJson(Map<String, dynamic> json) => Reply(
-        cache: json["cache"],
-        code: json["code"],
-        status: json["status"],
-        note: json["note"],
-        count: json["count"],
+        cache: json['cache'] as String,
+        code: json['code'] as int,
+        status: json['status'] as String,
+        note: json['note'] as String,
+        count: json['count'] as int,
       );
 
   Map<String, dynamic> toJson() => {
-        "cache": cache,
-        "code": code,
-        "status": status,
-        "note": note,
-        "count": count,
+        'cache': cache,
+        'code': code,
+        'status': status,
+        'note': note,
+        'count': count,
       };
 }
 
@@ -87,11 +89,11 @@ class Request {
   String item;
 
   factory Request.fromJson(Map<String, dynamic> json) => Request(
-        item: json["item"],
+        item: json['item'] as String,
       );
 
   Map<String, dynamic> toJson() => {
-        "item": item,
+        'item': item,
       };
 }
 
@@ -109,17 +111,17 @@ class Datum {
   Advisory advisory;
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
-        isoAlpha2: json["iso_alpha2"],
-        name: json["name"],
-        continent: continentValues.map[json["continent"]],
-        advisory: Advisory.fromJson(json["advisory"]),
+        isoAlpha2: json['iso_alpha2'] as String,
+        name: json['name'] as String,
+        continent: continentValues.map[json['continent']],
+        advisory: Advisory.fromJson(json['advisory'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toJson() => {
-        "iso_alpha2": isoAlpha2,
-        "name": name,
-        "continent": continentValues.reverse[continent],
-        "advisory": advisory.toJson(),
+        'iso_alpha2': isoAlpha2,
+        'name': name,
+        'continent': continentValues.reverse[continent],
+        'advisory': advisory.toJson(),
       };
 }
 
@@ -139,32 +141,32 @@ class Advisory {
   String source;
 
   factory Advisory.fromJson(Map<String, dynamic> json) => Advisory(
-        score: json["score"].toDouble(),
-        sourcesActive: json["sources_active"],
-        message: json["message"],
-        updated: DateTime.parse(json["updated"]),
-        source: json["source"],
+        score: json['score'].toDouble() as double,
+        sourcesActive: json['sources_active'] as int,
+        message: json['message'] as String,
+        updated: DateTime.parse(json['updated'] as String),
+        source: json['source'] as String,
       );
 
   Map<String, dynamic> toJson() => {
-        "score": score,
-        "sources_active": sourcesActive,
-        "message": message,
-        "updated": updated.toIso8601String(),
-        "source": source,
+        'score': score,
+        'sources_active': sourcesActive,
+        'message': message,
+        'updated': updated.toIso8601String(),
+        'source': source,
       };
 }
 
 enum Continent { EU, AS, NA, AF, SA, OC, AN }
 
 final continentValues = EnumValues({
-  "AF": Continent.AF,
-  "AN": Continent.AN,
-  "AS": Continent.AS,
-  "EU": Continent.EU,
-  "NA": Continent.NA,
-  "OC": Continent.OC,
-  "SA": Continent.SA
+  'AF': Continent.AF,
+  'AN': Continent.AN,
+  'AS': Continent.AS,
+  'EU': Continent.EU,
+  'NA': Continent.NA,
+  'OC': Continent.OC,
+  'SA': Continent.SA
 });
 
 class EnumValues<T> {
@@ -174,9 +176,7 @@ class EnumValues<T> {
   EnumValues(this.map);
 
   Map<T, String> get reverse {
-    if (reverseMap == null) {
-      reverseMap = map.map((k, v) => new MapEntry(v, k));
-    }
+    reverseMap ?? map.map((k, v) => MapEntry(v, k));
     return reverseMap;
   }
 }

@@ -34,7 +34,7 @@ class UsState extends StatelessWidget {
                       title: data.state,
                       subtitle: '$updatedasof $date',
                     ),
-                    Container(
+                    SizedBox(
                       width: 300,
                       child: Row(
                         children: [
@@ -71,88 +71,82 @@ class UsState extends StatelessWidget {
                   ],
                 ),
               ),
-              AdsComponent(type: NativeAdmobType.full),
-              Container(
+              const AdsComponent(type: NativeAdmobType.full),
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Expanded(
+                        child: CardComponent(
+                          padding: const EdgeInsets.all(20),
+                          child: KgpStatsWithTitle(
+                            flip: true,
+                            title: active,
+                            amount: data.active,
+                            titleFontSize: 18,
+                            amountFontSize: 15,
+                            titlecolor: ColorTheme.recovered,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      Expanded(
+                        child: CardComponent(
+                          padding: const EdgeInsets.all(20),
+                          child: KgpStatsWithTitle(
+                            flip: true,
+                            title: population,
+                            amount: data.population,
+                            titleFontSize: 18,
+                            amountFontSize: 15,
+                            titlecolor: ColorTheme.recovered,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              CardComponent(
+                padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
+                    KgpCardTitle(
+                      title: today,
+                      subtitle: '$updatedasof $date',
+                    ),
                     Row(
                       children: [
                         Expanded(
-                          child: CardComponent(
-                            padding: const EdgeInsets.all(20),
-                            child: KgpStatsWithTitle(
-                              flip: true,
-                              title: active,
-                              amount: data.active,
-                              titleFontSize: 18,
-                              amountFontSize: 15,
-                              titlecolor: ColorTheme.recovered,
-                            ),
+                          child: KgpStatsWithTitle(
+                            title: cases,
+                            amount: data.todayCases,
+                            amountFontSize: 20,
+                            titleFontSize: 15,
+                            titlecolor: ColorTheme.cases,
                           ),
                         ),
-                        const SizedBox(width: 20),
                         Expanded(
-                          child: CardComponent(
-                            padding: const EdgeInsets.all(20),
-                            child: KgpStatsWithTitle(
-                              flip: true,
-                              title: population,
-                              amount: data.population,
-                              titleFontSize: 18,
-                              amountFontSize: 15,
-                              titlecolor: ColorTheme.recovered,
-                            ),
+                          child: KgpStatsWithTitle(
+                            title: deaths,
+                            amount: data.todayDeaths,
+                            amountFontSize: 20,
+                            titleFontSize: 15,
+                            titlecolor: ColorTheme.deaths,
+                          ),
+                        ),
+                        Expanded(
+                          child: KgpStatsWithTitle(
+                            title: testdone,
+                            amount: data.tests,
+                            amountFontSize: 20,
+                            titleFontSize: 15,
+                            titlecolor: ColorTheme.recovered,
                           ),
                         ),
                       ],
                     ),
                   ],
-                ),
-              ),
-              CardComponent(
-                padding: const EdgeInsets.all(20),
-                child: Container(
-                  child: Column(
-                    children: [
-                      KgpCardTitle(
-                        title: today,
-                        subtitle: '$updatedasof $date',
-                      ),
-                      Container(
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: KgpStatsWithTitle(
-                                title: cases,
-                                amount: data.todayCases,
-                                amountFontSize: 20,
-                                titleFontSize: 15,
-                                titlecolor: ColorTheme.cases,
-                              ),
-                            ),
-                            Expanded(
-                              child: KgpStatsWithTitle(
-                                title: deaths,
-                                amount: data.todayDeaths,
-                                amountFontSize: 20,
-                                titleFontSize: 15,
-                                titlecolor: ColorTheme.deaths,
-                              ),
-                            ),
-                            Expanded(
-                              child: KgpStatsWithTitle(
-                                title: testdone,
-                                amount: data.tests,
-                                amountFontSize: 20,
-                                titleFontSize: 15,
-                                titlecolor: ColorTheme.recovered,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
                 ),
               ),
             ],

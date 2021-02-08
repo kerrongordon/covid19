@@ -1,0 +1,7 @@
+include: package:lint/analysis_options.yaml
+
+linter:
+  rules:
+    file_names: false
+    prefer_single_quotes: true
+    constant_identifier_names: false

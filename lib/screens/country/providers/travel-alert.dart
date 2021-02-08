@@ -5,5 +5,5 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 final travelAlert = FutureProvider.autoDispose
     .family<TravelAlert, String>((ref, countrycode) async {
   final travel = ref.watch(travelAlertProvider);
-  return await travel.gettravelAlertApi(countrycode: countrycode);
+  return travel.gettravelAlertApi(countrycode: countrycode);
 });

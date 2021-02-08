@@ -11,8 +11,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class Splash extends HookWidget {
   Widget _appStart({SharedPreferences pref}) {
-    bool _seen = (pref.getBool(appInitKey) ?? false);
-    return _seen ? TabScreen() : BoardingScreen();
+    final bool _seen = pref.getBool(appInitKey) ?? false;
+    return _seen ? TabScreen() : const BoardingScreen();
   }
 
   @override
@@ -21,7 +21,7 @@ class Splash extends HookWidget {
 
     return prefs.when(
       data: (data) => _appStart(pref: data),
-      loading: () => KgpCenter(child: KgpLoader()),
+      loading: () => const KgpCenter(child: KgpLoader()),
       error: (error, _) => KgpCenter(child: Text(error.toString())),
     );
   }

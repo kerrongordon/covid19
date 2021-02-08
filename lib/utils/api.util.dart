@@ -5,7 +5,7 @@ import 'package:dio_http_cache/dio_http_cache.dart';
 import 'package:dio_retry/dio_retry.dart';
 
 class ApiUtil {
-  final Dio _dio = new Dio();
+  final Dio _dio = Dio();
 
   Future<dynamic> getData({
     String baseUrl,
@@ -13,12 +13,12 @@ class ApiUtil {
     Map<String, dynamic> queryParameters,
   }) async {
     final String url = baseUrl + endPoint;
-    _dio.interceptors
-        .add(DioCacheManager(CacheConfig(baseUrl: url)).interceptor);
+    _dio.interceptors.add(
+        DioCacheManager(CacheConfig(baseUrl: url)).interceptor as Interceptor);
     _dio.interceptors.add(RetryInterceptor(dio: _dio));
 
     try {
-      Response res = await _dio.get(
+      final Response res = await _dio.get(
         url,
         queryParameters: queryParameters,
         options: buildCacheOptions(
@@ -26,7 +26,7 @@ class ApiUtil {
           maxStale: const Duration(minutes: 15),
           options: Options(
             extra: const RetryOptions(
-              retryInterval: const Duration(seconds: 10),
+              retryInterval: Duration(seconds: 10),
             ).toExtra(),
           ),
         ),

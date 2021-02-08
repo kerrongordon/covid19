@@ -4,14 +4,14 @@ import 'package:covid19/utils/api.util.dart';
 
 class OneCountryService {
   Future<Country> getOneCountryApi({String country}) async {
-    ApiUtil _oneCountryService = new ApiUtil();
+    final ApiUtil _oneCountryService = ApiUtil();
 
-    dynamic data = await _oneCountryService.getData(
+    final dynamic data = await _oneCountryService.getData(
       baseUrl: baseUrl,
       endPoint: '/covid-19/countries/$country',
       queryParameters: {'yesterday': 'true', 'strict': 'true'},
     );
 
-    return Country.fromJson(data);
+    return Country.fromJson(data as Map<String, dynamic>);
   }
 }

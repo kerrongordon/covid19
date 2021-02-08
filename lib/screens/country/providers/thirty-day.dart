@@ -17,7 +17,7 @@ class CountryAndType {
 final thirtyDayProvider = FutureProvider.autoDispose
     .family<Historical, String>((ref, countryName) async {
   final historical = ref.watch(historicalProvider);
-  return await historical.getHistoricalApi(country: countryName);
+  return historical.getHistoricalApi(country: countryName);
 });
 
 final historyItem = Provider.autoDispose
@@ -28,7 +28,7 @@ final historyItem = Provider.autoDispose
     final Timeline items = data.timeline;
 
     List<HistoryItem> _loopHistoryItem(Map<String, int> x) {
-      List<HistoryItem> output = [];
+      final List<HistoryItem> output = [];
       x.forEach((key, value) {
         final item = {'date': key, 'count': value};
         output.add(HistoryItem.fromJson(item));

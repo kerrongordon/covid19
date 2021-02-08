@@ -8,19 +8,19 @@ final homeCountryProvider =
     ChangeNotifierProvider.autoDispose<HomeProvider>((_) => HomeProvider());
 
 class HomeProvider extends ChangeNotifier {
-  Country _country = new Country();
+  Country _country = Country();
 
   Country get item => _country;
 
-  void setCountryName(Country country) async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+  Future<void> setCountryName(Country country) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString(countryNameKey, country.country);
     _country = country;
     notifyListeners();
   }
 
   Future<String> getCountryName() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getString(countryNameKey);
   }
 }

@@ -15,7 +15,7 @@ class TabScreen extends HookWidget {
 
   final MainScreen _mainScreen = MainScreen();
   final GlobalScreen _homeScreen = GlobalScreen();
-  final InforScreen _inforScreen = InforScreen();
+  final InforScreen _inforScreen = const InforScreen();
   final SettingsScreen _settingsScreen = SettingsScreen();
   final CountriesScreen _countriesScreen = CountriesScreen();
 

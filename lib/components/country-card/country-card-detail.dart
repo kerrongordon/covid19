@@ -14,73 +14,71 @@ class CountryCardDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        children: [
-          Row(
-            children: [
-              Expanded(
-                child: CardComponent(
-                  padding: const EdgeInsets.all(20),
-                  child: KgpStatsWithTitle(
-                    flip: true,
-                    title: active,
-                    amount: data.active,
-                    titleFontSize: 18,
-                    amountFontSize: 15,
-                    titlecolor: ColorTheme.cases,
-                  ),
+    return Column(
+      children: [
+        Row(
+          children: [
+            Expanded(
+              child: CardComponent(
+                padding: const EdgeInsets.all(20),
+                child: KgpStatsWithTitle(
+                  flip: true,
+                  title: active,
+                  amount: data.active,
+                  titleFontSize: 18,
+                  amountFontSize: 15,
+                  titlecolor: ColorTheme.cases,
                 ),
               ),
-              SizedBox(width: 20),
-              Expanded(
-                child: CardComponent(
-                  padding: const EdgeInsets.all(20),
-                  child: KgpStatsWithTitle(
-                    flip: true,
-                    title: critical,
-                    amount: data.critical,
-                    titleFontSize: 18,
-                    amountFontSize: 15,
-                    titlecolor: ColorTheme.deaths,
-                  ),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: CardComponent(
+                padding: const EdgeInsets.all(20),
+                child: KgpStatsWithTitle(
+                  flip: true,
+                  title: critical,
+                  amount: data.critical,
+                  titleFontSize: 18,
+                  amountFontSize: 15,
+                  titlecolor: ColorTheme.deaths,
                 ),
               ),
-            ],
-          ),
-          Row(
-            children: [
-              Expanded(
-                child: CardComponent(
-                  padding: const EdgeInsets.all(20),
-                  child: KgpStatsWithTitle(
-                    flip: true,
-                    title: testdone,
-                    amount: data.tests,
-                    titleFontSize: 18,
-                    amountFontSize: 15,
-                    titlecolor: ColorTheme.recovered,
-                  ),
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            Expanded(
+              child: CardComponent(
+                padding: const EdgeInsets.all(20),
+                child: KgpStatsWithTitle(
+                  flip: true,
+                  title: testdone,
+                  amount: data.tests,
+                  titleFontSize: 18,
+                  amountFontSize: 15,
+                  titlecolor: ColorTheme.recovered,
                 ),
               ),
-              SizedBox(width: 20),
-              Expanded(
-                child: CardComponent(
-                  padding: const EdgeInsets.all(20),
-                  child: KgpStatsWithTitle(
-                    flip: true,
-                    title: population,
-                    amount: data.population,
-                    titleFontSize: 18,
-                    amountFontSize: 15,
-                    titlecolor: ColorTheme.recovered,
-                  ),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: CardComponent(
+                padding: const EdgeInsets.all(20),
+                child: KgpStatsWithTitle(
+                  flip: true,
+                  title: population,
+                  amount: data.population,
+                  titleFontSize: 18,
+                  amountFontSize: 15,
+                  titlecolor: ColorTheme.recovered,
                 ),
               ),
-            ],
-          ),
-        ],
-      ),
+            ),
+          ],
+        ),
+      ],
     );
   }
 }

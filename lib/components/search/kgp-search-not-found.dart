@@ -11,7 +11,7 @@ class KgpSearchNotFound extends StatelessWidget {
     return Center(
       child: Text(
         '$messagethree... 👀',
-        style: TextStyle(fontSize: 20),
+        style: const TextStyle(fontSize: 20),
       ),
     );
   }

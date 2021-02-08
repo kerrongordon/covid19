@@ -29,37 +29,35 @@ class BoardingBottomNav extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          _pageIndex == _pages.length - 2 || _pageIndex == _pages.length - 1
-              ? Container(
-                  width: 89,
-                  height: 40,
-                )
-              : FlatButton(
-                  onPressed: () => ontap(_pages.length - 2),
-                  child: Text(
-                    skipbutton,
-                    style: TextStyle(
-                      color:
-                          _themeMode.isLight ? Colors.black54 : Colors.white54,
-                    ),
-                  ),
+          if (_pageIndex == _pages.length - 2 ||
+              _pageIndex == _pages.length - 1)
+            const SizedBox(
+              width: 89,
+              height: 40,
+            )
+          else
+            FlatButton(
+              onPressed: () => ontap(_pages.length - 2),
+              child: Text(
+                skipbutton,
+                style: TextStyle(
+                  color: _themeMode.isLight ? Colors.black54 : Colors.white54,
                 ),
-          Container(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                for (var i = 0; i < _pages.length - 1; i++)
-                  _pageIndex == i
-                      ? BoardingIndicator(
-                          toggle: true,
-                          onTap: () => ontap(i),
-                        )
-                      : BoardingIndicator(
-                          onTap: () => ontap(i),
-                        )
-              ],
+              ),
             ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              for (var i = 0; i < _pages.length - 1; i++)
+                _pageIndex == i
+                    ? BoardingIndicator(
+                        toggle: true,
+                        onTap: () => ontap(i),
+                      )
+                    : BoardingIndicator(
+                        onTap: () => ontap(i),
+                      )
+            ],
           ),
           Padding(
             padding: const EdgeInsets.only(left: 23),

@@ -5,6 +5,7 @@ import 'package:covid19/models/global-model.dart';
 import 'package:covid19/themes/color-theme.dart';
 import 'package:covid19/translations/app-translate.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 
 class GlobalCardOne extends StatelessWidget {
   final Global data;
@@ -15,11 +16,10 @@ class GlobalCardOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CardComponent(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Container(
+    return FadeInUp(
+      child: CardComponent(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Expanded(
@@ -39,7 +39,6 @@ class GlobalCardOne extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 1,
               child: Container(
                 padding: const EdgeInsets.only(right: 25),
                 child: Column(

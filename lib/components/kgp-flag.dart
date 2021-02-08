@@ -38,13 +38,13 @@ class KgpFlag extends StatelessWidget {
         ),
       ),
       errorWidget: (context, url, error) => const Icon(Icons.error),
-      placeholder: (context, url) => Container(
+      placeholder: (context, url) => SizedBox(
+        width: imageWidth,
+        height: imageHeight,
         child: CircularProgressIndicator(
           strokeWidth: 2.0,
           valueColor: valueColor,
         ),
-        width: imageWidth,
-        height: imageHeight,
       ),
     );
   }

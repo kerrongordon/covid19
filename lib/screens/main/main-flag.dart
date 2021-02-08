@@ -25,7 +25,6 @@ class MainFlag extends StatelessWidget {
                 width: double.infinity,
                 height: double.infinity,
                 decoration: BoxDecoration(
-                  shape: BoxShape.rectangle,
                   image: DecorationImage(
                     image: imageProvider,
                     fit: BoxFit.cover,

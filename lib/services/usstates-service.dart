@@ -4,18 +4,18 @@ import 'package:covid19/utils/api.util.dart';
 
 class UsStatesService {
   Future<List<UsStates>> getUsStatesApi() async {
-    ApiUtil _usStatesService = new ApiUtil();
+    final ApiUtil _usStatesService = ApiUtil();
 
-    dynamic data = await _usStatesService.getData(
+    final dynamic data = await _usStatesService.getData(
       baseUrl: baseUrl,
       endPoint: '/covid-19/states',
       queryParameters: {'sort': 'cases', 'yesterday': 'true'},
     );
 
-    List<UsStates> state = [];
+    final List<UsStates> state = [];
 
     for (final item in data) {
-      UsStates list = UsStates.fromJson(item);
+      final UsStates list = UsStates.fromJson(item as Map<String, dynamic>);
       state.add(list);
     }
 

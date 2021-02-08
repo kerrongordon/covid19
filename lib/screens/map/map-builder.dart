@@ -24,9 +24,9 @@ class MapBuilder extends HookWidget {
   @override
   Widget build(BuildContext context) {
     final mapApi = env['MAP_API'];
-    final mapLight = 'ckfkbb59g00mo1ao408id402s';
-    final mapDark = 'ckfkcdgj614e31aox1o5n2aml';
-    final openstreetmap = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+    const mapLight = 'ckfkbb59g00mo1ao408id402s';
+    const mapDark = 'ckfkcdgj614e31aox1o5n2aml';
+    const openstreetmap = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
     final mapUrl = useState(openstreetmap);
     final mapTheme = useState(mapLight);
     final changeTheme = AdaptiveTheme.of(context);
@@ -34,13 +34,14 @@ class MapBuilder extends HookWidget {
 
     if (changeTheme.mode.isDark) mapTheme.value = mapDark;
 
-    if (mapApi != null)
+    if (mapApi != null) {
       mapUrl.value =
-          "https://api.mapbox.com/styles/v1/kerron/${mapTheme.value}/tiles/256/{z}/{x}/{y}@2x?access_token=$mapApi";
+          'https://api.mapbox.com/styles/v1/kerron/${mapTheme.value}/tiles/256/{z}/{x}/{y}@2x?access_token=$mapApi';
+    }
 
     return Stack(
       children: [
-        Container(
+        SizedBox(
           height: mediaQuery.size.height,
           width: mediaQuery.size.width,
           child: FlutterMap(
@@ -58,7 +59,6 @@ class MapBuilder extends HookWidget {
                     : const Color.fromRGBO(117, 207, 240, 1.0),
                 urlTemplate: mapUrl.value,
                 subdomains: ['a', 'b', 'c'],
-                tileProvider: const CachedNetworkTileProvider(),
                 additionalOptions: {
                   'accessToken': mapApi,
                   'id': 'mapbox.mapbox-streets-v8',

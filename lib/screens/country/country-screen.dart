@@ -32,7 +32,7 @@ class CountryScreen extends StatelessWidget {
                   CountryCardMain(data: data),
                   CountryCardToday(data: data),
                   CountryCardDetail(data: data),
-                  AdsComponent(type: NativeAdmobType.full),
+                  const AdsComponent(type: NativeAdmobType.full),
                   TravelAlertScreen(data: data),
                   CountryCardFive(data: data),
                 ],
@@ -46,8 +46,8 @@ class CountryScreen extends StatelessWidget {
               heroTag: 'UsStatesSearch',
               onPressed: () =>
                   Navigator.of(context).pushNamed(usStatePageScreen),
-              label: Text('US States'),
-              icon: Icon(Ionicons.ios_list),
+              label: const Text('US States'),
+              icon: const Icon(Ionicons.ios_list),
             )
           : null,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

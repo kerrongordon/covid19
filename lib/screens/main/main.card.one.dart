@@ -6,6 +6,7 @@ import 'package:covid19/routes/route-names.dart';
 import 'package:covid19/themes/color-theme.dart';
 import 'package:covid19/translations/app-translate.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animator/flutter_animator.dart';
 
 class MainCardOne extends StatelessWidget {
   final Country data;
@@ -16,15 +17,14 @@ class MainCardOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CardComponent(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      onTap: () => Navigator.of(context).pushNamed(
-        countryScreen,
-        arguments: data,
-      ),
-      child: Container(
+    return FadeInUp(
+      child: CardComponent(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        onTap: () => Navigator.of(context).pushNamed(
+          countryScreen,
+          arguments: data,
+        ),
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Expanded(
@@ -44,7 +44,6 @@ class MainCardOne extends StatelessWidget {
               ),
             ),
             Expanded(
-              flex: 1,
               child: Container(
                 padding: const EdgeInsets.only(right: 25),
                 child: Column(

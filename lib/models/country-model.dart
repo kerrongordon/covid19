@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-List<Country> countryFromJson(String str) =>
-    List<Country>.from(json.decode(str).map((x) => Country.fromJson(x)));
+List<Country> countryFromJson(String str) => List<Country>.from(json
+    .decode(str)
+    .map((Map<String, dynamic> x) => Country.fromJson(x)) as Iterable<dynamic>);
 
 String countryToJson(List<Country> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
@@ -58,55 +59,58 @@ class Country {
   double criticalPerOneMillion;
 
   factory Country.fromJson(Map<String, dynamic> json) => Country(
-        updated: json["updated"],
-        country: json["country"],
-        countryInfo: CountryInfo.fromJson(json["countryInfo"]),
-        cases: json["cases"],
-        todayCases: json["todayCases"],
-        deaths: json["deaths"],
-        todayDeaths: json["todayDeaths"],
-        recovered: json["recovered"],
-        todayRecovered: json["todayRecovered"],
-        active: json["active"],
-        critical: json["critical"],
-        casesPerOneMillion: json["casesPerOneMillion"],
-        deathsPerOneMillion: json["deathsPerOneMillion"].toDouble(),
-        tests: json["tests"],
-        testsPerOneMillion: json["testsPerOneMillion"],
-        population: json["population"],
-        continent: continentValues.map[json["continent"]],
-        oneCasePerPeople: json["oneCasePerPeople"],
-        oneDeathPerPeople: json["oneDeathPerPeople"],
-        oneTestPerPeople: json["oneTestPerPeople"],
-        activePerOneMillion: json["activePerOneMillion"].toDouble(),
-        recoveredPerOneMillion: json["recoveredPerOneMillion"].toDouble(),
-        criticalPerOneMillion: json["criticalPerOneMillion"].toDouble(),
+        updated: json['updated'] as int,
+        country: json['country'] as String,
+        countryInfo:
+            CountryInfo.fromJson(json['countryInfo'] as Map<String, dynamic>),
+        cases: json['cases'] as int,
+        todayCases: json['todayCases'] as int,
+        deaths: json['deaths'] as int,
+        todayDeaths: json['todayDeaths'] as int,
+        recovered: json['recovered'] as int,
+        todayRecovered: json['todayRecovered'] as int,
+        active: json['active'] as int,
+        critical: json['critical'] as int,
+        casesPerOneMillion: json['casesPerOneMillion'] as int,
+        deathsPerOneMillion: json['deathsPerOneMillion'].toDouble() as double,
+        tests: json['tests'] as int,
+        testsPerOneMillion: json['testsPerOneMillion'] as int,
+        population: json['population'] as int,
+        continent: continentValues.map[json['continent']],
+        oneCasePerPeople: json['oneCasePerPeople'] as int,
+        oneDeathPerPeople: json['oneDeathPerPeople'] as int,
+        oneTestPerPeople: json['oneTestPerPeople'] as int,
+        activePerOneMillion: json['activePerOneMillion'].toDouble() as double,
+        recoveredPerOneMillion:
+            json['recoveredPerOneMillion'].toDouble() as double,
+        criticalPerOneMillion:
+            json['criticalPerOneMillion'].toDouble() as double,
       );
 
   Map<String, dynamic> toJson() => {
-        "updated": updated,
-        "country": country,
-        "countryInfo": countryInfo.toJson(),
-        "cases": cases,
-        "todayCases": todayCases,
-        "deaths": deaths,
-        "todayDeaths": todayDeaths,
-        "recovered": recovered,
-        "todayRecovered": todayRecovered,
-        "active": active,
-        "critical": critical,
-        "casesPerOneMillion": casesPerOneMillion,
-        "deathsPerOneMillion": deathsPerOneMillion,
-        "tests": tests,
-        "testsPerOneMillion": testsPerOneMillion,
-        "population": population,
-        "continent": continentValues.reverse[continent],
-        "oneCasePerPeople": oneCasePerPeople,
-        "oneDeathPerPeople": oneDeathPerPeople,
-        "oneTestPerPeople": oneTestPerPeople,
-        "activePerOneMillion": activePerOneMillion,
-        "recoveredPerOneMillion": recoveredPerOneMillion,
-        "criticalPerOneMillion": criticalPerOneMillion,
+        'updated': updated,
+        'country': country,
+        'countryInfo': countryInfo.toJson(),
+        'cases': cases,
+        'todayCases': todayCases,
+        'deaths': deaths,
+        'todayDeaths': todayDeaths,
+        'recovered': recovered,
+        'todayRecovered': todayRecovered,
+        'active': active,
+        'critical': critical,
+        'casesPerOneMillion': casesPerOneMillion,
+        'deathsPerOneMillion': deathsPerOneMillion,
+        'tests': tests,
+        'testsPerOneMillion': testsPerOneMillion,
+        'population': population,
+        'continent': continentValues.reverse[continent],
+        'oneCasePerPeople': oneCasePerPeople,
+        'oneDeathPerPeople': oneDeathPerPeople,
+        'oneTestPerPeople': oneTestPerPeople,
+        'activePerOneMillion': activePerOneMillion,
+        'recoveredPerOneMillion': recoveredPerOneMillion,
+        'criticalPerOneMillion': criticalPerOneMillion,
       };
 }
 
@@ -121,13 +125,13 @@ enum Continent {
 }
 
 final continentValues = EnumValues({
-  "Africa": Continent.AFRICA,
-  "Asia": Continent.ASIA,
-  "Australia/Oceania": Continent.AUSTRALIA_OCEANIA,
-  "": Continent.EMPTY,
-  "Europe": Continent.EUROPE,
-  "North America": Continent.NORTH_AMERICA,
-  "South America": Continent.SOUTH_AMERICA
+  'Africa': Continent.AFRICA,
+  'Asia': Continent.ASIA,
+  'Australia/Oceania': Continent.AUSTRALIA_OCEANIA,
+  '': Continent.EMPTY,
+  'Europe': Continent.EUROPE,
+  'North America': Continent.NORTH_AMERICA,
+  'South America': Continent.SOUTH_AMERICA
 });
 
 class CountryInfo {
@@ -148,21 +152,21 @@ class CountryInfo {
   String flag;
 
   factory CountryInfo.fromJson(Map<String, dynamic> json) => CountryInfo(
-        id: json["_id"] == null ? null : json["_id"],
-        iso2: json["iso2"] == null ? null : json["iso2"],
-        iso3: json["iso3"] == null ? null : json["iso3"],
-        lat: json["lat"].toDouble(),
-        long: json["long"].toDouble(),
-        flag: json["flag"],
+        id: json['_id'] == null ? null : json['_id'] as int,
+        iso2: json['iso2'] == null ? null : json['iso2'] as String,
+        iso3: json['iso3'] == null ? null : json['iso3'] as String,
+        lat: json['lat'].toDouble() as double,
+        long: json['long'].toDouble() as double,
+        flag: json['flag'] as String,
       );
 
   Map<String, dynamic> toJson() => {
-        "_id": id == null ? null : id,
-        "iso2": iso2 == null ? null : iso2,
-        "iso3": iso3 == null ? null : iso3,
-        "lat": lat,
-        "long": long,
-        "flag": flag,
+        '_id': id,
+        'iso2': iso2,
+        'iso3': iso3,
+        'lat': lat,
+        'long': long,
+        'flag': flag,
       };
 }
 
@@ -173,9 +177,7 @@ class EnumValues<T> {
   EnumValues(this.map);
 
   Map<T, String> get reverse {
-    if (reverseMap == null) {
-      reverseMap = map.map((k, v) => new MapEntry(v, k));
-    }
+    reverseMap ?? map.map((k, v) => MapEntry(v, k));
     return reverseMap;
   }
 }

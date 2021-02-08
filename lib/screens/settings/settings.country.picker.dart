@@ -26,8 +26,8 @@ class SettingsCountryPicker extends HookWidget {
 
     final snapshot = useFuture(countryName);
 
-    void openSearch() async {
-      Country search = await showSearch(
+    Future<void> openSearch() async {
+      final Country search = await showSearch(
         context: context,
         delegate: KgpSearch(
           countries: countries,
@@ -52,32 +52,32 @@ class SettingsCountryPicker extends HookWidget {
               child: Stack(
                 clipBehavior: Clip.none,
                 children: [
-                  CardComponent(
-                    padding: const EdgeInsets.all(20),
-                    child: Container(
-                      width: double.infinity,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 50),
-                        child: Column(
-                          children: [
-                            Text(changecountry),
-                            SizedBox(height: 10),
-                            Center(
-                              child: Text(
-                                home.item.country == null
-                                    ? data.country
-                                    : home.item.country,
-                                style: const TextStyle(
-                                  fontSize: 18,
+                  FadeInUp(
+                    child: CardComponent(
+                      padding: const EdgeInsets.all(20),
+                      onTap: openSearch,
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 50),
+                          child: Column(
+                            children: [
+                              Text(changecountry),
+                              const SizedBox(height: 10),
+                              Center(
+                                child: Text(
+                                  home.item.country ?? data.country,
+                                  style: const TextStyle(
+                                    fontSize: 18,
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
-                                textAlign: TextAlign.center,
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                    onTap: openSearch,
                   ),
                   Positioned(
                     top: -30,

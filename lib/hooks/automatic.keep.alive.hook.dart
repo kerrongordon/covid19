@@ -8,13 +8,13 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 ///  * [AutomaticKeepAlive]
 ///  * [AutomaticKeepAliveClientMixin]
 void useAutomaticKeepAliveClient({bool wantKeepAlive = true}) {
-  use(_AutomaticKeepAliveClientHook(wantKeepAlive));
+  use(_AutomaticKeepAliveClientHook(wantKeepAlive: wantKeepAlive));
 }
 
 class _AutomaticKeepAliveClientHook extends Hook<void> {
   final bool wantKeepAlive;
 
-  _AutomaticKeepAliveClientHook(this.wantKeepAlive);
+  const _AutomaticKeepAliveClientHook({this.wantKeepAlive});
 
   @override
   _AutomaticKeepAliveClientHookState createState() =>
@@ -51,7 +51,7 @@ class _AutomaticKeepAliveClientHookState
   }
 
   @override
-  initHook() {
+  void initHook() {
     super.initHook();
     if (wantKeepAlive) _ensureKeepAlive();
   }

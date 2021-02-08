@@ -4,14 +4,14 @@ import 'package:covid19/utils/api.util.dart';
 
 class TravelAlertService {
   Future<TravelAlert> gettravelAlertApi({String countrycode}) async {
-    ApiUtil _travelAlertService = new ApiUtil();
+    final ApiUtil _travelAlertService = ApiUtil();
 
-    dynamic data = await _travelAlertService.getData(
+    final dynamic data = await _travelAlertService.getData(
       baseUrl: travelUrl,
       endPoint: '/api',
       queryParameters: {'countrycode': countrycode},
     );
 
-    return TravelAlert.fromJson(data);
+    return TravelAlert.fromJson(data as Map<String, dynamic>);
   }
 }

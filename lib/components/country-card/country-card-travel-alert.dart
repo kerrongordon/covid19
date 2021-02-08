@@ -29,30 +29,26 @@ class CountryCardTravelAlert extends HookWidget {
           KgpCardTitle(
             title: travelalert,
             subtitle: '$updatedasof $date',
-            icon: Icon(Ionicons.ios_airplane),
+            icon: const Icon(Ionicons.ios_airplane),
           ),
           Column(
             children: [
-              Container(
-                child: Text(
-                  data.advisory.message,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    height: 1.5,
-                  ),
-                  textAlign: TextAlign.center,
+              Text(
+                data.advisory.message,
+                style: const TextStyle(
+                  fontSize: 16,
+                  height: 1.5,
                 ),
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 20),
-              Container(
-                child: Text(
-                  readmore,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    height: 1.5,
-                  ),
-                  textAlign: TextAlign.center,
+              Text(
+                readmore,
+                style: const TextStyle(
+                  fontSize: 16,
+                  height: 1.5,
                 ),
+                textAlign: TextAlign.center,
               ),
             ],
           ),

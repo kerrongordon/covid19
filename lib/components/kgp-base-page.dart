@@ -37,32 +37,29 @@ class KgpBasePage extends StatelessWidget {
       slivers: <Widget>[
         SliverAppBar(
           backgroundColor: Colors.transparent,
-          expandedHeight: expandedHeight != null
-              ? expandedHeight
-              : mediaQuery.size.height / 2.8,
+          expandedHeight: expandedHeight ?? mediaQuery.size.height / 2.8,
           pinned: true,
-          floating: false,
           elevation: 0.0,
           leading: leading,
           actions: actions,
           flexibleSpace: FlexibleSpaceBar(
-            titlePadding: const EdgeInsets.only(bottom: 0),
             background: background,
             title: _titleUi(context, theme),
             centerTitle: true,
           ),
         ),
-        sliverList == null
-            ? SliverToBoxAdapter(
-                child: Container(
-                  margin: const EdgeInsets.only(bottom: 60),
-                  child: child,
-                ),
-              )
-            : SliverPadding(
-                padding: const EdgeInsets.only(bottom: 60),
-                sliver: SliverList(delegate: sliverList),
-              ),
+        if (sliverList == null)
+          SliverToBoxAdapter(
+            child: Container(
+              margin: const EdgeInsets.only(bottom: 60),
+              child: child,
+            ),
+          )
+        else
+          SliverPadding(
+            padding: const EdgeInsets.only(bottom: 60),
+            sliver: SliverList(delegate: sliverList),
+          ),
       ],
     );
   }
@@ -83,14 +80,13 @@ class KgpBasePage extends StatelessWidget {
               Flexible(
                 flex: 4,
                 child: Text(
-                  title != null ? title : '',
+                  title ?? '',
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(fontWeight: FontWeight.w300),
                 ),
               ),
               Flexible(
-                flex: 1,
                 child: Container(),
               ),
             ],

@@ -7,17 +7,16 @@ final boardingProvider = StateNotifierProvider.autoDispose<BoardingNotifier>(
 
 class BoardingNotifier extends StateNotifier<int> {
   BoardingNotifier() : super(0);
-  void changePages(int number) => state = number;
+  Future<void> changePages(int number) async => state = number;
 }
 
 final boardingController =
     StateNotifierProvider.autoDispose<BoardingController>((ref) {
-  final page = ref.watch(boardingProvider.state);
-  return BoardingController(pageIndex: page);
+  return BoardingController();
 });
 
 class BoardingController extends StateNotifier<PageController> {
-  BoardingController({int pageIndex}) : super(PageController(initialPage: 0));
+  BoardingController() : super(PageController());
 
   void onTapIcon(int index) {
     state.animateToPage(

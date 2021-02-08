@@ -17,37 +17,35 @@ class KgpPieChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: AspectRatio(
-        aspectRatio: aspectRatio,
-        child: RotateIn(
-          child: ZoomIn(
-            child: PieChart(
-              PieChartData(
-                borderData: FlBorderData(show: false),
-                sectionsSpace: 3,
-                startDegreeOffset: 40,
-                sections: [
-                  PieChartSectionData(
-                    color: ColorTheme.cases,
-                    value: cases.toDouble(),
-                    title: '',
-                    radius: 20,
-                  ),
-                  PieChartSectionData(
-                    color: ColorTheme.recovered,
-                    value: recovered.toDouble(),
-                    title: '',
-                    radius: 40,
-                  ),
-                  PieChartSectionData(
-                    color: ColorTheme.deaths,
-                    value: deaths.toDouble(),
-                    title: '',
-                    radius: 60,
-                  ),
-                ],
-              ),
+    return AspectRatio(
+      aspectRatio: aspectRatio,
+      child: RotateIn(
+        child: ZoomIn(
+          child: PieChart(
+            PieChartData(
+              borderData: FlBorderData(show: false),
+              sectionsSpace: 3,
+              startDegreeOffset: 40,
+              sections: [
+                PieChartSectionData(
+                  color: ColorTheme.cases,
+                  value: cases.toDouble(),
+                  title: '',
+                  radius: 20,
+                ),
+                PieChartSectionData(
+                  color: ColorTheme.recovered,
+                  value: recovered.toDouble(),
+                  title: '',
+                  radius: 40,
+                ),
+                PieChartSectionData(
+                  color: ColorTheme.deaths,
+                  value: deaths.toDouble(),
+                  title: '',
+                  radius: 60,
+                ),
+              ],
             ),
           ),
         ),

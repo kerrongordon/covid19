@@ -15,43 +15,42 @@ class KgpCardTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    return Container(
-      child: Column(
-        children: [
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              children: [
-                TextSpan(
-                  text: title ?? '',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.w400,
-                    color: color ?? theme.textTheme.bodyText1.color,
-                  ),
+    return Column(
+      children: [
+        RichText(
+          textAlign: TextAlign.center,
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: title ?? '',
+                style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.w400,
+                  color: color ?? theme.textTheme.bodyText1.color,
                 ),
-                WidgetSpan(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: icon,
-                  ),
+              ),
+              WidgetSpan(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: icon,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-          const Divider(),
-          subtitle != null
-              ? Text(
-                  subtitle ?? '',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: color,
-                  ),
-                )
-              : Container(),
-          subtitle != null ? const SizedBox(height: 25) : Container(),
-        ],
-      ),
+        ),
+        const Divider(),
+        if (subtitle != null)
+          Text(
+            subtitle ?? '',
+            style: TextStyle(
+              fontSize: 12,
+              color: color,
+            ),
+          )
+        else
+          Container(),
+        if (subtitle != null) const SizedBox(height: 25) else Container(),
+      ],
     );
   }
 }

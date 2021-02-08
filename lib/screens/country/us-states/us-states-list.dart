@@ -26,7 +26,7 @@ class UsStatesList extends StatelessWidget {
                 Navigator.of(context).pushNamed(usState, arguments: item),
             child: ListTile(
               leading: ZoomIn(
-                child: Icon(
+                child: const Icon(
                   Ionicons.ios_pie,
                   color: Colors.lightBlue,
                 ),
