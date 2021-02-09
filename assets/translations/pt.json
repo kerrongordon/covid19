@@ -1,92 +1,92 @@
 {
-  "app" : {
-    "active" : "Ativo",
-    "cases" : "Casos",
-    "confirmed" : "Confirmado",
-    "couldnotlaunch" : "Não foi possível iniciar",
-    "critical" : "Crítica",
-    "deaths" : "Mortes",
-    "error" : {
-      "messageone" : "Oh, nada deu errado.",
-      "messagethree" : "Nenhum resultado encontrado.",
-      "messagetwo" : "Parece haver um problema"
+  "app": {
+    "active": "Ativo",
+    "cases": "Casos",
+    "confirmed": "Confirmado",
+    "couldnotlaunch": "Não foi possível iniciar",
+    "critical": "Crítica",
+    "deaths": "Mortes",
+    "error": {
+      "messageone": "Oh, nada deu errado.",
+      "messagethree": "Nenhum resultado encontrado.",
+      "messagetwo": "Parece haver um problema"
     },
-    "last30days" : "Últimos 30 dias",
-    "map" : "Mapa",
-    "population" : "População",
-    "readmore" : "Ler mais",
-    "recovered" : "Recuperado",
-    "search" : "Pesquisar",
-    "testdone" : "Teste feito",
-    "today" : "Hoje",
-    "travelalert" : "Alerta de viagem",
-    "updatedasof" : "Atualizado a partir de",
-    "viewmore" : "Ver mais",
-    "worldwide" : "No mundo todo"
+    "last30days": "Últimos 30 dias",
+    "map": "Mapa",
+    "population": "População",
+    "readmore": "Ler mais",
+    "recovered": "Recuperado",
+    "search": "Pesquisar",
+    "testdone": "Teste feito",
+    "today": "Hoje",
+    "travelalert": "Alerta de viagem",
+    "updatedasof": "Atualizado a partir de",
+    "viewmore": "Ver mais",
+    "worldwide": "No mundo todo"
   },
-  "boardingscreen" : {
-    "pagefive" : {
-      "button" : "Selecionar",
-      "title" : "Selecione o seu país"
+  "boardingscreen": {
+    "pagefive": {
+      "button": "Selecionar",
+      "title": "Selecione o seu país"
     },
-    "pagefour" : {
-      "subtitle" : "Se você tiver sintomas de COVID-19 no entanto leve, auto-isolar por pelo menos 10 dias a partir de quando seus sintomas começaram.",
-      "title" : "Fique em casa"
+    "pagefour": {
+      "subtitle": "Se você tiver sintomas de COVID-19 no entanto leve, auto-isolar por pelo menos 10 dias a partir de quando seus sintomas começaram.",
+      "title": "Fique em casa"
     },
-    "pageone" : {
-      "subtitle" : "Obtenha os fatos sobre a atualização de casos do Coronavírus Daily em todo o mundo.",
-      "title" : "Covid 19 Rastreador"
+    "pageone": {
+      "subtitle": "Obtenha os fatos sobre a atualização de casos do Coronavírus Daily em todo o mundo.",
+      "title": "Covid 19 Rastreador"
     },
-    "pagethree" : {
-      "subtitle" : "Avisos oficiais de viagem emitidos por governos em todo o mundo.",
-      "title" : "Avisos de Viagem"
+    "pagethree": {
+      "subtitle": "Avisos oficiais de viagem emitidos por governos em todo o mundo.",
+      "title": "Avisos de Viagem"
     },
-    "pagetwo" : {
-      "subtitle" : "Tome medidas para cuidar de si mesmo e ajudar a proteger os outros em sua casa e comunidade.",
-      "title" : "Aprenda como você vai"
+    "pagetwo": {
+      "subtitle": "Tome medidas para cuidar de si mesmo e ajudar a proteger os outros em sua casa e comunidade.",
+      "title": "Aprenda como você vai"
     },
-    "skipbutton" : "Pular",
-    "startbutton" : "Iniciar"
+    "skipbutton": "Pular",
+    "startbutton": "Iniciar"
   },
-  "inforscreen" : {
-    "inforfive" : {
-      "description" : "Cuide de si mesmo uma pequena maneira a cada dia. \n Relaxe fazendo ioga, ouvindo música ou jardinagem. \n Encontre novas maneiras de se conectar com a família e amigos, obter apoio e compartilhar sentimentos. \n Coma alimentos saudáveis e descanse o suficiente \n Relaxe lendo, ouvindo música ou iniciando um novo hobby.",
-      "title" : "Como lidar com o estresse"
+  "inforscreen": {
+    "inforfive": {
+      "description": "Cuide de si mesmo uma pequena maneira a cada dia. \n Relaxe fazendo ioga, ouvindo música ou jardinagem. \n Encontre novas maneiras de se conectar com a família e amigos, obter apoio e compartilhar sentimentos. \n Coma alimentos saudáveis e descanse o suficiente \n Relaxe lendo, ouvindo música ou iniciando um novo hobby.",
+      "title": "Como lidar com o estresse"
     },
-    "inforfour" : {
-      "description" : "Você pode visitar o site do seu estado ou departamento de saúde local para procurar as informações locais mais recentes sobre testes. \n Se você tiver sintomas de COVID-19 e quiser fazer o teste, ligue para o seu profissional de saúde primeiro. \n Se você tiver sintomas de COVID-19 e optar por não fazer o teste, é importante ficar em casa. Descubra o que fazer se estiver doente.",
-      "title" : "Como obter um teste para infecção atual"
+    "inforfour": {
+      "description": "Você pode visitar o site do seu estado ou departamento de saúde local para procurar as informações locais mais recentes sobre testes. \n Se você tiver sintomas de COVID-19 e quiser fazer o teste, ligue para o seu profissional de saúde primeiro. \n Se você tiver sintomas de COVID-19 e optar por não fazer o teste, é importante ficar em casa. Descubra o que fazer se estiver doente.",
+      "title": "Como obter um teste para infecção atual"
     },
-    "inforone" : {
-      "description" : "Use uma máscara que cubra o nariz e a boca para ajudar a proteger a si mesmo e aos outros. \n Fique a 6 metros distante dos outros que não vivem com você. \n Evite multidões. \n Evite espaços interiores mal ventilados. \n Lave as mãos com freqüência com sabão e água. Use desinfetante para as mãos se o sabão e a água não estiverem disponíveis.",
-      "title" : "Como se proteger quando sair"
+    "inforone": {
+      "description": "Use uma máscara que cubra o nariz e a boca para ajudar a proteger a si mesmo e aos outros. \n Fique a 6 metros distante dos outros que não vivem com você. \n Evite multidões. \n Evite espaços interiores mal ventilados. \n Lave as mãos com freqüência com sabão e água. Use desinfetante para as mãos se o sabão e a água não estiverem disponíveis.",
+      "title": "Como se proteger quando sair"
     },
-    "inforsix" : {
-      "description" : "Os sintomas mais comuns de COVID-19 são \n Febre \n Tosse \n Dores de cabeça \n Fadiga \n Dores musculares ou corporais \n Perda de sabor ou cheiro \n Dor de garganta \n Náusea \n Diarreia \n Outros sintomas são sinais de doença grave. Se alguém tiver problemas para respirar, dor no peito ou pressão, ou dificuldade em ficar acordado, obtenha assistência médica imediatamente.",
-      "title" : "Quais os sintomas a observar"
+    "inforsix": {
+      "description": "Os sintomas mais comuns de COVID-19 são \n Febre \n Tosse \n Dores de cabeça \n Fadiga \n Dores musculares ou corporais \n Perda de sabor ou cheiro \n Dor de garganta \n Náusea \n Diarreia \n Outros sintomas são sinais de doença grave. Se alguém tiver problemas para respirar, dor no peito ou pressão, ou dificuldade em ficar acordado, obtenha assistência médica imediatamente.",
+      "title": "Quais os sintomas a observar"
     },
-    "inforthree" : {
-      "description" : "Fique em casa, exceto para obter cuidados médicos. \n Isolar a si mesmo de outros membros da sua família para evitar a propagação para eles e para as pessoas com quem eles podem ter contato, como avós. \n Mesmo que você não se sinta doente, você pode espalhar o COVID-19 para outros. \n Tenha cuidado imediatamente se você estiver tendo sinais de alerta de emergência, como dificuldade para respirar, dor ou pressão no peito.",
-      "title" : "O que fazer se você está doente"
+    "inforthree": {
+      "description": "Fique em casa, exceto para obter cuidados médicos. \n Isolar a si mesmo de outros membros da sua família para evitar a propagação para eles e para as pessoas com quem eles podem ter contato, como avós. \n Mesmo que você não se sinta doente, você pode espalhar o COVID-19 para outros. \n Tenha cuidado imediatamente se você estiver tendo sinais de alerta de emergência, como dificuldade para respirar, dor ou pressão no peito.",
+      "title": "O que fazer se você está doente"
     },
-    "infortwo" : {
-      "description" : "Pessoas de qualquer idade podem obter COVID-19, até mesmo jovens adultos saudáveis e crianças. \n As pessoas que são mais velhas ou têm certas condições médicas subjacentes estão em maior risco de ficar muito doente com o COVID-19. \n Outros grupos podem estar em maior risco de contrair COVID-19 ou ter doenças mais graves.",
-      "title" : "Se você está em risco de ficar muito doente"
+    "infortwo": {
+      "description": "Pessoas de qualquer idade podem obter COVID-19, até mesmo jovens adultos saudáveis e crianças. \n As pessoas que são mais velhas ou têm certas condições médicas subjacentes estão em maior risco de ficar muito doente com o COVID-19. \n Outros grupos podem estar em maior risco de contrair COVID-19 ou ter doenças mais graves.",
+      "title": "Se você está em risco de ficar muito doente"
     },
-    "pagesubtitle" : "Acredita-se que o COVID-19 se espalhe principalmente através de contato próximo de pessoa para pessoa. Algumas pessoas sem sintomas podem ser capazes de espalhar o vírus. Ainda estamos aprendendo sobre como o vírus se espalha e a gravidade da doença que causa.",
-    "pagetitle" : "Proteja-se e aos outros"
+    "pagesubtitle": "Acredita-se que o COVID-19 se espalhe principalmente através de contato próximo de pessoa para pessoa. Algumas pessoas sem sintomas podem ser capazes de espalhar o vírus. Ainda estamos aprendendo sobre como o vírus se espalha e a gravidade da doença que causa.",
+    "pagetitle": "Proteja-se e aos outros"
   },
-  "settingscreen" : {
-    "about" : "Sobre",
-    "aboutinfo" : "Nós obtemos dados de dados de Open Disease Data, avisos de viagem atualizados diariamente e The Centers for Disease Control and Prevention.",
-    "changecountry" : "Alterar o País",
-    "lightdark" : "Luz/Escuro"
+  "settingscreen": {
+    "about": "Sobre",
+    "aboutinfo": "Nós obtemos dados de dados de Open Disease Data, avisos de viagem atualizados diariamente e The Centers for Disease Control and Prevention.",
+    "changecountry": "Alterar o País",
+    "lightdark": "Luz/Escuro"
   },
-  "tabscreen" : {
-    "countries" : "Países",
-    "global" : "Global",
-    "home" : "Início",
-    "info" : "Informações",
-    "settings" : "Configurações"
+  "tabscreen": {
+    "countries": "Países",
+    "global": "Global",
+    "home": "Início",
+    "info": "Informações",
+    "settings": "Configurações"
   }
 }

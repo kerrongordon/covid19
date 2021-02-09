@@ -1,92 +1,92 @@
 {
-  "app" : {
-    "active" : "Actif",
-    "cases" : "Coffret",
-    "confirmed" : "Confirmé",
-    "couldnotlaunch" : "Impossible de lancer",
-    "critical" : "Critique",
-    "deaths" : "Décès",
-    "error" : {
-      "messageone" : "Oh rien n'a mal tourné",
-      "messagethree" : "Aucun résultat trouvé",
-      "messagetwo" : "Il semble y avoir un problème"
+  "app": {
+    "active": "Actif",
+    "cases": "Coffret",
+    "confirmed": "Confirmé",
+    "couldnotlaunch": "Impossible de lancer",
+    "critical": "Critique",
+    "deaths": "Décès",
+    "error": {
+      "messageone": "Oh rien n'a mal tourné",
+      "messagethree": "Aucun résultat trouvé",
+      "messagetwo": "Il semble y avoir un problème"
     },
-    "last30days" : "30 derniers jours",
-    "map" : "Carte",
-    "population" : "Habitants",
-    "readmore" : "En savoir plus",
-    "recovered" : "Restauré",
-    "search" : "Rechercher…",
-    "testdone" : "Test terminé",
-    "today" : "Aujourd'hui",
-    "travelalert" : "Alerte Voyage",
-    "updatedasof" : "Mis à jour le",
-    "viewmore" : "Afficher plus",
-    "worldwide" : "Mondial"
+    "last30days": "30 derniers jours",
+    "map": "Carte",
+    "population": "Habitants",
+    "readmore": "En savoir plus",
+    "recovered": "Restauré",
+    "search": "Rechercher…",
+    "testdone": "Test terminé",
+    "today": "Aujourd'hui",
+    "travelalert": "Alerte Voyage",
+    "updatedasof": "Mis à jour le",
+    "viewmore": "Afficher plus",
+    "worldwide": "Mondial"
   },
-  "boardingscreen" : {
-    "pagefive" : {
-      "button" : "Sélectionner",
-      "title" : "Sélectionnez votre pays"
+  "boardingscreen": {
+    "pagefive": {
+      "button": "Sélectionner",
+      "title": "Sélectionnez votre pays"
     },
-    "pagefour" : {
-      "subtitle" : "Si vous présentez des symptômes de COVID-19, même s'ils sont bénins, isolez vous-même pendant au moins 10 jours à compter de l'apparition de vos symptômes.",
-      "title" : "Rester à la maison"
+    "pagefour": {
+      "subtitle": "Si vous présentez des symptômes de COVID-19, même s'ils sont bénins, isolez vous-même pendant au moins 10 jours à compter de l'apparition de vos symptômes.",
+      "title": "Rester à la maison"
     },
-    "pageone" : {
-      "subtitle" : "Obtenez les faits à propos de Coronavirus Les cas quotidiens sont mis à jour dans le monde entier.",
-      "title" : "Covid 19 Tracker"
+    "pageone": {
+      "subtitle": "Obtenez les faits à propos de Coronavirus Les cas quotidiens sont mis à jour dans le monde entier.",
+      "title": "Covid 19 Tracker"
     },
-    "pagethree" : {
-      "subtitle" : "Avis officiels aux voyageurs émis par les gouvernements du monde entier.",
-      "title" : "Avis aux voyageurs"
+    "pagethree": {
+      "subtitle": "Avis officiels aux voyageurs émis par les gouvernements du monde entier.",
+      "title": "Avis aux voyageurs"
     },
-    "pagetwo" : {
-      "subtitle" : "Prenez des mesures pour prendre soin de vous et aider à protéger les autres personnes dans votre maison et dans votre communauté.",
-      "title" : "Apprenez au fur et à mesure"
+    "pagetwo": {
+      "subtitle": "Prenez des mesures pour prendre soin de vous et aider à protéger les autres personnes dans votre maison et dans votre communauté.",
+      "title": "Apprenez au fur et à mesure"
     },
-    "skipbutton" : "Ignorer",
-    "startbutton" : "Démarrer"
+    "skipbutton": "Ignorer",
+    "startbutton": "Démarrer"
   },
-  "inforscreen" : {
-    "inforfive" : {
-      "description" : "Prenez soin de vous un petit chemin chaque jour. \n Détendez-vous en faisant du yoga, en écoutant de la musique ou en jardinant. \n Trouvez de nouvelles façons de communiquer avec votre famille et vos amis, d'obtenir du soutien et de partager vos sentiments. \n Mangez des aliments sains et prenez suffisamment de repos \n Détendez-vous en lisant, en écoutant de la musique ou en commençant un nouveau passe-temps.",
-      "title" : "Comment faire face au stress"
+  "inforscreen": {
+    "inforfive": {
+      "description": "Prenez soin de vous un petit chemin chaque jour. \n Détendez-vous en faisant du yoga, en écoutant de la musique ou en jardinant. \n Trouvez de nouvelles façons de communiquer avec votre famille et vos amis, d'obtenir du soutien et de partager vos sentiments. \n Mangez des aliments sains et prenez suffisamment de repos \n Détendez-vous en lisant, en écoutant de la musique ou en commençant un nouveau passe-temps.",
+      "title": "Comment faire face au stress"
     },
-    "inforfour" : {
-      "description" : "Vous pouvez consulter le site Web de votre département de santé national ou local pour rechercher les dernières informations locales sur les tests. \n Si vous présentez des symptômes du COVID-19 et que vous souhaitez vous faire subir un test, appelez d'abord votre professionnel de la santé. \n Si vous présentez des symptômes du COVID-19 et que vous choisissez de ne pas vous faire subir de test, il est important de rester à la maison. Découvrez ce qu'il faut faire si vous êtes malade.",
-      "title" : "Comment obtenir un test d'infection actuelle"
+    "inforfour": {
+      "description": "Vous pouvez consulter le site Web de votre département de santé national ou local pour rechercher les dernières informations locales sur les tests. \n Si vous présentez des symptômes du COVID-19 et que vous souhaitez vous faire subir un test, appelez d'abord votre professionnel de la santé. \n Si vous présentez des symptômes du COVID-19 et que vous choisissez de ne pas vous faire subir de test, il est important de rester à la maison. Découvrez ce qu'il faut faire si vous êtes malade.",
+      "title": "Comment obtenir un test d'infection actuelle"
     },
-    "inforone" : {
-      "description" : "Portez un masque qui couvre votre nez et votre bouche pour vous protéger et protéger les autres. \n Restez à 6 pieds à l'écart des autres qui ne vivent pas avec vous. \n Évitez les foules. \n Évitez les espaces intérieurs mal ventilés. \n Lavez-vous les mains souvent avec de l'eau et du savon. Utilisez un désinfectant pour les mains si du savon et de l'eau ne sont pas disponibles.",
-      "title" : "Comment se protéger en sortant"
+    "inforone": {
+      "description": "Portez un masque qui couvre votre nez et votre bouche pour vous protéger et protéger les autres. \n Restez à 6 pieds à l'écart des autres qui ne vivent pas avec vous. \n Évitez les foules. \n Évitez les espaces intérieurs mal ventilés. \n Lavez-vous les mains souvent avec de l'eau et du savon. Utilisez un désinfectant pour les mains si du savon et de l'eau ne sont pas disponibles.",
+      "title": "Comment se protéger en sortant"
     },
-    "inforsix" : {
-      "description" : "Les symptômes les plus courants du COVID-19 sont \n Fièvre \n Toux \n Maux de tête \n Fatigue \n Maux musculaires ou corporels \n Perte de goût ou d'odeur \n Maux de gorge \n Nausées \n Diarrhée \n D'autres symptômes sont des signes de maladie grave. Si quelqu'un a du mal à respirer, des douleurs thoraciques ou de la pression, ou de la difficulté à rester éveillé, obtenir des soins médicaux immédiatement.",
-      "title" : "Quels sont les symptômes à surveiller"
+    "inforsix": {
+      "description": "Les symptômes les plus courants du COVID-19 sont \n Fièvre \n Toux \n Maux de tête \n Fatigue \n Maux musculaires ou corporels \n Perte de goût ou d'odeur \n Maux de gorge \n Nausées \n Diarrhée \n D'autres symptômes sont des signes de maladie grave. Si quelqu'un a du mal à respirer, des douleurs thoraciques ou de la pression, ou de la difficulté à rester éveillé, obtenir des soins médicaux immédiatement.",
+      "title": "Quels sont les symptômes à surveiller"
     },
-    "inforthree" : {
-      "description" : "Restez à la maison sauf pour obtenir des soins médicaux. \n Isolez-vous des autres membres de votre famille pour éviter la propagation à eux et aux personnes avec qui ils peuvent avoir des contacts, comme les grands-parents. \n Même si vous ne vous sentez pas malade, vous pouvez propager COVID-19 aux autres. \n Prenez soin immédiatement si vous avez des signes d'avertissement d'urgence, comme des difficultés respiratoires, une douleur ou une pression thoracique.",
-      "title" : "Que faire si vous êtes malade"
+    "inforthree": {
+      "description": "Restez à la maison sauf pour obtenir des soins médicaux. \n Isolez-vous des autres membres de votre famille pour éviter la propagation à eux et aux personnes avec qui ils peuvent avoir des contacts, comme les grands-parents. \n Même si vous ne vous sentez pas malade, vous pouvez propager COVID-19 aux autres. \n Prenez soin immédiatement si vous avez des signes d'avertissement d'urgence, comme des difficultés respiratoires, une douleur ou une pression thoracique.",
+      "title": "Que faire si vous êtes malade"
     },
-    "infortwo" : {
-      "description" : "Les personnes de tout âge peuvent recevoir COVID-19, même les jeunes adultes et les enfants en bonne santé. \n Les personnes âgées ou ayant certaines affections médicales sous-jacentes courent un risque plus élevé de tomber très malades à cause du COVID-19. \n D'autres groupes peuvent présenter un risque plus élevé de contracter le COVID-19 ou d'avoir une maladie plus grave.",
-      "title" : "Si vous êtes à risque de tomber très malade"
+    "infortwo": {
+      "description": "Les personnes de tout âge peuvent recevoir COVID-19, même les jeunes adultes et les enfants en bonne santé. \n Les personnes âgées ou ayant certaines affections médicales sous-jacentes courent un risque plus élevé de tomber très malades à cause du COVID-19. \n D'autres groupes peuvent présenter un risque plus élevé de contracter le COVID-19 ou d'avoir une maladie plus grave.",
+      "title": "Si vous êtes à risque de tomber très malade"
     },
-    "pagesubtitle" : "On pense que le COVID-19 se propage principalement par contact étroit de personne à personne. Certaines personnes sans symptômes peuvent être capables de propager le virus. Nous sommes toujours en train d'apprendre comment le virus se propage et la gravité de la maladie qu'il provoque.",
-    "pagetitle" : "Protégez-vous et les autres"
+    "pagesubtitle": "On pense que le COVID-19 se propage principalement par contact étroit de personne à personne. Certaines personnes sans symptômes peuvent être capables de propager le virus. Nous sommes toujours en train d'apprendre comment le virus se propage et la gravité de la maladie qu'il provoque.",
+    "pagetitle": "Protégez-vous et les autres"
   },
-  "settingscreen" : {
-    "about" : "À propos",
-    "aboutinfo" : "Nous fournissons des données à partir des données ouvertes sur les maladies, des avis aux voyageurs mis à jour quotidiennement et des Centres pour le contrôle et la prévention des maladies.",
-    "changecountry" : "Changer de pays",
-    "lightdark" : "Claire/Foncé"
+  "settingscreen": {
+    "about": "À propos",
+    "aboutinfo": "Nous fournissons des données à partir des données ouvertes sur les maladies, des avis aux voyageurs mis à jour quotidiennement et des Centres pour le contrôle et la prévention des maladies.",
+    "changecountry": "Changer de pays",
+    "lightdark": "Claire/Foncé"
   },
-  "tabscreen" : {
-    "countries" : "Pays",
-    "global" : "Général",
-    "home" : "Accueil",
-    "info" : "Informations",
-    "settings" : "Paramètres"
+  "tabscreen": {
+    "countries": "Pays",
+    "global": "Général",
+    "home": "Accueil",
+    "info": "Informations",
+    "settings": "Paramètres"
   }
 }
