@@ -1,0 +1,92 @@
+{
+  "app": {
+    "active": "Aktiivinen",
+    "cases": "Tapaukset",
+    "confirmed": "Hyväksytty",
+    "couldnotlaunch": "Ei voi käynnistää",
+    "critical": "Kriittinen",
+    "deaths": "Kuolemat",
+    "error": {
+      "messageone": "Voi ei jokin meni pieleen",
+      "messagethree": "Ei tuloksia",
+      "messagetwo": "Täällä taitaa olla ongelma"
+    },
+    "last30days": "Viimeiset 30 päivää",
+    "map": "Kartta",
+    "population": "Väestö",
+    "readmore": "Lue lisää",
+    "recovered": "Palautettu",
+    "search": "Hae",
+    "testdone": "Testi tehty",
+    "today": "Tänään",
+    "travelalert": "Matkustusvaroitus",
+    "updatedasof": "Päivitetty",
+    "viewmore": "Näytä lisää",
+    "worldwide": "Maailmanlaajuinen"
+  },
+  "boardingscreen": {
+    "pagefive": {
+      "button": "Valitse",
+      "title": "Valitse maasi"
+    },
+    "pagefour": {
+      "subtitle": "Jos sinulla on koronaviruksen oireita, jotka ovat lieviä, eristäydy vähintään 10 päivän ajaksi oireidesi alkamisen jälkeen.",
+      "title": "Pysy kotona"
+    },
+    "pageone": {
+      "subtitle": "Hanki faktat koronaviruksen päivittäistapauksien päivityksistä ympäri maailmaa.",
+      "title": "Koronavirus seuranta"
+    },
+    "pagethree": {
+      "subtitle": "Viralliset matkustusneuvot, joita hallitukset ovat antaneet ympäri maailmaa.",
+      "title": "Matkailutiedotteita"
+    },
+    "pagetwo": {
+      "subtitle": "Ota askelia huolehtiaksesi itsestäsi ja auta suojaamaan muut sinun kodissa ja yhteisössäsi.",
+      "title": "Opi kun menet"
+    },
+    "skipbutton": "Ohita",
+    "startbutton": "Aloita"
+  },
+  "inforscreen": {
+    "inforfive": {
+      "description": "Huolehdi itsestäsi yhdellä pienellä asialla joka päivä. \n Voit rentoutua joogaamalla, kuuntelemalla musiikkia tai hoitamalla puutarhaa. \n Löydä uusia tapoja muodostaa yhteys perheeseen ja ystäviin, sekä tuen saamiseen ja ja tunteiden jakamiseen. \n Syö terveellisiä ruokaa ja saa tarpeeksi lepoa \n Rentoudu lukemalla, kuuntelemalla musiikkia tai aloittamalla uuden harrastuksen.",
+      "title": "Miten selviytyä stressistä"
+    },
+    "inforfour": {
+      "description": "Voit käydä oman valtion tai paikallisen terveysosaston verkkosivuilla etsimässä uusinta paikallista tietoa testauksesta. \n Jos sinulla on koronaviruksen oireita ja haluat käydä testissä, soita ensin terveydenhuollon tarjoajaasi. \n Jos sinulla on koronaviruksen oireita ja et halua käydä testissä, on tärkeää pysyä kotona. Selvitä mitä tehdä, jos olet sairas.",
+      "title": "Miten päästä koronavirustestiin"
+    },
+    "inforone": {
+      "description": "Käytä maskia, joka peittää nenän ja suun suojataksesi itseäsi ja muita.\n Pidä metrinturvaväli muihin, jotka eivät asu kanssasi. \n Vältä väkijoukkoja. \n Vältä huonosti tuuletettuja sisätiloja. \n Pese kätesi usein saippualla ja vedellä. Käytä käsidesiä, jos saippuaa ja vettä ei ole saatavilla.",
+      "title": "Miten suojata itsesi kun menet ulos"
+    },
+    "inforsix": {
+      "description": "Koronaviruksen yleisimmät oireet ovat \n Kuume \n Yskä \n päänsärky\n väsymys \n Lihaksen tai vartalon jäykkyys\n Maun tai hajun menetys \n Kurkkukipu \n pahoinvointi\n Ripuli \n Muut oireet ovat merkkejä vakavasta sairaudesta. Jos jollakulla on hengitysvaikeuksia, rintakipua tai -paineita tai vaikeuksia pysyä hereillä, hakeudu heti hoitoon.",
+      "title": "Mitä oireita on "
+    },
+    "inforthree": {
+      "description": "Pysy kotona, paitsi saadessasi sairaanhoitoa. \n Eristä itsesi muista perheenjäsenistä estääksesi leviämisen heihin ja muihin ihmisiin, joiden kanssa he voivat olla tekemisissä, kuten isovanhemmat. \n Vaikka et tuntisi oloasi sairaaksi, voit levittää koronavirusta muille. \n Hanki hoitoa välittömästi, jos sinulla on hengitysvaikeuksia, kipua tai rintakehän painetta.",
+      "title": "Mitä tehdä, jos olet sairas"
+    },
+    "infortwo": {
+      "description": "Kaikenikäiset ihmiset voivat saada koronaviruksen jopa terveet nuoret aikuiset ja lapset.\n Ikäihmiset tai ihmiset joilla on tiettyjä sairauksia, omistavat suuremman riskin sairastaa vakavan koronaviruksen.\n Joillakin ryhmillä saattaa olla suurempi riski saada koronavirus tai sen vakavampi muoto.",
+      "title": "Jos olet vaarassa sairastua vakavasti"
+    },
+    "pagesubtitle": "Koronaviruksen arvellaan leviävän lähinnä läheisen kontaktin kautta henkilöstä toiseen. Jotkut, joilla ei ole oireita, voivat pystyä myös levittämään virusta. Opimme vielä viruksen leviämisestä ja sen aiheuttaman sairauden vakavuudesta.",
+    "pagetitle": "Suojaa itseäsi & muita"
+  },
+  "settingscreen": {
+    "about": "Tietoja",
+    "aboutinfo": "Lähetämme tietoja avoimista tautitiedoista, päivittäin päivitetyistä matkaoppaista ja tautien torjunnan ja ehkäisyn keskuksista.",
+    "changecountry": "Vaihda maata",
+    "lightdark": "Vaalea / tumma"
+  },
+  "tabscreen": {
+    "countries": "Maat",
+    "global": "Maailmanlaajuinen",
+    "home": "Koti",
+    "info": "Tiedot",
+    "settings": "Asetukset"
+  }
+}
