@@ -1,7 +1,7 @@
 import 'package:covid19/configs/data.config.dart';
 import 'package:covid19/models/country-model.dart';
 import 'package:flutter/foundation.dart';
-import 'package:hooks_riverpod/all.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final homeCountryProvider =
