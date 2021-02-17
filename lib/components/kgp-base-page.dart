@@ -43,6 +43,9 @@ class KgpBasePage extends StatelessWidget {
           leading: leading,
           actions: actions,
           flexibleSpace: FlexibleSpaceBar(
+            titlePadding: const EdgeInsets.only(
+              bottom: 0.001,
+            ),
             background: background,
             title: _titleUi(context, theme),
             centerTitle: true,

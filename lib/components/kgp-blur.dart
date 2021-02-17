@@ -10,7 +10,8 @@ class KgpBlur extends StatelessWidget {
       top: 0,
       left: 0,
       right: 0,
-      height: 100,
+      // height: 100,
+      bottom: 0,
       child: ClipRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(

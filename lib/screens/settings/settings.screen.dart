@@ -82,45 +82,44 @@ class SettingsScreen extends HookWidget {
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        const SizedBox(height: 20),
-                        ListTile(
-                          title: FlatButton(
-                            onPressed: () =>
-                                _launchURL(url: 'https://disease.sh/'),
-                            child: Text(
-                              'Open Disease Data',
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: theme.textTheme.bodyText1.color,
+                        ListView(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          children: [
+                            ListTile(
+                              onTap: () =>
+                                  _launchURL(url: 'https://disease.sh/'),
+                              title: Text(
+                                'Open Disease Data',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: theme.textTheme.bodyText1.color,
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        ListTile(
-                          title: FlatButton(
-                            onPressed: () => _launchURL(
-                                url: 'https://www.travel-advisory.info/'),
-                            child: Text(
-                              'Daily updated travel advisories',
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: theme.textTheme.bodyText1.color,
+                            ListTile(
+                              onTap: () => _launchURL(
+                                  url: 'https://www.travel-advisory.info/'),
+                              title: Text(
+                                'Daily updated travel advisories',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: theme.textTheme.bodyText1.color,
+                                ),
                               ),
                             ),
-                          ),
-                        ),
-                        ListTile(
-                          title: FlatButton(
-                            onPressed: () =>
-                                _launchURL(url: 'https://www.cdc.gov/'),
-                            child: Text(
-                              'Centers for Disease Control and Prevention',
-                              style: TextStyle(
-                                fontSize: 13,
-                                color: theme.textTheme.bodyText1.color,
+                            ListTile(
+                              onTap: () =>
+                                  _launchURL(url: 'https://www.cdc.gov/'),
+                              title: Text(
+                                'Centers for Disease Control and Prevention',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: theme.textTheme.bodyText1.color,
+                                ),
                               ),
                             ),
-                          ),
+                          ],
                         ),
                       ],
                     ),
