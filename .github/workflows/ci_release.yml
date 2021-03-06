@@ -20,7 +20,7 @@ jobs:
           java-version: "12.x"
       - uses: subosito/flutter-action@v1
         with:
-          channel: "stable"
+          flutter-version: "1.22.6"
       - run: flutter pub get
       - run: flutter analyze
 
@@ -58,7 +58,7 @@ jobs:
           write_key: ${{ secrets.LOCALAZY_WRITE_KEY }}
       - uses: subosito/flutter-action@v1
         with:
-          channel: "stable"
+          flutter-version: "1.22.6"
       - run: flutter pub get
       - run: flutter clean
       - run: flutter build appbundle --release
