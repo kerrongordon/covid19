@@ -24,7 +24,7 @@ class SettingsCountryPicker extends HookWidget {
       () => home.getCountryName(),
     );
 
-    final snapshot = useFuture(countryName);
+    final snapshot = useFuture(countryName, initialData: '');
 
     Future<void> openSearch() async {
       final Country search = await showSearch(

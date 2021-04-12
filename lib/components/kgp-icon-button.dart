@@ -13,10 +13,8 @@ class KgpIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton.icon(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 7, bottom: 10),
-      color: Theme.of(context).accentColor,
-      textColor: Colors.white,
+    return TextButton.icon(
+      onPressed: onPressed,
       icon: buttonIcon,
       label: Text(
         buttonTitle ?? 'Change Title',
@@ -24,10 +22,40 @@ class KgpIconButton extends StatelessWidget {
           fontSize: 16,
         ),
       ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5.0),
+      style: ButtonStyle(
+        padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          const EdgeInsets.only(left: 20, right: 20, top: 7, bottom: 10),
+        ),
+        backgroundColor:
+            MaterialStateProperty.all<Color>(Theme.of(context).accentColor),
+        textStyle: MaterialStateProperty.all<TextStyle>(
+          const TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        shape: MaterialStateProperty.all<OutlinedBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(5.0),
+          ),
+        ),
       ),
-      onPressed: onPressed,
     );
+
+    // return FlatButton.icon(
+    // padding: const EdgeInsets.only(left: 20, right: 20, top: 7, bottom: 10),
+    // color: Theme.of(context).accentColor,
+    // textColor: Colors.white,
+    // icon: buttonIcon,
+    // label: Text(
+    //   buttonTitle ?? 'Change Title',
+    //   style: const TextStyle(
+    //     fontSize: 16,
+    //   ),
+    // ),
+    // shape: RoundedRectangleBorder(
+    //   borderRadius: BorderRadius.circular(5.0),
+    // ),
+    // onPressed: onPressed,
+    // );
   }
 }

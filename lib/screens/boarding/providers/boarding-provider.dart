@@ -2,8 +2,9 @@ import 'package:covid19/providers/home-provider.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-final boardingProvider = StateNotifierProvider.autoDispose<BoardingNotifier>(
-    (_) => BoardingNotifier());
+final boardingProvider =
+    StateNotifierProvider.autoDispose<BoardingNotifier, int>(
+        (_) => BoardingNotifier());
 
 class BoardingNotifier extends StateNotifier<int> {
   BoardingNotifier() : super(0);
@@ -11,7 +12,8 @@ class BoardingNotifier extends StateNotifier<int> {
 }
 
 final boardingController =
-    StateNotifierProvider.autoDispose<BoardingController>((ref) {
+    StateNotifierProvider.autoDispose<BoardingController, PageController>(
+        (ref) {
   return BoardingController();
 });
 

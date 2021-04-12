@@ -67,15 +67,24 @@ class MapMarkerItems extends StatelessWidget {
                   Row(
                     children: [
                       Expanded(
-                        child: FlatButton.icon(
+                        child: TextButton.icon(
                           onPressed: () => Navigator.of(context)
                               .popAndPushNamed(countryScreen,
                                   arguments: data[i]),
                           icon: const Icon(Ionicons.ios_compass),
                           label: const Text('View More'),
-                          textColor: theme.accentColor,
-                          padding: const EdgeInsets.all(20),
-                          splashColor: theme.accentColor,
+                          style: ButtonStyle(
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              theme.accentColor,
+                            ),
+                            padding:
+                                MaterialStateProperty.all<EdgeInsetsGeometry>(
+                              const EdgeInsets.all(20),
+                            ),
+                            overlayColor: MaterialStateProperty.all<Color>(
+                              theme.accentColor,
+                            ),
+                          ),
                         ),
                       ),
                     ],

@@ -21,8 +21,9 @@ class TabScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _pageIndex = useProvider(tabProvider);
+    final _pageIndex = useProvider(tabProvider.notifier);
     final _pageController = usePageController(initialPage: 2);
+
     void onPageChange(int index) => _pageIndex.changePages(index);
     void onTapIcon(int index) => _pageController.animateToPage(
           index,
@@ -49,7 +50,7 @@ class TabScreen extends HookWidget {
           KgpBlur(),
           Consumer(
             builder: (context, watch, __) {
-              final page = watch(tabProvider.state);
+              final page = watch(tabProvider);
               return TabBottomBar(
                 pageIndex: page,
                 onItemSelected: onTapIcon,

@@ -17,48 +17,49 @@ environment:
   sdk: ">=2.10.0 <3.0.0"
 
 dependencies:
+  adaptive_theme: ^2.1.1
+  auto_size_text: ^3.0.0-nullsafety.0
+  avatar_glow: ^2.0.1
+  bezier_chart: ^1.0.17+1
+  bottom_navy_bar: ^6.0.0
+  cached_network_image: ^3.0.0
+  dio: ^4.0.0
+  # dio_http_cache: ^0.2.11
+  # dio_retry: ^0.1.9-beta
+  easy_localization: ^3.0.0
+  firebase_analytics: ^8.0.0-dev.2
+  firebase_core: ^1.0.3
+  fl_chart: ^0.35.0
+  flare_flutter: ^3.0.0
   flutter:
     sdk: flutter
-  adaptive_theme: ^2.0.0
-  auto_size_text: ^3.0.0-nullsafety.0
-  bezier_chart: ^1.0.17+1
-  bottom_navy_bar: ^6.0.0-nullsafety.0
-  cached_network_image: ^3.0.0
-  dio: ^4.0.0-prev3
-  dio_http_cache: ^0.2.11
-  dio_retry: ^0.1.9-beta
-  easy_localization: ^3.0.0
-  firebase_analytics: ^7.1.1
-  firebase_core: ^1.0.2
-  fl_chart: ^0.30.0
-  flare_flutter: ^3.0.0-nullsafety.1
+  flutter_animator: ^3.1.1
   flutter_dotenv: ^4.0.0-nullsafety.0
   flutter_hooks: ^0.16.0
   flutter_icons: ^1.1.0
   flutter_map: ^0.12.0
   flutter_native_admob: ^2.1.0+3
   geolocator: ^7.0.1
-  hooks_riverpod: ^0.13.1+1
+  hooks_riverpod: ^0.14.0+1
+  # http: ^0.13.1
   intl: ^0.17.0
   latlong: ^0.6.1
   list_tile_switch: ^1.0.0
   loading_animations: ^2.2.0
+  package_info: ^2.0.0
   shared_preferences: ^2.0.5
   state_notifier: ^0.7.0
   url_launcher: ^6.0.3
-  package_info: ^2.0.0
-  avatar_glow: ^2.0.1
-  flutter_animator: ^3.1.1
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  lint: ^1.5.3
   flutter_launcher_icons: ^0.9.0
   flutter_launcher_name:
     git:
       url: https://github.com/kerrongordon/flutter_launcher_name
-  flutter_native_splash: ^1.1.5+1
+  flutter_native_splash: ^1.1.7+1
+  flutter_test:
+    sdk: flutter
+  lint: ^1.5.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

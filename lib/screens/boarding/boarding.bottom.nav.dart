@@ -36,7 +36,7 @@ class BoardingBottomNav extends StatelessWidget {
               height: 40,
             )
           else
-            FlatButton(
+            TextButton(
               onPressed: () => ontap(_pages.length - 2),
               child: Text(
                 skipbutton,

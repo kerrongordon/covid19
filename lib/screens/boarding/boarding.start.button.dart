@@ -20,13 +20,8 @@ class BoardingStartButton extends StatelessWidget {
           right: 40,
           bottom: 20,
         ),
-        child: FlatButton.icon(
+        child: TextButton.icon(
           clipBehavior: Clip.antiAlias,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(50.0),
-          ),
-          color: theme.accentColor,
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           onPressed: onPressed,
           icon: const Icon(
             Ionicons.ios_checkmark_circle,
@@ -37,6 +32,22 @@ class BoardingStartButton extends StatelessWidget {
             style: const TextStyle(
               fontSize: 20,
               color: Colors.white,
+            ),
+          ),
+          style: ButtonStyle(
+            padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+              const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 20,
+              ),
+            ),
+            backgroundColor: MaterialStateProperty.all<Color>(
+              theme.accentColor,
+            ),
+            shape: MaterialStateProperty.all<OutlinedBorder>(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50.0),
+              ),
             ),
           ),
         ),

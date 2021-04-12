@@ -21,12 +21,12 @@ class BoardingScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _pageIndex = useProvider(boardingProvider);
+    final _pageIndex = useProvider(boardingProvider.notifier);
     final countries = useProvider(countryProvider);
     final prefs = useProvider(preferencesProvider);
     final home = useProvider(homeCountryProvider);
     final changeTheme = AdaptiveTheme.of(context);
-    final _pageController = useProvider(boardingController);
+    final _pageController = useProvider(boardingController.notifier);
 
     void onPageChange(int index) => _pageIndex.changePages(index);
 
@@ -97,7 +97,7 @@ class BoardingScreen extends HookWidget {
             )
           : Consumer(
               builder: (context, watch, __) {
-                final pageController = watch(boardingController.state);
+                final pageController = watch(boardingController);
                 return BoardingBottomNav(
                   pages: _pages,
                   pageIndex: pageIndex,
@@ -119,7 +119,7 @@ class BoardingScreen extends HookWidget {
       ),
       body: Consumer(
         builder: (context, watch, __) {
-          final pageController = watch(boardingController.state);
+          final pageController = watch(boardingController);
           return PageView(
             controller: pageController,
             onPageChanged: onPageChange,
@@ -128,7 +128,7 @@ class BoardingScreen extends HookWidget {
         },
       ),
       bottomNavigationBar: Consumer(builder: (context, watch, __) {
-        final page = watch(boardingProvider.state);
+        final page = watch(boardingProvider);
         _pageController.ready(index: page, home: home);
         return changeNavbar(pageIndex: page);
       }),
