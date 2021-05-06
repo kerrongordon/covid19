@@ -37,7 +37,7 @@ dependencies:
   flutter_icons: ^1.1.0
   flutter_map: ^0.11.0
   flutter_native_admob: ^2.1.0+3
-  geolocator: ^6.1.13
+  geolocator: ^7.0.0
   hooks_riverpod: ^0.12.1
   intl: ^0.16.1
   latlong: ^0.6.1
