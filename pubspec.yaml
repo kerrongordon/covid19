@@ -24,7 +24,7 @@ dependencies:
   bezier_chart: ^1.0.17+1
   bottom_navy_bar: ^5.6.0
   cached_network_image: ^2.5.0
-  dio: ^3.0.10
+  dio: ^4.0.0
   dio_http_cache: ^0.2.11
   dio_retry: ^0.1.9-beta
   easy_localization: ^2.3.3
