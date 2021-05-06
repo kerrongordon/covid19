@@ -45,7 +45,7 @@ dependencies:
   loading_animations: ^2.1.0
   shared_preferences: ^0.5.12+4
   state_notifier: ^0.6.0
-  url_launcher: ^5.7.10
+  url_launcher: ^6.0.0
   package_info: ^0.4.3+2
   avatar_glow: ^1.2.0
   flutter_animator: ^2.1.0
