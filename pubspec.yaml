@@ -38,7 +38,7 @@ dependencies:
   flutter_map: ^0.11.0
   flutter_native_admob: ^2.1.0+3
   geolocator: ^6.1.13
-  hooks_riverpod: ^0.12.1
+  hooks_riverpod: ^0.14.0
   intl: ^0.16.1
   latlong: ^0.6.1
   list_tile_switch: ^0.0.2
