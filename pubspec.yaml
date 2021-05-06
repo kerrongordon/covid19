@@ -44,7 +44,7 @@ dependencies:
   list_tile_switch: ^0.0.2
   loading_animations: ^2.1.0
   shared_preferences: ^0.5.12+4
-  state_notifier: ^0.6.0
+  state_notifier: ^0.7.0
   url_launcher: ^5.7.10
   package_info: ^0.4.3+2
   avatar_glow: ^1.2.0
