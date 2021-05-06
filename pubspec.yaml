@@ -48,7 +48,7 @@ dependencies:
   url_launcher: ^5.7.10
   package_info: ^0.4.3+2
   avatar_glow: ^1.2.0
-  flutter_animator: ^2.1.0
+  flutter_animator: ^3.0.0
 
 dev_dependencies:
   flutter_test:
