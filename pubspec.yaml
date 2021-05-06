@@ -27,7 +27,7 @@ dependencies:
   dio: ^3.0.10
   dio_http_cache: ^0.2.11
   dio_retry: ^0.1.9-beta
-  easy_localization: ^2.3.3
+  easy_localization: ^3.0.0
   firebase_analytics: ^6.3.0
   firebase_core: ^0.5.3
   fl_chart: ^0.12.2
