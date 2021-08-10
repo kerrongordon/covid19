@@ -32,86 +32,91 @@ class BoardingSlide extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context);
     final theme = Theme.of(context);
 
-    return Container(
-      color: theme.backgroundColor,
-      padding: const EdgeInsets.symmetric(horizontal: 40),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          if (flar != null)
-            AspectRatio(
-              aspectRatio: 1.5,
-              child: FlareActor(
-                'assets/flar/$flar.flr',
-                animation: flarAnimationName,
-              ),
-            )
-          else
-            Container(),
-          if (flag != null && flar == null)
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: AvatarGlow(
-                glowColor: ColorTheme.primary,
-                endRadius: 130.0,
-                child: Material(
-                  shape: const CircleBorder(),
-                  child: KgpFlag(
-                    imageUrl: flag,
-                    imageHeight: mediaQuery.size.width / 2.5,
-                    imageWidth: mediaQuery.size.width / 2.5,
+    return Center(
+      child: SingleChildScrollView(
+        child: Container(
+          width: 400,
+          color: theme.backgroundColor,
+          padding: const EdgeInsets.symmetric(horizontal: 40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (flar != null)
+                AspectRatio(
+                  aspectRatio: 1.5,
+                  child: FlareActor(
+                    'assets/flar/$flar.flr',
+                    animation: flarAnimationName,
                   ),
-                ),
-              ),
-            )
-          else
-            Container(),
-          if (title != null)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: FadeInDown(
-                child: Text(
-                  title,
-                  style: const TextStyle(
-                    fontSize: 24,
+                )
+              else
+                Container(),
+              if (flag != null && flar == null)
+                Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: AvatarGlow(
+                    glowColor: ColorTheme.primary,
+                    endRadius: 130.0,
+                    child: Material(
+                      shape: const CircleBorder(),
+                      child: KgpFlag(
+                        imageUrl: flag,
+                        imageHeight: mediaQuery.size.width / 2.5,
+                        imageWidth: mediaQuery.size.width / 2.5,
+                      ),
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            )
-          else
-            Container(),
-          if (subtitle != null)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: FadeInUp(
-                child: Text(
-                  subtitle,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    height: 1.5,
-                    fontWeight: FontWeight.w300,
+                )
+              else
+                Container(),
+              if (title != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: FadeInDown(
+                    child: Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 24,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            )
-          else
-            Container(),
-          if (onPressed != null)
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20),
-              child: FadeInUp(
-                child: KgpIconButton(
-                  buttonTitle: buttonTitle,
-                  buttonIcon: buttonIcon,
-                  onPressed: onPressed,
-                ),
-              ),
-            )
-          else
-            Container(),
-        ],
+                )
+              else
+                Container(),
+              if (subtitle != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: FadeInUp(
+                    child: Text(
+                      subtitle,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        height: 1.5,
+                        fontWeight: FontWeight.w300,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                )
+              else
+                Container(),
+              if (onPressed != null)
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  child: FadeInUp(
+                    child: KgpIconButton(
+                      buttonTitle: buttonTitle,
+                      buttonIcon: buttonIcon,
+                      onPressed: onPressed,
+                    ),
+                  ),
+                )
+              else
+                Container(),
+            ],
+          ),
+        ),
       ),
     );
   }

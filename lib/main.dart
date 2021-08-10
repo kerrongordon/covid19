@@ -11,10 +11,11 @@ FirebaseAnalytics analytics;
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   analytics = FirebaseAnalytics();
-  await dot_env.load();
+  await dot_env.load(fileName: 'env');
 
   runApp(
     EasyLocalization(
+      startLocale: const Locale('en'),
       supportedLocales: appLocaleList,
       path: 'assets/translations',
       fallbackLocale: const Locale('en'),
