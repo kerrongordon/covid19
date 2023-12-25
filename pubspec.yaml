@@ -30,7 +30,7 @@ dependencies:
   easy_localization: ^2.3.3
   firebase_analytics: ^6.3.0
   firebase_core: ^0.5.3
-  fl_chart: ^0.12.2
+  fl_chart: ^0.66.0
   flare_flutter: ^2.0.6
   flutter_dotenv: ^3.1.0
   flutter_hooks: ^0.15.0
